@@ -19,4 +19,6 @@
 /** 获得灰度图 */
 - (UIImage *)convertToGrayImage;
 
+- (UIImage *) imageWithTintColor:(UIColor *)tintColor;
+
 @end

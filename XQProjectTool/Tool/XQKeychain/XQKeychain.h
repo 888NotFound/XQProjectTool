@@ -22,6 +22,11 @@
 + (NSString *)getUUIDStr;
 
 /**
+ 保存UUID
+ */
++ (int)saveUUIDStr:(NSString *)UUIDStr;
+
+/**
  删除uuid, 删除之后, 需要重新调用initUDID, 不然一直获取都是nil
  */
 + (int)deleteUUIDStr;
