@@ -16,8 +16,6 @@
 #import <Contacts/Contacts.h>// 通讯录
 #import <Speech/Speech.h>// 语音识别
 
-#import "AppDelegate.h"
-
 typedef NS_ENUM(NSInteger, XQOpenURL) {
     XQOpenURLCamera = 0,
     XQOpenURLPhoto,
