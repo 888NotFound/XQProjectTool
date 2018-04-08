@@ -43,8 +43,20 @@
     // 行间距
 - (void)xqAtt_setParagraphStyleWithLineSpace:(CGFloat)space range:(NSRange)range {
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:space];
+    paragraphStyle.lineSpacing = space;
     [self xq_addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:range];
+}
+
+    // 对齐格式
+- (void)xqAtt_setParagraphStyleWithAlignment:(NSTextAlignment)alignment range:(NSRange)range {
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = alignment;
+    [self xq_addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:range];
+}
+
+    // 段落风格
+- (void)xqAtt_setParagraphStyleWithStyle:(NSMutableParagraphStyle *)style range:(NSRange)range {
+    [self xq_addAttribute:NSParagraphStyleAttributeName value:style range:range];
 }
 
     // 字间距

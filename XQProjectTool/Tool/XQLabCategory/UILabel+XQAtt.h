@@ -46,6 +46,16 @@
 - (void)xqAtt_setParagraphStyleWithLineSpace:(CGFloat)space range:(NSRange)range;
 
 /**
+ 对齐格式
+ */
+- (void)xqAtt_setParagraphStyleWithAlignment:(NSTextAlignment)alignment range:(NSRange)range;
+
+/**
+ 段落风格
+ */
+- (void)xqAtt_setParagraphStyleWithStyle:(NSMutableParagraphStyle *)style range:(NSRange)range;
+
+/**
  字间距
  */
 - (void)xqAtt_setKernWithSpace:(CGFloat)space range:(NSRange)range;
