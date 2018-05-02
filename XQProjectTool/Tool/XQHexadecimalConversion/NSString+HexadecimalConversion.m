@@ -10,26 +10,38 @@
 
 @implementation NSString (HexadecimalConversion)
 
-- (NSString *)xq_hexadecimalTransferDecimal {
+    // 温湿度
+- (NSString *)xq_HTHexadecimalTransferDecimal {
     if (self.length < 2) {
         return @"";
     }
     
-    // 这步操作是项目需求
-    // 后面的两个字符串
+        // 这步操作是项目需求
+        // 后面的两个字符串
     NSString *a = [self substringFromIndex:self.length - 2];
-    // 前面字符串
+        // 前面字符串
     NSString *b = [self substringToIndex:self.length - 2];
-    // 交换位置
+        // 交换位置
     NSString *str = [NSString stringWithFormat:@"%@%@", a, b];
     
-    // 转换
+        // /100, 温湿度
+    return [NSString stringWithFormat:@"%.2f", [NSString xq_hexadecimalTransferDecimalWithStr:str].floatValue/100.0];
+}
+
+- (NSString *)xq_hexadecimalTransferDecimal {
+    return [NSString xq_hexadecimalTransferDecimalWithStr:self];
+}
+
++ (NSString *)xq_hexadecimalTransferDecimalWithStr:(NSString *)str {
+    if (str.length == 0) {
+        return @"0";
+    }
+        // 转换
     NSScanner * scanner = [NSScanner scannerWithString:str];
     unsigned long long longlongValue;
     [scanner scanHexLongLong:&longlongValue];
         //将整数转换为NSNumber,存储到数组中,并返回.
-    // /100项目需求
-    return [NSString stringWithFormat:@"%lld", (longlongValue/100)];
+    return [NSString stringWithFormat:@"%lld", longlongValue];
 }
 
 /**

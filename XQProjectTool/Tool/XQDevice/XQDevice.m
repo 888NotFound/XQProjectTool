@@ -216,6 +216,7 @@ static CGFloat statusHeight_ = -1;
     
     if([platform isEqualToString:@"x86_64"])return@"iPhone Simulator";
     
+    
     return platform;
 }
 
