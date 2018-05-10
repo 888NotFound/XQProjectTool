@@ -7,6 +7,7 @@
 //
 
 #import "XQGetAppInfo.h"
+#import <UIKit/UIKit.h>
 
 @implementation XQGetAppInfo
 
@@ -59,7 +60,7 @@
 }
 
 #ifdef DEBUG
-+ (void)getFirInfoWithToken:(NSString *)token bID:(NSString *)bID success:(XQGetAppInfoSucceedBlock)success failure:(XQGetAppInfoFailureBlock)failure; {
++ (void)getFirInfoWithToken:(NSString *)token bID:(NSString *)bID success:(XQGetAppInfoSucceedBlock)success failure:(XQGetAppInfoFailureBlock)failure {
     // 经本人测试...有关fir.im的代码, 都可能造成上架 2.5.2 原因....所以, 有关这部分代码, 都要用DEBUG框起来, 在release预编译的时候, 就不编译这段代码进去
     if (bID.length == 0 || token.length == 0) {
         if (failure) {

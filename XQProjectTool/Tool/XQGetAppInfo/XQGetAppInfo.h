@@ -40,7 +40,7 @@ typedef void(^XQGetAppInfoFailureBlock)(NSError *error);
  @param bID 应用bundleid或者基本信息里面的应用id
  */
 + (void)getFirInfoWithToken:(NSString *)token bID:(NSString *)bID success:(XQGetAppInfoSucceedBlock)success failure:(XQGetAppInfoFailureBlock)failure;
-#ifdef DEBUG
+#endif
 
 @end
 
