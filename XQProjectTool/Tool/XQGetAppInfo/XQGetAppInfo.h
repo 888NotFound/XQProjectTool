@@ -32,6 +32,7 @@ typedef void(^XQGetAppInfoFailureBlock)(NSError *error);
  */
 + (BOOL)openURLWithURLStr:(NSString *)urlStr completionHandler:(void (^)(BOOL success))completion;
 
+#ifdef DEBUG
 /**
  获取fir应用信息
 
@@ -39,6 +40,7 @@ typedef void(^XQGetAppInfoFailureBlock)(NSError *error);
  @param bID 应用bundleid或者基本信息里面的应用id
  */
 + (void)getFirInfoWithToken:(NSString *)token bID:(NSString *)bID success:(XQGetAppInfoSucceedBlock)success failure:(XQGetAppInfoFailureBlock)failure;
+#ifdef DEBUG
 
 @end
 
