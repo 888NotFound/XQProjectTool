@@ -13,8 +13,10 @@ s.source       = { :git => "https://github.com/SyKingW/XQProjectTool.git" ,:tag 
 s.requires_arc = true   #是否必须arc
 s.source_files = 'XQProjectTool/Tool/**/*'   #SDK实际的重要文件路径，这里有个坑，后面文章再说, XQProjectTool/Tool/*.{h,m}这个是表示这个文件夹下面的.hm文件, /**/*.{h,m}
 
-#s.frameworks   = "UIKit","Foundation"    #需要导入的frameworks名称，注意不要带上frameworks
 #s.dependency "AFNetworking" #依赖的第三方库
 #s.dependency "YYCache"      #依赖的第三方库
+
+#关联系统framework, 后缀不要
+s.frameworks = "UIKit"
 
 end
