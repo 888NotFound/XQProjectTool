@@ -7,7 +7,6 @@
 //
 
 #import "XQGetAppInfo.h"
-#import <UIKit/UIKit.h>
 
 @implementation XQGetAppInfo
 
@@ -59,9 +58,8 @@
     return NO;
 }
 
-
+#ifdef DEBUG
 + (void)getFirInfoWithToken:(NSString *)token bID:(NSString *)bID success:(XQGetAppInfoSucceedBlock)success failure:(XQGetAppInfoFailureBlock)failure {
-    #ifdef DEBUG
     // 经本人测试...有关fir.im的代码, 都可能造成上架 2.5.2 原因....所以, 有关这部分代码, 都要用DEBUG框起来, 在release预编译的时候, 就不编译这段代码进去
     if (bID.length == 0 || token.length == 0) {
         if (failure) {
@@ -71,8 +69,8 @@
     }
     NSString *url = [NSString stringWithFormat:@"http://api.fir.im/apps/latest/%@?api_token=%@", bID, token];
     [self GET:url succeed:success failure:failure];
-    #endif
 }
+#endif
 
 #pragma mark - POST请求
 + (NSURLSessionDataTask *)POST:(NSString *)URLStr param:(NSDictionary *)param succeed:(XQGetAppInfoSucceedBlock)succeed failure:(XQGetAppInfoFailureBlock)failure {

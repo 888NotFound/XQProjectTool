@@ -7,6 +7,7 @@
 //  查看苹果商店里面的app信息
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef void(^XQGetAppInfoSucceedBlock)(id responseObject);
 typedef void(^XQGetAppInfoFailureBlock)(NSError *error);
@@ -32,7 +33,7 @@ typedef void(^XQGetAppInfoFailureBlock)(NSError *error);
  */
 + (BOOL)openURLWithURLStr:(NSString *)urlStr completionHandler:(void (^)(BOOL success))completion;
 
-//#ifdef DEBUG
+#ifdef DEBUG
 /**
  获取fir应用信息
 
@@ -40,7 +41,7 @@ typedef void(^XQGetAppInfoFailureBlock)(NSError *error);
  @param bID 应用bundleid或者基本信息里面的应用id
  */
 + (void)getFirInfoWithToken:(NSString *)token bID:(NSString *)bID success:(XQGetAppInfoSucceedBlock)success failure:(XQGetAppInfoFailureBlock)failure;
-//#endif
+#endif
 
 @end
 
