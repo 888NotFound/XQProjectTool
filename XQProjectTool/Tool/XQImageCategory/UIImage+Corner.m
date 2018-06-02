@@ -64,7 +64,9 @@
 + (UIImage *)dealImage:(UIImage *)img cornerRadius:(CGFloat)c {
     // 1.CGDataProviderRef 把 CGImage 转 二进制流
     CGDataProviderRef provider = CGImageGetDataProvider(img.CGImage);
-    void *imgData = (void *)CFDataGetBytePtr(CGDataProviderCopyData(provider));
+    CFDataRef dataRef = CGDataProviderCopyData(provider);
+    void *imgData = (void *)CFDataGetBytePtr(dataRef);
+    CFRelease(dataRef);
     CGFloat width = img.size.width * img.scale;
     CGFloat height = img.size.height * img.scale;
     
@@ -74,7 +76,10 @@
     
     // 3.CGDataProviderRef 把 二进制流 转 CGImage
     CGDataProviderRef pv = CGDataProviderCreateWithData(NULL, imgData, width * height * 4, releaseData);
-    CGImageRef content = CGImageCreate(width , height, 8, 32, 4 * width, CGColorSpaceCreateDeviceRGB(), kCGBitmapByteOrder32Big | kCGImageAlphaPremultipliedLast, pv, NULL, true, kCGRenderingIntentDefault);
+    
+    CGColorSpaceRef csRef = CGColorSpaceCreateDeviceRGB();
+    CGImageRef content = CGImageCreate(width , height, 8, 32, 4 * width, csRef, kCGBitmapByteOrder32Big | kCGImageAlphaPremultipliedLast, pv, NULL, true, kCGRenderingIntentDefault);
+    CGColorSpaceRelease(csRef);
     UIImage *result = [UIImage imageWithCGImage:content];
     CGDataProviderRelease(pv);      // 释放空间
     CGImageRelease(content);

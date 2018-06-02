@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0E4F2F20C2493F004A4D28 /* UIView+ColorProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E4F2A20C2493F004A4D28 /* UIView+ColorProgress.m */; };
+		1A0E4F3120C2493F004A4D28 /* UIView+XQLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E4F2E20C2493F004A4D28 /* UIView+XQLine.m */; };
 		1A5AEB2720736B6B00F647C4 /* XQGetAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5AEB2620736B6B00F647C4 /* XQGetAppInfo.m */; };
+		1A7316DA20AAD9B600194020 /* NSString+SmallMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7316D920AAD9B600194020 /* NSString+SmallMethod.m */; };
 		1ABDE9832071BE0900638A16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9822071BE0900638A16 /* AppDelegate.m */; };
 		1ABDE9862071BE0A00638A16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9852071BE0A00638A16 /* ViewController.m */; };
 		1ABDE9892071BE0A00638A16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDE9872071BE0A00638A16 /* Main.storyboard */; };
@@ -18,7 +21,6 @@
 		1ABDE9A62071BE0A00638A16 /* XQProjectToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9A52071BE0A00638A16 /* XQProjectToolUITests.m */; };
 		1ABDEA012071C03F00638A16 /* XQDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9CD2071C03E00638A16 /* XQDevice.m */; };
 		1ABDEA022071C03F00638A16 /* NSDictionary+XQJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9D02071C03E00638A16 /* NSDictionary+XQJson.m */; };
-		1ABDEA032071C03F00638A16 /* UIView+XQDottedLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9D32071C03E00638A16 /* UIView+XQDottedLine.m */; };
 		1ABDEA072071C03F00638A16 /* NSString+HexadecimalConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9DE2071C03E00638A16 /* NSString+HexadecimalConversion.m */; };
 		1ABDEA082071C03F00638A16 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9E12071C03E00638A16 /* UIImage+Color.m */; };
 		1ABDEA092071C03F00638A16 /* UIImage+Corner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9E32071C03E00638A16 /* UIImage+Corner.m */; };
@@ -55,8 +57,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A0E4F2920C2493F004A4D28 /* UIView+ColorProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ColorProgress.h"; sourceTree = "<group>"; };
+		1A0E4F2A20C2493F004A4D28 /* UIView+ColorProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ColorProgress.m"; sourceTree = "<group>"; };
+		1A0E4F2D20C2493F004A4D28 /* UIView+XQLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XQLine.h"; sourceTree = "<group>"; };
+		1A0E4F2E20C2493F004A4D28 /* UIView+XQLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XQLine.m"; sourceTree = "<group>"; };
 		1A5AEB2520736B6B00F647C4 /* XQGetAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQGetAppInfo.h; sourceTree = "<group>"; };
 		1A5AEB2620736B6B00F647C4 /* XQGetAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQGetAppInfo.m; sourceTree = "<group>"; };
+		1A7316D820AAD9B600194020 /* NSString+SmallMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SmallMethod.h"; sourceTree = "<group>"; };
+		1A7316D920AAD9B600194020 /* NSString+SmallMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SmallMethod.m"; sourceTree = "<group>"; };
 		1ABDE97E2071BE0900638A16 /* XQProjectTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XQProjectTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABDE9812071BE0900638A16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1ABDE9822071BE0900638A16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,8 +85,6 @@
 		1ABDE9CD2071C03E00638A16 /* XQDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQDevice.m; sourceTree = "<group>"; };
 		1ABDE9CF2071C03E00638A16 /* NSDictionary+XQJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XQJson.h"; sourceTree = "<group>"; };
 		1ABDE9D02071C03E00638A16 /* NSDictionary+XQJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XQJson.m"; sourceTree = "<group>"; };
-		1ABDE9D22071C03E00638A16 /* UIView+XQDottedLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XQDottedLine.h"; sourceTree = "<group>"; };
-		1ABDE9D32071C03E00638A16 /* UIView+XQDottedLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XQDottedLine.m"; sourceTree = "<group>"; };
 		1ABDE9DD2071C03E00638A16 /* NSString+HexadecimalConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HexadecimalConversion.h"; sourceTree = "<group>"; };
 		1ABDE9DE2071C03E00638A16 /* NSString+HexadecimalConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HexadecimalConversion.m"; sourceTree = "<group>"; };
 		1ABDE9E02071C03E00638A16 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
@@ -138,6 +144,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A0E4F2820C2493F004A4D28 /* XQViewCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1A0E4F2920C2493F004A4D28 /* UIView+ColorProgress.h */,
+				1A0E4F2A20C2493F004A4D28 /* UIView+ColorProgress.m */,
+				1A0E4F2D20C2493F004A4D28 /* UIView+XQLine.h */,
+				1A0E4F2E20C2493F004A4D28 /* UIView+XQLine.m */,
+			);
+			path = XQViewCategory;
+			sourceTree = "<group>";
+		};
 		1A5AEB2420736B6B00F647C4 /* XQGetAppInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +162,17 @@
 				1A5AEB2620736B6B00F647C4 /* XQGetAppInfo.m */,
 			);
 			path = XQGetAppInfo;
+			sourceTree = "<group>";
+		};
+		1A7316DB20AADA1500194020 /* XQStrCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1ABDE9DD2071C03E00638A16 /* NSString+HexadecimalConversion.h */,
+				1ABDE9DE2071C03E00638A16 /* NSString+HexadecimalConversion.m */,
+				1A7316D820AAD9B600194020 /* NSString+SmallMethod.h */,
+				1A7316D920AAD9B600194020 /* NSString+SmallMethod.m */,
+			);
+			path = XQStrCategory;
 			sourceTree = "<group>";
 		};
 		1ABDE9752071BE0900638A16 = {
@@ -205,17 +233,17 @@
 		1ABDE9B32071C03E00638A16 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				1A0E4F2820C2493F004A4D28 /* XQViewCategory */,
 				1A5AEB2420736B6B00F647C4 /* XQGetAppInfo */,
 				1ABDEA122071D3FD00638A16 /* XQRuntime */,
 				1ABDE9CB2071C03E00638A16 /* XQDevice */,
 				1ABDE9CE2071C03E00638A16 /* XQDJson */,
-				1ABDE9D12071C03E00638A16 /* XQDottedLine */,
-				1ABDE9DC2071C03E00638A16 /* XQHexadecimalConversion */,
 				1ABDE9DF2071C03E00638A16 /* XQImageCategory */,
 				1ABDE9EC2071C03E00638A16 /* XQKeychain */,
 				1ABDE9EF2071C03E00638A16 /* XQLabCategory */,
 				1ABDE9F22071C03E00638A16 /* XQPermissionJudge */,
 				1ABDE9F52071C03E00638A16 /* XQSystemAlert */,
+				1A7316DB20AADA1500194020 /* XQStrCategory */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -236,24 +264,6 @@
 				1ABDE9D02071C03E00638A16 /* NSDictionary+XQJson.m */,
 			);
 			path = XQDJson;
-			sourceTree = "<group>";
-		};
-		1ABDE9D12071C03E00638A16 /* XQDottedLine */ = {
-			isa = PBXGroup;
-			children = (
-				1ABDE9D22071C03E00638A16 /* UIView+XQDottedLine.h */,
-				1ABDE9D32071C03E00638A16 /* UIView+XQDottedLine.m */,
-			);
-			path = XQDottedLine;
-			sourceTree = "<group>";
-		};
-		1ABDE9DC2071C03E00638A16 /* XQHexadecimalConversion */ = {
-			isa = PBXGroup;
-			children = (
-				1ABDE9DD2071C03E00638A16 /* NSString+HexadecimalConversion.h */,
-				1ABDE9DE2071C03E00638A16 /* NSString+HexadecimalConversion.m */,
-			);
-			path = XQHexadecimalConversion;
 			sourceTree = "<group>";
 		};
 		1ABDE9DF2071C03E00638A16 /* XQImageCategory */ = {
@@ -390,7 +400,7 @@
 		1ABDE9762071BE0900638A16 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = SyKing;
 				TargetAttributes = {
 					1ABDE97D2071BE0900638A16 = {
@@ -475,15 +485,17 @@
 				1ABDEA0F2071C03F00638A16 /* UILabel+XQAtt.m in Sources */,
 				1ABDEA0C2071C03F00638A16 /* UIImage+Rotate.m in Sources */,
 				1ABDEA0D2071C03F00638A16 /* UIImage+SubImage.m in Sources */,
+				1A7316DA20AAD9B600194020 /* NSString+SmallMethod.m in Sources */,
 				1ABDEA022071C03F00638A16 /* NSDictionary+XQJson.m in Sources */,
 				1ABDEA202071D3FD00638A16 /* UIButton+XQResponse.m in Sources */,
+				1A0E4F2F20C2493F004A4D28 /* UIView+ColorProgress.m in Sources */,
 				1ABDE9912071BE0A00638A16 /* main.m in Sources */,
 				1ABDE9832071BE0900638A16 /* AppDelegate.m in Sources */,
 				1ABDEA0A2071C03F00638A16 /* UIImage+CreateQRCode.m in Sources */,
 				1ABDEA212071D3FD00638A16 /* UIView+XQResponse.m in Sources */,
+				1A0E4F3120C2493F004A4D28 /* UIView+XQLine.m in Sources */,
 				1ABDEA092071C03F00638A16 /* UIImage+Corner.m in Sources */,
 				1ABDEA082071C03F00638A16 /* UIImage+Color.m in Sources */,
-				1ABDEA032071C03F00638A16 /* UIView+XQDottedLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +564,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -559,6 +572,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -607,6 +621,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -614,6 +629,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -653,6 +669,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BlueMedia.ConfidenceCat.XQProjectTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

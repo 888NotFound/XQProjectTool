@@ -56,7 +56,10 @@
 
 + (int)deleteUUIDStr {
     NSMutableDictionary *keychainQuery = [self getUDIDKeychainQuery];
-    return SecItemDelete((__bridge_retained CFDictionaryRef)keychainQuery);
+    CFDictionaryRef dRef = (__bridge_retained CFDictionaryRef)keychainQuery;
+    int result = SecItemDelete(dRef);
+    CFRelease(dRef);
+    return result;
 }
 
 // 获取查询udid(设备唯一标识符, 这里是结合kechain and uuid, 不过设备重置, 就是刷机等等一些极端操作, 就会删除keychain, 所以这里的udid相对来说是唯一的)
@@ -149,12 +152,18 @@ static NSString *pwdServer_ = @"xq_pwdServer";
 
 + (int)deleteAcc:(NSString *)acc {
     NSMutableDictionary *keychainQuery = [self getKeychainPWDQueryWithSev:pwdServer_ acc:acc];
-    return SecItemDelete((__bridge_retained CFDictionaryRef)keychainQuery);
+    CFDictionaryRef ref = (__bridge_retained CFDictionaryRef)keychainQuery;
+    int result = SecItemDelete(ref);
+    CFRelease(ref);
+    return result;
 }
 
 + (int)deleteAllAcc {
     NSMutableDictionary *keychainQuery = [self getKeychainPWDQueryWithSev:pwdServer_];
-    return SecItemDelete((__bridge_retained CFDictionaryRef)keychainQuery);
+    CFDictionaryRef ref = (__bridge_retained CFDictionaryRef)keychainQuery;
+    int result = SecItemDelete(ref);
+    CFRelease(ref);
+    return result;
 }
 
 // 可以用这个来保存用户的密码这些
@@ -181,13 +190,17 @@ static NSString *pwdServer_ = @"xq_pwdServer";
     CFDictionaryRef aRef = (__bridge_retained CFDictionaryRef)dic;
     SecItemDelete(aRef);
     [dic setObject:[data dataUsingEncoding:NSUTF8StringEncoding] forKey:(__bridge_transfer id)kSecValueData];
-    return SecItemAdd(aRef, NULL);
+    int result = SecItemAdd(aRef, NULL);
+    CFRelease(aRef);
+    return result;
 }
 
 + (id)getDataWithDic:(NSDictionary *)dic {
     CFTypeRef keyData = NULL;
     id ret = nil;
-    if (SecItemCopyMatching((__bridge_retained CFDictionaryRef)dic, &keyData) == errSecSuccess) {
+    CFDictionaryRef dRef = (__bridge_retained CFDictionaryRef)dic;
+    
+    if (SecItemCopyMatching(dRef, &keyData) == errSecSuccess) {
         ret = (__bridge id)(keyData);
     }
     
@@ -195,7 +208,7 @@ static NSString *pwdServer_ = @"xq_pwdServer";
     if (keyData) {
         CFRelease(keyData);
     }
-    
+    CFRelease(dRef);
     return ret;
 }
 

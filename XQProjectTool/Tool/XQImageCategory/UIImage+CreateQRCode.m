@@ -43,6 +43,7 @@
     size_t height = CGRectGetHeight(extent) * scale;
     CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
     CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
+    CGColorSpaceRelease(cs);
     CIContext *context = [CIContext contextWithOptions:nil];
     CGImageRef bitmapImage = [context createCGImage:image fromRect:extent];
     CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
@@ -53,7 +54,9 @@
     CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
     CGContextRelease(bitmapRef);
     CGImageRelease(bitmapImage);
-    return [UIImage imageWithCGImage:scaledImage];
+    UIImage *img = [UIImage imageWithCGImage:scaledImage];
+    CGImageRelease(scaledImage);
+    return img;
 }
 
 @end
