@@ -1,14 +1,15 @@
 //
-//  UIView+XQDottedLine.m
-//  MQTTProject
+//  UIView+XQLine.m
+//  XQP2PCamera
 //
-//  Created by WXQ on 2018/3/26.
-//  Copyright © 2018年 ConfidenceCat. All rights reserved.
+//  Created by WXQ on 2018/5/26.
+//  Copyright © 2018年 SyKing. All rights reserved.
 //
 
-#import "UIView+XQDottedLine.h"
+#import "UIView+XQLine.h"
 
-@implementation UIView (XQDottedLine)
+@implementation UIView (XQLine)
+
 
 /**
  *  通过 CAShapeLayer 方式绘制虚线
@@ -48,7 +49,7 @@
         [shapeLayer setLineWidth:CGRectGetWidth(lineView.frame)];
     }
     [shapeLayer setLineJoin:kCALineJoinRound];
-    // 第一个线的长, 第二个是间隔
+        // 第一个线的长, 第二个是间隔
     [shapeLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:5], [NSNumber numberWithInt:lineSpacing], nil]];
         //  设置路径
     CGMutablePathRef path = CGPathCreateMutable();
@@ -101,4 +102,55 @@
     return UIGraphicsGetImageFromCurrentImageContext();
 }
 
++ (void)setBorderWithView:(UIView *)view top:(BOOL)top left:(BOOL)left bottom:(BOOL)bottom right:(BOOL)right borderColor:(UIColor *)color borderWidth:(CGFloat)width {
+    if (top) {
+        CALayer *layer = [CALayer layer];
+        layer.frame = CGRectMake(0, 0, view.frame.size.width, width);
+        layer.backgroundColor = color.CGColor;
+        [view.layer addSublayer:layer];
+    }
+    if (left) {
+        CALayer *layer = [CALayer layer];
+        layer.frame = CGRectMake(0, 0, width, view.frame.size.height);
+        layer.backgroundColor = color.CGColor;
+        [view.layer addSublayer:layer];
+    }
+    if (bottom) {
+        CALayer *layer = [CALayer layer];
+        layer.frame = CGRectMake(0, view.frame.size.height - width, view.frame.size.width, width);
+        layer.backgroundColor = color.CGColor;
+        [view.layer addSublayer:layer];
+    }
+    if (right) {
+        CALayer *layer = [CALayer layer];
+        layer.frame = CGRectMake(view.frame.size.width - width, 0, width, view.frame.size.height);
+        layer.backgroundColor = color.CGColor;
+        [view.layer addSublayer:layer];
+    }
+}
+
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
