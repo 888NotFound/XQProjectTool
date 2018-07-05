@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
 
 @interface NSObject (XQExchangeIMP)
 
@@ -33,7 +34,24 @@
                          otherIsClass:(BOOL)otherIsClass
                              otherSEL:(SEL)otherSEL;
 
+/**
+ 关联值, 可用在category属性关联值
+
+ @param obj 关联对象
+ @param key 关联key
+ @param value 关联值
+ @param policy 关联的方式
+ */
++ (void)xq_setAssociatedObject:(id)obj key:(NSString *)key value:(id)value policy:(objc_AssociationPolicy)policy;
+
+/**
+ 获取关联的值
+ */
++ (id)xq_getAssociatedObject:(id)obj key:(NSString *)key;
+
 @end
+
+
 
 
 

@@ -26,7 +26,7 @@
 + (BOOL)isExistParticularStr:(NSString *)str;
 
 /**
- 查询model某个key的值 ??能用字典查么..应该字典也是用这个吧
+ 查询model or dictionary某个key的值
  
  @param dataArr 数据源
  @param value 要查询的值
@@ -52,7 +52,7 @@
 
 #pragma mark -- 基础方法
 /**
- 查询数组里面的值, 这个不能用于model
+ 查询数组里面的值, 这个不能用于model和dic
  
  @param dataArr 数据源, 一般是 @[@"1"], 或者@[@(1)]
  @param value 值

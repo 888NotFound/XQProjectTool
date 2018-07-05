@@ -30,4 +30,37 @@
  */
 + (NSString *)getBinaryByDecimal:(NSInteger)decimal;
 
+/**
+ 十六转换为二
+ 
+ @param hexadecimal 十六
+ @param length 保留多少位
+ @return 二进制数
+ */
++ (NSString *)getBinaryWithHexadecimal:(NSString *)hexadecimal length:(int)length;
+
+/**
+ 十进制转换为二进制
+ 
+ @param decimal 十进制数
+ @param length 保留多少位
+ @return 二进制数
+ */
++ (NSString *)getBinaryByDecimal:(NSInteger)decimal length:(int)length;
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

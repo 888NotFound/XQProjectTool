@@ -51,8 +51,29 @@
  @return 二进制数
  */
 + (NSString *)getBinaryByDecimal:(NSInteger)decimal {
-    // 只用保留4位数, 如果不够4位, 则补0
-    int length = 4;
+    return [self getBinaryByDecimal:decimal length:4];
+}
+
+/**
+ 十六转换为二
+ 
+ @param hexadecimal 十六
+ @param length 保留多少位
+ @return 二进制数
+ */
++ (NSString *)getBinaryWithHexadecimal:(NSString *)hexadecimal length:(int)length {
+    NSString *str = [self xq_hexadecimalTransferDecimalWithStr:hexadecimal];
+    return [self getBinaryByDecimal:str.integerValue length:length];
+}
+
+/**
+ 十进制转换为二进制
+ 
+ @param decimal 十进制数
+ @param length 保留多少位
+ @return 二进制数
+ */
++ (NSString *)getBinaryByDecimal:(NSInteger)decimal length:(int)length {
     NSString *a = @"";
     while (decimal) {
         a = [[NSString stringWithFormat:@"%ld",decimal%2] stringByAppendingString:a];
@@ -63,7 +84,7 @@
     }
     
     if (a.length < length) {
-        // 小于长度, 补零
+            // 小于长度, 补零
         NSMutableString *b = [[NSMutableString alloc]init];;
         for (int i = 0; i < length - a.length; i++) {
             [b appendString:@"0"];
@@ -72,7 +93,7 @@
         a = [b stringByAppendingString:a];
         
     }else if (a.length > length) {
-        // 大于长度, 截取
+            // 大于长度, 截取
         a = [a substringWithRange:NSMakeRange(a.length - length, length)];
     }
     

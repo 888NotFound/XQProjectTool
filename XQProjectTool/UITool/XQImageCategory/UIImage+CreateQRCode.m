@@ -59,6 +59,26 @@
     return img;
 }
 
++ (NSArray <NSString *> *)getCodeInfoWithImg:(UIImage *)img {
+    if (!img) {
+        return @[];
+    }
+    
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+    NSData *imageData = UIImagePNGRepresentation(img);
+    CIImage *ciImage = [CIImage imageWithData:imageData];
+    NSArray *features = [detector featuresInImage:ciImage];
+    if (features.count == 0) {
+        return @[];
+    }
+    
+    NSMutableArray *muArr = [NSMutableArray array];
+    for (CIQRCodeFeature *qrFeature in features) {
+        [muArr addObject:qrFeature.messageString];
+    }
+    return muArr.copy;
+}
+
 @end
 
 

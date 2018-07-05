@@ -61,6 +61,15 @@
 }
 
 
++ (void)xq_setAssociatedObject:(id)obj key:(NSString *)key value:(id)value policy:(objc_AssociationPolicy)policy  {
+    objc_setAssociatedObject(obj, (__bridge const void * _Nonnull)(key), value, policy);
+}
+
++ (id)xq_getAssociatedObject:(id)obj key:(NSString *)key {
+    return objc_getAssociatedObject(obj, (__bridge const void * _Nonnull)(key));
+}
+
+
 @end
 
 

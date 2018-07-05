@@ -16,4 +16,11 @@
  */
 + (UIImage *)createQRCodeWithData:(NSData *)data imgSize:(CGFloat)imgSize;
 
+/**
+ 传入图片, 获取图片的二维码
+ 
+ @return 如有多个, 则返回多个
+ */
++ (NSArray <NSString *> *)getCodeInfoWithImg:(UIImage *)img;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "XQKeychain.h"
+#import "UIImage+SubImage.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -46,6 +47,9 @@ static NSString *reusing_ = @"VCCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%@", [XQKeychain getUUIDStr]);
     [XQKeychain saveUUIDStr:@"asdwqe"];
+    
+//    UIImage *img = [[UIImage imageNamed:@"1.jpg"] rescaleImageToSize:CGSizeMake(2000, 1000)];
+//    NSLog(@"%@", img);
 }
 
 #pragma mark -- get

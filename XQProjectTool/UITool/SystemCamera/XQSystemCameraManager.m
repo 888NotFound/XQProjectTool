@@ -49,6 +49,19 @@ static XQSystemCameraManager *manager_ = nil;
     return [manager_ startWithRectOfInterest:rectOfInterest];
 }
 
+/**
+ 停止, 并销毁
+ */
++ (void)destroyCamera {
+    if (![self manager]) {
+        NSLog(@"不存在相机");
+        return;
+    }
+    
+    [[self manager] stop];
+    manager_ = nil;
+}
+
 + (void)start {
     if (![self manager]) {
         NSLog(@"不存在相机");
@@ -64,7 +77,6 @@ static XQSystemCameraManager *manager_ = nil;
     }
     
     [[self manager] stop];
-    manager_ = nil;
 }
 
 + (CALayer *)getVideoLayerWithFrame:(CGRect)frame {

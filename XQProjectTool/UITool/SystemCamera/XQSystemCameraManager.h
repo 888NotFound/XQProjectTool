@@ -14,14 +14,14 @@ typedef void(^XQSystemCameraManagerCallback)(NSArray *resultArr);
 @interface XQSystemCameraManager : NSObject
 
 /**
- 开始扫描
+ 初始化, 并开始扫描
  */
 + (BOOL)startScanWithCallback:(XQSystemCameraManagerCallback)callback;
 
 /**
- 开始扫描
+ 初始化, 并开始扫描
 
- @param rectOfInterest (0, 0, 1, 1) 值是 0~1, (y,x,h,w), 其实就是手机屏幕横着来, 原点在右上角  ...其实这个..还有点问题, 感觉总不对
+ @param rectOfInterest (0, 0, 1, 1) 值是 0~1, (y,x,h,w), 其实就是手机屏幕横着来, 原点在右上角(还是左下角..)  ...其实这个..还有点问题, 感觉总不对
  @param callback 扫描结果
  */
 + (BOOL)startScanWithRectOfInterest:(CGRect)rectOfInterest callback:(XQSystemCameraManagerCallback)callback;
@@ -30,6 +30,11 @@ typedef void(^XQSystemCameraManagerCallback)(NSArray *resultArr);
  传入frame获取预览摄像头的layer
  */
 + (CALayer *)getVideoLayerWithFrame:(CGRect)frame;
+
+/**
+ 停止, 并销毁
+ */
++ (void)destroyCamera;
 
 /**
  开始扫描
