@@ -101,6 +101,64 @@
 }
 
 
+
+    // 默认补4位
++ (NSString *)toHexInt:(long long int)tmpid {
+    return [self toHexInt:tmpid complement:4];
+}
+
+/**
+ 10 int 转 16 str
+ 
+ @param tmpid 10进制
+ @return 16进制字符串
+ */
++ (NSString *)toHexInt:(long long int)tmpid complement:(NSInteger)complement {
+    NSString *nLetterValue;
+    NSString *str =@"";
+    long long int ttmpig;
+    for (int i =0; i<9; i++) {
+        
+        ttmpig=tmpid%16;
+        
+        tmpid=tmpid/16;
+        
+        switch (ttmpig) {
+            case 10:
+                nLetterValue =@"A";break;
+            case 11:
+                nLetterValue =@"B";break;
+            case 12:
+                nLetterValue =@"C";break;
+            case 13:
+                nLetterValue =@"D";break;
+            case 14:
+                nLetterValue =@"E";break;
+            case 15:
+                nLetterValue =@"F";break;
+            default:nLetterValue=[[NSString alloc] initWithFormat:@"%lli",ttmpig];
+        }
+        
+        str = [nLetterValue stringByAppendingString:str];
+        
+        if (tmpid == 0) {
+            break;
+        }
+    }
+    
+    if (str.length >= complement) {
+        return str;
+    }
+    
+        // 补0
+    NSInteger count = complement - str.length;
+    for (int i = 0; i < count; i++) {
+        str = [@"0" stringByAppendingString:str];
+    }
+    
+    return str;
+}
+
 @end
 
 

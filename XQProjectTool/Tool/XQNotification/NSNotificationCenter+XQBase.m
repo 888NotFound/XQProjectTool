@@ -9,6 +9,7 @@
 #define XQ_AddNT(ntName) [self xq_addObserver:observer selector:aSelector name:ntName]
 
 #import "NSNotificationCenter+XQBase.h"
+#import <UIKit/UIKit.h>
 
 @implementation NSNotificationCenter (XQBase)
 

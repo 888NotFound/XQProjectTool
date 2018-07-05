@@ -11,16 +11,15 @@
 		1A0E4F3120C2493F004A4D28 /* UIView+XQLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E4F2E20C2493F004A4D28 /* UIView+XQLine.m */; };
 		1A5AEB2720736B6B00F647C4 /* XQGetAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5AEB2620736B6B00F647C4 /* XQGetAppInfo.m */; };
 		1A5FEA5A20D2038D00D62832 /* NSNotificationCenter+XQBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5FEA5920D2038D00D62832 /* NSNotificationCenter+XQBase.m */; };
-		1A7316DA20AAD9B600194020 /* NSString+SmallMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7316D920AAD9B600194020 /* NSString+SmallMethod.m */; };
 		1A7B365B20C26921000C8BD3 /* XQPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B365A20C26921000C8BD3 /* XQPredicate.m */; };
 		1A7B366120C269E1000C8BD3 /* XQSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B365E20C269E1000C8BD3 /* XQSpeech.m */; };
 		1A7B366220C269E1000C8BD3 /* XQSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366020C269E1000C8BD3 /* XQSpeechSynthesizer.m */; };
 		1A7B366620C26A49000C8BD3 /* XQPlayerMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366520C26A49000C8BD3 /* XQPlayerMusic.m */; };
-		1A7B367220C26BE7000C8BD3 /* NSString+XOR.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366920C26BE7000C8BD3 /* NSString+XOR.m */; };
 		1A7B367320C26BE7000C8BD3 /* NSString+XQCRC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366B20C26BE7000C8BD3 /* NSString+XQCRC.m */; };
 		1A7B367420C26BE7000C8BD3 /* XQSystemCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366E20C26BE7000C8BD3 /* XQSystemCameraManager.m */; };
 		1A7B367520C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B367120C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.m */; };
 		1A7B367A20C26C25000C8BD3 /* XQLocalAut.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B367920C26C25000C8BD3 /* XQLocalAut.m */; };
+		1A7C844C20EE0E3600BCDCD2 /* UITextField+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C844B20EE0E3600BCDCD2 /* UITextField+Keyboard.m */; };
 		1ABDE9832071BE0900638A16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9822071BE0900638A16 /* AppDelegate.m */; };
 		1ABDE9862071BE0A00638A16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9852071BE0A00638A16 /* ViewController.m */; };
 		1ABDE9892071BE0A00638A16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDE9872071BE0A00638A16 /* Main.storyboard */; };
@@ -76,8 +75,6 @@
 		1A5AEB2620736B6B00F647C4 /* XQGetAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQGetAppInfo.m; sourceTree = "<group>"; };
 		1A5FEA5820D2038D00D62832 /* NSNotificationCenter+XQBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+XQBase.h"; sourceTree = "<group>"; };
 		1A5FEA5920D2038D00D62832 /* NSNotificationCenter+XQBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+XQBase.m"; sourceTree = "<group>"; };
-		1A7316D820AAD9B600194020 /* NSString+SmallMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SmallMethod.h"; sourceTree = "<group>"; };
-		1A7316D920AAD9B600194020 /* NSString+SmallMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SmallMethod.m"; sourceTree = "<group>"; };
 		1A7B365920C26921000C8BD3 /* XQPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPredicate.h; sourceTree = "<group>"; };
 		1A7B365A20C26921000C8BD3 /* XQPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPredicate.m; sourceTree = "<group>"; };
 		1A7B365D20C269E1000C8BD3 /* XQSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpeech.h; sourceTree = "<group>"; };
@@ -86,8 +83,6 @@
 		1A7B366020C269E1000C8BD3 /* XQSpeechSynthesizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpeechSynthesizer.m; sourceTree = "<group>"; };
 		1A7B366420C26A49000C8BD3 /* XQPlayerMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPlayerMusic.h; sourceTree = "<group>"; };
 		1A7B366520C26A49000C8BD3 /* XQPlayerMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPlayerMusic.m; sourceTree = "<group>"; };
-		1A7B366820C26BE7000C8BD3 /* NSString+XOR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XOR.h"; sourceTree = "<group>"; };
-		1A7B366920C26BE7000C8BD3 /* NSString+XOR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XOR.m"; sourceTree = "<group>"; };
 		1A7B366A20C26BE7000C8BD3 /* NSString+XQCRC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XQCRC.h"; sourceTree = "<group>"; };
 		1A7B366B20C26BE7000C8BD3 /* NSString+XQCRC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XQCRC.m"; sourceTree = "<group>"; };
 		1A7B366D20C26BE7000C8BD3 /* XQSystemCameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSystemCameraManager.h; sourceTree = "<group>"; };
@@ -96,6 +91,8 @@
 		1A7B367120C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ChangeBackColor.m"; sourceTree = "<group>"; };
 		1A7B367820C26C25000C8BD3 /* XQLocalAut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQLocalAut.h; sourceTree = "<group>"; };
 		1A7B367920C26C25000C8BD3 /* XQLocalAut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQLocalAut.m; sourceTree = "<group>"; };
+		1A7C844A20EE0E3600BCDCD2 /* UITextField+Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Keyboard.h"; sourceTree = "<group>"; };
+		1A7C844B20EE0E3600BCDCD2 /* UITextField+Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Keyboard.m"; sourceTree = "<group>"; };
 		1ABDE97E2071BE0900638A16 /* XQProjectTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XQProjectTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABDE9812071BE0900638A16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1ABDE9822071BE0900638A16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -208,10 +205,10 @@
 		1A7316DB20AADA1500194020 /* XQStrCategory */ = {
 			isa = PBXGroup;
 			children = (
+				1A7B366A20C26BE7000C8BD3 /* NSString+XQCRC.h */,
+				1A7B366B20C26BE7000C8BD3 /* NSString+XQCRC.m */,
 				1ABDE9DD2071C03E00638A16 /* NSString+HexadecimalConversion.h */,
 				1ABDE9DE2071C03E00638A16 /* NSString+HexadecimalConversion.m */,
-				1A7316D820AAD9B600194020 /* NSString+SmallMethod.h */,
-				1A7316D920AAD9B600194020 /* NSString+SmallMethod.m */,
 			);
 			path = XQStrCategory;
 			sourceTree = "<group>";
@@ -243,17 +240,6 @@
 				1A7B366520C26A49000C8BD3 /* XQPlayerMusic.m */,
 			);
 			path = XQPlayerMusic;
-			sourceTree = "<group>";
-		};
-		1A7B366720C26BE7000C8BD3 /* XQCrypt */ = {
-			isa = PBXGroup;
-			children = (
-				1A7B366820C26BE7000C8BD3 /* NSString+XOR.h */,
-				1A7B366920C26BE7000C8BD3 /* NSString+XOR.m */,
-				1A7B366A20C26BE7000C8BD3 /* NSString+XQCRC.h */,
-				1A7B366B20C26BE7000C8BD3 /* NSString+XQCRC.m */,
-			);
-			path = XQCrypt;
 			sourceTree = "<group>";
 		};
 		1A7B366C20C26BE7000C8BD3 /* SystemCamera */ = {
@@ -293,6 +279,15 @@
 				1A7B367920C26C25000C8BD3 /* XQLocalAut.m */,
 			);
 			path = XQlocalAut;
+			sourceTree = "<group>";
+		};
+		1A7C844920EE0E3600BCDCD2 /* UITextFieldCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1A7C844A20EE0E3600BCDCD2 /* UITextField+Keyboard.h */,
+				1A7C844B20EE0E3600BCDCD2 /* UITextField+Keyboard.m */,
+			);
+			path = UITextFieldCategory;
 			sourceTree = "<group>";
 		};
 		1ABDE9752071BE0900638A16 = {
@@ -355,9 +350,9 @@
 		1ABDE9B32071C03E00638A16 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				1A7C844920EE0E3600BCDCD2 /* UITextFieldCategory */,
 				1A5FEA5720D2038D00D62832 /* XQNotification */,
 				1A7B367720C26C25000C8BD3 /* XQlocalAut */,
-				1A7B366720C26BE7000C8BD3 /* XQCrypt */,
 				1A7B366320C26A49000C8BD3 /* XQPlayerMusic */,
 				1A7B365C20C269E1000C8BD3 /* XQVoice */,
 				1A7B365820C26921000C8BD3 /* Predicate */,
@@ -601,11 +596,11 @@
 				1ABDE9862071BE0A00638A16 /* ViewController.m in Sources */,
 				1A5AEB2720736B6B00F647C4 /* XQGetAppInfo.m in Sources */,
 				1ABDEA072071C03F00638A16 /* NSString+HexadecimalConversion.m in Sources */,
+				1A7C844C20EE0E3600BCDCD2 /* UITextField+Keyboard.m in Sources */,
 				1A7B367420C26BE7000C8BD3 /* XQSystemCameraManager.m in Sources */,
 				1A7B366620C26A49000C8BD3 /* XQPlayerMusic.m in Sources */,
 				1ABDEA1F2071D3FD00638A16 /* NSObject+XQViewOC.m in Sources */,
 				1ABDEA112071C03F00638A16 /* XQSystemAlert.m in Sources */,
-				1A7B367220C26BE7000C8BD3 /* NSString+XOR.m in Sources */,
 				1ABDEA1E2071D3FD00638A16 /* NSObject+XQExchangeIMP.m in Sources */,
 				1ABDEA1D2071D3FD00638A16 /* NSObject+XQArchiverData.m in Sources */,
 				1A7B367A20C26C25000C8BD3 /* XQLocalAut.m in Sources */,
@@ -617,7 +612,6 @@
 				1ABDEA0D2071C03F00638A16 /* UIImage+SubImage.m in Sources */,
 				1A7B367320C26BE7000C8BD3 /* NSString+XQCRC.m in Sources */,
 				1A7B366120C269E1000C8BD3 /* XQSpeech.m in Sources */,
-				1A7316DA20AAD9B600194020 /* NSString+SmallMethod.m in Sources */,
 				1ABDEA022071C03F00638A16 /* NSDictionary+XQJson.m in Sources */,
 				1A7B366220C269E1000C8BD3 /* XQSpeechSynthesizer.m in Sources */,
 				1A7B365B20C26921000C8BD3 /* XQPredicate.m in Sources */,

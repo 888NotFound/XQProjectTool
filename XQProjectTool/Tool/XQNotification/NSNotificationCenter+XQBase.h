@@ -12,6 +12,7 @@
 #define XQ_PostNT(ntName, obj) [self xq_postNotificationName:ntName object:obj]
 #define XQ_PostNTU(ntName, obj, aUserInfo) [self xq_postNotificationName:ntName object:obj userInfo:aUserInfo]
 
+/** 在.m使用, 免去一串串代码 */
 #define XQ_NTIMP(mName, ntName) + (void)xq_add##mName##WithObserver:(id)observer selector:(SEL)aSelector {\
 XQ_AddNT(ntName);\
 }\
@@ -22,6 +23,7 @@ XQ_PostNT(ntName, anObject);\
 XQ_PostNTU(ntName, anObject, aUserInfo);\
 }
 
+/** 在.h使用 */
 #define XQ_NTHeader(mName) + (void)xq_add##mName##WithObserver:(id)observer selector:(SEL)aSelector;\
 + (void)xq_post##mName##WithObject:(id)anObject;\
 + (void)xq_post##mName##WithObject:(id)anObject userInfo:(NSDictionary *)aUserInfo;
