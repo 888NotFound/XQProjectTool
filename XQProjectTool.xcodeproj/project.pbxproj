@@ -11,6 +11,9 @@
 		1A0E4F3120C2493F004A4D28 /* UIView+XQLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E4F2E20C2493F004A4D28 /* UIView+XQLine.m */; };
 		1A5AEB2720736B6B00F647C4 /* XQGetAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5AEB2620736B6B00F647C4 /* XQGetAppInfo.m */; };
 		1A5FEA5A20D2038D00D62832 /* NSNotificationCenter+XQBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5FEA5920D2038D00D62832 /* NSNotificationCenter+XQBase.m */; };
+		1A66985B20FD787100E76B28 /* XQInputPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66985520FD787000E76B28 /* XQInputPasswordView.m */; };
+		1A66985C20FD787100E76B28 /* CAShapeLayer+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66985820FD787000E76B28 /* CAShapeLayer+Common.m */; };
+		1A66985D20FD787100E76B28 /* CATextLayer+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66985A20FD787000E76B28 /* CATextLayer+Common.m */; };
 		1A7B365B20C26921000C8BD3 /* XQPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B365A20C26921000C8BD3 /* XQPredicate.m */; };
 		1A7B366120C269E1000C8BD3 /* XQSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B365E20C269E1000C8BD3 /* XQSpeech.m */; };
 		1A7B366220C269E1000C8BD3 /* XQSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366020C269E1000C8BD3 /* XQSpeechSynthesizer.m */; };
@@ -75,6 +78,12 @@
 		1A5AEB2620736B6B00F647C4 /* XQGetAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQGetAppInfo.m; sourceTree = "<group>"; };
 		1A5FEA5820D2038D00D62832 /* NSNotificationCenter+XQBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+XQBase.h"; sourceTree = "<group>"; };
 		1A5FEA5920D2038D00D62832 /* NSNotificationCenter+XQBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+XQBase.m"; sourceTree = "<group>"; };
+		1A66985420FD787000E76B28 /* XQInputPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQInputPasswordView.h; sourceTree = "<group>"; };
+		1A66985520FD787000E76B28 /* XQInputPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQInputPasswordView.m; sourceTree = "<group>"; };
+		1A66985720FD787000E76B28 /* CAShapeLayer+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+Common.h"; sourceTree = "<group>"; };
+		1A66985820FD787000E76B28 /* CAShapeLayer+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+Common.m"; sourceTree = "<group>"; };
+		1A66985920FD787000E76B28 /* CATextLayer+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATextLayer+Common.h"; sourceTree = "<group>"; };
+		1A66985A20FD787000E76B28 /* CATextLayer+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATextLayer+Common.m"; sourceTree = "<group>"; };
 		1A7B365920C26921000C8BD3 /* XQPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPredicate.h; sourceTree = "<group>"; };
 		1A7B365A20C26921000C8BD3 /* XQPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPredicate.m; sourceTree = "<group>"; };
 		1A7B365D20C269E1000C8BD3 /* XQSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpeech.h; sourceTree = "<group>"; };
@@ -202,6 +211,26 @@
 			path = XQNotification;
 			sourceTree = "<group>";
 		};
+		1A66985320FD787000E76B28 /* XQInputPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				1A66985420FD787000E76B28 /* XQInputPasswordView.h */,
+				1A66985520FD787000E76B28 /* XQInputPasswordView.m */,
+			);
+			path = XQInputPasswordView;
+			sourceTree = "<group>";
+		};
+		1A66985620FD787000E76B28 /* CALayerCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1A66985720FD787000E76B28 /* CAShapeLayer+Common.h */,
+				1A66985820FD787000E76B28 /* CAShapeLayer+Common.m */,
+				1A66985920FD787000E76B28 /* CATextLayer+Common.h */,
+				1A66985A20FD787000E76B28 /* CATextLayer+Common.m */,
+			);
+			path = CALayerCategory;
+			sourceTree = "<group>";
+		};
 		1A7316DB20AADA1500194020 /* XQStrCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +292,7 @@
 		1A7B367620C26BF5000C8BD3 /* UITool */ = {
 			isa = PBXGroup;
 			children = (
+				1A66985320FD787000E76B28 /* XQInputPasswordView */,
 				1ABDE9F52071C03E00638A16 /* XQSystemAlert */,
 				1ABDE9DF2071C03E00638A16 /* XQImageCategory */,
 				1A0E4F2820C2493F004A4D28 /* XQViewCategory */,
@@ -350,6 +380,7 @@
 		1ABDE9B32071C03E00638A16 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				1A66985620FD787000E76B28 /* CALayerCategory */,
 				1A7C844920EE0E3600BCDCD2 /* UITextFieldCategory */,
 				1A5FEA5720D2038D00D62832 /* XQNotification */,
 				1A7B367720C26C25000C8BD3 /* XQlocalAut */,
@@ -594,10 +625,12 @@
 			files = (
 				1ABDEA012071C03F00638A16 /* XQDevice.m in Sources */,
 				1ABDE9862071BE0A00638A16 /* ViewController.m in Sources */,
+				1A66985D20FD787100E76B28 /* CATextLayer+Common.m in Sources */,
 				1A5AEB2720736B6B00F647C4 /* XQGetAppInfo.m in Sources */,
 				1ABDEA072071C03F00638A16 /* NSString+HexadecimalConversion.m in Sources */,
 				1A7C844C20EE0E3600BCDCD2 /* UITextField+Keyboard.m in Sources */,
 				1A7B367420C26BE7000C8BD3 /* XQSystemCameraManager.m in Sources */,
+				1A66985C20FD787100E76B28 /* CAShapeLayer+Common.m in Sources */,
 				1A7B366620C26A49000C8BD3 /* XQPlayerMusic.m in Sources */,
 				1ABDEA1F2071D3FD00638A16 /* NSObject+XQViewOC.m in Sources */,
 				1ABDEA112071C03F00638A16 /* XQSystemAlert.m in Sources */,
@@ -621,6 +654,7 @@
 				1ABDE9832071BE0900638A16 /* AppDelegate.m in Sources */,
 				1ABDEA0A2071C03F00638A16 /* UIImage+CreateQRCode.m in Sources */,
 				1A5FEA5A20D2038D00D62832 /* NSNotificationCenter+XQBase.m in Sources */,
+				1A66985B20FD787100E76B28 /* XQInputPasswordView.m in Sources */,
 				1ABDEA212071D3FD00638A16 /* UIView+XQResponse.m in Sources */,
 				1A7B367520C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.m in Sources */,
 				1A0E4F3120C2493F004A4D28 /* UIView+XQLine.m in Sources */,

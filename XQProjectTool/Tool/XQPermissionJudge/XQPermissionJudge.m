@@ -156,39 +156,43 @@ typedef NS_ENUM(NSInteger, XQOpenURL) {
 + (BOOL)judgeWithIndex:(XQOpenURL)index title:(NSString *)title message:(NSString *)message {
     // 相机，相册，定位，麦克风，蓝牙，通讯录，通知
     NSArray *URLStrArr = nil;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-    URLStrArr = @[@"App-Prefs:root=Privacy&path=CAMERA",
-                  @"App-Prefs:root=Privacy&path=PHOTOS",
-                  @"App-Prefs:root=Privacy&path=LOCATION_SERVICES",
-                  @"App-Prefs:root=Privacy&path=MICROPHONE",
-                  @"App-Prefs:root=Privacy&path=BLUETOOTH",
-                  @"App-Prefs:root=Privacy&path=MICROPHONE",
-                  @"App-Prefs:root=Privacy&path=NOTIFICATIONS_ID"];
-#else 
-    URLStrArr = @[@"prefs:root=Privacy&path=CAMERA",
-                  @"prefs:root=Privacy&path=Photos",
-                  @"prefs:root=Privacy&path=LOCATION_SERVICES",
-                  @"prefs:root=Privacy&path=MICROPHONE",
-                  @"prefs:root=Privacy&path=Bluetooth",
-                  @"prefs:root=Privacy&path=MICROPHONE",
-                  @"prefs:root=Privacy&path=NOTIFICATIONS_ID"];
-#endif
+//#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+//    URLStrArr = @[@"App-Prefs:root=Privacy&path=CAMERA",
+//                  @"App-Prefs:root=Privacy&path=PHOTOS",
+//                  @"App-Prefs:root=Privacy&path=LOCATION_SERVICES",
+//                  @"App-Prefs:root=Privacy&path=MICROPHONE",
+//                  @"App-Prefs:root=Privacy&path=BLUETOOTH",
+//                  @"App-Prefs:root=Privacy&path=MICROPHONE",
+//                  @"App-Prefs:root=Privacy&path=NOTIFICATIONS_ID"];
+//#else
+//    URLStrArr = @[@"prefs:root=Privacy&path=CAMERA",
+//                  @"prefs:root=Privacy&path=Photos",
+//                  @"prefs:root=Privacy&path=LOCATION_SERVICES",
+//                  @"prefs:root=Privacy&path=MICROPHONE",
+//                  @"prefs:root=Privacy&path=Bluetooth",
+//                  @"prefs:root=Privacy&path=MICROPHONE",
+//                  @"prefs:root=Privacy&path=NOTIFICATIONS_ID"];
+//#endif
     
     if (URLStrArr == nil || index > URLStrArr.count) {
         return NO;
     }
     
-    NSURL *url = [NSURL URLWithString:URLStrArr[index]];
+    //NSURL *url = [NSURL URLWithString:URLStrArr[index]];
+    // 被拒, 说这样可以过
+    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     
     UIApplication *application = [UIApplication sharedApplication];
     if ([application canOpenURL:url]) {
         __weak UIApplication *weakApp = application;
         [XQPermissionJudge alertWithTitle:title message:message sure:^{
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-            [weakApp openURL:url options:@{} completionHandler:nil];
-#else
-            [weakApp openURL:url];
-#endif
+            
+            if (@available(iOS 10.0, *)) {
+                [weakApp openURL:url options:@{} completionHandler:nil];
+            } else {
+                [weakApp openURL:url];
+            }
+            
         }];
         
         return YES;
