@@ -138,8 +138,9 @@
     }
     
     CGFloat size = (self.bounds.size.width - (self.boxSpacing * (self.pwLength - 1)) - self.boxLeftSpacing - self.boxRightSpacing) / self.pwLength;
+    CGFloat y = ((self.bounds.size.height - size)/2) * self.boxTopY + (size - self.fontSize)/2;
     for (int i = 0; i < self.passwordStr.length; i++) {
-        CGRect rect = CGRectMake(self.boxLeftSpacing + (self.boxSpacing + size) * i, self.boxTopY + (size - self.fontSize) / 2, size, self.fontSize);
+        CGRect rect = CGRectMake(self.boxLeftSpacing + (self.boxSpacing + size) * i, y, size, self.fontSize);
         
         CATextLayer *layer = nil;
         if (self.isSecure) {
