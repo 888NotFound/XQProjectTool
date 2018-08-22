@@ -49,6 +49,14 @@
  */
 + (NSArray *)predicateSelfInWithDataArr1:(NSArray *)dataArr1 dataArr2:(NSArray *)dataArr2;
 
+/**
+ 查询字典, 或者Model, 相同元素
+ 
+ @param dataArr 字典或者model
+ @param dataArr2 数组, 里面要包含的值
+ @param key dataArr的 字段 or key
+ */
++ (NSArray *)predicateKeyWithDataArr:(NSArray *)dataArr dataArr2:(NSArray *)dataArr2 key:(NSString *)key;
 
 #pragma mark -- 基础方法
 /**

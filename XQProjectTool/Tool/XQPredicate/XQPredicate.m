@@ -116,6 +116,10 @@
     return eqArr;
 }
 
++ (NSArray *)predicateKeyWithDataArr:(NSArray *)dataArr dataArr2:(NSArray *)dataArr2 key:(NSString *)key {
+    return [self predicateKeyWithDataArr:dataArr value:dataArr2 key:key symbol:@"in"];
+}
+
 /**
  查询数组里面的值
 
