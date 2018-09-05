@@ -14,11 +14,9 @@
 		1A66985B20FD787100E76B28 /* XQInputPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66985520FD787000E76B28 /* XQInputPasswordView.m */; };
 		1A66985C20FD787100E76B28 /* CAShapeLayer+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66985820FD787000E76B28 /* CAShapeLayer+Common.m */; };
 		1A66985D20FD787100E76B28 /* CATextLayer+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66985A20FD787000E76B28 /* CATextLayer+Common.m */; };
-		1A7B365B20C26921000C8BD3 /* XQPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B365A20C26921000C8BD3 /* XQPredicate.m */; };
 		1A7B366120C269E1000C8BD3 /* XQSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B365E20C269E1000C8BD3 /* XQSpeech.m */; };
 		1A7B366220C269E1000C8BD3 /* XQSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366020C269E1000C8BD3 /* XQSpeechSynthesizer.m */; };
 		1A7B366620C26A49000C8BD3 /* XQPlayerMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366520C26A49000C8BD3 /* XQPlayerMusic.m */; };
-		1A7B367320C26BE7000C8BD3 /* NSString+XQCRC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366B20C26BE7000C8BD3 /* NSString+XQCRC.m */; };
 		1A7B367420C26BE7000C8BD3 /* XQSystemCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366E20C26BE7000C8BD3 /* XQSystemCameraManager.m */; };
 		1A7B367520C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B367120C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.m */; };
 		1A7B367A20C26C25000C8BD3 /* XQLocalAut.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B367920C26C25000C8BD3 /* XQLocalAut.m */; };
@@ -50,6 +48,9 @@
 		1ABDEA202071D3FD00638A16 /* UIButton+XQResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDEA1A2071D3FD00638A16 /* UIButton+XQResponse.m */; };
 		1ABDEA212071D3FD00638A16 /* UIView+XQResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDEA1C2071D3FD00638A16 /* UIView+XQResponse.m */; };
 		1AD68F6A20C68075001949D1 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1AD68F6920C68075001949D1 /* 1.jpg */; };
+		1AE88FE5213F748D0081C642 /* NSArray+XQFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE88FE4213F748D0081C642 /* NSArray+XQFilter.m */; };
+		1AE88FE9213F749C0081C642 /* XQPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE88FE8213F749C0081C642 /* XQPredicate.m */; };
+		1AE88FEC213F74AF0081C642 /* NSString+XQHTMLFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE88FEB213F74AF0081C642 /* NSString+XQHTMLFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,16 +85,12 @@
 		1A66985820FD787000E76B28 /* CAShapeLayer+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+Common.m"; sourceTree = "<group>"; };
 		1A66985920FD787000E76B28 /* CATextLayer+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATextLayer+Common.h"; sourceTree = "<group>"; };
 		1A66985A20FD787000E76B28 /* CATextLayer+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATextLayer+Common.m"; sourceTree = "<group>"; };
-		1A7B365920C26921000C8BD3 /* XQPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPredicate.h; sourceTree = "<group>"; };
-		1A7B365A20C26921000C8BD3 /* XQPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPredicate.m; sourceTree = "<group>"; };
 		1A7B365D20C269E1000C8BD3 /* XQSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpeech.h; sourceTree = "<group>"; };
 		1A7B365E20C269E1000C8BD3 /* XQSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpeech.m; sourceTree = "<group>"; };
 		1A7B365F20C269E1000C8BD3 /* XQSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpeechSynthesizer.h; sourceTree = "<group>"; };
 		1A7B366020C269E1000C8BD3 /* XQSpeechSynthesizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpeechSynthesizer.m; sourceTree = "<group>"; };
 		1A7B366420C26A49000C8BD3 /* XQPlayerMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPlayerMusic.h; sourceTree = "<group>"; };
 		1A7B366520C26A49000C8BD3 /* XQPlayerMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPlayerMusic.m; sourceTree = "<group>"; };
-		1A7B366A20C26BE7000C8BD3 /* NSString+XQCRC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XQCRC.h"; sourceTree = "<group>"; };
-		1A7B366B20C26BE7000C8BD3 /* NSString+XQCRC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XQCRC.m"; sourceTree = "<group>"; };
 		1A7B366D20C26BE7000C8BD3 /* XQSystemCameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSystemCameraManager.h; sourceTree = "<group>"; };
 		1A7B366E20C26BE7000C8BD3 /* XQSystemCameraManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSystemCameraManager.m; sourceTree = "<group>"; };
 		1A7B367020C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ChangeBackColor.h"; sourceTree = "<group>"; };
@@ -155,6 +152,12 @@
 		1ABDEA1B2071D3FD00638A16 /* UIView+XQResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XQResponse.h"; sourceTree = "<group>"; };
 		1ABDEA1C2071D3FD00638A16 /* UIView+XQResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XQResponse.m"; sourceTree = "<group>"; };
 		1AD68F6920C68075001949D1 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		1AE88FE3213F748D0081C642 /* NSArray+XQFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+XQFilter.h"; sourceTree = "<group>"; };
+		1AE88FE4213F748D0081C642 /* NSArray+XQFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XQFilter.m"; sourceTree = "<group>"; };
+		1AE88FE7213F749C0081C642 /* XQPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPredicate.h; sourceTree = "<group>"; };
+		1AE88FE8213F749C0081C642 /* XQPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPredicate.m; sourceTree = "<group>"; };
+		1AE88FEA213F74AF0081C642 /* NSString+XQHTMLFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XQHTMLFilter.h"; sourceTree = "<group>"; };
+		1AE88FEB213F74AF0081C642 /* NSString+XQHTMLFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XQHTMLFilter.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,21 +237,12 @@
 		1A7316DB20AADA1500194020 /* XQStrCategory */ = {
 			isa = PBXGroup;
 			children = (
-				1A7B366A20C26BE7000C8BD3 /* NSString+XQCRC.h */,
-				1A7B366B20C26BE7000C8BD3 /* NSString+XQCRC.m */,
+				1AE88FEA213F74AF0081C642 /* NSString+XQHTMLFilter.h */,
+				1AE88FEB213F74AF0081C642 /* NSString+XQHTMLFilter.m */,
 				1ABDE9DD2071C03E00638A16 /* NSString+HexadecimalConversion.h */,
 				1ABDE9DE2071C03E00638A16 /* NSString+HexadecimalConversion.m */,
 			);
 			path = XQStrCategory;
-			sourceTree = "<group>";
-		};
-		1A7B365820C26921000C8BD3 /* Predicate */ = {
-			isa = PBXGroup;
-			children = (
-				1A7B365920C26921000C8BD3 /* XQPredicate.h */,
-				1A7B365A20C26921000C8BD3 /* XQPredicate.m */,
-			);
-			path = Predicate;
 			sourceTree = "<group>";
 		};
 		1A7B365C20C269E1000C8BD3 /* XQVoice */ = {
@@ -380,13 +374,14 @@
 		1ABDE9B32071C03E00638A16 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				1AE88FE6213F749C0081C642 /* XQPredicate */,
+				1AE88FE2213F748D0081C642 /* XQNSArrayCategory */,
 				1A66985620FD787000E76B28 /* CALayerCategory */,
 				1A7C844920EE0E3600BCDCD2 /* UITextFieldCategory */,
 				1A5FEA5720D2038D00D62832 /* XQNotification */,
 				1A7B367720C26C25000C8BD3 /* XQlocalAut */,
 				1A7B366320C26A49000C8BD3 /* XQPlayerMusic */,
 				1A7B365C20C269E1000C8BD3 /* XQVoice */,
-				1A7B365820C26921000C8BD3 /* Predicate */,
 				1A5AEB2420736B6B00F647C4 /* XQGetAppInfo */,
 				1ABDEA122071D3FD00638A16 /* XQRuntime */,
 				1ABDE9CB2071C03E00638A16 /* XQDevice */,
@@ -487,6 +482,24 @@
 				1ABDEA1C2071D3FD00638A16 /* UIView+XQResponse.m */,
 			);
 			path = XQRuntime;
+			sourceTree = "<group>";
+		};
+		1AE88FE2213F748D0081C642 /* XQNSArrayCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1AE88FE3213F748D0081C642 /* NSArray+XQFilter.h */,
+				1AE88FE4213F748D0081C642 /* NSArray+XQFilter.m */,
+			);
+			path = XQNSArrayCategory;
+			sourceTree = "<group>";
+		};
+		1AE88FE6213F749C0081C642 /* XQPredicate */ = {
+			isa = PBXGroup;
+			children = (
+				1AE88FE7213F749C0081C642 /* XQPredicate.h */,
+				1AE88FE8213F749C0081C642 /* XQPredicate.m */,
+			);
+			path = XQPredicate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,7 +639,9 @@
 				1ABDEA012071C03F00638A16 /* XQDevice.m in Sources */,
 				1ABDE9862071BE0A00638A16 /* ViewController.m in Sources */,
 				1A66985D20FD787100E76B28 /* CATextLayer+Common.m in Sources */,
+				1AE88FE5213F748D0081C642 /* NSArray+XQFilter.m in Sources */,
 				1A5AEB2720736B6B00F647C4 /* XQGetAppInfo.m in Sources */,
+				1AE88FEC213F74AF0081C642 /* NSString+XQHTMLFilter.m in Sources */,
 				1ABDEA072071C03F00638A16 /* NSString+HexadecimalConversion.m in Sources */,
 				1A7C844C20EE0E3600BCDCD2 /* UITextField+Keyboard.m in Sources */,
 				1A7B367420C26BE7000C8BD3 /* XQSystemCameraManager.m in Sources */,
@@ -636,6 +651,7 @@
 				1ABDEA112071C03F00638A16 /* XQSystemAlert.m in Sources */,
 				1ABDEA1E2071D3FD00638A16 /* NSObject+XQExchangeIMP.m in Sources */,
 				1ABDEA1D2071D3FD00638A16 /* NSObject+XQArchiverData.m in Sources */,
+				1AE88FE9213F749C0081C642 /* XQPredicate.m in Sources */,
 				1A7B367A20C26C25000C8BD3 /* XQLocalAut.m in Sources */,
 				1ABDEA0B2071C03F00638A16 /* UIImage+Gif.m in Sources */,
 				1ABDEA0E2071C03F00638A16 /* XQKeychain.m in Sources */,
@@ -643,11 +659,9 @@
 				1ABDEA0F2071C03F00638A16 /* UILabel+XQAtt.m in Sources */,
 				1ABDEA0C2071C03F00638A16 /* UIImage+Rotate.m in Sources */,
 				1ABDEA0D2071C03F00638A16 /* UIImage+SubImage.m in Sources */,
-				1A7B367320C26BE7000C8BD3 /* NSString+XQCRC.m in Sources */,
 				1A7B366120C269E1000C8BD3 /* XQSpeech.m in Sources */,
 				1ABDEA022071C03F00638A16 /* NSDictionary+XQJson.m in Sources */,
 				1A7B366220C269E1000C8BD3 /* XQSpeechSynthesizer.m in Sources */,
-				1A7B365B20C26921000C8BD3 /* XQPredicate.m in Sources */,
 				1ABDEA202071D3FD00638A16 /* UIButton+XQResponse.m in Sources */,
 				1A0E4F2F20C2493F004A4D28 /* UIView+ColorProgress.m in Sources */,
 				1ABDE9912071BE0A00638A16 /* main.m in Sources */,

@@ -74,6 +74,24 @@
     return YES;
 }
 
+/**
+ 是否存在中文 
+ */
++ (BOOL)isContainChineseWithStr:(NSString *)str {
+    for(int i=0; i< [str length]; i++){
+        int a = [str characterAtIndex:i];
+        if(a > 0x4e00 && a < 0x9fff) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+//-(BOOL)IsChinese:(NSString *)str {
+
+//
+//}
+
 
 /**
  查询model某个key的值 ??能用字典查么..应该字典也是用这个吧

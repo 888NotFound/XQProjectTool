@@ -39,7 +39,7 @@
 @property (nonatomic, assign) NSUInteger pwLength;
 /** YES安全输入, 默认YES */
 @property (nonatomic, assign) BOOL isSecure;
-/** 键盘样式, 默认UIKeyboardTypeNumberPad, ....其实现在还没支持其他键盘, 有问题 */
+/** 键盘样式, 默认UIKeyboardTypeNumberPad, ....其实现在还没支持其他键盘, 有问题, 而且在iPad上面是能输入英文什么的.. */
 @property (nonatomic, assign) UIKeyboardType xq_keyboardType;
 
 /** 方框top y  0 ~ 2, ....倍数了..1是中心点 */

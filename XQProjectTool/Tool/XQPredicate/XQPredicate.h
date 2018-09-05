@@ -26,6 +26,13 @@
 + (BOOL)isExistParticularStr:(NSString *)str;
 
 /**
+ 是否存在中文
+ 
+ @return YES存在
+ */
++ (BOOL)isContainChineseWithStr:(NSString *)str;
+
+/**
  查询model or dictionary某个key的值
  
  @param dataArr 数据源

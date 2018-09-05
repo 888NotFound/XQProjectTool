@@ -33,6 +33,9 @@ static CGFloat statusHeight_ = -1;
 }
 
 + (CGFloat)getStatusHeight {
+    // 这些最大问题是开热点...如果开了热点..那么..
+    return [UIApplication sharedApplication].statusBarFrame.size.height;
+    
     if (statusHeight_ != -1) {
         return statusHeight_;
     }
@@ -44,7 +47,6 @@ static CGFloat statusHeight_ = -1;
         //[UIDevice currentDevice].orientation
         
         NSString *iPhoneType = [self getIPhoneType];
-        
         // 真机
         if ([iPhoneType isEqualToString:@"iPhone X"]) {
             statusHeight_ = 44;
@@ -64,6 +66,9 @@ static CGFloat statusHeight_ = -1;
 }
 
 + (CGFloat)getTabbarHeight {
+    // 这些最大问题是开热点...如果开了热点..那么....这个要实地测一下
+    return [[UIApplication sharedApplication] statusBarFrame].size.height > 20 ? 83 : 49;
+    
     if ([iPhoneType_ isEqualToString:@"iPhone X"]) {
         return 83;
     }
