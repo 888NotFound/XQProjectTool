@@ -12,12 +12,12 @@
 @implementation NSArray (XQFilter)
 
 + (NSArray *)xq_filterWithArr:(NSArray *)arr key:(NSString *)key {
-    if (key.length == 0) {
+    if (key.length == 0 || arr.count == 0) {
         return @[];
     }
     
-    if (arr.count == 0 || arr.count == 1) {
-        return arr;
+    if (arr.count == 1) {
+        return @[arr];
     }
     
     NSMutableArray *muArr = arr.mutableCopy;

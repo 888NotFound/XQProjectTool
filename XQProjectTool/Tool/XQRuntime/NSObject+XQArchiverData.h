@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-/** 遵守NSCoding, 如没有什么需要自己手动写入的, 可以直接在.m 调用该宏就行 */
+/** 遵守NSCoding, 如没有什么特别需要改的属性, 自己手动写入的, 可以直接在.m 调用该宏就行 */
 #define XQArchiverM - (instancetype)initWithCoder:(NSCoder *)aDecoder {\
 self = [super init];\
 if (self) {\

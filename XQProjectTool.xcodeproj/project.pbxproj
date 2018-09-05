@@ -21,6 +21,7 @@
 		1A7B367520C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B367120C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.m */; };
 		1A7B367A20C26C25000C8BD3 /* XQLocalAut.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B367920C26C25000C8BD3 /* XQLocalAut.m */; };
 		1A7C844C20EE0E3600BCDCD2 /* UITextField+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C844B20EE0E3600BCDCD2 /* UITextField+Keyboard.m */; };
+		1AB9870D213FCC7000FF6F63 /* XQIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB9870C213FCC7000FF6F63 /* XQIPAddress.m */; };
 		1ABDE9832071BE0900638A16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9822071BE0900638A16 /* AppDelegate.m */; };
 		1ABDE9862071BE0A00638A16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9852071BE0A00638A16 /* ViewController.m */; };
 		1ABDE9892071BE0A00638A16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDE9872071BE0A00638A16 /* Main.storyboard */; };
@@ -29,7 +30,7 @@
 		1ABDE9912071BE0A00638A16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9902071BE0A00638A16 /* main.m */; };
 		1ABDE99B2071BE0A00638A16 /* XQProjectToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE99A2071BE0A00638A16 /* XQProjectToolTests.m */; };
 		1ABDE9A62071BE0A00638A16 /* XQProjectToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9A52071BE0A00638A16 /* XQProjectToolUITests.m */; };
-		1ABDEA012071C03F00638A16 /* XQDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9CD2071C03E00638A16 /* XQDevice.m */; };
+		1ABDEA012071C03F00638A16 /* XQIOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9CD2071C03E00638A16 /* XQIOSDevice.m */; };
 		1ABDEA022071C03F00638A16 /* NSDictionary+XQJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9D02071C03E00638A16 /* NSDictionary+XQJson.m */; };
 		1ABDEA072071C03F00638A16 /* NSString+HexadecimalConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9DE2071C03E00638A16 /* NSString+HexadecimalConversion.m */; };
 		1ABDEA082071C03F00638A16 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9E12071C03E00638A16 /* UIImage+Color.m */; };
@@ -99,6 +100,8 @@
 		1A7B367920C26C25000C8BD3 /* XQLocalAut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQLocalAut.m; sourceTree = "<group>"; };
 		1A7C844A20EE0E3600BCDCD2 /* UITextField+Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Keyboard.h"; sourceTree = "<group>"; };
 		1A7C844B20EE0E3600BCDCD2 /* UITextField+Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Keyboard.m"; sourceTree = "<group>"; };
+		1AB9870B213FCC7000FF6F63 /* XQIPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQIPAddress.h; sourceTree = "<group>"; };
+		1AB9870C213FCC7000FF6F63 /* XQIPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQIPAddress.m; sourceTree = "<group>"; };
 		1ABDE97E2071BE0900638A16 /* XQProjectTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XQProjectTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABDE9812071BE0900638A16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1ABDE9822071BE0900638A16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,8 +118,8 @@
 		1ABDE9A12071BE0A00638A16 /* XQProjectToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XQProjectToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABDE9A52071BE0A00638A16 /* XQProjectToolUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XQProjectToolUITests.m; sourceTree = "<group>"; };
 		1ABDE9A72071BE0B00638A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1ABDE9CC2071C03E00638A16 /* XQDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQDevice.h; sourceTree = "<group>"; };
-		1ABDE9CD2071C03E00638A16 /* XQDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQDevice.m; sourceTree = "<group>"; };
+		1ABDE9CC2071C03E00638A16 /* XQIOSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQIOSDevice.h; sourceTree = "<group>"; };
+		1ABDE9CD2071C03E00638A16 /* XQIOSDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQIOSDevice.m; sourceTree = "<group>"; };
 		1ABDE9CF2071C03E00638A16 /* NSDictionary+XQJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XQJson.h"; sourceTree = "<group>"; };
 		1ABDE9D02071C03E00638A16 /* NSDictionary+XQJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XQJson.m"; sourceTree = "<group>"; };
 		1ABDE9DD2071C03E00638A16 /* NSString+HexadecimalConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HexadecimalConversion.h"; sourceTree = "<group>"; };
@@ -314,6 +317,15 @@
 			path = UITextFieldCategory;
 			sourceTree = "<group>";
 		};
+		1AB9870A213FCC7000FF6F63 /* XQIPAddress */ = {
+			isa = PBXGroup;
+			children = (
+				1AB9870B213FCC7000FF6F63 /* XQIPAddress.h */,
+				1AB9870C213FCC7000FF6F63 /* XQIPAddress.m */,
+			);
+			path = XQIPAddress;
+			sourceTree = "<group>";
+		};
 		1ABDE9752071BE0900638A16 = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +386,7 @@
 		1ABDE9B32071C03E00638A16 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				1AB9870A213FCC7000FF6F63 /* XQIPAddress */,
 				1AE88FE6213F749C0081C642 /* XQPredicate */,
 				1AE88FE2213F748D0081C642 /* XQNSArrayCategory */,
 				1A66985620FD787000E76B28 /* CALayerCategory */,
@@ -397,8 +410,8 @@
 		1ABDE9CB2071C03E00638A16 /* XQDevice */ = {
 			isa = PBXGroup;
 			children = (
-				1ABDE9CC2071C03E00638A16 /* XQDevice.h */,
-				1ABDE9CD2071C03E00638A16 /* XQDevice.m */,
+				1ABDE9CC2071C03E00638A16 /* XQIOSDevice.h */,
+				1ABDE9CD2071C03E00638A16 /* XQIOSDevice.m */,
 			);
 			path = XQDevice;
 			sourceTree = "<group>";
@@ -636,7 +649,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ABDEA012071C03F00638A16 /* XQDevice.m in Sources */,
+				1ABDEA012071C03F00638A16 /* XQIOSDevice.m in Sources */,
 				1ABDE9862071BE0A00638A16 /* ViewController.m in Sources */,
 				1A66985D20FD787100E76B28 /* CATextLayer+Common.m in Sources */,
 				1AE88FE5213F748D0081C642 /* NSArray+XQFilter.m in Sources */,
@@ -648,6 +661,7 @@
 				1A66985C20FD787100E76B28 /* CAShapeLayer+Common.m in Sources */,
 				1A7B366620C26A49000C8BD3 /* XQPlayerMusic.m in Sources */,
 				1ABDEA1F2071D3FD00638A16 /* NSObject+XQViewOC.m in Sources */,
+				1AB9870D213FCC7000FF6F63 /* XQIPAddress.m in Sources */,
 				1ABDEA112071C03F00638A16 /* XQSystemAlert.m in Sources */,
 				1ABDEA1E2071D3FD00638A16 /* NSObject+XQExchangeIMP.m in Sources */,
 				1ABDEA1D2071D3FD00638A16 /* NSObject+XQArchiverData.m in Sources */,
