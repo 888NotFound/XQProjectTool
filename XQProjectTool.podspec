@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "XQProjectTool"      #SDK名称
-s.version      = "1.3"#版本号
+s.version      = "1.4"#版本号
 s.homepage     = "https://github.com/SyKingW/XQProjectTool"  #工程主页地址
 s.summary      = "一些项目里面要用到的’小公举’."  #项目的简单描述
 s.license     = "MIT"  #协议类型

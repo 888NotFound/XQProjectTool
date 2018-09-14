@@ -1,5 +1,5 @@
 //
-//  XQDevice.m
+//  XQIOSDevice.m
 //  XQAddProperty
 //
 //  Created by ladystyle100 on 2017/9/25.
@@ -29,7 +29,7 @@
 static NSString *iPhoneType_ = @"";
 static CGFloat statusHeight_ = -1;
 
-@implementation XQDevice
+@implementation XQIOSDevice
 
 + (CGFloat)getNavigationHeight {
     CGFloat nHeight = 44;

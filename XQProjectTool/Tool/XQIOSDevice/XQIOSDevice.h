@@ -1,5 +1,5 @@
 //
-//  XQDevice.h
+//  XQIOSDevice.h
 //  XQAddProperty
 //
 //  Created by ladystyle100 on 2017/9/25.
@@ -99,13 +99,13 @@ typedef struct _XQIOSDevModel {
 }XQIOSDevModel;
 
 
-#define XQ_IPhoneType [XQDevice getIPhoneType]
+#define XQ_IPhoneType [XQIOSDevice getIPhoneType]
 
-#define XQ_NHeight [XQDevice getNavigationHeight]
-#define XQ_StatusHeight [XQDevice getStatusHeight]
-#define XQ_TabBarHeight [XQDevice getTabbarHeight]
+#define XQ_NHeight [XQIOSDevice getNavigationHeight]
+#define XQ_StatusHeight [XQIOSDevice getStatusHeight]
+#define XQ_TabBarHeight [XQIOSDevice getTabbarHeight]
 
-@interface XQDevice : NSObject
+@interface XQIOSDevice : NSObject
 
 /**
  获取当前机型
