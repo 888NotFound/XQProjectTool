@@ -8,18 +8,21 @@
 
 #import "XQIOSDevice.h"
 #import <sys/utsname.h>
-#import "XQIPAddress.h"
+//#import "XQIPAddress.h"
 #import <UIKit/UIKit.h>
 
 /*
-1.手机系统版本：9.1
-NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
-
-2.手机系统：iPhone OS
-NSString * iponeM = [[UIDevice currentDevice] systemName];
-
-3.电池电量
-CGFloat batteryLevel=[[UIDevicecurrentDevice]batteryLevel];
+ 手机系统版本：9.1
+ NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
+ 
+ 手机系统：iPhone OS
+ NSString * iponeM = [[UIDevice currentDevice] systemName];
+ 
+ 电池电量
+ CGFloat batteryLevel=[[UIDevicecurrentDevice] batteryLevel];
+ 
+ 状态栏
+ [UIApplication sharedApplication].statusBarFrame
  */
 
 // 避免重复计算
@@ -34,14 +37,17 @@ static CGFloat statusHeight_ = -1;
 }
 
 + (CGFloat)getStatusHeight {
-    if (statusHeight_ == -1) {
-        if ([XQIPAddress flagWithOpenHotSpot]) {
-            // 开了热点...那么获取会高20
-            statusHeight_ = [UIApplication sharedApplication].statusBarFrame.size.height - 20;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+            //44是正常高度, 64是开启热点, QQ语音, 定位等等, 会增加20
+        if ([UIApplication sharedApplication].statusBarFrame.size.height == 44 ||
+            [UIApplication sharedApplication].statusBarFrame.size.height == 64) {
+            statusHeight_ = 44;
         }else {
-            statusHeight_ = [UIApplication sharedApplication].statusBarFrame.size.height;
+            statusHeight_ = 20;
         }
-    }
+    });
+    
     return statusHeight_;
     
     if (statusHeight_ != -1) {
@@ -327,8 +333,6 @@ static CGFloat statusHeight_ = -1;
     
     return platform;
 }
-
-
 
 
 @end
