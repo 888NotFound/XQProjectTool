@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, copy) NSString *filePath;
+@property (nonatomic, assign) BOOL isCirculate;
 
 @end
 
@@ -28,8 +29,10 @@ static XQPlayerMusic *manager_ = nil;
 }
 
 - (void)playWithFilePath:(NSString *)filePath isCirculate:(BOOL)isCirculate {
-    if (self.player && [self.filePath isEqualToString:filePath]) {
-        return;
+    if (self.player) {
+        [self removeNotification];
+        [self.player pause];
+        self.player = nil;
     }
     
     if (filePath.length == 0) {
@@ -44,17 +47,17 @@ static XQPlayerMusic *manager_ = nil;
     }
     
     self.filePath = filePath;
-    AVPlayer * player = [[AVPlayer alloc] initWithURL:url];
-    [player play];
-    self.player = player;
-    if (isCirculate) {
-        [self addNotification];
-    }
+    self.player = [[AVPlayer alloc] initWithURL:url];
+    [self.player play];
+    self.isCirculate = isCirculate;
+    [self addNotification];
 }
 
 - (void)stop {
-    [self.player pause];
-    [self removeNotification];
+    if (self.player) {
+        [self.player pause];
+        [self removeNotification];
+    }
     manager_ = nil;
 }
 
@@ -81,10 +84,14 @@ static XQPlayerMusic *manager_ = nil;
  */
 - (void)playbackFinished:(NSNotification *)notification {
     NSLog(@"视频播放完成.");
-        // 播放完成后重复播放
-        // 跳到最新的时间点开始播放
-    [_player seekToTime:CMTimeMake(0, 1)];
-    [_player play];
+    if (self.isCirculate) {
+            // 播放完成后重复播放
+            // 跳到最新的时间点开始播放
+        [self.player seekToTime:CMTimeMake(0, 1)];
+        [self.player play];
+    }else {
+        [self stop];
+    }
 }
 
 @end

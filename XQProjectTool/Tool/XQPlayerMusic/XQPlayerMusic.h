@@ -13,10 +13,10 @@
 + (instancetype)manager;
 
 /**
- 播放
+ 播放本地铃声
 
  @param filePath 文件路径, 现在是只能本地文件
- @param isCirculate 是否循环播放 YES循环
+ @param isCirculate NO播放一次 YES循环
  */
 - (void)playWithFilePath:(NSString *)filePath isCirculate:(BOOL)isCirculate;
 
