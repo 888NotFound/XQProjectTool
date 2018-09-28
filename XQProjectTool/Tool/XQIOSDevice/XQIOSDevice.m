@@ -162,6 +162,12 @@ static CGFloat statusHeight_ = -1;
             subtype = XQIPhoneDevType8Plus;
         }else if ([str hasPrefix:@"iPhone X"]) {
             subtype = XQIPhoneDevTypeX;
+        }else if ([str isEqualToString:@"iPhone XS"]) {
+            subtype = XQIPhoneDevTypeXS;
+        }else if ([str isEqualToString:@"iPhone XS Max"]) {
+            subtype = XQIPhoneDevTypeXSMax;
+        }else if ([str isEqualToString:@"iPhone XR"]) {
+            subtype = XQIPhoneDevTypeXR;
         }
         
     }else if ([str hasPrefix:@"iPod"]) {
@@ -263,6 +269,9 @@ static CGFloat statusHeight_ = -1;
     if ([platform isEqualToString:@"iPhone10,1"] || [platform isEqualToString:@"iPhone10,4"]) return @"iPhone 8";
     if ([platform isEqualToString:@"iPhone10,2"] || [platform isEqualToString:@"iPhone10,5"]) return @"iPhone 8 Plus";
     if ([platform isEqualToString:@"iPhone10,3"] || [platform isEqualToString:@"iPhone10,6"]) return @"iPhone X";
+    if ([platform isEqualToString:@"iPhone11,2"])   return @"iPhone XS";
+    if ([platform isEqualToString:@"iPhone11,4"] || [platform isEqualToString:@"iPhone11,6"])   return @"iPhone XS Max";
+    if ([platform isEqualToString:@"iPhone11,8"])   return @"iPhone XR";
     
 #pragma mark - iPod
     if ([platform isEqualToString:@"iPod1,1"]) return @"iPod Touch 1G";

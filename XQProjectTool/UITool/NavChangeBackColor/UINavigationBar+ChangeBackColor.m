@@ -8,6 +8,7 @@
 
 #import "UINavigationBar+ChangeBackColor.h"
 #import <objc/runtime.h>
+#import "XQIOSDevice.h"
 
 static NSString *overlayKey = @"NBBackColor";
 
@@ -27,15 +28,20 @@ static NSString *overlayKey = @"NBBackColor";
 {
     
     if (!self.overlay) {
+        // iOS12之后, 在初始化里面调用是没有subview的, 需要在viewDidAppear里面调用...才会有
+        if (self.subviews.count == 0) {
+            return;
+        }
         // 想要完全透明, 必须设置这个, 还有 translucent属性为YES
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
         
         CGFloat statusBarHeight = 20;
-        if ([UIScreen mainScreen].bounds.size.height == 812) {
+        
+        if ([XQIOSDevice isNormalModel] == NO) {
             statusBarHeight = 44;
         }
         
-        // insert an overlay into the view hierarchy
+        // iOS12的Y好像也不是负的了, 直接填0就行
         self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, -statusBarHeight, [UIScreen mainScreen].bounds.size.width, self.bounds.size.height + statusBarHeight)];
         self.overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         self.overlay.userInteractionEnabled = NO;

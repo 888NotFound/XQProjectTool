@@ -39,6 +39,9 @@ typedef NS_ENUM(NSInteger, XQIPhoneDevType) {
     XQIPhoneDevType8,
     XQIPhoneDevType8Plus,
     XQIPhoneDevTypeX,
+    XQIPhoneDevTypeXS,
+    XQIPhoneDevTypeXSMax,
+    XQIPhoneDevTypeXR,
 };
 
 // ipod
