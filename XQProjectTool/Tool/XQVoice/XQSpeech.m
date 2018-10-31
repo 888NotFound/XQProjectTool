@@ -11,6 +11,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 
+API_AVAILABLE(ios(10.0))
 @interface XQSpeech () <SFSpeechRecognizerDelegate, SFSpeechRecognitionTaskDelegate>
 
 @property (nonatomic, strong) SFSpeechRecognizer *recognizer;
@@ -319,19 +320,19 @@ static XQSpeech *_manager;
 #pragma mark -- SFSpeechRecognizerDelegate
 
     // 可用性发生改变
-- (void)speechRecognizer:(SFSpeechRecognizer *)speechRecognizer availabilityDidChange:(BOOL)available {
+- (void)speechRecognizer:(SFSpeechRecognizer *)speechRecognizer availabilityDidChange:(BOOL)available  API_AVAILABLE(ios(10.0)){
     //NSLog(@"availabilityDidChange = %d", available);
 }
 
 #pragma mark -- SFSpeechRecognitionTaskDelegate
 
     // 已经发现语言
-- (void)speechRecognitionDidDetectSpeech:(SFSpeechRecognitionTask *)task {
+- (void)speechRecognitionDidDetectSpeech:(SFSpeechRecognitionTask *)task  API_AVAILABLE(ios(10.0)){
     //NSLog(@"speechRecognitionDidDetectSpeech");
 }
 
     // 已经假设转录
-- (void)speechRecognitionTask:(SFSpeechRecognitionTask *)task didHypothesizeTranscription:(SFTranscription *)transcription {
+- (void)speechRecognitionTask:(SFSpeechRecognitionTask *)task didHypothesizeTranscription:(SFTranscription *)transcription  API_AVAILABLE(ios(10.0)){
     //self.label.text = transcription.formattedString;
     NSLog(@"didHypothesizeTranscription = %@", transcription.formattedString);
     
@@ -355,7 +356,7 @@ static XQSpeech *_manager;
 }
 
     // 已经完成识别
-- (void)speechRecognitionTask:(SFSpeechRecognitionTask *)task didFinishRecognition:(SFSpeechRecognitionResult *)recognitionResult {
+- (void)speechRecognitionTask:(SFSpeechRecognitionTask *)task didFinishRecognition:(SFSpeechRecognitionResult *)recognitionResult  API_AVAILABLE(ios(10.0)){
     self.request = nil;
     if (self.resultCallback) {
         self.resultCallback(recognitionResult.bestTranscription.formattedString);
@@ -367,7 +368,7 @@ static XQSpeech *_manager;
 }
 
     // 已经读取完音频
-- (void)speechRecognitionTaskFinishedReadingAudio:(SFSpeechRecognitionTask *)task {
+- (void)speechRecognitionTaskFinishedReadingAudio:(SFSpeechRecognitionTask *)task  API_AVAILABLE(ios(10.0)){
     if (task.error) {
         NSLog(@"error = %@", task.error);
         self.request = nil;
@@ -375,7 +376,7 @@ static XQSpeech *_manager;
 }
 
     // 取消
-- (void)speechRecognitionTaskWasCancelled:(SFSpeechRecognitionTask *)task {
+- (void)speechRecognitionTaskWasCancelled:(SFSpeechRecognitionTask *)task  API_AVAILABLE(ios(10.0)){
     self.request = nil;
     if ([self.delegate respondsToSelector:@selector(speechRecognitionTaskWasCancelled:)]) {
         [self.delegate speechRecognitionTaskWasCancelled:self];
@@ -383,7 +384,7 @@ static XQSpeech *_manager;
 }
 
     // 已经完成
-- (void)speechRecognitionTask:(SFSpeechRecognitionTask *)task didFinishSuccessfully:(BOOL)successfully {
+- (void)speechRecognitionTask:(SFSpeechRecognitionTask *)task didFinishSuccessfully:(BOOL)successfully  API_AVAILABLE(ios(10.0)){
     if ([self.delegate respondsToSelector:@selector(speechRecognitionTask:didFinishSuccessfully:)]) {
         [self.delegate speechRecognitionTask:self didFinishSuccessfully:successfully];
     }
@@ -391,7 +392,7 @@ static XQSpeech *_manager;
 
 #pragma mark -- get
 
-- (SFSpeechRecognizer *)recognizer {
+- (SFSpeechRecognizer *)recognizer  API_AVAILABLE(ios(10.0)){
     if (!_recognizer) {
         NSString *language = @"zh-CN";
         switch ([XQSpeech getLanguage]) {
@@ -414,7 +415,7 @@ static XQSpeech *_manager;
     return _recognizer;
 }
 
-- (SFSpeechAudioBufferRecognitionRequest *)request {
+- (SFSpeechAudioBufferRecognitionRequest *)request  API_AVAILABLE(ios(10.0)){
     if (!_request) {
         _request = [[SFSpeechAudioBufferRecognitionRequest alloc] init];
         _request.taskHint = SFSpeechRecognitionTaskHintDictation;

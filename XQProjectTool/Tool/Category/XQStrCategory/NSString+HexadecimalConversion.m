@@ -76,7 +76,7 @@
 + (NSString *)getBinaryByDecimal:(NSInteger)decimal length:(int)length {
     NSString *a = @"";
     while (decimal) {
-        a = [[NSString stringWithFormat:@"%ld",decimal%2] stringByAppendingString:a];
+        a = [[NSString stringWithFormat:@"%d", (int)decimal%2] stringByAppendingString:a];
         if (decimal/2 < 1) {
             break;
         }

@@ -24,6 +24,7 @@
 
 /**
  获取当前wifi信息
+ iOS12获取不到问题: Capabilities -> Access WiFi Information -> ON
  
  @return nil表示获取不到, 就可能当前不是在wifi环境下
  */

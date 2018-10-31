@@ -14,6 +14,17 @@
 		1A66985B20FD787100E76B28 /* XQInputPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66985520FD787000E76B28 /* XQInputPasswordView.m */; };
 		1A66985C20FD787100E76B28 /* CAShapeLayer+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66985820FD787000E76B28 /* CAShapeLayer+Common.m */; };
 		1A66985D20FD787100E76B28 /* CATextLayer+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A66985A20FD787000E76B28 /* CATextLayer+Common.m */; };
+		1A701A0B2189459A00D8A7FA /* NSDictionary+Str.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A701A092189459A00D8A7FA /* NSDictionary+Str.m */; };
+		1A701A142189498A00D8A7FA /* XQSuspensionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A701A112189498A00D8A7FA /* XQSuspensionView.m */; };
+		1A701A152189498A00D8A7FA /* XQSuspensionViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A701A122189498A00D8A7FA /* XQSuspensionViewTool.m */; };
+		1A701A23218949A000D8A7FA /* XQCustomSheetAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A701A17218949A000D8A7FA /* XQCustomSheetAlertView.m */; };
+		1A701A24218949A000D8A7FA /* XQCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A701A19218949A000D8A7FA /* XQCustomAlertView.m */; };
+		1A701A25218949A000D8A7FA /* XQCustomSheetAlertViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A701A1D218949A000D8A7FA /* XQCustomSheetAlertViewCell.m */; };
+		1A701A26218949A000D8A7FA /* XQCustomSheetAlertViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A701A1E218949A000D8A7FA /* XQCustomSheetAlertViewCell.xib */; };
+		1A701A27218949A000D8A7FA /* XQCustomSheetAlertTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A701A1F218949A000D8A7FA /* XQCustomSheetAlertTopView.m */; };
+		1A701A28218949A000D8A7FA /* XQCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A701A21218949A000D8A7FA /* XQCustomAlertView.xib */; };
+		1A701A29218949A000D8A7FA /* XQCustomSheetAlertFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A701A22218949A000D8A7FA /* XQCustomSheetAlertFooterView.m */; };
+		1A701A2D218949AD00D8A7FA /* XQSpreadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A701A2B218949AD00D8A7FA /* XQSpreadView.m */; };
 		1A7B366120C269E1000C8BD3 /* XQSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B365E20C269E1000C8BD3 /* XQSpeech.m */; };
 		1A7B366220C269E1000C8BD3 /* XQSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366020C269E1000C8BD3 /* XQSpeechSynthesizer.m */; };
 		1A7B366620C26A49000C8BD3 /* XQPlayerMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7B366520C26A49000C8BD3 /* XQPlayerMusic.m */; };
@@ -52,6 +63,9 @@
 		1AE88FE5213F748D0081C642 /* NSArray+XQFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE88FE4213F748D0081C642 /* NSArray+XQFilter.m */; };
 		1AE88FE9213F749C0081C642 /* XQPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE88FE8213F749C0081C642 /* XQPredicate.m */; };
 		1AE88FEC213F74AF0081C642 /* NSString+XQHTMLFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE88FEB213F74AF0081C642 /* NSString+XQHTMLFilter.m */; };
+		27E1B87E3517B25C5357C487 /* libPods-XQProjectTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D75A403147AA4D22D54E0 /* libPods-XQProjectTool.a */; };
+		A9AD6789AD49D5111245ECF9 /* libPods-XQProjectToolTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBD3B981A3B077B4CA42DDB /* libPods-XQProjectToolTests.a */; };
+		DAEE74861E18C566F6694589 /* libPods-XQProjectToolUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B2E902B7EA3A08F97D222 /* libPods-XQProjectToolUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +100,26 @@
 		1A66985820FD787000E76B28 /* CAShapeLayer+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+Common.m"; sourceTree = "<group>"; };
 		1A66985920FD787000E76B28 /* CATextLayer+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATextLayer+Common.h"; sourceTree = "<group>"; };
 		1A66985A20FD787000E76B28 /* CATextLayer+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATextLayer+Common.m"; sourceTree = "<group>"; };
+		1A701A092189459A00D8A7FA /* NSDictionary+Str.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Str.m"; sourceTree = "<group>"; };
+		1A701A0A2189459A00D8A7FA /* NSDictionary+Str.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Str.h"; sourceTree = "<group>"; };
+		1A701A102189498A00D8A7FA /* XQSuspensionViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSuspensionViewTool.h; sourceTree = "<group>"; };
+		1A701A112189498A00D8A7FA /* XQSuspensionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSuspensionView.m; sourceTree = "<group>"; };
+		1A701A122189498A00D8A7FA /* XQSuspensionViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSuspensionViewTool.m; sourceTree = "<group>"; };
+		1A701A132189498A00D8A7FA /* XQSuspensionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSuspensionView.h; sourceTree = "<group>"; };
+		1A701A17218949A000D8A7FA /* XQCustomSheetAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCustomSheetAlertView.m; sourceTree = "<group>"; };
+		1A701A18218949A000D8A7FA /* XQCustomSheetAlertViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCustomSheetAlertViewCell.h; sourceTree = "<group>"; };
+		1A701A19218949A000D8A7FA /* XQCustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCustomAlertView.m; sourceTree = "<group>"; };
+		1A701A1A218949A000D8A7FA /* XQCustomSheetAlertTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCustomSheetAlertTopView.h; sourceTree = "<group>"; };
+		1A701A1B218949A000D8A7FA /* XQCustomSheetAlertFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCustomSheetAlertFooterView.h; sourceTree = "<group>"; };
+		1A701A1C218949A000D8A7FA /* XQCustomSheetAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCustomSheetAlertView.h; sourceTree = "<group>"; };
+		1A701A1D218949A000D8A7FA /* XQCustomSheetAlertViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCustomSheetAlertViewCell.m; sourceTree = "<group>"; };
+		1A701A1E218949A000D8A7FA /* XQCustomSheetAlertViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XQCustomSheetAlertViewCell.xib; sourceTree = "<group>"; };
+		1A701A1F218949A000D8A7FA /* XQCustomSheetAlertTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCustomSheetAlertTopView.m; sourceTree = "<group>"; };
+		1A701A20218949A000D8A7FA /* XQCustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCustomAlertView.h; sourceTree = "<group>"; };
+		1A701A21218949A000D8A7FA /* XQCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XQCustomAlertView.xib; sourceTree = "<group>"; };
+		1A701A22218949A000D8A7FA /* XQCustomSheetAlertFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCustomSheetAlertFooterView.m; sourceTree = "<group>"; };
+		1A701A2B218949AD00D8A7FA /* XQSpreadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpreadView.m; sourceTree = "<group>"; };
+		1A701A2C218949AD00D8A7FA /* XQSpreadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpreadView.h; sourceTree = "<group>"; };
 		1A7B365D20C269E1000C8BD3 /* XQSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpeech.h; sourceTree = "<group>"; };
 		1A7B365E20C269E1000C8BD3 /* XQSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpeech.m; sourceTree = "<group>"; };
 		1A7B365F20C269E1000C8BD3 /* XQSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpeechSynthesizer.h; sourceTree = "<group>"; };
@@ -161,6 +195,15 @@
 		1AE88FE8213F749C0081C642 /* XQPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPredicate.m; sourceTree = "<group>"; };
 		1AE88FEA213F74AF0081C642 /* NSString+XQHTMLFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XQHTMLFilter.h"; sourceTree = "<group>"; };
 		1AE88FEB213F74AF0081C642 /* NSString+XQHTMLFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XQHTMLFilter.m"; sourceTree = "<group>"; };
+		209172CEE9C8C39642F068FB /* Pods-XQProjectToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectToolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectToolTests/Pods-XQProjectToolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		321332897B2135914BF968BA /* Pods-XQProjectToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectToolUITests/Pods-XQProjectToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		493D75A403147AA4D22D54E0 /* libPods-XQProjectTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XQProjectTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		502B2E902B7EA3A08F97D222 /* libPods-XQProjectToolUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XQProjectToolUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A9327BBE9728491430FCE82 /* Pods-XQProjectToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectToolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectToolUITests/Pods-XQProjectToolUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9EAC0534F1CD0B6644D73F19 /* Pods-XQProjectTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectTool/Pods-XQProjectTool.debug.xcconfig"; sourceTree = "<group>"; };
+		9FBD3B981A3B077B4CA42DDB /* libPods-XQProjectToolTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XQProjectToolTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A07360E89482B79D965F6609 /* Pods-XQProjectToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectToolTests/Pods-XQProjectToolTests.release.xcconfig"; sourceTree = "<group>"; };
+		B3494BA459B4473D41D67908 /* Pods-XQProjectTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectTool/Pods-XQProjectTool.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E1B87E3517B25C5357C487 /* libPods-XQProjectTool.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9AD6789AD49D5111245ECF9 /* libPods-XQProjectToolTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAEE74861E18C566F6694589 /* libPods-XQProjectToolUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,13 +254,13 @@
 			path = XQGetAppInfo;
 			sourceTree = "<group>";
 		};
-		1A5FEA5720D2038D00D62832 /* XQNotification */ = {
+		1A5FEA5720D2038D00D62832 /* XQNSNotificationCenterCategory */ = {
 			isa = PBXGroup;
 			children = (
 				1A5FEA5820D2038D00D62832 /* NSNotificationCenter+XQBase.h */,
 				1A5FEA5920D2038D00D62832 /* NSNotificationCenter+XQBase.m */,
 			);
-			path = XQNotification;
+			path = XQNSNotificationCenterCategory;
 			sourceTree = "<group>";
 		};
 		1A66985320FD787000E76B28 /* XQInputPasswordView */ = {
@@ -235,6 +281,82 @@
 				1A66985A20FD787000E76B28 /* CATextLayer+Common.m */,
 			);
 			path = CALayerCategory;
+			sourceTree = "<group>";
+		};
+		1A701A0C218946F400D8A7FA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1ABDEA122071D3FD00638A16 /* XQRuntime */,
+				1A7316DB20AADA1500194020 /* XQStrCategory */,
+				1A5FEA5720D2038D00D62832 /* XQNSNotificationCenterCategory */,
+				1AE88FE2213F748D0081C642 /* XQNSArrayCategory */,
+				1A66985620FD787000E76B28 /* CALayerCategory */,
+				1ABDE9CE2071C03E00638A16 /* XQDictionaryCategory */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1A701A0D2189476700D8A7FA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1A7C844920EE0E3600BCDCD2 /* UITextFieldCategory */,
+				1ABDE9EF2071C03E00638A16 /* XQLabCategory */,
+				1A701A0E2189489800D8A7FA /* ViewRuntime */,
+				1ABDE9DF2071C03E00638A16 /* XQImageCategory */,
+				1A0E4F2820C2493F004A4D28 /* XQViewCategory */,
+				1A7B366F20C26BE7000C8BD3 /* UINavigationBarCategory */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1A701A0E2189489800D8A7FA /* ViewRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				1ABDEA192071D3FD00638A16 /* UIButton+XQResponse.h */,
+				1ABDEA1A2071D3FD00638A16 /* UIButton+XQResponse.m */,
+				1ABDEA1B2071D3FD00638A16 /* UIView+XQResponse.h */,
+				1ABDEA1C2071D3FD00638A16 /* UIView+XQResponse.m */,
+			);
+			path = ViewRuntime;
+			sourceTree = "<group>";
+		};
+		1A701A0F2189498A00D8A7FA /* SuspensionView */ = {
+			isa = PBXGroup;
+			children = (
+				1A701A102189498A00D8A7FA /* XQSuspensionViewTool.h */,
+				1A701A112189498A00D8A7FA /* XQSuspensionView.m */,
+				1A701A122189498A00D8A7FA /* XQSuspensionViewTool.m */,
+				1A701A132189498A00D8A7FA /* XQSuspensionView.h */,
+			);
+			path = SuspensionView;
+			sourceTree = "<group>";
+		};
+		1A701A16218949A000D8A7FA /* CustomAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				1A701A17218949A000D8A7FA /* XQCustomSheetAlertView.m */,
+				1A701A18218949A000D8A7FA /* XQCustomSheetAlertViewCell.h */,
+				1A701A19218949A000D8A7FA /* XQCustomAlertView.m */,
+				1A701A1A218949A000D8A7FA /* XQCustomSheetAlertTopView.h */,
+				1A701A1B218949A000D8A7FA /* XQCustomSheetAlertFooterView.h */,
+				1A701A1C218949A000D8A7FA /* XQCustomSheetAlertView.h */,
+				1A701A1D218949A000D8A7FA /* XQCustomSheetAlertViewCell.m */,
+				1A701A1E218949A000D8A7FA /* XQCustomSheetAlertViewCell.xib */,
+				1A701A1F218949A000D8A7FA /* XQCustomSheetAlertTopView.m */,
+				1A701A20218949A000D8A7FA /* XQCustomAlertView.h */,
+				1A701A21218949A000D8A7FA /* XQCustomAlertView.xib */,
+				1A701A22218949A000D8A7FA /* XQCustomSheetAlertFooterView.m */,
+			);
+			path = CustomAlertView;
+			sourceTree = "<group>";
+		};
+		1A701A2A218949AD00D8A7FA /* SpreadView */ = {
+			isa = PBXGroup;
+			children = (
+				1A701A2B218949AD00D8A7FA /* XQSpreadView.m */,
+				1A701A2C218949AD00D8A7FA /* XQSpreadView.h */,
+			);
+			path = SpreadView;
 			sourceTree = "<group>";
 		};
 		1A7316DB20AADA1500194020 /* XQStrCategory */ = {
@@ -277,23 +399,24 @@
 			path = SystemCamera;
 			sourceTree = "<group>";
 		};
-		1A7B366F20C26BE7000C8BD3 /* NavChangeBackColor */ = {
+		1A7B366F20C26BE7000C8BD3 /* UINavigationBarCategory */ = {
 			isa = PBXGroup;
 			children = (
 				1A7B367020C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.h */,
 				1A7B367120C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.m */,
 			);
-			path = NavChangeBackColor;
+			path = UINavigationBarCategory;
 			sourceTree = "<group>";
 		};
 		1A7B367620C26BF5000C8BD3 /* UITool */ = {
 			isa = PBXGroup;
 			children = (
+				1A701A16218949A000D8A7FA /* CustomAlertView */,
+				1A701A2A218949AD00D8A7FA /* SpreadView */,
+				1A701A0F2189498A00D8A7FA /* SuspensionView */,
 				1A66985320FD787000E76B28 /* XQInputPasswordView */,
 				1ABDE9F52071C03E00638A16 /* XQSystemAlert */,
-				1ABDE9DF2071C03E00638A16 /* XQImageCategory */,
-				1A0E4F2820C2493F004A4D28 /* XQViewCategory */,
-				1A7B366F20C26BE7000C8BD3 /* NavChangeBackColor */,
+				1A701A0D2189476700D8A7FA /* Category */,
 				1A7B366C20C26BE7000C8BD3 /* SystemCamera */,
 			);
 			path = UITool;
@@ -333,6 +456,8 @@
 				1ABDE9992071BE0A00638A16 /* XQProjectToolTests */,
 				1ABDE9A42071BE0A00638A16 /* XQProjectToolUITests */,
 				1ABDE97F2071BE0900638A16 /* Products */,
+				B39AB4A9D1E198175C553DE0 /* Pods */,
+				AE2101AE77FD96FE89A49768 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -388,21 +513,14 @@
 			children = (
 				1AB9870A213FCC7000FF6F63 /* XQIPAddress */,
 				1AE88FE6213F749C0081C642 /* XQPredicate */,
-				1AE88FE2213F748D0081C642 /* XQNSArrayCategory */,
-				1A66985620FD787000E76B28 /* CALayerCategory */,
-				1A7C844920EE0E3600BCDCD2 /* UITextFieldCategory */,
-				1A5FEA5720D2038D00D62832 /* XQNotification */,
+				1A701A0C218946F400D8A7FA /* Category */,
 				1A7B367720C26C25000C8BD3 /* XQlocalAut */,
 				1A7B366320C26A49000C8BD3 /* XQPlayerMusic */,
 				1A7B365C20C269E1000C8BD3 /* XQVoice */,
 				1A5AEB2420736B6B00F647C4 /* XQGetAppInfo */,
-				1ABDEA122071D3FD00638A16 /* XQRuntime */,
 				1ABDE9CB2071C03E00638A16 /* XQIOSDevice */,
-				1ABDE9CE2071C03E00638A16 /* XQDJson */,
 				1ABDE9EC2071C03E00638A16 /* XQKeychain */,
-				1ABDE9EF2071C03E00638A16 /* XQLabCategory */,
 				1ABDE9F22071C03E00638A16 /* XQPermissionJudge */,
-				1A7316DB20AADA1500194020 /* XQStrCategory */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -416,13 +534,15 @@
 			path = XQIOSDevice;
 			sourceTree = "<group>";
 		};
-		1ABDE9CE2071C03E00638A16 /* XQDJson */ = {
+		1ABDE9CE2071C03E00638A16 /* XQDictionaryCategory */ = {
 			isa = PBXGroup;
 			children = (
+				1A701A0A2189459A00D8A7FA /* NSDictionary+Str.h */,
+				1A701A092189459A00D8A7FA /* NSDictionary+Str.m */,
 				1ABDE9CF2071C03E00638A16 /* NSDictionary+XQJson.h */,
 				1ABDE9D02071C03E00638A16 /* NSDictionary+XQJson.m */,
 			);
-			path = XQDJson;
+			path = XQDictionaryCategory;
 			sourceTree = "<group>";
 		};
 		1ABDE9DF2071C03E00638A16 /* XQImageCategory */ = {
@@ -489,10 +609,6 @@
 				1ABDEA162071D3FD00638A16 /* NSObject+XQExchangeIMP.m */,
 				1ABDEA172071D3FD00638A16 /* NSObject+XQViewOC.h */,
 				1ABDEA182071D3FD00638A16 /* NSObject+XQViewOC.m */,
-				1ABDEA192071D3FD00638A16 /* UIButton+XQResponse.h */,
-				1ABDEA1A2071D3FD00638A16 /* UIButton+XQResponse.m */,
-				1ABDEA1B2071D3FD00638A16 /* UIView+XQResponse.h */,
-				1ABDEA1C2071D3FD00638A16 /* UIView+XQResponse.m */,
 			);
 			path = XQRuntime;
 			sourceTree = "<group>";
@@ -515,6 +631,29 @@
 			path = XQPredicate;
 			sourceTree = "<group>";
 		};
+		AE2101AE77FD96FE89A49768 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				493D75A403147AA4D22D54E0 /* libPods-XQProjectTool.a */,
+				9FBD3B981A3B077B4CA42DDB /* libPods-XQProjectToolTests.a */,
+				502B2E902B7EA3A08F97D222 /* libPods-XQProjectToolUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B39AB4A9D1E198175C553DE0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC0534F1CD0B6644D73F19 /* Pods-XQProjectTool.debug.xcconfig */,
+				B3494BA459B4473D41D67908 /* Pods-XQProjectTool.release.xcconfig */,
+				209172CEE9C8C39642F068FB /* Pods-XQProjectToolTests.debug.xcconfig */,
+				A07360E89482B79D965F6609 /* Pods-XQProjectToolTests.release.xcconfig */,
+				321332897B2135914BF968BA /* Pods-XQProjectToolUITests.debug.xcconfig */,
+				9A9327BBE9728491430FCE82 /* Pods-XQProjectToolUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -522,6 +661,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ABDE9AA2071BE0B00638A16 /* Build configuration list for PBXNativeTarget "XQProjectTool" */;
 			buildPhases = (
+				0A9AAAB83E641D9A8AA18A7B /* [CP] Check Pods Manifest.lock */,
 				1ABDE97A2071BE0900638A16 /* Sources */,
 				1ABDE97B2071BE0900638A16 /* Frameworks */,
 				1ABDE97C2071BE0900638A16 /* Resources */,
@@ -539,6 +679,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ABDE9AD2071BE0B00638A16 /* Build configuration list for PBXNativeTarget "XQProjectToolTests" */;
 			buildPhases = (
+				1AA868C2D2A609CB4E386B80 /* [CP] Check Pods Manifest.lock */,
 				1ABDE9922071BE0A00638A16 /* Sources */,
 				1ABDE9932071BE0A00638A16 /* Frameworks */,
 				1ABDE9942071BE0A00638A16 /* Resources */,
@@ -557,6 +698,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ABDE9B02071BE0B00638A16 /* Build configuration list for PBXNativeTarget "XQProjectToolUITests" */;
 			buildPhases = (
+				8F7622C6A131A8CDC958B21A /* [CP] Check Pods Manifest.lock */,
 				1ABDE99D2071BE0A00638A16 /* Sources */,
 				1ABDE99E2071BE0A00638A16 /* Frameworks */,
 				1ABDE99F2071BE0A00638A16 /* Resources */,
@@ -625,6 +767,8 @@
 				1AD68F6A20C68075001949D1 /* 1.jpg in Resources */,
 				1ABDE98B2071BE0A00638A16 /* Assets.xcassets in Resources */,
 				1ABDE9892071BE0A00638A16 /* Main.storyboard in Resources */,
+				1A701A26218949A000D8A7FA /* XQCustomSheetAlertViewCell.xib in Resources */,
+				1A701A28218949A000D8A7FA /* XQCustomAlertView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,12 +788,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A9AAAB83E641D9A8AA18A7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XQProjectTool-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AA868C2D2A609CB4E386B80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XQProjectToolTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F7622C6A131A8CDC958B21A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XQProjectToolUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1ABDE97A2071BE0900638A16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1ABDEA012071C03F00638A16 /* XQIOSDevice.m in Sources */,
+				1A701A27218949A000D8A7FA /* XQCustomSheetAlertTopView.m in Sources */,
 				1ABDE9862071BE0A00638A16 /* ViewController.m in Sources */,
 				1A66985D20FD787100E76B28 /* CATextLayer+Common.m in Sources */,
 				1AE88FE5213F748D0081C642 /* NSArray+XQFilter.m in Sources */,
@@ -657,9 +859,13 @@
 				1AE88FEC213F74AF0081C642 /* NSString+XQHTMLFilter.m in Sources */,
 				1ABDEA072071C03F00638A16 /* NSString+HexadecimalConversion.m in Sources */,
 				1A7C844C20EE0E3600BCDCD2 /* UITextField+Keyboard.m in Sources */,
+				1A701A152189498A00D8A7FA /* XQSuspensionViewTool.m in Sources */,
+				1A701A0B2189459A00D8A7FA /* NSDictionary+Str.m in Sources */,
 				1A7B367420C26BE7000C8BD3 /* XQSystemCameraManager.m in Sources */,
+				1A701A2D218949AD00D8A7FA /* XQSpreadView.m in Sources */,
 				1A66985C20FD787100E76B28 /* CAShapeLayer+Common.m in Sources */,
 				1A7B366620C26A49000C8BD3 /* XQPlayerMusic.m in Sources */,
+				1A701A29218949A000D8A7FA /* XQCustomSheetAlertFooterView.m in Sources */,
 				1ABDEA1F2071D3FD00638A16 /* NSObject+XQViewOC.m in Sources */,
 				1AB9870D213FCC7000FF6F63 /* XQIPAddress.m in Sources */,
 				1ABDEA112071C03F00638A16 /* XQSystemAlert.m in Sources */,
@@ -667,6 +873,8 @@
 				1ABDEA1D2071D3FD00638A16 /* NSObject+XQArchiverData.m in Sources */,
 				1AE88FE9213F749C0081C642 /* XQPredicate.m in Sources */,
 				1A7B367A20C26C25000C8BD3 /* XQLocalAut.m in Sources */,
+				1A701A23218949A000D8A7FA /* XQCustomSheetAlertView.m in Sources */,
+				1A701A24218949A000D8A7FA /* XQCustomAlertView.m in Sources */,
 				1ABDEA0B2071C03F00638A16 /* UIImage+Gif.m in Sources */,
 				1ABDEA0E2071C03F00638A16 /* XQKeychain.m in Sources */,
 				1ABDEA102071C03F00638A16 /* XQPermissionJudge.m in Sources */,
@@ -684,6 +892,8 @@
 				1A5FEA5A20D2038D00D62832 /* NSNotificationCenter+XQBase.m in Sources */,
 				1A66985B20FD787100E76B28 /* XQInputPasswordView.m in Sources */,
 				1ABDEA212071D3FD00638A16 /* UIView+XQResponse.m in Sources */,
+				1A701A142189498A00D8A7FA /* XQSuspensionView.m in Sources */,
+				1A701A25218949A000D8A7FA /* XQCustomSheetAlertViewCell.m in Sources */,
 				1A7B367520C26BE7000C8BD3 /* UINavigationBar+ChangeBackColor.m in Sources */,
 				1A0E4F3120C2493F004A4D28 /* UIView+XQLine.m in Sources */,
 				1ABDEA092071C03F00638A16 /* UIImage+Corner.m in Sources */,
@@ -852,6 +1062,7 @@
 		};
 		1ABDE9AB2071BE0B00638A16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EAC0534F1CD0B6644D73F19 /* Pods-XQProjectTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -868,6 +1079,7 @@
 		};
 		1ABDE9AC2071BE0B00638A16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3494BA459B4473D41D67908 /* Pods-XQProjectTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -883,6 +1095,7 @@
 		};
 		1ABDE9AE2071BE0B00638A16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 209172CEE9C8C39642F068FB /* Pods-XQProjectToolTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -898,6 +1111,7 @@
 		};
 		1ABDE9AF2071BE0B00638A16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A07360E89482B79D965F6609 /* Pods-XQProjectToolTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -913,6 +1127,7 @@
 		};
 		1ABDE9B12071BE0B00638A16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 321332897B2135914BF968BA /* Pods-XQProjectToolUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYE5WA8QEX;
@@ -927,6 +1142,7 @@
 		};
 		1ABDE9B22071BE0B00638A16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A9327BBE9728491430FCE82 /* Pods-XQProjectToolUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYE5WA8QEX;
