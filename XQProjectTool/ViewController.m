@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "XQKeychain.h"
 #import "UIImage+SubImage.h"
+#import "XQIPAddress.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -45,11 +46,16 @@ static NSString *reusing_ = @"VCCell";
 #pragma mark -- UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@", [XQKeychain getUUIDStr]);
-    [XQKeychain saveUUIDStr:@"asdwqe"];
+//    NSLog(@"%@", [XQKeychain getUUIDStr]);
+//    [XQKeychain saveUUIDStr:@"asdwqe"];
     
 //    UIImage *img = [[UIImage imageNamed:@"1.jpg"] rescaleImageToSize:CGSizeMake(2000, 1000)];
 //    NSLog(@"%@", img);
+    
+    NSLog(@"%@", [XQIPAddress getIPAddresses]);
+    NSLog(@"%@", [XQIPAddress getWANIPAddress]);
+    NSLog(@"%@", [XQIPAddress getInIPAddress]);
+    
 }
 
 #pragma mark -- get

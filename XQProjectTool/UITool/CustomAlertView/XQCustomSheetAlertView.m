@@ -266,7 +266,7 @@ static NSString *reusing_ = @"XQCustomSheetAlertViewCell";
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
         
-        UINib *nib = [UINib nibWithNibName:reusing_ bundle:nil];
+        UINib *nib = [UINib nibWithNibName:reusing_ bundle:[NSBundle bundleForClass:[XQCustomSheetAlertViewCell class]]];
         [_tableView registerNib:nib forCellReuseIdentifier:reusing_];
         
         _tableView.rowHeight = asCellHeight_;

@@ -8,7 +8,10 @@
 
 #import "XQIPAddress.h"
 
+#if TARGET_OS_IPHONE
 #import <SystemConfiguration/CaptiveNetwork.h>// 获取wifi
+#endif
+
 // 获取当前相关ip网络的
 #include <ifaddrs.h>
 #include <arpa/inet.h>
@@ -157,6 +160,7 @@
     return address ? address : @"0.0.0.0";
 }
 
+#if TARGET_OS_IPHONE
 /**
  获取当前wifi信息
  */
@@ -168,9 +172,17 @@
         info = (__bridge_transfer id)CNCopyCurrentNetworkInfo(strRef);
         CFRelease(strRef);
     }
-    
     return info;
 }
+#endif
+
+#if TARGET_OS_OSX
++ (CWInterface *)getOSXWIFIInfo {
+    CWInterface * interface = [[CWWiFiClient sharedWiFiClient] interface];
+    return interface;
+}
+#endif
+
 
 /**
  判断热点是否开启
@@ -187,4 +199,78 @@
     return NO;
 }
 
+
+/**
+ 获取外网ip
+ */
++ (NSDictionary *)getWANIPAddress  {
+    NSError *error;
+    
+    /*
+    NSURL *ipURL = [NSURL URLWithString:@"http://pv.sohu.com/cityjson?ie=utf-8"];
+    NSMutableString *ip = [NSMutableString stringWithContentsOfURL:ipURL encoding:NSUTF8StringEncoding error:&error];
+        //判断返回字符串是否为所需数据
+    if ([ip hasPrefix:@"var returnCitySN = "]) {
+            //对字符串进行处理，然后进行json解析
+            //删除字符串多余字符串
+        NSRange range = NSMakeRange(0, 19);
+        [ip deleteCharactersInRange:range];
+        NSString * nowIp = [ip substringToIndex:ip.length-1];
+            //将字符串转换成二进制进行Json解析
+        NSData * data = [nowIp dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        return dict;
+    }
+     */
+    
+    // 这个信息获取的比较完全
+    NSURL *ipURL = [NSURL URLWithString:@"http://ip.taobao.com/service/getIpInfo.php?ip=myip"];
+    NSMutableString *ip = [NSMutableString stringWithContentsOfURL:ipURL encoding:NSUTF8StringEncoding error:&error];
+    if (!error && ip) {
+        NSData *data = [ip dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        if (!error && [dic isKindOfClass:[NSDictionary class]]) {
+            return dic;
+        }
+    }
+    
+    return @{};
+}
+
+/**
+ 获取内网IP
+ */
++ (NSString *)getInIPAddress {
+    NSString *address = @"";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+        // 检索当前接口,在成功时,返回0
+    success = getifaddrs(&interfaces);
+    if (success == 0) {
+            // 循环链表的接口
+        temp_addr = interfaces;
+        while(temp_addr != NULL) {
+            if(temp_addr->ifa_addr->sa_family == AF_INET) {
+                    // 检查接口是否en0 wifi连接在iPhone上
+                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
+                        // 得到NSString从C字符串
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+        // 释放内存
+    freeifaddrs(interfaces);
+    return address;
+}
+
+
 @end
+
+
+
+
+
+

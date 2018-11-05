@@ -74,7 +74,7 @@ static XQCustomAlertView *caView_ = nil;
 }
 
 + (void)initViewWithTitle:(NSString *)title message:(NSString *)message titleArr:(NSArray <NSString *> *)titleArr {
-    caView_ = [[NSBundle mainBundle] loadNibNamed:@"XQCustomAlertView" owner:nil options:nil].firstObject;
+    caView_ = [[NSBundle bundleForClass:[XQCustomAlertView class]] loadNibNamed:@"XQCustomAlertView" owner:nil options:nil].firstObject;
     caView_.alertLab.text = title;
     caView_.messageLab.text = message;
     
