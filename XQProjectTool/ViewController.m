@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "XQKeychain.h"
-#import "UIImage+SubImage.h"
-#import "XQIPAddress.h"
+//#import "XQKeychain.h"
+//#import "UIImage+SubImage.h"
+//#import "XQIPAddress.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -52,9 +52,9 @@ static NSString *reusing_ = @"VCCell";
 //    UIImage *img = [[UIImage imageNamed:@"1.jpg"] rescaleImageToSize:CGSizeMake(2000, 1000)];
 //    NSLog(@"%@", img);
     
-    NSLog(@"%@", [XQIPAddress getIPAddresses]);
-    NSLog(@"%@", [XQIPAddress getWANIPAddress]);
-    NSLog(@"%@", [XQIPAddress getInIPAddress]);
+//    NSLog(@"%@", [XQIPAddress getIPAddresses]);
+//    NSLog(@"%@", [XQIPAddress getWANIPAddress]);
+//    NSLog(@"%@", [XQIPAddress getInIPAddress]);
     
 }
 
