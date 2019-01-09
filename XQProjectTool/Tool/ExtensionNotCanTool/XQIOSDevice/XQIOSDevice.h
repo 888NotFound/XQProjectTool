@@ -6,12 +6,14 @@
 //  Copyright © 2017年 WangXQ. All rights reserved.
 //
 
+#if !XQExtensionFramework
+
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+
+#if !XQExtensionFramework
 #import "XQIOSDeviceType.h"
-
-
-
+#endif
 
 #define XQ_NHeight [XQIOSDevice getNavigationHeight]
 #define XQ_StatusHeight [XQIOSDevice getStatusHeight]
@@ -57,7 +59,7 @@
 
 
 
-
+#endif
 
 
 

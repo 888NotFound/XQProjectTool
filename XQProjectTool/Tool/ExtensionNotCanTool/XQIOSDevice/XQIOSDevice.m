@@ -6,6 +6,8 @@
 //  Copyright © 2017年 WangXQ. All rights reserved.
 //
 
+#if !XQExtensionFramework
+
 #import "XQIOSDevice.h"
 
 //#import "XQIPAddress.h"
@@ -24,7 +26,7 @@
  CGFloat batteryLevel=[[UIDevicecurrentDevice] batteryLevel];
  
  状态栏
- [UIApplication sharedApplication].statusBarFrame
+ [XQApplication sharedApplication].statusBarFrame
  */
 
 // 避免重复计算
@@ -43,12 +45,17 @@ static CGFloat statusHeight_ = -1;
     dispatch_once(&onceToken, ^{
 #if TARGET_OS_IPHONE
             //44是正常高度, 64是开启热点, QQ语音, 定位等等, 会增加20
-        if ([UIApplication sharedApplication].statusBarFrame.size.height == 44 ||
-            [UIApplication sharedApplication].statusBarFrame.size.height == 64) {
+#if !XQExtensionFramework
+        if ([XQApplication sharedApplication].statusBarFrame.size.height == 44 ||
+            [XQApplication sharedApplication].statusBarFrame.size.height == 64) {
             statusHeight_ = 44;
         }else {
             statusHeight_ = 20;
         }
+#else
+        statusHeight_ = 20;
+#endif
+        
 #endif
     });
     
@@ -61,10 +68,13 @@ static CGFloat statusHeight_ = -1;
     statusHeight_ = 20;
     
     if (@available(iOS 11.0, *)) {
-        //[UIApplication sharedApplication].statusBarOrientation
+        //[XQApplication sharedApplication].statusBarOrientation
         //[UIDevice currentDevice].orientation
-        
+#if !XQExtensionFramework
         NSString *iPhoneType = [XQIOSDeviceType getIPhoneType];
+#else
+        NSString *iPhoneType = @"iPhone 6S";
+#endif
         // 真机
         if ([iPhoneType isEqualToString:@"iPhone X"]) {
             statusHeight_ = 44;
@@ -91,9 +101,12 @@ static CGFloat statusHeight_ = -1;
     }
     return 49;
     
+#if !XQExtensionFramework
     if ([[XQIOSDeviceType getIPhoneType] isEqualToString:@"iPhone X"]) {
         return 83;
     }
+#endif
+    
     return 49;
 }
 
@@ -126,6 +139,7 @@ static CGFloat statusHeight_ = -1;
 
 
 
+#endif
 
 
 

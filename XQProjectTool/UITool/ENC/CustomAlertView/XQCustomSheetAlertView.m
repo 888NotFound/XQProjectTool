@@ -7,12 +7,18 @@
 //
 
 #import "XQCustomSheetAlertView.h"
+#import <Masonry/Masonry.h>
+
 #import "XQCustomSheetAlertViewCell.h"
 #import "XQCustomSheetAlertTopView.h"
-#import "UIView+XQLine.h"
 #import "XQCustomSheetAlertFooterView.h"
-#import <Masonry/Masonry.h>
+
+#if !XQExtensionFramework
+#import "UIView+XQLine.h"
 #import "XQIOSDevice.h"
+#endif
+
+
 
 #define XQ_Screen_Width [UIScreen mainScreen].bounds.size.width
 #define XQ_Screen_Height [UIScreen mainScreen].bounds.size.height
@@ -109,10 +115,12 @@ static CGFloat asCellHeight_ = 60;
     
     [saView_ setTableLayoutWithIsHide:YES];
     
-    [[UIApplication sharedApplication].keyWindow addSubview:saView_];
+#if !XQExtensionFramework
+    [[XQApplication sharedApplication].keyWindow addSubview:saView_];
     [saView_ mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo([UIApplication sharedApplication].keyWindow);
+        make.edges.equalTo([XQApplication sharedApplication].keyWindow);
     }];
+#endif
 }
 
 + (void)setItemColorWithColor:(UIColor *)color rows:(NSArray <NSNumber *> *)rows {
@@ -153,7 +161,9 @@ static CGFloat asCellHeight_ = 60;
     [super layoutSubviews];
     
     if (self.headerView) {
+#if !XQExtensionFramework
         [UIView setBorderWithView:self.headerView top:NO left:NO bottom:YES right:NO borderColor:[UIColor lightGrayColor] borderWidth:1];
+#endif
     }
     
     // 0.0 因为是用约束...得等布局完毕, 再进行动画
@@ -183,12 +193,16 @@ static CGFloat asCellHeight_ = 60;
 }
 
 - (CGFloat)getAlertHeight {
+#if !XQExtensionFramework
     CGFloat height = asCellHeight_ * self.dataArr.count + self.headerView.frame.size.height;
     CGFloat maxHeight = XQ_Screen_Height - [XQIOSDevice getNavigationHeight] - 20 - (self.cancelText.length == 0 ? 0 : [self getFooterHeight]);
     if (height > maxHeight) {
         height = maxHeight;
     }
     return height;
+#else
+    return 0;
+#endif
 }
 
 - (CGFloat)getFooterHeight {

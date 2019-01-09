@@ -63,8 +63,9 @@ static XQSuspensionView *sView_ = nil;
     sView_.smallRectangleView = smallRectangleView;
     sView_.rectangleView = rectangleView;
     sView_.roundView = roundView;
-    
-    [[UIApplication sharedApplication].keyWindow addSubview:sView_];
+#if !XQExtensionFramework
+    [[XQApplication sharedApplication].keyWindow addSubview:sView_];
+#endif
     [sView_ refreshViewType];
 }
 
@@ -359,7 +360,11 @@ static XQSuspensionView *sView_ = nil;
 }
 
 + (UIWindow *)getWindow {
-    return [UIApplication sharedApplication].keyWindow;
+#if !XQExtensionFramework
+    return [XQApplication sharedApplication].keyWindow;
+#else
+    return nil;
+#endif
 }
 
 #pragma mark -- get

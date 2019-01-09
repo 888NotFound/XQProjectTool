@@ -7,9 +7,11 @@
 //
 
 #import "XQCustomAlertView.h"
-#import <Masonry/Masonry.h>
 
+#import <Masonry/Masonry.h>
+#if !XQExtensionFramework
 #import "UIView+XQLine.h"
+#endif
 
 #import "XQCustomSheetAlertView.h"
 
@@ -105,12 +107,14 @@ static XQCustomAlertView *caView_ = nil;
         return;
     }
     
-    [[UIApplication sharedApplication].keyWindow addSubview:caView_];
+#if !XQExtensionFramework
+    [[XQApplication sharedApplication].keyWindow addSubview:caView_];
     [caView_ mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo([UIApplication sharedApplication].keyWindow);
+        make.edges.equalTo([XQApplication sharedApplication].keyWindow);
     }];
     
     [caView_ show];
+#endif
 }
 
 + (void)hide {
@@ -216,9 +220,11 @@ static XQCustomAlertView *caView_ = nil;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+#if !XQExtensionFramework
     [UIView setBorderWithView:self.centerBtn top:YES left:NO bottom:NO right:NO borderColor:[UIColor lightGrayColor] borderWidth:1];
     [UIView setBorderWithView:self.rightBtn top:YES left:NO bottom:NO right:NO borderColor:[UIColor lightGrayColor] borderWidth:1];
     [UIView setBorderWithView:self.leftBtn top:YES left:NO bottom:NO right:YES borderColor:[UIColor lightGrayColor] borderWidth:1];
+#endif
 }
 
 - (void)show {
@@ -290,6 +296,7 @@ static XQCustomAlertView *caView_ = nil;
 }
 
 @end
+
 
 
 

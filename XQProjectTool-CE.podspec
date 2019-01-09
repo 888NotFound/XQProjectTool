@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     
-    s.name         = "XQProjectTool"      #SDK名称
+    s.name         = "XQProjectTool-CE"      #SDK名称
     s.version      = "1.9"#版本号
     s.homepage     = "https://github.com/SyKingW/XQProjectTool"  #工程主页地址
     s.summary      = "一些项目里面要用到的’小公举’."  #项目的简单描述
@@ -10,9 +10,9 @@ Pod::Spec.new do |s|
     s.ios.deployment_target  = "9.3" #平台及版本
     s.source       = { :git => "https://github.com/SyKingW/XQProjectTool.git" ,:tag => "#{s.version}"}   #工程地址及版本号
     s.requires_arc = true   #是否必须arc
-    s.prefix_header_file = 'XQProjectTool/XQProjcetToolPrefixHeader.pch'
     
-    
+#    s.public_header_files = 'XQProjectTool/UITool/**/*.h', 'XQProjectTool/Tool/**/*.h', 'XQProjectTool/MacTool/**/*.h', 'XQProjectTool/iPhoneTool/**/*.h'
+
     #UITool模块
     s.subspec 'UITool' do |iphoneS|
         iphoneS.platform     = :ios, "9.3" #平台及版本
@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
         #关联系统framework, 后缀不要
         iphoneS.frameworks = "UIKit", "AVFoundation"
     end
-    
+
     
     
     #通用Tool模块
@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
         toolS.ios.deployment_target  = "9.3" #平台及版本
         toolS.source_files = 'XQProjectTool/Tool/ExtensionNotCanTool/**/*.{h,m,mm}'
     end
-    
+
     #iPhoneTool模块
     s.subspec 'iPhoneTool' do |iPhoneToolS|
         iPhoneToolS.platform     = :ios, "9.3" #平台及版本
@@ -59,8 +59,6 @@ Pod::Spec.new do |s|
         iPhoneToolS.frameworks = "AVFoundation", "Speech"
     end
     
-    
-    
     #MacTool模块
     s.subspec 'MacTool' do |macS|
         macS.platform = :osx, '10.13'
@@ -68,6 +66,10 @@ Pod::Spec.new do |s|
     end
     
     
+    #项目配置
+    s.pod_target_xcconfig = {
+        'GCC_PREPROCESSOR_DEFINITIONS' => 'XQExtensionFramework'
+    }
     
 end
 

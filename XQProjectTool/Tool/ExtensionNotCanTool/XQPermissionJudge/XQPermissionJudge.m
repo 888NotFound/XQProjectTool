@@ -126,11 +126,15 @@ typedef NS_ENUM(NSInteger, XQOpenURL) {
         return isPermission;
     } else {
 #if TARGET_OS_IPHONE
-        BOOL isPermission = [[UIApplication sharedApplication] isRegisteredForRemoteNotifications];
+        
+#if !XQExtensionFramework
+        BOOL isPermission = [[XQApplication sharedApplication] isRegisteredForRemoteNotifications];
         if (!isPermission) {
             [XQPermissionJudge judgeWithIndex:XQOpenURLNotification title:@"提示" message:@"使用该功能需要App打开通知"];
         }
         return isPermission;
+#endif
+        
 #endif
     }
     return NO;
@@ -193,7 +197,8 @@ typedef NS_ENUM(NSInteger, XQOpenURL) {
     // 被拒, 说这样可以过
     NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     
-    UIApplication *application = [UIApplication sharedApplication];
+#if !XQExtensionFramework
+    UIApplication *application = [XQApplication sharedApplication];
     if ([application canOpenURL:url]) {
         __weak UIApplication *weakApp = application;
         [XQPermissionJudge alertWithTitle:title message:message sure:^{
@@ -209,12 +214,16 @@ typedef NS_ENUM(NSInteger, XQOpenURL) {
         return YES;
     }
 #endif
+    
+#endif
     return NO;
 }
 
 // alert
 + (void)alertWithTitle:(NSString *)title message:(NSString *)message sure:(void(^)(void))sure {
 #if TARGET_OS_IPHONE
+    
+#if !XQExtensionFramework
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (sure) {
@@ -224,7 +233,9 @@ typedef NS_ENUM(NSInteger, XQOpenURL) {
     
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
     
-    [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:alert animated:YES completion:nil];
+    [[XQApplication sharedApplication].delegate.window.rootViewController presentViewController:alert animated:YES completion:nil];
+#endif
+    
 #endif
 }
 

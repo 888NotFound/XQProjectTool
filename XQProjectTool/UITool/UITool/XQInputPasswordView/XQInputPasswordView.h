@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#if !XQExtensionFramework
+
 @class XQInputPasswordView;
 
 @protocol XQInputPasswordViewDelegate <NSObject>
@@ -65,7 +67,7 @@
 
 @end
 
-
+#endif
 
 
 

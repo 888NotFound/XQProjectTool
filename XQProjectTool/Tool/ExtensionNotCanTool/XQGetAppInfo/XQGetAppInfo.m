@@ -36,15 +36,19 @@
     NSString *urlStr = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/appname/id%@?mt=8", appID];
     NSURL *url = [NSURL URLWithString:urlStr];
     
-    #if TARGET_OS_IPHONE
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+#if TARGET_OS_IPHONE
+    
+#if !XQExtensionFramework
+    if ([[XQApplication sharedApplication] canOpenURL:url]) {
         if (@available(iOS 10.0, *)) {
-            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:completion];
+            [[XQApplication sharedApplication] openURL:url options:@{} completionHandler:completion];
         } else {
-            return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
+            return [[XQApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
         }
         return YES;
     }
+#endif
+    
 #endif
     
     return NO;
@@ -52,15 +56,19 @@
 
 + (BOOL)openURLWithURLStr:(NSString *)urlStr completionHandler:(void (^)(BOOL success))completion {
     NSURL *url = [NSURL URLWithString:urlStr];
-    #if TARGET_OS_IPHONE
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+#if TARGET_OS_IPHONE
+    
+#if !XQExtensionFramework
+    if ([[XQApplication sharedApplication] canOpenURL:url]) {
         if (@available(iOS 10.0, *)) {
-            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+            [[XQApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
         } else {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
+            [[XQApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
         }
         return YES;
     }
+#endif
+    
 #endif
     return NO;
 }

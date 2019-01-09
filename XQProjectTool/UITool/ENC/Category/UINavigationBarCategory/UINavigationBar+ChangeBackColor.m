@@ -8,7 +8,10 @@
 
 #import "UINavigationBar+ChangeBackColor.h"
 #import <objc/runtime.h>
+
+#if !XQExtensionFramework
 #import "XQIOSDevice.h"
+#endif
 
 static NSString *overlayKey = @"NBBackColor";
 
@@ -37,9 +40,11 @@ static NSString *overlayKey = @"NBBackColor";
         
         CGFloat statusBarHeight = 20;
         
+#if !XQExtensionFramework
         if ([XQIOSDevice isNormalModel] == NO) {
             statusBarHeight = 44;
         }
+#endif
         
         // iOS12的Y好像也不是负的了, 直接填0就行
         self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, -statusBarHeight, [UIScreen mainScreen].bounds.size.width, self.bounds.size.height + statusBarHeight)];

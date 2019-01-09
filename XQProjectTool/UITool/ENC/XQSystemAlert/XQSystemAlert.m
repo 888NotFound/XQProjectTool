@@ -98,8 +98,11 @@
         if (sourceView) {
             alert.popoverPresentationController.sourceView = sourceView;
         }else {
-            UIView *keyWindow = [UIApplication sharedApplication].keyWindow;
+            
+#if !XQExtensionFramework
+            UIView *keyWindow = [XQApplication sharedApplication].keyWindow;
             alert.popoverPresentationController.sourceView = keyWindow;
+#endif
         }
         
         //CGRect rect = CGRectMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height, 0, 0);
@@ -150,12 +153,14 @@
     if (vc) {
         [vc presentViewController:alert animated:YES completion:nil];
     }else {
-        UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+#if !XQExtensionFramework
+        UIViewController *rootVC = [XQApplication sharedApplication].keyWindow.rootViewController;
         if (rootVC) {
             [rootVC presentViewController:alert animated:YES completion:nil];
         }else {
             NSLog(@"vc不存在");
         }
+#endif
     }
     
 }
@@ -164,7 +169,11 @@
 
 /** 获取alert */
 + (UIAlertController *)alertCtr {
-    return (UIAlertController *)[UIApplication sharedApplication].keyWindow.rootViewController.presentedViewController;
+#if !XQExtensionFramework
+    return (UIAlertController *)[XQApplication sharedApplication].keyWindow.rootViewController.presentedViewController;
+#else
+    return nil;
+#endif
 }
 
 /**
@@ -184,7 +193,11 @@
  @return YES是弹框在最前面
  */
 + (BOOL)isAlert {
-    return [[UIApplication sharedApplication].keyWindow.rootViewController.presentedViewController isKindOfClass:[UIAlertController class]];
+#if !XQExtensionFramework
+    return [[XQApplication sharedApplication].keyWindow.rootViewController.presentedViewController isKindOfClass:[UIAlertController class]];
+#else
+    return NO;
+#endif
 }
 
 /**
