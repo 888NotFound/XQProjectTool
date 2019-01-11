@@ -9,6 +9,7 @@
 
 @implementation XQApplication
 
+#if TARGET_OS_IPHONE
 + (UIApplication *)sharedApplication {
 #if !XQExtensionFramework
     return [UIApplication sharedApplication];
@@ -16,5 +17,6 @@
     return nil;
 #endif
 }
+#endif
 
 @end

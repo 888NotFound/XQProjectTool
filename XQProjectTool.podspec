@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     
     #UITool模块
     s.subspec 'UITool' do |iphoneS|
-        iphoneS.platform     = :ios, "9.3" #平台及版本
+        iphoneS.ios.deployment_target  = "9.3" #平台及版本
         iphoneS.source_files = 'XQProjectTool/UITool/UITool/**/*.{h,m,mm}'
         #关联资源
         iphoneS.resources = 'XQProjectTool/UITool/**/*.{xib}'
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
     
     #UITool模块
     s.subspec 'ENCUITool' do |iphoneS|
-        iphoneS.platform     = :ios, "9.3" #平台及版本
+        iphoneS.ios.deployment_target  = "9.3" #平台及版本
         iphoneS.source_files = 'XQProjectTool/UITool/ENC/**/*.{h,m,mm}'
         #依赖的第三方库
         iphoneS.dependency "Masonry"
@@ -53,7 +53,7 @@ Pod::Spec.new do |s|
     
     #iPhoneTool模块
     s.subspec 'iPhoneTool' do |iPhoneToolS|
-        iPhoneToolS.platform     = :ios, "9.3" #平台及版本
+        iPhoneToolS.ios.deployment_target  = "9.3" #平台及版本
         iPhoneToolS.source_files = 'XQProjectTool/iPhoneTool/**/*.{h,m,mm}'
         #关联系统framework, 后缀不要
         iPhoneToolS.frameworks = "AVFoundation", "Speech"
