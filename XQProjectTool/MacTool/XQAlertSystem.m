@@ -10,11 +10,20 @@
 
 @implementation XQAlertSystem
 
-+ (void)alertSheetWithTitle:(NSString *)title message:(NSString *)message contentArr:(NSArray <NSString *> *)contentArr callback:(XQAlertSystemCallback)callback {
-    [self alertSheetWithTitle:title message:message img:[NSImage imageNamed:NSImageNameInfo] contentArr:contentArr window:[NSApplication sharedApplication].mainWindow style:NSAlertStyleInformational callback:callback];
++ (NSAlert *)alertErrorWithWithWindow:(NSWindow *)window domain:(NSErrorDomain)domain code:(NSInteger)code userInfo:(nullable NSDictionary<NSErrorUserInfoKey, id> *)dict callback:(XQAlertSystemCallback)callback {
+    if (!window) {
+        return nil;
+    }
+    NSAlert *alert = [NSAlert alertWithError:[NSError errorWithDomain:domain code:code userInfo:dict]];
+    [alert beginSheetModalForWindow:window completionHandler:callback];
+    return alert;
 }
 
-+ (void)alertSheetWithTitle:(NSString *)title message:(NSString *)message img:(NSImage *)img contentArr:(NSArray <NSString *> *)contentArr window:(NSWindow *)window style:(NSAlertStyle)style callback:(XQAlertSystemCallback)callback {
++ (NSAlert *)alertSheetWithTitle:(NSString *)title message:(NSString *)message contentArr:(NSArray <NSString *> *)contentArr callback:(XQAlertSystemCallback)callback {
+    return [self alertSheetWithTitle:title message:message img:[NSImage imageNamed:NSImageNameInfo] contentArr:contentArr window:[NSApplication sharedApplication].mainWindow style:NSAlertStyleInformational callback:callback];
+}
+
++ (NSAlert *)alertSheetWithTitle:(NSString *)title message:(NSString *)message img:(NSImage *)img contentArr:(NSArray <NSString *> *)contentArr window:(NSWindow *)window style:(NSAlertStyle)style callback:(XQAlertSystemCallback)callback {
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:title];
     [alert setInformativeText:message];
@@ -34,6 +43,8 @@
             callback(result);
         }
     }];
+    
+    return alert;
 }
 
 /* 保存图片到本地

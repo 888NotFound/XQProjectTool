@@ -8,6 +8,7 @@
 
 #import "NSObject+XQExchangeIMP.h"
 #import <objc/runtime.h>
+//#import <objc/message.h> // 包含消息机制
 
 // 获取imp
 //class_getMethodImplementation(<#Class  _Nullable __unsafe_unretained cls#>, <#SEL  _Nonnull name#>)

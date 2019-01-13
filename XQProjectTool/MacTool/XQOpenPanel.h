@@ -16,6 +16,12 @@ typedef void(^XQOpenPanelCancelCallback)(void);
 
 + (void)beginSheetModalWithWindow:(NSWindow *)window openCallback:(XQOpenPanelCallback)openCallback cancelCallback:(XQOpenPanelCancelCallback)cancelCallback;
 
++ (void)beginSheetImageModalWithWindow:(NSWindow *)window openCallback:(XQOpenPanelCallback)openCallback cancelCallback:(XQOpenPanelCancelCallback)cancelCallback;
+
++ (void)beginSheetPNGImageModalWithWindow:(NSWindow *)window openCallback:(XQOpenPanelCallback)openCallback cancelCallback:(XQOpenPanelCancelCallback)cancelCallback;
+
++ (void)beginSheetModalWithWindow:(NSWindow *)window configPanel:(void(^)(NSOpenPanel *openPanel))configPanel openCallback:(XQOpenPanelCallback)openCallback cancelCallback:(XQOpenPanelCancelCallback)cancelCallback;
+
 @end
 
 

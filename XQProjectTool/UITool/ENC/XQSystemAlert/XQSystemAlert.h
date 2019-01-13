@@ -24,13 +24,13 @@ typedef void(^XQSystemAlertActionBlock)(UIAlertController * _Nonnull alert);
 /** 弹框
  *  注意, 如果 contentArr and cancelText都为空, 则不会出现弹框, 因为这时候弹框是无法取消的
  */
-+ (void)alertWithTitle:(NSString *_Nullable)title
-               message:(NSString *_Nullable)message
-            contentArr:(NSArray *_Nullable)contentArr
-            cancelText:(NSString *_Nullable)cancelText
-                    vc:(UIViewController *_Nullable)vc
-       contentCallback:(XQSystemAlertBlock _Nullable)contentCallback
-        cancelCallback:(XQSystemAlertCancelBlock _Nullable)cancelCallback;
++ (UIAlertController *)alertWithTitle:(NSString *_Nullable)title
+                              message:(NSString *_Nullable)message
+                           contentArr:(NSArray *_Nullable)contentArr
+                           cancelText:(NSString *_Nullable)cancelText
+                                   vc:(UIViewController *_Nullable)vc
+                      contentCallback:(XQSystemAlertBlock _Nullable)contentCallback
+                       cancelCallback:(XQSystemAlertCancelBlock _Nullable)cancelCallback;
 
 /**
  有输入框的弹框
@@ -38,24 +38,24 @@ typedef void(^XQSystemAlertActionBlock)(UIAlertController * _Nonnull alert);
  @param textFieldCount 输入框个数
  @param textFieldBlock 在这里面设置输入框属性
  */
-+ (void)alertWithTitle:(NSString *_Nullable)title
-               message:(NSString *_Nullable)message
-            contentArr:(NSArray *_Nullable)contentArr
-            cancelText:(NSString *_Nullable)cancelText
-                    vc:(UIViewController *_Nullable)vc
-        textFieldCount:(NSUInteger)textFieldCount
-        textFieldBlock:(XQSystemAlertTextFieldBlock _Nullable)textFieldBlock
-       contentCallback:(XQSystemAlertBlock _Nullable)contentCallback
-        cancelCallback:(XQSystemAlertCancelBlock _Nullable)cancelCallback;
++ (UIAlertController *)alertWithTitle:(NSString *_Nullable)title
+                              message:(NSString *_Nullable)message
+                           contentArr:(NSArray *_Nullable)contentArr
+                           cancelText:(NSString *_Nullable)cancelText
+                                   vc:(UIViewController *_Nullable)vc
+                       textFieldCount:(NSUInteger)textFieldCount
+                       textFieldBlock:(XQSystemAlertTextFieldBlock _Nullable)textFieldBlock
+                      contentCallback:(XQSystemAlertBlock _Nullable)contentCallback
+                       cancelCallback:(XQSystemAlertCancelBlock _Nullable)cancelCallback;
 
 /** 底部弹框, iPad默认就从最底部的中间弹出来 */
-+ (void)actionSheetWithTitle:(NSString *_Nullable)title
-                     message:(NSString *_Nullable)message
-                  contentArr:(NSArray *_Nullable)contentArr
-                  cancelText:(NSString *_Nullable)cancelText
-                          vc:(UIViewController *_Nullable)vc
-             contentCallback:(XQSystemAlertBlock _Nullable)contentCallback
-              cancelCallback:(XQSystemAlertCancelBlock _Nullable)cancelCallback;
++ (UIAlertController *)actionSheetWithTitle:(NSString *_Nullable)title
+                                    message:(NSString *_Nullable)message
+                                 contentArr:(NSArray *_Nullable)contentArr
+                                 cancelText:(NSString *_Nullable)cancelText
+                                         vc:(UIViewController *_Nullable)vc
+                            contentCallback:(XQSystemAlertBlock _Nullable)contentCallback
+                             cancelCallback:(XQSystemAlertCancelBlock _Nullable)cancelCallback;
 
 
 /**
@@ -64,15 +64,15 @@ typedef void(^XQSystemAlertActionBlock)(UIAlertController * _Nonnull alert);
  @param sourceView 弹出在那个view上面
  @param sourceRect 弹出的尖点位置, 锚点
  */
-+ (void)actionSheetWithTitle:(NSString *_Nullable)title
-                     message:(NSString *_Nullable)message
-                  contentArr:(NSArray *_Nullable)contentArr
-                  cancelText:(NSString *_Nullable)cancelText
-                          vc:(UIViewController *_Nullable)vc
-                  sourceView:(UIView *_Nullable)sourceView
-                  sourceRect:(CGRect)sourceRect
-             contentCallback:(XQSystemAlertBlock _Nullable)contentCallback
-              cancelCallback:(XQSystemAlertCancelBlock _Nullable)cancelCallback;
++ (UIAlertController *)actionSheetWithTitle:(NSString *_Nullable)title
+                                    message:(NSString *_Nullable)message
+                                 contentArr:(NSArray *_Nullable)contentArr
+                                 cancelText:(NSString *_Nullable)cancelText
+                                         vc:(UIViewController *_Nullable)vc
+                                 sourceView:(UIView *_Nullable)sourceView
+                                 sourceRect:(CGRect)sourceRect
+                            contentCallback:(XQSystemAlertBlock _Nullable)contentCallback
+                             cancelCallback:(XQSystemAlertCancelBlock _Nullable)cancelCallback;
 
 
 

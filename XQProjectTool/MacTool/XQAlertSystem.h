@@ -13,7 +13,17 @@ typedef void(^XQAlertSystemCallback)(NSInteger index);
 
 @interface XQAlertSystem : NSObject
 
-+ (void)alertSheetWithTitle:(NSString *)title message:(NSString *)message contentArr:(NSArray <NSString *> *)contentArr callback:(XQAlertSystemCallback)callback;
+/**
+ 显示弹框
+ 
+ @param callback index 从1000开始
+ */
++ (NSAlert *)alertSheetWithTitle:(NSString *)title message:(NSString *)message contentArr:(NSArray <NSString *> *)contentArr callback:(XQAlertSystemCallback)callback;
+
+/**
+ 显示错误弹框
+ */
++ (NSAlert *)alertErrorWithWithWindow:(NSWindow *)window domain:(NSErrorDomain)domain code:(NSInteger)code userInfo:(nullable NSDictionary<NSErrorUserInfoKey, id> *)dict callback:(XQAlertSystemCallback)callback;
 
 @end
 

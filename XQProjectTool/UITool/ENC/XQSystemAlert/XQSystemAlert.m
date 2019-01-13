@@ -17,27 +17,27 @@
 @implementation XQSystemAlert
 
 #pragma mark -- 大致适配iPad
-+ (void)alertWithTitle:(NSString *)title
++ (UIAlertController *)alertWithTitle:(NSString *)title
                message:(NSString *)message
             contentArr:(NSArray *)contentArr
             cancelText:(NSString *)cancelText
                     vc:(UIViewController *)vc
        contentCallback:(XQSystemAlertBlock)contentCallback
         cancelCallback:(XQSystemAlertCancelBlock)cancelCallback {
-    [self alertWithStyle:UIAlertControllerStyleAlert title:title message:message contentArr:contentArr cancelText:cancelText vc:vc textFieldCount:0 textFieldBlock:nil contentCallback:contentCallback cancelCallback:cancelCallback];
+    return [self alertWithStyle:UIAlertControllerStyleAlert title:title message:message contentArr:contentArr cancelText:cancelText vc:vc textFieldCount:0 textFieldBlock:nil contentCallback:contentCallback cancelCallback:cancelCallback];
 }
 
-+ (void)actionSheetWithTitle:(NSString *)title
++ (UIAlertController *)actionSheetWithTitle:(NSString *)title
                      message:(NSString *)message
                   contentArr:(NSArray *)contentArr
                   cancelText:(NSString *)cancelText
                           vc:(UIViewController *)vc
              contentCallback:(XQSystemAlertBlock)contentCallback
               cancelCallback:(XQSystemAlertCancelBlock)cancelCallback {
-    [self alertWithStyle:UIAlertControllerStyleActionSheet title:title message:message contentArr:contentArr cancelText:cancelText vc:vc textFieldCount:0 textFieldBlock:nil contentCallback:contentCallback cancelCallback:cancelCallback];
+    return [self alertWithStyle:UIAlertControllerStyleActionSheet title:title message:message contentArr:contentArr cancelText:cancelText vc:vc textFieldCount:0 textFieldBlock:nil contentCallback:contentCallback cancelCallback:cancelCallback];
 }
 
-+ (void)alertWithTitle:(NSString *)title
++ (UIAlertController *)alertWithTitle:(NSString *)title
                message:(NSString *)message
             contentArr:(NSArray *)contentArr
             cancelText:(NSString *)cancelText
@@ -46,12 +46,12 @@
         textFieldBlock:(XQSystemAlertTextFieldBlock)textFieldBlock
        contentCallback:(XQSystemAlertBlock)contentCallback
         cancelCallback:(XQSystemAlertCancelBlock)cancelCallback {
-    [self alertWithStyle:UIAlertControllerStyleAlert title:title message:message contentArr:contentArr cancelText:cancelText vc:vc textFieldCount:textFieldCount textFieldBlock:textFieldBlock contentCallback:contentCallback cancelCallback:cancelCallback];
+    return [self alertWithStyle:UIAlertControllerStyleAlert title:title message:message contentArr:contentArr cancelText:cancelText vc:vc textFieldCount:textFieldCount textFieldBlock:textFieldBlock contentCallback:contentCallback cancelCallback:cancelCallback];
 }
 
 #pragma mark -- 具体适配iPad
 
-+ (void)actionSheetWithTitle:(NSString *)title
++ (UIAlertController *)actionSheetWithTitle:(NSString *)title
                      message:(NSString *)message
                   contentArr:(NSArray *)contentArr
                   cancelText:(NSString *)cancelText
@@ -60,10 +60,10 @@
                   sourceRect:(CGRect)sourceRect
              contentCallback:(XQSystemAlertBlock)contentCallback
               cancelCallback:(XQSystemAlertCancelBlock)cancelCallback {
-    [self alertWithStyle:UIAlertControllerStyleActionSheet title:title message:message contentArr:contentArr cancelText:cancelText vc:vc sourceView:sourceView sourceRect:sourceRect textFieldCount:0 textFieldBlock:nil contentCallback:contentCallback cancelCallback:cancelCallback];
+    return [self alertWithStyle:UIAlertControllerStyleActionSheet title:title message:message contentArr:contentArr cancelText:cancelText vc:vc sourceView:sourceView sourceRect:sourceRect textFieldCount:0 textFieldBlock:nil contentCallback:contentCallback cancelCallback:cancelCallback];
 }
 
-+ (void)alertWithStyle:(UIAlertControllerStyle)style
++ (UIAlertController *)alertWithStyle:(UIAlertControllerStyle)style
                  title:(NSString *)title
                message:(NSString *)message
             contentArr:(NSArray *)contentArr
@@ -74,11 +74,11 @@
        contentCallback:(XQSystemAlertBlock)contentCallback
         cancelCallback:(XQSystemAlertCancelBlock)cancelCallback {
     CGRect sourceRect = CGRectMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height, 0, 0);
-    [self alertWithStyle:style title:title message:message contentArr:contentArr cancelText:cancelText vc:vc sourceView:nil sourceRect:sourceRect textFieldCount:textFieldCount textFieldBlock:textFieldBlock contentCallback:contentCallback cancelCallback:cancelCallback];
+    return [self alertWithStyle:style title:title message:message contentArr:contentArr cancelText:cancelText vc:vc sourceView:nil sourceRect:sourceRect textFieldCount:textFieldCount textFieldBlock:textFieldBlock contentCallback:contentCallback cancelCallback:cancelCallback];
     
 }
 
-+ (void)alertWithStyle:(UIAlertControllerStyle)style
++ (UIAlertController *)alertWithStyle:(UIAlertControllerStyle)style
                  title:(NSString *)title
                message:(NSString *)message
             contentArr:(NSArray *)contentArr
@@ -146,7 +146,7 @@
     
         // 没有点击按钮, 并是中间弹框情况下, 用户会返回不了, 所以不允许弹框
     if (alert.actions.count == 0 && alert.preferredStyle == UIAlertControllerStyleAlert) {
-        return;
+        return nil;
     }
     
         // 跳转
@@ -163,6 +163,7 @@
 #endif
     }
     
+    return alert;
 }
 
 #pragma mark -- 额外的一些方法
