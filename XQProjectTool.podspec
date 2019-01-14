@@ -25,30 +25,12 @@ Pod::Spec.new do |s|
         iphoneS.frameworks = "UIKit", "AVFoundation"
     end
     
-    #UITool模块
-    s.subspec 'ENCUITool' do |iphoneS|
-        iphoneS.ios.deployment_target  = "9.3" #平台及版本
-        iphoneS.source_files = 'XQProjectTool/UITool/ENC/**/*.{h,m,mm}'
-        #依赖的第三方库
-        iphoneS.dependency "Masonry"
-        #关联系统framework, 后缀不要
-        iphoneS.frameworks = "UIKit", "AVFoundation"
-    end
-    
-    
     
     #通用Tool模块
     s.subspec 'Tool' do |toolS|
         toolS.osx.deployment_target  = '10.13'
         toolS.ios.deployment_target  = "9.3" #平台及版本
         toolS.source_files = 'XQProjectTool/Tool/Tool/**/*.{h,m,mm}'
-    end
-    
-    #extension不能用的通用Tool模块
-    s.subspec 'ENCTool' do |toolS|
-        toolS.osx.deployment_target  = '10.13'
-        toolS.ios.deployment_target  = "9.3" #平台及版本
-        toolS.source_files = 'XQProjectTool/Tool/ExtensionNotCanTool/**/*.{h,m,mm}'
     end
     
     #iPhoneTool模块
@@ -58,8 +40,6 @@ Pod::Spec.new do |s|
         #关联系统framework, 后缀不要
         iPhoneToolS.frameworks = "AVFoundation", "Speech"
     end
-    
-    
     
     #MacTool模块
     s.subspec 'MacTool' do |macS|

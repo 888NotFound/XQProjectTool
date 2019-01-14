@@ -6,14 +6,15 @@
 //  Copyright © 2018年 SyKing. All rights reserved.
 //
 
-#if !XQExtensionFramework
-
 #import "XQInputPasswordView.h"
-
 #if !XQExtensionFramework
 #import "CAShapeLayer+Common.h"
 #import "CATextLayer+Common.h"
+#else
+#import <XQProjectTool_CE/CAShapeLayer+Common.h>
+#import <XQProjectTool_CE/CATextLayer+Common.h>
 #endif
+
 
 #define xq_screen_width     ([[UIScreen mainScreen] bounds].size.width)
 #define xq_screen_height    ([[UIScreen mainScreen] bounds].size.height)
@@ -128,10 +129,8 @@
     CGFloat y = ((self.bounds.size.height - size)/2) * self.boxTopY;
     for (int i = 0; i < self.pwLength; i++) {
         CGRect rect = CGRectMake(self.boxLeftSpacing + (self.boxSpacing + size) * i, y, size, size);
-#if !XQExtensionFramework
         CAShapeLayer *layer = [CAShapeLayer rectangleLayerWithRect:rect color:self.boxFillColor strokeColor:self.boxColor lineWidth:self.boxLinewidth];
         [self.layer addSublayer:layer];
-#endif
     }
 }
 
@@ -147,7 +146,6 @@
     CGFloat size = (self.bounds.size.width - (self.boxSpacing * (self.pwLength - 1)) - self.boxLeftSpacing - self.boxRightSpacing) / self.pwLength;
     CGFloat y = ((self.bounds.size.height - size)/2) * self.boxTopY + (size - self.fontSize)/2;
     for (int i = 0; i < self.passwordStr.length; i++) {
-#if !XQExtensionFramework
         CGRect rect = CGRectMake(self.boxLeftSpacing + (self.boxSpacing + size) * i, y, size, self.fontSize);
         
         CATextLayer *layer = nil;
@@ -157,7 +155,6 @@
             layer = [CATextLayer textLayerWithStr:[self.passwordStr substringWithRange:NSMakeRange(i, 1)] strColor:self.fontColor font:[UIFont systemFontOfSize:self.fontSize] frame:rect];
         }
         [self.layer addSublayer:layer];
-#endif
     }
     
 }
@@ -208,8 +205,6 @@
 
 @end
 
-
-#endif
 
 
 

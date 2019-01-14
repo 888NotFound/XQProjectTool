@@ -9,10 +9,6 @@
 #import "XQSystemCameraManager.h"
 #import <AVFoundation/AVFoundation.h>
 
-#if !XQExtensionFramework
-#import "XQPermissionJudge.h"
-#endif
-
 #define XQ_Screen_Width [UIScreen mainScreen].bounds.size.width
 #define XQ_Screen_Height [UIScreen mainScreen].bounds.size.height
 
@@ -114,11 +110,12 @@ static XQSystemCameraManager *manager_ = nil;
 }
 
 - (void)initCaptureWithRectOfInterest:(CGRect)rectOfInterest {
-#if !XQExtensionFramework
-    if (![XQPermissionJudge isPermissionCameraShowAlert:YES]) {
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (authStatus != AVAuthorizationStatusAuthorized &&
+        authStatus != AVAuthorizationStatusNotDetermined) {
+        NSLog(@"权限不足,无法使用该功能");
         return;
     }
-#endif
     
     if (self.session) {
         return;

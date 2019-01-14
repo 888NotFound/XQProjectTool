@@ -6,8 +6,6 @@
 //  Copyright © 2018年 SyKing. All rights reserved.
 //
 
-#if !XQExtensionFramework
-
 #import <Foundation/Foundation.h>
 
 #if TARGET_OS_OSX
@@ -66,5 +64,3 @@
 
 @end
 
-
-#endif

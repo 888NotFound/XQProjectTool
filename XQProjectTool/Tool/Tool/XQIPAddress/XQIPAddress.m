@@ -6,8 +6,6 @@
 //  Copyright © 2018年 SyKing. All rights reserved.
 //
 
-#if !XQExtensionFramework
-
 #import "XQIPAddress.h"
 
 #if TARGET_OS_IPHONE
@@ -271,9 +269,6 @@
 
 @end
 
-
-
-#endif
 
 
 
