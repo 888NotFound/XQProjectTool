@@ -44,7 +44,7 @@
  @param obj 存在, 则valueDic会有值
  @param class 查询的类
  */
-+ (void)viewPropertyWithObj:(id)obj class:(Class)class callback:(void(^)(NSArray *nameArr, NSArray *typeArr, NSDictionary *valueDic))callback;
++ (void)viewPropertyWithObj:(id)obj class:(Class)xqClass callback:(void(^)(NSArray *nameArr, NSArray *typeArr, NSDictionary *valueDic))callback;
 
 /** 查看实例方法 */
 + (void)viewInstanceMethod;

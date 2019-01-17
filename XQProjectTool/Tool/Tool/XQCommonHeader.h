@@ -21,7 +21,7 @@
  @param weakName weak名称
  @param instance 对应weak的实例
  */
-#define XQ_WSI(weakName, instance)  __weak __typeof(&*instance)weakSelf = instance
+#define XQ_WSI(weakName, instance)  __weak __typeof(&*instance)weakName = instance
 
 
 

@@ -79,14 +79,14 @@
     [self viewPropertyWithObj:obj class:self callback:callback];
 }
 
-+ (void)viewPropertyWithObj:(id)obj class:(Class)class callback:(void(^)(NSArray *nameArr, NSArray *typeArr, NSDictionary *valueDic))callback {
++ (void)viewPropertyWithObj:(id)obj class:(Class)xqClass callback:(void(^)(NSArray *nameArr, NSArray *typeArr, NSDictionary *valueDic))callback {
     NSMutableArray *nameArr = [NSMutableArray array];
     NSMutableArray *typeArr = [NSMutableArray array];
     NSMutableDictionary *valueDic = [NSMutableDictionary dictionary];
     
     unsigned int count = 0;
         // 获取属性列表
-    objc_property_t *propertys = class_copyPropertyList(class, &count);
+    objc_property_t *propertys = class_copyPropertyList(xqClass, &count);
     
     for (int i = 0; i < count; i++) {
         objc_property_t property = propertys[i];
