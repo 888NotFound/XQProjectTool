@@ -1,6 +1,6 @@
 //
-//  UIImage+Color.m
-//  UIImage+Categories
+//  XQ_Image_type+Color.m
+//  XQ_Image_type+Categories
 //
 //  Created by lisong on 16/9/4.
 //  Copyright © 2016年 lisong. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import "UIImage+Color.h"
 
-@implementation UIImage (Color)
+@implementation XQ_Image_type (Color)
 
 /** 根据颜色生成纯色图片 */
-+ (UIImage *)imageWithColor:(UIColor *)color
-{
++ (XQ_Image_type *)imageWithColor:(XQ_Color_Type *)color {
+#if TARGET_OS_IPHONE
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -20,15 +20,18 @@
     CGContextSetFillColorWithColor(context, [color CGColor]);
     CGContextFillRect(context, rect);
     
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    XQ_Image_type *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     return image;
+#else
+    return nil;
+#endif
 }
 
-- (UIImage *) imageWithTintColor:(UIColor *)tintColor
-{
+- (XQ_Image_type *)imageWithTintColor:(XQ_Color_Type *)tintColor {
     //We want to keep alpha, set opaque to NO; Use 0.0f for scale to use the scale factor of the device’s main screen.
+#if TARGET_OS_IPHONE
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
     [tintColor setFill];
     CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
@@ -36,16 +39,17 @@
     
     //Draw the tinted image in context
     [self drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.0f];
-    
-    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+//    contentTintColor
+    XQ_Image_type *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     return tintedImage;
+#else
+    return self;
+#endif
 }
 
 /** 取图片某一像素的颜色 */
-- (UIColor *)colorAtPixel:(CGPoint)point
-{
+- (XQ_Color_Type *)colorAtPixel:(CGPoint)point {
     if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, self.size.width, self.size.height), point))
     {
         return nil;
@@ -53,7 +57,12 @@
     
     NSInteger pointX = trunc(point.x);
     NSInteger pointY = trunc(point.y);
+#if TARGET_OS_IPHONE
     CGImageRef cgImage = self.CGImage;
+#else
+    NSRect rect = NSMakeRect(0, 0, [self size].width, [self size].height);
+    CGImageRef cgImage = [self CGImageForProposedRect:&rect context:nil hints:nil];
+#endif
     NSUInteger width = self.size.width;
     NSUInteger height = self.size.height;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -79,12 +88,11 @@
     CGFloat green = (CGFloat)pixelData[1] / 255.0f;
     CGFloat blue  = (CGFloat)pixelData[2] / 255.0f;
     CGFloat alpha = (CGFloat)pixelData[3] / 255.0f;
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+    return [XQ_Color_Type colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 /** 获得灰度图 */
-- (UIImage *)convertToGrayImage
-{
+- (XQ_Image_type *)convertToGrayImage {
     int width = self.size.width;
     int height = self.size.height;
     
@@ -96,10 +104,24 @@
     {
         return nil;
     }
+
+#if TARGET_OS_IPHONE
+    CGImageRef cgImage = self.CGImage;
+#else
+    NSRect rect = NSMakeRect(0, 0, [self size].width, [self size].height);
+    CGImageRef cgImage = [self CGImageForProposedRect:&rect context:nil hints:nil];
+#endif
     
-    CGContextDrawImage(context,CGRectMake(0, 0, width, height), self.CGImage);
+    CGContextDrawImage(context,CGRectMake(0, 0, width, height), cgImage);
     CGImageRef contextRef = CGBitmapContextCreateImage(context);
-    UIImage *grayImage = [UIImage imageWithCGImage:contextRef];
+    
+#if TARGET_OS_IPHONE
+    XQ_Image_type *grayImage = [XQ_Image_type imageWithCGImage:contextRef];
+#else
+    XQ_Image_type *grayImage = [[XQ_Image_type alloc] initWithCGImage:contextRef size:NSMakeSize(width, height)];
+#endif
+    
+    
     CGContextRelease(context);
     CGImageRelease(contextRef);
     

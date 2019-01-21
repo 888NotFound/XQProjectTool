@@ -7,11 +7,7 @@
 //
 
 #import "NSBundle+Localizable.h"
-#if !XQExtensionFramework
 #import "NSObject+XQExchangeIMP.h"
-#else
-#import <XQProjectTool_CE/NSObject+XQExchangeIMP.h>
-#endif
 
 /** 原理
  *  其实就是创建本地化的时候, 在Bundle的路径下, 就会有各种语言的lproj文件(zh-Hans.lproj这个是简体中文)
