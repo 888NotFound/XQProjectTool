@@ -21,6 +21,7 @@ static NSString *iPhoneType_ = @"";
     return iPhoneType_;
 }
 
+
 + (XQIOSDevModel)getIOSDevType {
     NSString *str = [self getIPhoneType];
     XQIOSDevType type = XQIOSDevTypeUnknow;
@@ -144,6 +145,8 @@ static NSString *iPhoneType_ = @"";
 
 + (NSString *)iPhoneType {
     //需要导入头文件：#import <sys/utsname.h>
+    
+#if TARGET_OS_IPHONE
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSASCIIStringEncoding];
@@ -244,6 +247,21 @@ static NSString *iPhoneType_ = @"";
     if ([platform isEqualToString:@"x86_64"]) return @"iPhone Simulator(x86_64)";
     
     return platform;
+    
+#else
+    // mac
+    NSString *result = @"Unknown Mac";
+    size_t len = 0;
+    sysctlbyname("hw.model", NULL, &len, NULL, 0);
+    if (len) {
+        NSMutableData *data = [NSMutableData dataWithLength:len];
+        sysctlbyname("hw.model", [data mutableBytes], &len, NULL, 0);
+        result = [NSString stringWithUTF8String:[data bytes]];
+    }
+    
+    return result;
+    
+#endif
 }
 
 @end
