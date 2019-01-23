@@ -12,12 +12,29 @@
 
 @interface NSBundle (Localizable)
 
-/** 要改变的语言字符串
+
+/**
+ 改变当前bundle语言
+ */
+- (void)xq_setLanguage:(NSString *)language;
+
+/**
+ 改变MainBundle的语言
+ */
++ (void)xq_setMainBundleLanguage:(NSString *)language;
+
+/**
+ 改变语言
+
+ @param language 要改变的语言
  en: 英文
  zh-Hans: 中文
- zh_Hans_HK: 香港
- zh_Hant_TW: 台湾
+ zh-Hant: 香港
+ zh-HK: 台湾
+ @param bundle 改变的bundle
  */
-+ (void)xq_setLanguage:(NSString *)language;
++ (void)xq_setLanguage:(NSString *)language bundle:(NSBundle *)bundle;
+
+
 
 @end

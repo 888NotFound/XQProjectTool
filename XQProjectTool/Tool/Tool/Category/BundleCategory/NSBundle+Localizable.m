@@ -35,7 +35,7 @@ static NSString *_xq_local_bundle = @"987";
     /** 获取关联对象 ([NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:language ofType:@"lproj"]])
      *  这个关联对象就是上面这个路径下的NSBundle, 这样的话, 就相当于, 实时获取最新的NSBundle
      */
-    NSBundle *bundle = [BundleEx xq_getAssociatedObject:[NSBundle mainBundle] key:_xq_local_bundle];
+    NSBundle *bundle = [BundleEx xq_getAssociatedObject:self key:_xq_local_bundle];
 //    NSBundle *bundle = objc_getAssociatedObject(self, &_bundle);
     
     // 获取值, 当关联对象不存在时, 用父类调用
@@ -47,16 +47,27 @@ static NSString *_xq_local_bundle = @"987";
 
 @implementation NSBundle (Localizable)
 
-+ (void)xq_setLanguage:(NSString *)language {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        // 设置系统单例为BundleEx类
-        object_setClass([NSBundle mainBundle], [BundleEx class]);
-    });
+- (void)xq_setLanguage:(NSString *)language {
+    [[self class] xq_setLanguage:language bundle:self];
+}
 
++ (void)xq_setMainBundleLanguage:(NSString *)language {
+    [self xq_setLanguage:language bundle:[NSBundle mainBundle]];
+}
+
++ (void)xq_setLanguage:(NSString *)language bundle:(NSBundle *)bundle {
+    if (![bundle isKindOfClass:[BundleEx class]]) {
+        object_setClass(bundle, [BundleEx class]);
+    }
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        // 设置系统单例为BundleEx类
+//        object_setClass([NSBundle mainBundle], [BundleEx class]);
+//    });
+    
     
     if (!language || language.length == 0) {
-//        NSLog(@"language is nil");
+        //        NSLog(@"language is nil");
         return;
     }
     
@@ -70,9 +81,9 @@ static NSString *_xq_local_bundle = @"987";
      *  关联对象
      *  关联方案
      */
-    [self xq_setAssociatedObject:[NSBundle mainBundle] key:_xq_local_bundle value:[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:language ofType:@"lproj"]] policy:OBJC_ASSOCIATION_RETAIN_NONATOMIC];
+    [self xq_setAssociatedObject:bundle key:_xq_local_bundle value:[NSBundle bundleWithPath:[bundle pathForResource:language ofType:@"lproj"]] policy:OBJC_ASSOCIATION_RETAIN_NONATOMIC];
     
-//    objc_setAssociatedObject([NSBundle mainBundle], &_bundle, [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:language ofType:@"lproj"]], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    //    objc_setAssociatedObject([NSBundle mainBundle], &_bundle, [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:language ofType:@"lproj"]], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     // 断开所有关联 (如果想单单断开一个关联, 只需要把上面的关联对象变填nil就行)
     //objc_removeAssociatedObjects(<#id object#>)
     
@@ -80,6 +91,7 @@ static NSString *_xq_local_bundle = @"987";
     // 注意: 如果你不是正常结束进程, 而是调试的时候, 直接 command + r 结束进程的话, 这样语音的更改是失败的
     [[NSUserDefaults standardUserDefaults] setObject:@[language] forKey:@"AppleLanguages"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:XQ_ChangeLanguage object:language];
 }
 
 @end
