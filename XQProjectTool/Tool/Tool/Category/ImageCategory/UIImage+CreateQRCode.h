@@ -28,6 +28,16 @@
 + (XQ_D_ImageType *)createQRCodeWithData:(NSData *)data imgSize:(CGFloat)imgSize;
 
 /**
+ 传入ciimage和size生成图片
+ */
++ (XQ_D_ImageType *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat)size;
+
+/**
+ 传入图片, 获取图片的二维码信息
+ */
++ (NSArray <NSString *> *)xq_getCodeInfoWithCIImage:(CIImage *)ciImage;
+
+/**
  传入图片, 获取图片的二维码
  
  @return 如有多个, 则返回多个

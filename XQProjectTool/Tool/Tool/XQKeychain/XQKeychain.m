@@ -24,6 +24,7 @@
     NSString *str = [self getUUIDStr];
     if (!str || [str isEqualToString:@""]) {
         NSString *uuidStr = [[NSUUID UUID].UUIDString stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        // 为了让用户看起来不那么长, 这里就 uuid 前6位 + 时间戳???
         [self saveUUIDStr:uuidStr];
     }
 }

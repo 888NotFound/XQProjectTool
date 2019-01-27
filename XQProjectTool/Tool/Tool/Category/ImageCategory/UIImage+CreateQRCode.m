@@ -70,13 +70,36 @@
     if (!img) {
         return @[];
     }
+    // png
 #if TARGET_OS_IPHONE
     NSData *imageData = UIImagePNGRepresentation(img);
 #else
     NSData *imageData = [self xq_imageTransferWithImage:img isPNG:YES];
 #endif
     
+    
+    // jpg
+    NSArray *arr = [self xq_getCodeInfoWithImageData:imageData];
+    if (arr.count == 0) {
+        
+#if TARGET_OS_IPHONE
+        NSData *imageData = UIImageJPEGRepresentation(img, 1);
+        arr = [self xq_getCodeInfoWithImageData:imageData];
+        
+        if (arr.count == 0) {
+            // ciimage
+            return [self xq_getCodeInfoWithCIImage:[CIImage imageWithCGImage:img.CGImage]];
+        }
+        return arr;
+#else
+        NSData *imageData = [self xq_imageTransferWithImage:img isPNG:NO];
+        return [self xq_getCodeInfoWithImageData:imageData];
+#endif
+        
+    }
+    
     return [self xq_getCodeInfoWithImageData:imageData];
+    
 }
 
 + (NSArray <NSString *> *)xq_getCodeInfoWithImageData:(NSData *)imageData {
@@ -84,8 +107,16 @@
         return @[];
     }
     
-    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
     CIImage *ciImage = [CIImage imageWithData:imageData];
+    return [self xq_getCodeInfoWithCIImage:ciImage];
+}
+
++ (NSArray <NSString *> *)xq_getCodeInfoWithCIImage:(CIImage *)ciImage {
+    if (!ciImage) {
+        return @[];
+    }
+    
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
     NSArray *features = [detector featuresInImage:ciImage];
     if (features.count == 0) {
         return @[];
