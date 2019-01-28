@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
     #UITool模块
     s.subspec 'UITool' do |iphoneS|
         iphoneS.ios.deployment_target  = "9.3" #平台及版本
-        iphoneS.source_files = 'XQProjectTool/UITool/UITool/**/*.{h,m,mm}'
+        iphoneS.source_files = 'XQProjectTool/UITool/**/*.{h,m,mm}'
         #关联资源
         iphoneS.resources = 'XQProjectTool/UITool/**/*.{xib}'
         
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
     s.subspec 'Tool' do |toolS|
         toolS.osx.deployment_target  = '10.13'
         toolS.ios.deployment_target  = "9.3" #平台及版本
-        toolS.source_files = 'XQProjectTool/Tool/Tool/**/*.{h,m,mm}'
+        toolS.source_files = 'XQProjectTool/Tool/**/*.{h,m,mm}'
     end
     
     #iPhoneTool模块
