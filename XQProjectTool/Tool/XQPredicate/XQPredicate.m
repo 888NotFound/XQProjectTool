@@ -114,10 +114,29 @@
     return NO;
 }
 
-//-(BOOL)IsChinese:(NSString *)str {
+// 判断是否全部为数字
++ (BOOL)inputShouldNumber:(NSString *)inputString {
+    if (inputString.length == 0) return NO;
+    NSString *regex =@"[0-9]*";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    return [pred evaluateWithObject:inputString];
+}
 
-//
-//}
+// 是否全部为中文
++ (BOOL)inputShouldChinese:(NSString *)inputString {
+    if (inputString.length == 0) return NO;
+    NSString *regex = @"[\u4e00-\u9fa5]+";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    return [pred evaluateWithObject:inputString];
+}
+
+// 是否全部为字母
++ (BOOL)inputShouldLetter:(NSString *)inputString {
+    if (inputString.length == 0) return NO;
+    NSString *regex =@"[a-zA-Z]*";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    return [pred evaluateWithObject:inputString];
+}
 
 
 /**

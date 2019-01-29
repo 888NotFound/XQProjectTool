@@ -32,6 +32,13 @@ typedef void(^XQSystemCameraManagerCallback)(NSArray *resultArr);
 + (CALayer *)getVideoLayerWithFrame:(CGRect)frame;
 
 /**
+ 对焦
+
+ @param point 聚焦点 (y,x) 0 ~ 1
+ */
++ (void)focusAtPoint:(CGPoint)point;
+
+/**
  停止, 并销毁
  */
 + (void)destroyCamera;
@@ -40,6 +47,7 @@ typedef void(^XQSystemCameraManagerCallback)(NSArray *resultArr);
  开始扫描
  */
 + (void)start;
+
 /**
  停止扫描
  */

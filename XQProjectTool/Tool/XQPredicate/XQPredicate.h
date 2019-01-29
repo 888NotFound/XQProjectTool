@@ -53,6 +53,24 @@
  */
 + (BOOL)isContainChineseWithStr:(NSString *)str;
 
+
+/**
+ 判断是否全部为数字
+ */
++ (BOOL)inputShouldNumber:(NSString *)inputString;
+
+/**
+ 判断是否全部为中文
+ */
++ (BOOL)inputShouldChinese:(NSString *)inputString;
+
+/**
+ 判断是否全部为字母
+ */
++ (BOOL)inputShouldLetter:(NSString *)inputString;
+
+
+
 /**
  查询model or dictionary某个key的值
  

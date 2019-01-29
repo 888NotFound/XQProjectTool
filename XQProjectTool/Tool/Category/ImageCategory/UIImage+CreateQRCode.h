@@ -45,6 +45,11 @@
 + (NSArray <NSString *> *)getCodeInfoWithImg:(XQ_D_ImageType *)img;
 
 /**
+ 传入图片, 获取图片的二维码, 异步操作
+ */
++ (void)xq_getCodeInfoWithImg:(XQ_D_ImageType *)img callback:(void(^)(NSArray *qrCodeInfoArr))callback;
+
+/**
  传入图片data, 获取图片的二维码
  
  @return 如有多个, 则返回多个

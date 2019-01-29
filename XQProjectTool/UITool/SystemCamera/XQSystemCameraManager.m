@@ -145,11 +145,17 @@ static XQSystemCameraManager *manager_ = nil;
 }
 
 - (void)start {
+    if (!self.session) {
+        return;
+    }
         //开始启动
     [self.session startRunning];
 }
 
 - (void)stop {
+    if (!self.session) {
+        return;
+    }
     //停止扫描
     [self.session stopRunning];
 }
@@ -170,11 +176,42 @@ static XQSystemCameraManager *manager_ = nil;
     }
 }
 
+
+
++ (void)focusAtPoint:(CGPoint)point {
+    if (![self manager]) {
+        NSLog(@"不存在相机");
+        return;
+    }
+    [[self manager] focusAtPoint:point];
+}
+
+- (void)focusAtPoint:(CGPoint)point {
+//    CGSize size = CGSizeZero;
+//    CGPoint focusPoint = CGPointMake(point.y/size.height, 1-point.x/size.width);
+    NSError *error = nil;
+    if ([self.device lockForConfiguration:&error]) {
+        if ([self.device isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+            [self.device setFocusPointOfInterest:point];
+            [self.device setFocusMode:AVCaptureFocusModeAutoFocus];
+        }
+        [self.device unlockForConfiguration];
+    }
+    
+    if (error) {
+        NSLog(@"lockForConfiguration error:%@", error);
+    }
+    
+    // 显示对焦动画
+//    [self setFocusCursorWithPoint:point];
+}
+
 - (void)dealloc {
     NSLog(@"%s 系统相机扫描释放", __func__);
 }
 
 @end
+
 
 
 
