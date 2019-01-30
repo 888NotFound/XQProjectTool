@@ -12,7 +12,6 @@
 
 @interface NSBundle (Localizable)
 
-
 /**
  改变当前bundle语言
  */
@@ -22,6 +21,11 @@
  改变MainBundle的语言
  */
 + (void)xq_setMainBundleLanguage:(NSString *)language;
+
+/**
+ 调换系统方法
+ */
++ (void)xq_changeLocalizedStringMethod;
 
 /**
  改变语言

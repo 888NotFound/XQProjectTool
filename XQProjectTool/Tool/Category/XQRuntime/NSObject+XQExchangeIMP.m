@@ -49,11 +49,18 @@
     originMethod = originIsClass ? class_getClassMethod(originClass, originSEL) : class_getInstanceMethod(originClass, originSEL);
     otherMethod = otherIsClass ? class_getClassMethod(otherClass, otherSEL) : class_getInstanceMethod(otherClass, otherSEL);
     
+    if (!originMethod && !otherMethod) {
+        NSLog(@"获取不到 originMethod and otherMethod");
+        return NO;
+    }
+    
     if (!originMethod) {
+        NSLog(@"获取不到 originMethod");
         return NO;
     }
     
     if (!otherMethod) {
+        NSLog(@"获取不到 otherMethod");
         return NO;
     }
     

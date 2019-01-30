@@ -36,7 +36,6 @@ static NSString *_xq_local_bundle = @"987";
      *  这个关联对象就是上面这个路径下的NSBundle, 这样的话, 就相当于, 实时获取最新的NSBundle
      */
     NSBundle *bundle = [BundleEx xq_getAssociatedObject:self key:_xq_local_bundle];
-//    NSBundle *bundle = objc_getAssociatedObject(self, &_bundle);
     
     // 获取值, 当关联对象不存在时, 用父类调用
     NSString *str = bundle ? [bundle localizedStringForKey:key value:value table:tableName] : [super localizedStringForKey:key value:value table:tableName];
@@ -47,6 +46,24 @@ static NSString *_xq_local_bundle = @"987";
 
 @implementation NSBundle (Localizable)
 
+- (NSString *)xq_localizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName {
+    NSString *language = [[NSUserDefaults standardUserDefaults] objectForKey:@"xq_AppleLanguages"];
+    if (!language) {
+        return [self xq_localizedStringForKey:key value:value table:tableName];
+    }
+    
+    NSBundle *bundle = [NSBundle bundleWithPath:[self pathForResource:language ofType:@"lproj"]];
+    if (bundle) {
+        return [bundle xq_localizedStringForKey:key value:value table:tableName];
+    }
+    
+    return [self xq_localizedStringForKey:key value:value table:tableName];
+}
+
++ (void)xq_changeLocalizedStringMethod {
+    [NSBundle exchangeInstanceMethodWithOriginSEL:@selector(localizedStringForKey:value:table:) otherSEL:@selector(xq_localizedStringForKey:value:table:)];
+}
+
 - (void)xq_setLanguage:(NSString *)language {
     [[self class] xq_setLanguage:language bundle:self];
 }
@@ -56,19 +73,20 @@ static NSString *_xq_local_bundle = @"987";
 }
 
 + (void)xq_setLanguage:(NSString *)language bundle:(NSBundle *)bundle {
-    if (![bundle isKindOfClass:[BundleEx class]]) {
-        object_setClass(bundle, [BundleEx class]);
-    }
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        // 设置系统单例为BundleEx类
-//        object_setClass([NSBundle mainBundle], [BundleEx class]);
-//    });
-    
     
     if (!language || language.length == 0) {
         //        NSLog(@"language is nil");
         return;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:language forKey:@"xq_AppleLanguages"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:XQ_ChangeLanguage object:language];
+    
+    
+    return;
+    if (![bundle isKindOfClass:[BundleEx class]]) {
+        object_setClass(bundle, [BundleEx class]);
     }
     
     // 这个就是拿来做扩展的 set get 方法
@@ -88,7 +106,7 @@ static NSString *_xq_local_bundle = @"987";
     //objc_removeAssociatedObjects(<#id object#>)
     
     // 单纯设置这个, 只能重启App才能有效, 而且这句代码上上面这句代码顺序不能交换, 不然就设置失败
-    // 注意: 如果你不是正常结束进程, 而是调试的时候, 直接 command + r 结束进程的话, 这样语音的更改是失败的
+    // 注意: 如果你不是正常结束进程, 而是调试的时候, 直接 command + r 结束进程的话, 这样语音的更改是失败的;  一开始系统默认是一个数组的值
     [[NSUserDefaults standardUserDefaults] setObject:@[language] forKey:@"AppleLanguages"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:XQ_ChangeLanguage object:language];
