@@ -60,14 +60,15 @@ static NSString *_xq_local_bundle = @"987";
             language = @"zh-Hans";
             
         }else {
-            // 有些后面会加上CN的, 例如en-CN 
-            if ([arr.firstObject containsObject:@"en"]) {
+            
+            // 有些后面会加上CN的, 例如en-CN
+            if ([arr.firstObject containsString:@"en"]) {
                 language = @"en";
-            }else if ([arr.firstObject containsObject:@"zh-Hans"]) {
+            }else if ([arr.firstObject containsString:@"zh-Hans"]) {
                 language = @"zh-Hans";
-            }else if ([arr.firstObject containsObject:@"zh-Hant"]) {
+            }else if ([arr.firstObject containsString:@"zh-Hant"]) {
                 language = @"zh-Hant";
-            }else if ([arr.firstObject containsObject:@"zh-HK"]) {
+            }else if ([arr.firstObject containsString:@"zh-HK"]) {
 //                language = @"zh-HK";
                 language = @"zh-Hant";
             }else {
