@@ -8,7 +8,7 @@
 
 #import "NSBundle+Localizable.h"
 #import "NSObject+XQExchangeIMP.h"
-
+#import "XQIOSDeviceType.h"
 /** 原理
  *  其实就是创建本地化的时候, 在Bundle的路径下, 就会有各种语言的lproj文件(zh-Hans.lproj这个是简体中文)
  *  在App内改变语言, 就是关联本地的lproj文件
@@ -49,7 +49,35 @@ static NSString *_xq_local_bundle = @"987";
 - (NSString *)xq_localizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName {
     NSString *language = [[NSUserDefaults standardUserDefaults] objectForKey:@"xq_AppleLanguages"];
     if (!language) {
-        return [self xq_localizedStringForKey:key value:value table:tableName];
+        NSArray *arr = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+        
+        if (!arr || arr.count == 0) {
+//            if ([XQIOSDeviceType getIOSDevType].type == XQIOSDevTypeIPad) {
+//
+//            }else {
+//
+//            }
+            language = @"zh-Hans";
+            
+        }else {
+            // 有些后面会加上CN的, 例如en-CN 
+            if ([arr.firstObject containsObject:@"en"]) {
+                language = @"en";
+            }else if ([arr.firstObject containsObject:@"zh-Hans"]) {
+                language = @"zh-Hans";
+            }else if ([arr.firstObject containsObject:@"zh-Hant"]) {
+                language = @"zh-Hant";
+            }else if ([arr.firstObject containsObject:@"zh-HK"]) {
+//                language = @"zh-HK";
+                language = @"zh-Hant";
+            }else {
+                language = arr.firstObject;
+            }
+            
+        }
+        
+        [[NSUserDefaults standardUserDefaults] setObject:language forKey:@"xq_AppleLanguages"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
     NSBundle *bundle = [NSBundle bundleWithPath:[self pathForResource:language ofType:@"lproj"]];
