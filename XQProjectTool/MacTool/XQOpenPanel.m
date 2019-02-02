@@ -6,6 +6,8 @@
 //  Copyright © 2018年 ConfidenceCat. All rights reserved.
 //
 
+#if TARGET_OS_OSX
+
 #import "XQOpenPanel.h"
 
 @implementation XQOpenPanel
@@ -87,7 +89,7 @@
 
 
 
-
+#endif
 
 
 

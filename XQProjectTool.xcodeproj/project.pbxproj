@@ -16,59 +16,52 @@
 		1ABDE99B2071BE0A00638A16 /* XQProjectToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE99A2071BE0A00638A16 /* XQProjectToolTests.m */; };
 		1ABDE9A62071BE0A00638A16 /* XQProjectToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDE9A52071BE0A00638A16 /* XQProjectToolUITests.m */; };
 		1AD68F6A20C68075001949D1 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1AD68F6920C68075001949D1 /* 1.jpg */; };
-		9627470FA4D7D964C980363C /* Pods_XQProjectTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E27E9247189B89183582694E /* Pods_XQProjectTool.framework */; };
-		A4DBB8F421E49D1E00D53F5A /* UITextField+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB86C21E49D1E00D53F5A /* UITextField+Keyboard.m */; };
-		A4DBB8F521E49D1E00D53F5A /* UILabel+XQAtt.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB86F21E49D1E00D53F5A /* UILabel+XQAtt.m */; };
-		A4DBB8F621E49D1E00D53F5A /* UIImage+SubImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB87121E49D1E00D53F5A /* UIImage+SubImage.m */; };
-		A4DBB8F721E49D1E00D53F5A /* UIImage+Gif.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB87521E49D1E00D53F5A /* UIImage+Gif.m */; };
-		A4DBB8F821E49D1E00D53F5A /* UIImage+Corner.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB87821E49D1E00D53F5A /* UIImage+Corner.m */; };
-		A4DBB8F921E49D1E00D53F5A /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB87921E49D1E00D53F5A /* UIImage+Rotate.m */; };
-		A4DBB8FA21E49D1E00D53F5A /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB87A21E49D1E00D53F5A /* UIImage+Color.m */; };
-		A4DBB8FB21E49D1E00D53F5A /* UIImage+CreateQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB87B21E49D1E00D53F5A /* UIImage+CreateQRCode.m */; };
-		A4DBB8FC21E49D1E00D53F5A /* UIView+ColorProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB87E21E49D1E00D53F5A /* UIView+ColorProgress.m */; };
-		A4DBB8FD21E49D1E00D53F5A /* UIView+XQLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB87F21E49D1E00D53F5A /* UIView+XQLine.m */; };
-		A4DBB8FE21E49D1E00D53F5A /* XQSpreadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB88321E49D1E00D53F5A /* XQSpreadView.m */; };
-		A4DBB8FF21E49D1E00D53F5A /* XQInputPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB88721E49D1E00D53F5A /* XQInputPasswordView.m */; };
-		A4DBB90021E49D1E00D53F5A /* XQCustomSheetAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB88A21E49D1E00D53F5A /* XQCustomSheetAlertView.m */; };
-		A4DBB90121E49D1E00D53F5A /* XQCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB88C21E49D1E00D53F5A /* XQCustomAlertView.m */; };
-		A4DBB90221E49D1E00D53F5A /* XQCustomSheetAlertViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB89021E49D1E00D53F5A /* XQCustomSheetAlertViewCell.m */; };
-		A4DBB90321E49D1E00D53F5A /* XQCustomSheetAlertViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DBB89121E49D1E00D53F5A /* XQCustomSheetAlertViewCell.xib */; };
-		A4DBB90421E49D1E00D53F5A /* XQCustomSheetAlertTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB89221E49D1E00D53F5A /* XQCustomSheetAlertTopView.m */; };
-		A4DBB90521E49D1E00D53F5A /* XQCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DBB89421E49D1E00D53F5A /* XQCustomAlertView.xib */; };
-		A4DBB90621E49D1E00D53F5A /* XQCustomSheetAlertFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB89521E49D1E00D53F5A /* XQCustomSheetAlertFooterView.m */; };
-		A4DBB90721E49D1E00D53F5A /* UINavigationBar+ChangeBackColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB89921E49D1E00D53F5A /* UINavigationBar+ChangeBackColor.m */; };
-		A4DBB90821E49D1E00D53F5A /* XQSuspensionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB89C21E49D1E00D53F5A /* XQSuspensionView.m */; };
-		A4DBB90921E49D1E00D53F5A /* XQSuspensionViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB89D21E49D1E00D53F5A /* XQSuspensionViewTool.m */; };
-		A4DBB90A21E49D1E00D53F5A /* XQSystemCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8A121E49D1E00D53F5A /* XQSystemCameraManager.m */; };
-		A4DBB90B21E49D1E00D53F5A /* XQSystemAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8A321E49D1E00D53F5A /* XQSystemAlert.m */; };
-		A4DBB90C21E49D1E00D53F5A /* XQSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8A721E49D1E00D53F5A /* XQSpeechSynthesizer.m */; };
-		A4DBB90D21E49D1E00D53F5A /* XQSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8A921E49D1E00D53F5A /* XQSpeech.m */; };
-		A4DBB90E21E49D1E00D53F5A /* XQIOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8AE21E49D1E00D53F5A /* XQIOSDevice.m */; };
-		A4DBB90F21E49D1E00D53F5A /* XQGetAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8B121E49D1E00D53F5A /* XQGetAppInfo.m */; };
-		A4DBB91021E49D1E00D53F5A /* XQPermissionJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8B421E49D1E00D53F5A /* XQPermissionJudge.m */; };
-		A4DBB91121E49D1E00D53F5A /* XQIOSDeviceType.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8B821E49D1E00D53F5A /* XQIOSDeviceType.m */; };
-		A4DBB91221E49D1E00D53F5A /* CATextLayer+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8BC21E49D1E00D53F5A /* CATextLayer+Common.m */; };
-		A4DBB91321E49D1E00D53F5A /* CAShapeLayer+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8BE21E49D1E00D53F5A /* CAShapeLayer+Common.m */; };
-		A4DBB91421E49D1E00D53F5A /* NSDictionary+Str.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8C221E49D1E00D53F5A /* NSDictionary+Str.m */; };
-		A4DBB91521E49D1E00D53F5A /* NSDictionary+XQJson.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8C321E49D1E00D53F5A /* NSDictionary+XQJson.m */; };
-		A4DBB91621E49D1E00D53F5A /* NSArray+XQFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8C721E49D1E00D53F5A /* NSArray+XQFilter.m */; };
-		A4DBB91721E49D1E00D53F5A /* UIButton+XQResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8C921E49D1E00D53F5A /* UIButton+XQResponse.m */; };
-		A4DBB91821E49D1E00D53F5A /* UIView+XQResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8CB21E49D1E00D53F5A /* UIView+XQResponse.m */; };
-		A4DBB91921E49D1E00D53F5A /* NSString+HexadecimalConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8CF21E49D1E00D53F5A /* NSString+HexadecimalConversion.m */; };
-		A4DBB91A21E49D1E00D53F5A /* NSString+XQHTMLFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8D021E49D1E00D53F5A /* NSString+XQHTMLFilter.m */; };
-		A4DBB91B21E49D1E00D53F5A /* NSNotificationCenter+XQBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8D421E49D1E00D53F5A /* NSNotificationCenter+XQBase.m */; };
-		A4DBB91C21E49D1E00D53F5A /* NSObject+XQViewOC.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8D921E49D1E00D53F5A /* NSObject+XQViewOC.m */; };
-		A4DBB91D21E49D1E00D53F5A /* NSObject+XQArchiverData.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8DA21E49D1E00D53F5A /* NSObject+XQArchiverData.m */; };
-		A4DBB91E21E49D1E00D53F5A /* NSObject+XQExchangeIMP.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8DB21E49D1E00D53F5A /* NSObject+XQExchangeIMP.m */; };
-		A4DBB91F21E49D1E00D53F5A /* XQPlayerMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8DE21E49D1E00D53F5A /* XQPlayerMusic.m */; };
-		A4DBB92021E49D1E00D53F5A /* XQKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8E121E49D1E00D53F5A /* XQKeychain.m */; };
-		A4DBB92121E49D1E00D53F5A /* XQIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8E321E49D1E00D53F5A /* XQIPAddress.m */; };
-		A4DBB92221E49D1E00D53F5A /* XQPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8E721E49D1E00D53F5A /* XQPredicate.m */; };
-		A4DBB92321E49D1E00D53F5A /* XQLocalAut.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8EA21E49D1E00D53F5A /* XQLocalAut.m */; };
-		A4DBB92421E49D1E00D53F5A /* XQOpenPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8F021E49D1E00D53F5A /* XQOpenPanel.m */; };
-		A4DBB92521E49D1E00D53F5A /* XQUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8F121E49D1E00D53F5A /* XQUD.m */; };
-		A4DBB92621E49D1E00D53F5A /* XQAlertSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8F221E49D1E00D53F5A /* XQAlertSystem.m */; };
-		A4DBB92721E49D1E00D53F5A /* NSView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DBB8F321E49D1E00D53F5A /* NSView+Common.m */; };
+		335F9DC1A03786EEE3716FC1 /* libPods-XQProjectToolTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBD3B981A3B077B4CA42DDB /* libPods-XQProjectToolTests.a */; };
+		63305C5104842C3586BB22A7 /* libPods-XQProjectTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F70FB18D8BA4605EFD9FBA /* libPods-XQProjectTool.a */; };
+		A4907B7E220594D300A4E1C4 /* NSView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B0A220594D200A4E1C4 /* NSView+Common.m */; };
+		A4907B7F220594D300A4E1C4 /* NSImage+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B0D220594D200A4E1C4 /* NSImage+Tools.m */; };
+		A4907B80220594D300A4E1C4 /* XQRegisterHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B0E220594D200A4E1C4 /* XQRegisterHotKey.m */; };
+		A4907B81220594D300A4E1C4 /* XQOpenPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B11220594D200A4E1C4 /* XQOpenPanel.m */; };
+		A4907B82220594D300A4E1C4 /* XQAlertSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B12220594D200A4E1C4 /* XQAlertSystem.m */; };
+		A4907B83220594D300A4E1C4 /* NSViewController+XQAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B13220594D200A4E1C4 /* NSViewController+XQAlert.m */; };
+		A4907B84220594D300A4E1C4 /* XQTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B15220594D200A4E1C4 /* XQTask.m */; };
+		A4907B85220594D300A4E1C4 /* UITextField+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B1A220594D300A4E1C4 /* UITextField+Keyboard.m */; };
+		A4907B86220594D300A4E1C4 /* UIDevice+TFDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B1C220594D300A4E1C4 /* UIDevice+TFDevice.m */; };
+		A4907B87220594D300A4E1C4 /* UILabel+XQAtt.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B20220594D300A4E1C4 /* UILabel+XQAtt.m */; };
+		A4907B88220594D300A4E1C4 /* UIImage+SubImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B22220594D300A4E1C4 /* UIImage+SubImage.m */; };
+		A4907B89220594D300A4E1C4 /* UIImage+Gif.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B25220594D300A4E1C4 /* UIImage+Gif.m */; };
+		A4907B8A220594D300A4E1C4 /* UIImage+Corner.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B27220594D300A4E1C4 /* UIImage+Corner.m */; };
+		A4907B8B220594D300A4E1C4 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B28220594D300A4E1C4 /* UIImage+Rotate.m */; };
+		A4907B8C220594D300A4E1C4 /* UIView+ColorProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B2B220594D300A4E1C4 /* UIView+ColorProgress.m */; };
+		A4907B8D220594D300A4E1C4 /* UIView+XQLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B2C220594D300A4E1C4 /* UIView+XQLine.m */; };
+		A4907B8E220594D300A4E1C4 /* XQSpreadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B30220594D300A4E1C4 /* XQSpreadView.m */; };
+		A4907B8F220594D300A4E1C4 /* XQSystemCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B34220594D300A4E1C4 /* XQSystemCameraManager.m */; };
+		A4907B90220594D300A4E1C4 /* XQInputPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B37220594D300A4E1C4 /* XQInputPasswordView.m */; };
+		A4907B91220594D300A4E1C4 /* XQSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B3B220594D300A4E1C4 /* XQSpeechSynthesizer.m */; };
+		A4907B92220594D300A4E1C4 /* XQSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B3D220594D300A4E1C4 /* XQSpeech.m */; };
+		A4907B93220594D300A4E1C4 /* XQIOSDeviceType.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B41220594D300A4E1C4 /* XQIOSDeviceType.m */; };
+		A4907B94220594D300A4E1C4 /* CATextLayer+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B45220594D300A4E1C4 /* CATextLayer+Common.m */; };
+		A4907B95220594D300A4E1C4 /* CAShapeLayer+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B47220594D300A4E1C4 /* CAShapeLayer+Common.m */; };
+		A4907B96220594D300A4E1C4 /* UIImage+CreateQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B4B220594D300A4E1C4 /* UIImage+CreateQRCode.m */; };
+		A4907B97220594D300A4E1C4 /* NSDictionary+Str.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B4E220594D300A4E1C4 /* NSDictionary+Str.m */; };
+		A4907B98220594D300A4E1C4 /* NSDictionary+XQJson.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B4F220594D300A4E1C4 /* NSDictionary+XQJson.m */; };
+		A4907B99220594D300A4E1C4 /* NSBundle+Localizable.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B52220594D300A4E1C4 /* NSBundle+Localizable.m */; };
+		A4907B9A220594D300A4E1C4 /* NSArray+XQFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B56220594D300A4E1C4 /* NSArray+XQFilter.m */; };
+		A4907B9B220594D300A4E1C4 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B59220594D300A4E1C4 /* UIImage+Color.m */; };
+		A4907B9C220594D300A4E1C4 /* UIButton+XQResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B5B220594D300A4E1C4 /* UIButton+XQResponse.m */; };
+		A4907B9D220594D300A4E1C4 /* UIView+XQResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B5D220594D300A4E1C4 /* UIView+XQResponse.m */; };
+		A4907B9E220594D300A4E1C4 /* NSString+HexadecimalConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B61220594D300A4E1C4 /* NSString+HexadecimalConversion.m */; };
+		A4907B9F220594D300A4E1C4 /* NSString+XQHTMLFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B62220594D300A4E1C4 /* NSString+XQHTMLFilter.m */; };
+		A4907BA0220594D300A4E1C4 /* NSNotificationCenter+XQBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B66220594D300A4E1C4 /* NSNotificationCenter+XQBase.m */; };
+		A4907BA1220594D300A4E1C4 /* NSObject+XQViewOC.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B6B220594D300A4E1C4 /* NSObject+XQViewOC.m */; };
+		A4907BA2220594D300A4E1C4 /* NSObject+XQArchiverData.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B6C220594D300A4E1C4 /* NSObject+XQArchiverData.m */; };
+		A4907BA3220594D300A4E1C4 /* NSObject+XQExchangeIMP.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B6D220594D300A4E1C4 /* NSObject+XQExchangeIMP.m */; };
+		A4907BA4220594D300A4E1C4 /* XQPlayerMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B70220594D300A4E1C4 /* XQPlayerMusic.m */; };
+		A4907BA5220594D300A4E1C4 /* XQKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B73220594D300A4E1C4 /* XQKeychain.m */; };
+		A4907BA6220594D300A4E1C4 /* XQIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B75220594D300A4E1C4 /* XQIPAddress.m */; };
+		A4907BA7220594D300A4E1C4 /* XQPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B7A220594D300A4E1C4 /* XQPredicate.m */; };
+		A4907BA8220594D300A4E1C4 /* XQLocalAut.m in Sources */ = {isa = PBXBuildFile; fileRef = A4907B7D220594D300A4E1C4 /* XQLocalAut.m */; };
+		F01E240C195CD7C43956F850 /* libPods-XQProjectToolUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B2E902B7EA3A08F97D222 /* libPods-XQProjectToolUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14D7AD49ECACD74C15ADFED6 /* Pods-XQProjectToolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectToolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectToolTests/Pods-XQProjectToolTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1ABDE97E2071BE0900638A16 /* XQProjectTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XQProjectTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABDE9812071BE0900638A16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1ABDE9822071BE0900638A16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,112 +101,101 @@
 		1ABDE9A72071BE0B00638A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AD68F6920C68075001949D1 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		502B2E902B7EA3A08F97D222 /* libPods-XQProjectToolUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XQProjectToolUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EAC0534F1CD0B6644D73F19 /* Pods-XQProjectTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectTool.debug.xcconfig"; path = "../../XQWorkProject/4.0/Appollo4.0/4.0Project/Pods/Target Support Files/Pods-XQProjectTool/Pods-XQProjectTool.debug.xcconfig"; sourceTree = "<group>"; };
+		64E797192EA9DA2042EABA37 /* Pods-XQProjectToolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectToolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectToolUITests/Pods-XQProjectToolUITests.release.xcconfig"; sourceTree = "<group>"; };
+		82F70FB18D8BA4605EFD9FBA /* libPods-XQProjectTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XQProjectTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBD3B981A3B077B4CA42DDB /* libPods-XQProjectToolTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XQProjectToolTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4DBB86B21E49D1E00D53F5A /* UITextField+Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Keyboard.h"; sourceTree = "<group>"; };
-		A4DBB86C21E49D1E00D53F5A /* UITextField+Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Keyboard.m"; sourceTree = "<group>"; };
-		A4DBB86E21E49D1E00D53F5A /* UILabel+XQAtt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+XQAtt.h"; sourceTree = "<group>"; };
-		A4DBB86F21E49D1E00D53F5A /* UILabel+XQAtt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+XQAtt.m"; sourceTree = "<group>"; };
-		A4DBB87121E49D1E00D53F5A /* UIImage+SubImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SubImage.m"; sourceTree = "<group>"; };
-		A4DBB87221E49D1E00D53F5A /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
-		A4DBB87321E49D1E00D53F5A /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
-		A4DBB87421E49D1E00D53F5A /* UIImage+Corner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Corner.h"; sourceTree = "<group>"; };
-		A4DBB87521E49D1E00D53F5A /* UIImage+Gif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Gif.m"; sourceTree = "<group>"; };
-		A4DBB87621E49D1E00D53F5A /* UIImage+CreateQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CreateQRCode.h"; sourceTree = "<group>"; };
-		A4DBB87721E49D1E00D53F5A /* UIImage+SubImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SubImage.h"; sourceTree = "<group>"; };
-		A4DBB87821E49D1E00D53F5A /* UIImage+Corner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Corner.m"; sourceTree = "<group>"; };
-		A4DBB87921E49D1E00D53F5A /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
-		A4DBB87A21E49D1E00D53F5A /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
-		A4DBB87B21E49D1E00D53F5A /* UIImage+CreateQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CreateQRCode.m"; sourceTree = "<group>"; };
-		A4DBB87C21E49D1E00D53F5A /* UIImage+Gif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Gif.h"; sourceTree = "<group>"; };
-		A4DBB87E21E49D1E00D53F5A /* UIView+ColorProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ColorProgress.m"; sourceTree = "<group>"; };
-		A4DBB87F21E49D1E00D53F5A /* UIView+XQLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XQLine.m"; sourceTree = "<group>"; };
-		A4DBB88021E49D1E00D53F5A /* UIView+ColorProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ColorProgress.h"; sourceTree = "<group>"; };
-		A4DBB88121E49D1E00D53F5A /* UIView+XQLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XQLine.h"; sourceTree = "<group>"; };
-		A4DBB88321E49D1E00D53F5A /* XQSpreadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpreadView.m; sourceTree = "<group>"; };
-		A4DBB88421E49D1E00D53F5A /* XQSpreadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpreadView.h; sourceTree = "<group>"; };
-		A4DBB88621E49D1E00D53F5A /* XQInputPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQInputPasswordView.h; sourceTree = "<group>"; };
-		A4DBB88721E49D1E00D53F5A /* XQInputPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQInputPasswordView.m; sourceTree = "<group>"; };
-		A4DBB88A21E49D1E00D53F5A /* XQCustomSheetAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCustomSheetAlertView.m; sourceTree = "<group>"; };
-		A4DBB88B21E49D1E00D53F5A /* XQCustomSheetAlertViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCustomSheetAlertViewCell.h; sourceTree = "<group>"; };
-		A4DBB88C21E49D1E00D53F5A /* XQCustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCustomAlertView.m; sourceTree = "<group>"; };
-		A4DBB88D21E49D1E00D53F5A /* XQCustomSheetAlertTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCustomSheetAlertTopView.h; sourceTree = "<group>"; };
-		A4DBB88E21E49D1E00D53F5A /* XQCustomSheetAlertFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCustomSheetAlertFooterView.h; sourceTree = "<group>"; };
-		A4DBB88F21E49D1E00D53F5A /* XQCustomSheetAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCustomSheetAlertView.h; sourceTree = "<group>"; };
-		A4DBB89021E49D1E00D53F5A /* XQCustomSheetAlertViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCustomSheetAlertViewCell.m; sourceTree = "<group>"; };
-		A4DBB89121E49D1E00D53F5A /* XQCustomSheetAlertViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XQCustomSheetAlertViewCell.xib; sourceTree = "<group>"; };
-		A4DBB89221E49D1E00D53F5A /* XQCustomSheetAlertTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCustomSheetAlertTopView.m; sourceTree = "<group>"; };
-		A4DBB89321E49D1E00D53F5A /* XQCustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCustomAlertView.h; sourceTree = "<group>"; };
-		A4DBB89421E49D1E00D53F5A /* XQCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XQCustomAlertView.xib; sourceTree = "<group>"; };
-		A4DBB89521E49D1E00D53F5A /* XQCustomSheetAlertFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCustomSheetAlertFooterView.m; sourceTree = "<group>"; };
-		A4DBB89821E49D1E00D53F5A /* UINavigationBar+ChangeBackColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ChangeBackColor.h"; sourceTree = "<group>"; };
-		A4DBB89921E49D1E00D53F5A /* UINavigationBar+ChangeBackColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ChangeBackColor.m"; sourceTree = "<group>"; };
-		A4DBB89B21E49D1E00D53F5A /* XQSuspensionViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSuspensionViewTool.h; sourceTree = "<group>"; };
-		A4DBB89C21E49D1E00D53F5A /* XQSuspensionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSuspensionView.m; sourceTree = "<group>"; };
-		A4DBB89D21E49D1E00D53F5A /* XQSuspensionViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSuspensionViewTool.m; sourceTree = "<group>"; };
-		A4DBB89E21E49D1E00D53F5A /* XQSuspensionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSuspensionView.h; sourceTree = "<group>"; };
-		A4DBB8A021E49D1E00D53F5A /* XQSystemCameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSystemCameraManager.h; sourceTree = "<group>"; };
-		A4DBB8A121E49D1E00D53F5A /* XQSystemCameraManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSystemCameraManager.m; sourceTree = "<group>"; };
-		A4DBB8A321E49D1E00D53F5A /* XQSystemAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSystemAlert.m; sourceTree = "<group>"; };
-		A4DBB8A421E49D1E00D53F5A /* XQSystemAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSystemAlert.h; sourceTree = "<group>"; };
-		A4DBB8A721E49D1E00D53F5A /* XQSpeechSynthesizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpeechSynthesizer.m; sourceTree = "<group>"; };
-		A4DBB8A821E49D1E00D53F5A /* XQSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpeech.h; sourceTree = "<group>"; };
-		A4DBB8A921E49D1E00D53F5A /* XQSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpeech.m; sourceTree = "<group>"; };
-		A4DBB8AA21E49D1E00D53F5A /* XQSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpeechSynthesizer.h; sourceTree = "<group>"; };
-		A4DBB8AE21E49D1E00D53F5A /* XQIOSDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQIOSDevice.m; sourceTree = "<group>"; };
-		A4DBB8AF21E49D1E00D53F5A /* XQIOSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQIOSDevice.h; sourceTree = "<group>"; };
-		A4DBB8B121E49D1E00D53F5A /* XQGetAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQGetAppInfo.m; sourceTree = "<group>"; };
-		A4DBB8B221E49D1E00D53F5A /* XQGetAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQGetAppInfo.h; sourceTree = "<group>"; };
-		A4DBB8B421E49D1E00D53F5A /* XQPermissionJudge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPermissionJudge.m; sourceTree = "<group>"; };
-		A4DBB8B521E49D1E00D53F5A /* XQPermissionJudge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPermissionJudge.h; sourceTree = "<group>"; };
-		A4DBB8B821E49D1E00D53F5A /* XQIOSDeviceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQIOSDeviceType.m; sourceTree = "<group>"; };
-		A4DBB8B921E49D1E00D53F5A /* XQIOSDeviceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQIOSDeviceType.h; sourceTree = "<group>"; };
-		A4DBB8BC21E49D1E00D53F5A /* CATextLayer+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATextLayer+Common.m"; sourceTree = "<group>"; };
-		A4DBB8BD21E49D1E00D53F5A /* CAShapeLayer+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+Common.h"; sourceTree = "<group>"; };
-		A4DBB8BE21E49D1E00D53F5A /* CAShapeLayer+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+Common.m"; sourceTree = "<group>"; };
-		A4DBB8BF21E49D1E00D53F5A /* CATextLayer+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATextLayer+Common.h"; sourceTree = "<group>"; };
-		A4DBB8C121E49D1E00D53F5A /* NSDictionary+XQJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XQJson.h"; sourceTree = "<group>"; };
-		A4DBB8C221E49D1E00D53F5A /* NSDictionary+Str.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Str.m"; sourceTree = "<group>"; };
-		A4DBB8C321E49D1E00D53F5A /* NSDictionary+XQJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XQJson.m"; sourceTree = "<group>"; };
-		A4DBB8C421E49D1E00D53F5A /* NSDictionary+Str.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Str.h"; sourceTree = "<group>"; };
-		A4DBB8C621E49D1E00D53F5A /* NSArray+XQFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+XQFilter.h"; sourceTree = "<group>"; };
-		A4DBB8C721E49D1E00D53F5A /* NSArray+XQFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XQFilter.m"; sourceTree = "<group>"; };
-		A4DBB8C921E49D1E00D53F5A /* UIButton+XQResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+XQResponse.m"; sourceTree = "<group>"; };
-		A4DBB8CA21E49D1E00D53F5A /* UIView+XQResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XQResponse.h"; sourceTree = "<group>"; };
-		A4DBB8CB21E49D1E00D53F5A /* UIView+XQResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XQResponse.m"; sourceTree = "<group>"; };
-		A4DBB8CC21E49D1E00D53F5A /* UIButton+XQResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+XQResponse.h"; sourceTree = "<group>"; };
-		A4DBB8CE21E49D1E00D53F5A /* NSString+XQHTMLFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XQHTMLFilter.h"; sourceTree = "<group>"; };
-		A4DBB8CF21E49D1E00D53F5A /* NSString+HexadecimalConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HexadecimalConversion.m"; sourceTree = "<group>"; };
-		A4DBB8D021E49D1E00D53F5A /* NSString+XQHTMLFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XQHTMLFilter.m"; sourceTree = "<group>"; };
-		A4DBB8D121E49D1E00D53F5A /* NSString+HexadecimalConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HexadecimalConversion.h"; sourceTree = "<group>"; };
-		A4DBB8D321E49D1E00D53F5A /* NSNotificationCenter+XQBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+XQBase.h"; sourceTree = "<group>"; };
-		A4DBB8D421E49D1E00D53F5A /* NSNotificationCenter+XQBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+XQBase.m"; sourceTree = "<group>"; };
-		A4DBB8D621E49D1E00D53F5A /* NSObject+XQViewOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XQViewOC.h"; sourceTree = "<group>"; };
-		A4DBB8D721E49D1E00D53F5A /* NSObject+XQExchangeIMP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XQExchangeIMP.h"; sourceTree = "<group>"; };
-		A4DBB8D821E49D1E00D53F5A /* NSObject+XQArchiverData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XQArchiverData.h"; sourceTree = "<group>"; };
-		A4DBB8D921E49D1E00D53F5A /* NSObject+XQViewOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XQViewOC.m"; sourceTree = "<group>"; };
-		A4DBB8DA21E49D1E00D53F5A /* NSObject+XQArchiverData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XQArchiverData.m"; sourceTree = "<group>"; };
-		A4DBB8DB21E49D1E00D53F5A /* NSObject+XQExchangeIMP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XQExchangeIMP.m"; sourceTree = "<group>"; };
-		A4DBB8DD21E49D1E00D53F5A /* XQPlayerMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPlayerMusic.h; sourceTree = "<group>"; };
-		A4DBB8DE21E49D1E00D53F5A /* XQPlayerMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPlayerMusic.m; sourceTree = "<group>"; };
-		A4DBB8E021E49D1E00D53F5A /* XQKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQKeychain.h; sourceTree = "<group>"; };
-		A4DBB8E121E49D1E00D53F5A /* XQKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQKeychain.m; sourceTree = "<group>"; };
-		A4DBB8E321E49D1E00D53F5A /* XQIPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQIPAddress.m; sourceTree = "<group>"; };
-		A4DBB8E421E49D1E00D53F5A /* XQIPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQIPAddress.h; sourceTree = "<group>"; };
-		A4DBB8E621E49D1E00D53F5A /* XQPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPredicate.h; sourceTree = "<group>"; };
-		A4DBB8E721E49D1E00D53F5A /* XQPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPredicate.m; sourceTree = "<group>"; };
-		A4DBB8E921E49D1E00D53F5A /* XQLocalAut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQLocalAut.h; sourceTree = "<group>"; };
-		A4DBB8EA21E49D1E00D53F5A /* XQLocalAut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQLocalAut.m; sourceTree = "<group>"; };
-		A4DBB8EC21E49D1E00D53F5A /* XQOpenPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQOpenPanel.h; sourceTree = "<group>"; };
-		A4DBB8ED21E49D1E00D53F5A /* XQAlertSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQAlertSystem.h; sourceTree = "<group>"; };
-		A4DBB8EE21E49D1E00D53F5A /* XQUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQUD.h; sourceTree = "<group>"; };
-		A4DBB8EF21E49D1E00D53F5A /* NSView+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Common.h"; sourceTree = "<group>"; };
-		A4DBB8F021E49D1E00D53F5A /* XQOpenPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQOpenPanel.m; sourceTree = "<group>"; };
-		A4DBB8F121E49D1E00D53F5A /* XQUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQUD.m; sourceTree = "<group>"; };
-		A4DBB8F221E49D1E00D53F5A /* XQAlertSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQAlertSystem.m; sourceTree = "<group>"; };
-		A4DBB8F321E49D1E00D53F5A /* NSView+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Common.m"; sourceTree = "<group>"; };
-		B3494BA459B4473D41D67908 /* Pods-XQProjectTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectTool.release.xcconfig"; path = "../../XQWorkProject/4.0/Appollo4.0/4.0Project/Pods/Target Support Files/Pods-XQProjectTool/Pods-XQProjectTool.release.xcconfig"; sourceTree = "<group>"; };
-		E27E9247189B89183582694E /* Pods_XQProjectTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XQProjectTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4907B05220594D200A4E1C4 /* XQOpenPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQOpenPanel.h; sourceTree = "<group>"; };
+		A4907B06220594D200A4E1C4 /* XQAlertSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQAlertSystem.h; sourceTree = "<group>"; };
+		A4907B09220594D200A4E1C4 /* NSView+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Common.h"; sourceTree = "<group>"; };
+		A4907B0A220594D200A4E1C4 /* NSView+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Common.m"; sourceTree = "<group>"; };
+		A4907B0C220594D200A4E1C4 /* NSImage+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Tools.h"; sourceTree = "<group>"; };
+		A4907B0D220594D200A4E1C4 /* NSImage+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Tools.m"; sourceTree = "<group>"; };
+		A4907B0E220594D200A4E1C4 /* XQRegisterHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQRegisterHotKey.m; sourceTree = "<group>"; };
+		A4907B0F220594D200A4E1C4 /* NSViewController+XQAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSViewController+XQAlert.h"; sourceTree = "<group>"; };
+		A4907B10220594D200A4E1C4 /* XQTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQTask.h; sourceTree = "<group>"; };
+		A4907B11220594D200A4E1C4 /* XQOpenPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQOpenPanel.m; sourceTree = "<group>"; };
+		A4907B12220594D200A4E1C4 /* XQAlertSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQAlertSystem.m; sourceTree = "<group>"; };
+		A4907B13220594D200A4E1C4 /* NSViewController+XQAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSViewController+XQAlert.m"; sourceTree = "<group>"; };
+		A4907B14220594D200A4E1C4 /* XQRegisterHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQRegisterHotKey.h; sourceTree = "<group>"; };
+		A4907B15220594D200A4E1C4 /* XQTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQTask.m; sourceTree = "<group>"; };
+		A4907B19220594D300A4E1C4 /* UITextField+Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Keyboard.h"; sourceTree = "<group>"; };
+		A4907B1A220594D300A4E1C4 /* UITextField+Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Keyboard.m"; sourceTree = "<group>"; };
+		A4907B1C220594D300A4E1C4 /* UIDevice+TFDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+TFDevice.m"; sourceTree = "<group>"; };
+		A4907B1D220594D300A4E1C4 /* UIDevice+TFDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+TFDevice.h"; sourceTree = "<group>"; };
+		A4907B1F220594D300A4E1C4 /* UILabel+XQAtt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+XQAtt.h"; sourceTree = "<group>"; };
+		A4907B20220594D300A4E1C4 /* UILabel+XQAtt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+XQAtt.m"; sourceTree = "<group>"; };
+		A4907B22220594D300A4E1C4 /* UIImage+SubImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SubImage.m"; sourceTree = "<group>"; };
+		A4907B23220594D300A4E1C4 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		A4907B24220594D300A4E1C4 /* UIImage+Corner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Corner.h"; sourceTree = "<group>"; };
+		A4907B25220594D300A4E1C4 /* UIImage+Gif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Gif.m"; sourceTree = "<group>"; };
+		A4907B26220594D300A4E1C4 /* UIImage+SubImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SubImage.h"; sourceTree = "<group>"; };
+		A4907B27220594D300A4E1C4 /* UIImage+Corner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Corner.m"; sourceTree = "<group>"; };
+		A4907B28220594D300A4E1C4 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		A4907B29220594D300A4E1C4 /* UIImage+Gif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Gif.h"; sourceTree = "<group>"; };
+		A4907B2B220594D300A4E1C4 /* UIView+ColorProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ColorProgress.m"; sourceTree = "<group>"; };
+		A4907B2C220594D300A4E1C4 /* UIView+XQLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XQLine.m"; sourceTree = "<group>"; };
+		A4907B2D220594D300A4E1C4 /* UIView+ColorProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ColorProgress.h"; sourceTree = "<group>"; };
+		A4907B2E220594D300A4E1C4 /* UIView+XQLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XQLine.h"; sourceTree = "<group>"; };
+		A4907B30220594D300A4E1C4 /* XQSpreadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpreadView.m; sourceTree = "<group>"; };
+		A4907B31220594D300A4E1C4 /* XQSpreadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpreadView.h; sourceTree = "<group>"; };
+		A4907B33220594D300A4E1C4 /* XQSystemCameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSystemCameraManager.h; sourceTree = "<group>"; };
+		A4907B34220594D300A4E1C4 /* XQSystemCameraManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSystemCameraManager.m; sourceTree = "<group>"; };
+		A4907B36220594D300A4E1C4 /* XQInputPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQInputPasswordView.h; sourceTree = "<group>"; };
+		A4907B37220594D300A4E1C4 /* XQInputPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQInputPasswordView.m; sourceTree = "<group>"; };
+		A4907B38220594D300A4E1C4 /* XQProjcetToolPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQProjcetToolPrefixHeader.pch; sourceTree = "<group>"; };
+		A4907B3B220594D300A4E1C4 /* XQSpeechSynthesizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpeechSynthesizer.m; sourceTree = "<group>"; };
+		A4907B3C220594D300A4E1C4 /* XQSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpeech.h; sourceTree = "<group>"; };
+		A4907B3D220594D300A4E1C4 /* XQSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQSpeech.m; sourceTree = "<group>"; };
+		A4907B3E220594D300A4E1C4 /* XQSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQSpeechSynthesizer.h; sourceTree = "<group>"; };
+		A4907B41220594D300A4E1C4 /* XQIOSDeviceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQIOSDeviceType.m; sourceTree = "<group>"; };
+		A4907B42220594D300A4E1C4 /* XQIOSDeviceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQIOSDeviceType.h; sourceTree = "<group>"; };
+		A4907B45220594D300A4E1C4 /* CATextLayer+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATextLayer+Common.m"; sourceTree = "<group>"; };
+		A4907B46220594D300A4E1C4 /* CAShapeLayer+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+Common.h"; sourceTree = "<group>"; };
+		A4907B47220594D300A4E1C4 /* CAShapeLayer+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+Common.m"; sourceTree = "<group>"; };
+		A4907B48220594D300A4E1C4 /* CATextLayer+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATextLayer+Common.h"; sourceTree = "<group>"; };
+		A4907B4A220594D300A4E1C4 /* UIImage+CreateQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CreateQRCode.h"; sourceTree = "<group>"; };
+		A4907B4B220594D300A4E1C4 /* UIImage+CreateQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CreateQRCode.m"; sourceTree = "<group>"; };
+		A4907B4D220594D300A4E1C4 /* NSDictionary+XQJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XQJson.h"; sourceTree = "<group>"; };
+		A4907B4E220594D300A4E1C4 /* NSDictionary+Str.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Str.m"; sourceTree = "<group>"; };
+		A4907B4F220594D300A4E1C4 /* NSDictionary+XQJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XQJson.m"; sourceTree = "<group>"; };
+		A4907B50220594D300A4E1C4 /* NSDictionary+Str.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Str.h"; sourceTree = "<group>"; };
+		A4907B52220594D300A4E1C4 /* NSBundle+Localizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Localizable.m"; sourceTree = "<group>"; };
+		A4907B53220594D300A4E1C4 /* NSBundle+Localizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Localizable.h"; sourceTree = "<group>"; };
+		A4907B55220594D300A4E1C4 /* NSArray+XQFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+XQFilter.h"; sourceTree = "<group>"; };
+		A4907B56220594D300A4E1C4 /* NSArray+XQFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XQFilter.m"; sourceTree = "<group>"; };
+		A4907B58220594D300A4E1C4 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		A4907B59220594D300A4E1C4 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		A4907B5B220594D300A4E1C4 /* UIButton+XQResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+XQResponse.m"; sourceTree = "<group>"; };
+		A4907B5C220594D300A4E1C4 /* UIView+XQResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XQResponse.h"; sourceTree = "<group>"; };
+		A4907B5D220594D300A4E1C4 /* UIView+XQResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XQResponse.m"; sourceTree = "<group>"; };
+		A4907B5E220594D300A4E1C4 /* UIButton+XQResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+XQResponse.h"; sourceTree = "<group>"; };
+		A4907B60220594D300A4E1C4 /* NSString+XQHTMLFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XQHTMLFilter.h"; sourceTree = "<group>"; };
+		A4907B61220594D300A4E1C4 /* NSString+HexadecimalConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HexadecimalConversion.m"; sourceTree = "<group>"; };
+		A4907B62220594D300A4E1C4 /* NSString+XQHTMLFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XQHTMLFilter.m"; sourceTree = "<group>"; };
+		A4907B63220594D300A4E1C4 /* NSString+HexadecimalConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HexadecimalConversion.h"; sourceTree = "<group>"; };
+		A4907B65220594D300A4E1C4 /* NSNotificationCenter+XQBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+XQBase.h"; sourceTree = "<group>"; };
+		A4907B66220594D300A4E1C4 /* NSNotificationCenter+XQBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+XQBase.m"; sourceTree = "<group>"; };
+		A4907B68220594D300A4E1C4 /* NSObject+XQViewOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XQViewOC.h"; sourceTree = "<group>"; };
+		A4907B69220594D300A4E1C4 /* NSObject+XQExchangeIMP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XQExchangeIMP.h"; sourceTree = "<group>"; };
+		A4907B6A220594D300A4E1C4 /* NSObject+XQArchiverData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XQArchiverData.h"; sourceTree = "<group>"; };
+		A4907B6B220594D300A4E1C4 /* NSObject+XQViewOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XQViewOC.m"; sourceTree = "<group>"; };
+		A4907B6C220594D300A4E1C4 /* NSObject+XQArchiverData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XQArchiverData.m"; sourceTree = "<group>"; };
+		A4907B6D220594D300A4E1C4 /* NSObject+XQExchangeIMP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XQExchangeIMP.m"; sourceTree = "<group>"; };
+		A4907B6F220594D300A4E1C4 /* XQPlayerMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPlayerMusic.h; sourceTree = "<group>"; };
+		A4907B70220594D300A4E1C4 /* XQPlayerMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPlayerMusic.m; sourceTree = "<group>"; };
+		A4907B72220594D300A4E1C4 /* XQKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQKeychain.h; sourceTree = "<group>"; };
+		A4907B73220594D300A4E1C4 /* XQKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQKeychain.m; sourceTree = "<group>"; };
+		A4907B75220594D300A4E1C4 /* XQIPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQIPAddress.m; sourceTree = "<group>"; };
+		A4907B76220594D300A4E1C4 /* XQIPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQIPAddress.h; sourceTree = "<group>"; };
+		A4907B77220594D300A4E1C4 /* XQCommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCommonHeader.h; sourceTree = "<group>"; };
+		A4907B79220594D300A4E1C4 /* XQPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQPredicate.h; sourceTree = "<group>"; };
+		A4907B7A220594D300A4E1C4 /* XQPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQPredicate.m; sourceTree = "<group>"; };
+		A4907B7C220594D300A4E1C4 /* XQLocalAut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQLocalAut.h; sourceTree = "<group>"; };
+		A4907B7D220594D300A4E1C4 /* XQLocalAut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQLocalAut.m; sourceTree = "<group>"; };
+		CBD3C2BC48C719097B56D548 /* Pods-XQProjectTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectTool/Pods-XQProjectTool.debug.xcconfig"; sourceTree = "<group>"; };
+		D82549C5D302C1F5126D3425 /* Pods-XQProjectToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectToolTests/Pods-XQProjectToolTests.release.xcconfig"; sourceTree = "<group>"; };
+		EC966D24EF077557EB4A20AE /* Pods-XQProjectToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectToolUITests/Pods-XQProjectToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EDFDC1F0041A39148FFB83A0 /* Pods-XQProjectTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectTool/Pods-XQProjectTool.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9627470FA4D7D964C980363C /* Pods_XQProjectTool.framework in Frameworks */,
+				63305C5104842C3586BB22A7 /* libPods-XQProjectTool.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335F9DC1A03786EEE3716FC1 /* libPods-XQProjectToolTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F01E240C195CD7C43956F850 /* libPods-XQProjectToolUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,10 +255,11 @@
 				1ABDE9822071BE0900638A16 /* AppDelegate.m */,
 				1ABDE9842071BE0900638A16 /* ViewController.h */,
 				1ABDE9852071BE0A00638A16 /* ViewController.m */,
-				A4DBB8A521E49D1E00D53F5A /* iPhoneTool */,
-				A4DBB8EB21E49D1E00D53F5A /* MacTool */,
-				A4DBB8AB21E49D1E00D53F5A /* Tool */,
-				A4DBB86721E49D1E00D53F5A /* UITool */,
+				A4907B39220594D300A4E1C4 /* iPhoneTool */,
+				A4907B04220594D200A4E1C4 /* MacTool */,
+				A4907B3F220594D300A4E1C4 /* Tool */,
+				A4907B16220594D300A4E1C4 /* UITool */,
+				A4907B38220594D300A4E1C4 /* XQProjcetToolPrefixHeader.pch */,
 				1AD68F6920C68075001949D1 /* 1.jpg */,
 				1ABDE9872071BE0A00638A16 /* Main.storyboard */,
 				1ABDE98A2071BE0A00638A16 /* Assets.xcassets */,
@@ -302,414 +288,359 @@
 			path = XQProjectToolUITests;
 			sourceTree = "<group>";
 		};
-		A4DBB86721E49D1E00D53F5A /* UITool */ = {
+		A4907B04220594D200A4E1C4 /* MacTool */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB86821E49D1E00D53F5A /* UITool */,
-				A4DBB88821E49D1E00D53F5A /* ENC */,
+				A4907B07220594D200A4E1C4 /* Category */,
+				A4907B0F220594D200A4E1C4 /* NSViewController+XQAlert.h */,
+				A4907B13220594D200A4E1C4 /* NSViewController+XQAlert.m */,
+				A4907B06220594D200A4E1C4 /* XQAlertSystem.h */,
+				A4907B12220594D200A4E1C4 /* XQAlertSystem.m */,
+				A4907B05220594D200A4E1C4 /* XQOpenPanel.h */,
+				A4907B11220594D200A4E1C4 /* XQOpenPanel.m */,
+				A4907B14220594D200A4E1C4 /* XQRegisterHotKey.h */,
+				A4907B0E220594D200A4E1C4 /* XQRegisterHotKey.m */,
+				A4907B10220594D200A4E1C4 /* XQTask.h */,
+				A4907B15220594D200A4E1C4 /* XQTask.m */,
 			);
-			path = UITool;
+			path = MacTool;
 			sourceTree = "<group>";
 		};
-		A4DBB86821E49D1E00D53F5A /* UITool */ = {
+		A4907B07220594D200A4E1C4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB86921E49D1E00D53F5A /* Category */,
-				A4DBB88221E49D1E00D53F5A /* SpreadView */,
-				A4DBB88521E49D1E00D53F5A /* XQInputPasswordView */,
-			);
-			path = UITool;
-			sourceTree = "<group>";
-		};
-		A4DBB86921E49D1E00D53F5A /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB86A21E49D1E00D53F5A /* UITextFieldCategory */,
-				A4DBB86D21E49D1E00D53F5A /* XQLabCategory */,
-				A4DBB87021E49D1E00D53F5A /* XQImageCategory */,
-				A4DBB87D21E49D1E00D53F5A /* XQViewCategory */,
+				A4907B08220594D200A4E1C4 /* NSView */,
+				A4907B0B220594D200A4E1C4 /* NSImage */,
 			);
 			path = Category;
 			sourceTree = "<group>";
 		};
-		A4DBB86A21E49D1E00D53F5A /* UITextFieldCategory */ = {
+		A4907B08220594D200A4E1C4 /* NSView */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB86B21E49D1E00D53F5A /* UITextField+Keyboard.h */,
-				A4DBB86C21E49D1E00D53F5A /* UITextField+Keyboard.m */,
+				A4907B09220594D200A4E1C4 /* NSView+Common.h */,
+				A4907B0A220594D200A4E1C4 /* NSView+Common.m */,
+			);
+			path = NSView;
+			sourceTree = "<group>";
+		};
+		A4907B0B220594D200A4E1C4 /* NSImage */ = {
+			isa = PBXGroup;
+			children = (
+				A4907B0C220594D200A4E1C4 /* NSImage+Tools.h */,
+				A4907B0D220594D200A4E1C4 /* NSImage+Tools.m */,
+			);
+			path = NSImage;
+			sourceTree = "<group>";
+		};
+		A4907B16220594D300A4E1C4 /* UITool */ = {
+			isa = PBXGroup;
+			children = (
+				A4907B17220594D300A4E1C4 /* Category */,
+				A4907B2F220594D300A4E1C4 /* SpreadView */,
+				A4907B32220594D300A4E1C4 /* SystemCamera */,
+				A4907B35220594D300A4E1C4 /* XQInputPasswordView */,
+			);
+			path = UITool;
+			sourceTree = "<group>";
+		};
+		A4907B17220594D300A4E1C4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A4907B18220594D300A4E1C4 /* UITextFieldCategory */,
+				A4907B1B220594D300A4E1C4 /* DeviceCategory */,
+				A4907B1E220594D300A4E1C4 /* XQLabCategory */,
+				A4907B21220594D300A4E1C4 /* XQImageCategory */,
+				A4907B2A220594D300A4E1C4 /* XQViewCategory */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		A4907B18220594D300A4E1C4 /* UITextFieldCategory */ = {
+			isa = PBXGroup;
+			children = (
+				A4907B19220594D300A4E1C4 /* UITextField+Keyboard.h */,
+				A4907B1A220594D300A4E1C4 /* UITextField+Keyboard.m */,
 			);
 			path = UITextFieldCategory;
 			sourceTree = "<group>";
 		};
-		A4DBB86D21E49D1E00D53F5A /* XQLabCategory */ = {
+		A4907B1B220594D300A4E1C4 /* DeviceCategory */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB86E21E49D1E00D53F5A /* UILabel+XQAtt.h */,
-				A4DBB86F21E49D1E00D53F5A /* UILabel+XQAtt.m */,
+				A4907B1C220594D300A4E1C4 /* UIDevice+TFDevice.m */,
+				A4907B1D220594D300A4E1C4 /* UIDevice+TFDevice.h */,
+			);
+			path = DeviceCategory;
+			sourceTree = "<group>";
+		};
+		A4907B1E220594D300A4E1C4 /* XQLabCategory */ = {
+			isa = PBXGroup;
+			children = (
+				A4907B1F220594D300A4E1C4 /* UILabel+XQAtt.h */,
+				A4907B20220594D300A4E1C4 /* UILabel+XQAtt.m */,
 			);
 			path = XQLabCategory;
 			sourceTree = "<group>";
 		};
-		A4DBB87021E49D1E00D53F5A /* XQImageCategory */ = {
+		A4907B21220594D300A4E1C4 /* XQImageCategory */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB87121E49D1E00D53F5A /* UIImage+SubImage.m */,
-				A4DBB87221E49D1E00D53F5A /* UIImage+Color.h */,
-				A4DBB87321E49D1E00D53F5A /* UIImage+Rotate.h */,
-				A4DBB87421E49D1E00D53F5A /* UIImage+Corner.h */,
-				A4DBB87521E49D1E00D53F5A /* UIImage+Gif.m */,
-				A4DBB87621E49D1E00D53F5A /* UIImage+CreateQRCode.h */,
-				A4DBB87721E49D1E00D53F5A /* UIImage+SubImage.h */,
-				A4DBB87821E49D1E00D53F5A /* UIImage+Corner.m */,
-				A4DBB87921E49D1E00D53F5A /* UIImage+Rotate.m */,
-				A4DBB87A21E49D1E00D53F5A /* UIImage+Color.m */,
-				A4DBB87B21E49D1E00D53F5A /* UIImage+CreateQRCode.m */,
-				A4DBB87C21E49D1E00D53F5A /* UIImage+Gif.h */,
+				A4907B22220594D300A4E1C4 /* UIImage+SubImage.m */,
+				A4907B23220594D300A4E1C4 /* UIImage+Rotate.h */,
+				A4907B24220594D300A4E1C4 /* UIImage+Corner.h */,
+				A4907B25220594D300A4E1C4 /* UIImage+Gif.m */,
+				A4907B26220594D300A4E1C4 /* UIImage+SubImage.h */,
+				A4907B27220594D300A4E1C4 /* UIImage+Corner.m */,
+				A4907B28220594D300A4E1C4 /* UIImage+Rotate.m */,
+				A4907B29220594D300A4E1C4 /* UIImage+Gif.h */,
 			);
 			path = XQImageCategory;
 			sourceTree = "<group>";
 		};
-		A4DBB87D21E49D1E00D53F5A /* XQViewCategory */ = {
+		A4907B2A220594D300A4E1C4 /* XQViewCategory */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB87E21E49D1E00D53F5A /* UIView+ColorProgress.m */,
-				A4DBB87F21E49D1E00D53F5A /* UIView+XQLine.m */,
-				A4DBB88021E49D1E00D53F5A /* UIView+ColorProgress.h */,
-				A4DBB88121E49D1E00D53F5A /* UIView+XQLine.h */,
+				A4907B2B220594D300A4E1C4 /* UIView+ColorProgress.m */,
+				A4907B2C220594D300A4E1C4 /* UIView+XQLine.m */,
+				A4907B2D220594D300A4E1C4 /* UIView+ColorProgress.h */,
+				A4907B2E220594D300A4E1C4 /* UIView+XQLine.h */,
 			);
 			path = XQViewCategory;
 			sourceTree = "<group>";
 		};
-		A4DBB88221E49D1E00D53F5A /* SpreadView */ = {
+		A4907B2F220594D300A4E1C4 /* SpreadView */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB88321E49D1E00D53F5A /* XQSpreadView.m */,
-				A4DBB88421E49D1E00D53F5A /* XQSpreadView.h */,
+				A4907B30220594D300A4E1C4 /* XQSpreadView.m */,
+				A4907B31220594D300A4E1C4 /* XQSpreadView.h */,
 			);
 			path = SpreadView;
 			sourceTree = "<group>";
 		};
-		A4DBB88521E49D1E00D53F5A /* XQInputPasswordView */ = {
+		A4907B32220594D300A4E1C4 /* SystemCamera */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB88621E49D1E00D53F5A /* XQInputPasswordView.h */,
-				A4DBB88721E49D1E00D53F5A /* XQInputPasswordView.m */,
-			);
-			path = XQInputPasswordView;
-			sourceTree = "<group>";
-		};
-		A4DBB88821E49D1E00D53F5A /* ENC */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB88921E49D1E00D53F5A /* CustomAlertView */,
-				A4DBB89621E49D1E00D53F5A /* Category */,
-				A4DBB89A21E49D1E00D53F5A /* SuspensionView */,
-				A4DBB89F21E49D1E00D53F5A /* SystemCamera */,
-				A4DBB8A221E49D1E00D53F5A /* XQSystemAlert */,
-			);
-			path = ENC;
-			sourceTree = "<group>";
-		};
-		A4DBB88921E49D1E00D53F5A /* CustomAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB88A21E49D1E00D53F5A /* XQCustomSheetAlertView.m */,
-				A4DBB88B21E49D1E00D53F5A /* XQCustomSheetAlertViewCell.h */,
-				A4DBB88C21E49D1E00D53F5A /* XQCustomAlertView.m */,
-				A4DBB88D21E49D1E00D53F5A /* XQCustomSheetAlertTopView.h */,
-				A4DBB88E21E49D1E00D53F5A /* XQCustomSheetAlertFooterView.h */,
-				A4DBB88F21E49D1E00D53F5A /* XQCustomSheetAlertView.h */,
-				A4DBB89021E49D1E00D53F5A /* XQCustomSheetAlertViewCell.m */,
-				A4DBB89121E49D1E00D53F5A /* XQCustomSheetAlertViewCell.xib */,
-				A4DBB89221E49D1E00D53F5A /* XQCustomSheetAlertTopView.m */,
-				A4DBB89321E49D1E00D53F5A /* XQCustomAlertView.h */,
-				A4DBB89421E49D1E00D53F5A /* XQCustomAlertView.xib */,
-				A4DBB89521E49D1E00D53F5A /* XQCustomSheetAlertFooterView.m */,
-			);
-			path = CustomAlertView;
-			sourceTree = "<group>";
-		};
-		A4DBB89621E49D1E00D53F5A /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB89721E49D1E00D53F5A /* UINavigationBarCategory */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		A4DBB89721E49D1E00D53F5A /* UINavigationBarCategory */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB89821E49D1E00D53F5A /* UINavigationBar+ChangeBackColor.h */,
-				A4DBB89921E49D1E00D53F5A /* UINavigationBar+ChangeBackColor.m */,
-			);
-			path = UINavigationBarCategory;
-			sourceTree = "<group>";
-		};
-		A4DBB89A21E49D1E00D53F5A /* SuspensionView */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB89B21E49D1E00D53F5A /* XQSuspensionViewTool.h */,
-				A4DBB89C21E49D1E00D53F5A /* XQSuspensionView.m */,
-				A4DBB89D21E49D1E00D53F5A /* XQSuspensionViewTool.m */,
-				A4DBB89E21E49D1E00D53F5A /* XQSuspensionView.h */,
-			);
-			path = SuspensionView;
-			sourceTree = "<group>";
-		};
-		A4DBB89F21E49D1E00D53F5A /* SystemCamera */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB8A021E49D1E00D53F5A /* XQSystemCameraManager.h */,
-				A4DBB8A121E49D1E00D53F5A /* XQSystemCameraManager.m */,
+				A4907B33220594D300A4E1C4 /* XQSystemCameraManager.h */,
+				A4907B34220594D300A4E1C4 /* XQSystemCameraManager.m */,
 			);
 			path = SystemCamera;
 			sourceTree = "<group>";
 		};
-		A4DBB8A221E49D1E00D53F5A /* XQSystemAlert */ = {
+		A4907B35220594D300A4E1C4 /* XQInputPasswordView */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8A321E49D1E00D53F5A /* XQSystemAlert.m */,
-				A4DBB8A421E49D1E00D53F5A /* XQSystemAlert.h */,
+				A4907B36220594D300A4E1C4 /* XQInputPasswordView.h */,
+				A4907B37220594D300A4E1C4 /* XQInputPasswordView.m */,
 			);
-			path = XQSystemAlert;
+			path = XQInputPasswordView;
 			sourceTree = "<group>";
 		};
-		A4DBB8A521E49D1E00D53F5A /* iPhoneTool */ = {
+		A4907B39220594D300A4E1C4 /* iPhoneTool */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8A621E49D1E00D53F5A /* XQVoice */,
+				A4907B3A220594D300A4E1C4 /* XQVoice */,
 			);
 			path = iPhoneTool;
 			sourceTree = "<group>";
 		};
-		A4DBB8A621E49D1E00D53F5A /* XQVoice */ = {
+		A4907B3A220594D300A4E1C4 /* XQVoice */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8A721E49D1E00D53F5A /* XQSpeechSynthesizer.m */,
-				A4DBB8A821E49D1E00D53F5A /* XQSpeech.h */,
-				A4DBB8A921E49D1E00D53F5A /* XQSpeech.m */,
-				A4DBB8AA21E49D1E00D53F5A /* XQSpeechSynthesizer.h */,
+				A4907B3B220594D300A4E1C4 /* XQSpeechSynthesizer.m */,
+				A4907B3C220594D300A4E1C4 /* XQSpeech.h */,
+				A4907B3D220594D300A4E1C4 /* XQSpeech.m */,
+				A4907B3E220594D300A4E1C4 /* XQSpeechSynthesizer.h */,
 			);
 			path = XQVoice;
 			sourceTree = "<group>";
 		};
-		A4DBB8AB21E49D1E00D53F5A /* Tool */ = {
+		A4907B3F220594D300A4E1C4 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8AC21E49D1E00D53F5A /* ExtensionNotCanTool */,
-				A4DBB8B621E49D1E00D53F5A /* Tool */,
+				A4907B40220594D300A4E1C4 /* XQIOSDeviceType */,
+				A4907B43220594D300A4E1C4 /* Category */,
+				A4907B6E220594D300A4E1C4 /* XQPlayerMusic */,
+				A4907B71220594D300A4E1C4 /* XQKeychain */,
+				A4907B74220594D300A4E1C4 /* XQIPAddress */,
+				A4907B77220594D300A4E1C4 /* XQCommonHeader.h */,
+				A4907B78220594D300A4E1C4 /* XQPredicate */,
+				A4907B7B220594D300A4E1C4 /* XQlocalAut */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		A4DBB8AC21E49D1E00D53F5A /* ExtensionNotCanTool */ = {
+		A4907B40220594D300A4E1C4 /* XQIOSDeviceType */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8AD21E49D1E00D53F5A /* XQIOSDevice */,
-				A4DBB8B021E49D1E00D53F5A /* XQGetAppInfo */,
-				A4DBB8B321E49D1E00D53F5A /* XQPermissionJudge */,
-			);
-			path = ExtensionNotCanTool;
-			sourceTree = "<group>";
-		};
-		A4DBB8AD21E49D1E00D53F5A /* XQIOSDevice */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB8AE21E49D1E00D53F5A /* XQIOSDevice.m */,
-				A4DBB8AF21E49D1E00D53F5A /* XQIOSDevice.h */,
-			);
-			path = XQIOSDevice;
-			sourceTree = "<group>";
-		};
-		A4DBB8B021E49D1E00D53F5A /* XQGetAppInfo */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB8B121E49D1E00D53F5A /* XQGetAppInfo.m */,
-				A4DBB8B221E49D1E00D53F5A /* XQGetAppInfo.h */,
-			);
-			path = XQGetAppInfo;
-			sourceTree = "<group>";
-		};
-		A4DBB8B321E49D1E00D53F5A /* XQPermissionJudge */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB8B421E49D1E00D53F5A /* XQPermissionJudge.m */,
-				A4DBB8B521E49D1E00D53F5A /* XQPermissionJudge.h */,
-			);
-			path = XQPermissionJudge;
-			sourceTree = "<group>";
-		};
-		A4DBB8B621E49D1E00D53F5A /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB8B721E49D1E00D53F5A /* XQIOSDeviceType */,
-				A4DBB8BA21E49D1E00D53F5A /* Category */,
-				A4DBB8DC21E49D1E00D53F5A /* XQPlayerMusic */,
-				A4DBB8DF21E49D1E00D53F5A /* XQKeychain */,
-				A4DBB8E221E49D1E00D53F5A /* XQIPAddress */,
-				A4DBB8E521E49D1E00D53F5A /* XQPredicate */,
-				A4DBB8E821E49D1E00D53F5A /* XQlocalAut */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
-		A4DBB8B721E49D1E00D53F5A /* XQIOSDeviceType */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB8B821E49D1E00D53F5A /* XQIOSDeviceType.m */,
-				A4DBB8B921E49D1E00D53F5A /* XQIOSDeviceType.h */,
+				A4907B41220594D300A4E1C4 /* XQIOSDeviceType.m */,
+				A4907B42220594D300A4E1C4 /* XQIOSDeviceType.h */,
 			);
 			path = XQIOSDeviceType;
 			sourceTree = "<group>";
 		};
-		A4DBB8BA21E49D1E00D53F5A /* Category */ = {
+		A4907B43220594D300A4E1C4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8BB21E49D1E00D53F5A /* CALayerCategory */,
-				A4DBB8C021E49D1E00D53F5A /* XQDictionaryCategory */,
-				A4DBB8C521E49D1E00D53F5A /* XQNSArrayCategory */,
-				A4DBB8C821E49D1E00D53F5A /* ViewRuntime */,
-				A4DBB8CD21E49D1E00D53F5A /* XQStrCategory */,
-				A4DBB8D221E49D1E00D53F5A /* XQNSNotificationCenterCategory */,
-				A4DBB8D521E49D1E00D53F5A /* XQRuntime */,
+				A4907B44220594D300A4E1C4 /* CALayerCategory */,
+				A4907B49220594D300A4E1C4 /* ImageCategory */,
+				A4907B4C220594D300A4E1C4 /* XQDictionaryCategory */,
+				A4907B51220594D300A4E1C4 /* BundleCategory */,
+				A4907B54220594D300A4E1C4 /* XQNSArrayCategory */,
+				A4907B57220594D300A4E1C4 /* XQImageCategory */,
+				A4907B5A220594D300A4E1C4 /* ViewRuntime */,
+				A4907B5F220594D300A4E1C4 /* XQStrCategory */,
+				A4907B64220594D300A4E1C4 /* XQNSNotificationCenterCategory */,
+				A4907B67220594D300A4E1C4 /* XQRuntime */,
 			);
 			path = Category;
 			sourceTree = "<group>";
 		};
-		A4DBB8BB21E49D1E00D53F5A /* CALayerCategory */ = {
+		A4907B44220594D300A4E1C4 /* CALayerCategory */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8BC21E49D1E00D53F5A /* CATextLayer+Common.m */,
-				A4DBB8BD21E49D1E00D53F5A /* CAShapeLayer+Common.h */,
-				A4DBB8BE21E49D1E00D53F5A /* CAShapeLayer+Common.m */,
-				A4DBB8BF21E49D1E00D53F5A /* CATextLayer+Common.h */,
+				A4907B45220594D300A4E1C4 /* CATextLayer+Common.m */,
+				A4907B46220594D300A4E1C4 /* CAShapeLayer+Common.h */,
+				A4907B47220594D300A4E1C4 /* CAShapeLayer+Common.m */,
+				A4907B48220594D300A4E1C4 /* CATextLayer+Common.h */,
 			);
 			path = CALayerCategory;
 			sourceTree = "<group>";
 		};
-		A4DBB8C021E49D1E00D53F5A /* XQDictionaryCategory */ = {
+		A4907B49220594D300A4E1C4 /* ImageCategory */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8C121E49D1E00D53F5A /* NSDictionary+XQJson.h */,
-				A4DBB8C221E49D1E00D53F5A /* NSDictionary+Str.m */,
-				A4DBB8C321E49D1E00D53F5A /* NSDictionary+XQJson.m */,
-				A4DBB8C421E49D1E00D53F5A /* NSDictionary+Str.h */,
+				A4907B4A220594D300A4E1C4 /* UIImage+CreateQRCode.h */,
+				A4907B4B220594D300A4E1C4 /* UIImage+CreateQRCode.m */,
+			);
+			path = ImageCategory;
+			sourceTree = "<group>";
+		};
+		A4907B4C220594D300A4E1C4 /* XQDictionaryCategory */ = {
+			isa = PBXGroup;
+			children = (
+				A4907B4D220594D300A4E1C4 /* NSDictionary+XQJson.h */,
+				A4907B4E220594D300A4E1C4 /* NSDictionary+Str.m */,
+				A4907B4F220594D300A4E1C4 /* NSDictionary+XQJson.m */,
+				A4907B50220594D300A4E1C4 /* NSDictionary+Str.h */,
 			);
 			path = XQDictionaryCategory;
 			sourceTree = "<group>";
 		};
-		A4DBB8C521E49D1E00D53F5A /* XQNSArrayCategory */ = {
+		A4907B51220594D300A4E1C4 /* BundleCategory */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8C621E49D1E00D53F5A /* NSArray+XQFilter.h */,
-				A4DBB8C721E49D1E00D53F5A /* NSArray+XQFilter.m */,
+				A4907B52220594D300A4E1C4 /* NSBundle+Localizable.m */,
+				A4907B53220594D300A4E1C4 /* NSBundle+Localizable.h */,
+			);
+			path = BundleCategory;
+			sourceTree = "<group>";
+		};
+		A4907B54220594D300A4E1C4 /* XQNSArrayCategory */ = {
+			isa = PBXGroup;
+			children = (
+				A4907B55220594D300A4E1C4 /* NSArray+XQFilter.h */,
+				A4907B56220594D300A4E1C4 /* NSArray+XQFilter.m */,
 			);
 			path = XQNSArrayCategory;
 			sourceTree = "<group>";
 		};
-		A4DBB8C821E49D1E00D53F5A /* ViewRuntime */ = {
+		A4907B57220594D300A4E1C4 /* XQImageCategory */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8C921E49D1E00D53F5A /* UIButton+XQResponse.m */,
-				A4DBB8CA21E49D1E00D53F5A /* UIView+XQResponse.h */,
-				A4DBB8CB21E49D1E00D53F5A /* UIView+XQResponse.m */,
-				A4DBB8CC21E49D1E00D53F5A /* UIButton+XQResponse.h */,
+				A4907B58220594D300A4E1C4 /* UIImage+Color.h */,
+				A4907B59220594D300A4E1C4 /* UIImage+Color.m */,
+			);
+			path = XQImageCategory;
+			sourceTree = "<group>";
+		};
+		A4907B5A220594D300A4E1C4 /* ViewRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				A4907B5B220594D300A4E1C4 /* UIButton+XQResponse.m */,
+				A4907B5C220594D300A4E1C4 /* UIView+XQResponse.h */,
+				A4907B5D220594D300A4E1C4 /* UIView+XQResponse.m */,
+				A4907B5E220594D300A4E1C4 /* UIButton+XQResponse.h */,
 			);
 			path = ViewRuntime;
 			sourceTree = "<group>";
 		};
-		A4DBB8CD21E49D1E00D53F5A /* XQStrCategory */ = {
+		A4907B5F220594D300A4E1C4 /* XQStrCategory */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8CE21E49D1E00D53F5A /* NSString+XQHTMLFilter.h */,
-				A4DBB8CF21E49D1E00D53F5A /* NSString+HexadecimalConversion.m */,
-				A4DBB8D021E49D1E00D53F5A /* NSString+XQHTMLFilter.m */,
-				A4DBB8D121E49D1E00D53F5A /* NSString+HexadecimalConversion.h */,
+				A4907B60220594D300A4E1C4 /* NSString+XQHTMLFilter.h */,
+				A4907B61220594D300A4E1C4 /* NSString+HexadecimalConversion.m */,
+				A4907B62220594D300A4E1C4 /* NSString+XQHTMLFilter.m */,
+				A4907B63220594D300A4E1C4 /* NSString+HexadecimalConversion.h */,
 			);
 			path = XQStrCategory;
 			sourceTree = "<group>";
 		};
-		A4DBB8D221E49D1E00D53F5A /* XQNSNotificationCenterCategory */ = {
+		A4907B64220594D300A4E1C4 /* XQNSNotificationCenterCategory */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8D321E49D1E00D53F5A /* NSNotificationCenter+XQBase.h */,
-				A4DBB8D421E49D1E00D53F5A /* NSNotificationCenter+XQBase.m */,
+				A4907B65220594D300A4E1C4 /* NSNotificationCenter+XQBase.h */,
+				A4907B66220594D300A4E1C4 /* NSNotificationCenter+XQBase.m */,
 			);
 			path = XQNSNotificationCenterCategory;
 			sourceTree = "<group>";
 		};
-		A4DBB8D521E49D1E00D53F5A /* XQRuntime */ = {
+		A4907B67220594D300A4E1C4 /* XQRuntime */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8D621E49D1E00D53F5A /* NSObject+XQViewOC.h */,
-				A4DBB8D721E49D1E00D53F5A /* NSObject+XQExchangeIMP.h */,
-				A4DBB8D821E49D1E00D53F5A /* NSObject+XQArchiverData.h */,
-				A4DBB8D921E49D1E00D53F5A /* NSObject+XQViewOC.m */,
-				A4DBB8DA21E49D1E00D53F5A /* NSObject+XQArchiverData.m */,
-				A4DBB8DB21E49D1E00D53F5A /* NSObject+XQExchangeIMP.m */,
+				A4907B68220594D300A4E1C4 /* NSObject+XQViewOC.h */,
+				A4907B69220594D300A4E1C4 /* NSObject+XQExchangeIMP.h */,
+				A4907B6A220594D300A4E1C4 /* NSObject+XQArchiverData.h */,
+				A4907B6B220594D300A4E1C4 /* NSObject+XQViewOC.m */,
+				A4907B6C220594D300A4E1C4 /* NSObject+XQArchiverData.m */,
+				A4907B6D220594D300A4E1C4 /* NSObject+XQExchangeIMP.m */,
 			);
 			path = XQRuntime;
 			sourceTree = "<group>";
 		};
-		A4DBB8DC21E49D1E00D53F5A /* XQPlayerMusic */ = {
+		A4907B6E220594D300A4E1C4 /* XQPlayerMusic */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8DD21E49D1E00D53F5A /* XQPlayerMusic.h */,
-				A4DBB8DE21E49D1E00D53F5A /* XQPlayerMusic.m */,
+				A4907B6F220594D300A4E1C4 /* XQPlayerMusic.h */,
+				A4907B70220594D300A4E1C4 /* XQPlayerMusic.m */,
 			);
 			path = XQPlayerMusic;
 			sourceTree = "<group>";
 		};
-		A4DBB8DF21E49D1E00D53F5A /* XQKeychain */ = {
+		A4907B71220594D300A4E1C4 /* XQKeychain */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8E021E49D1E00D53F5A /* XQKeychain.h */,
-				A4DBB8E121E49D1E00D53F5A /* XQKeychain.m */,
+				A4907B72220594D300A4E1C4 /* XQKeychain.h */,
+				A4907B73220594D300A4E1C4 /* XQKeychain.m */,
 			);
 			path = XQKeychain;
 			sourceTree = "<group>";
 		};
-		A4DBB8E221E49D1E00D53F5A /* XQIPAddress */ = {
+		A4907B74220594D300A4E1C4 /* XQIPAddress */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8E321E49D1E00D53F5A /* XQIPAddress.m */,
-				A4DBB8E421E49D1E00D53F5A /* XQIPAddress.h */,
+				A4907B75220594D300A4E1C4 /* XQIPAddress.m */,
+				A4907B76220594D300A4E1C4 /* XQIPAddress.h */,
 			);
 			path = XQIPAddress;
 			sourceTree = "<group>";
 		};
-		A4DBB8E521E49D1E00D53F5A /* XQPredicate */ = {
+		A4907B78220594D300A4E1C4 /* XQPredicate */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8E621E49D1E00D53F5A /* XQPredicate.h */,
-				A4DBB8E721E49D1E00D53F5A /* XQPredicate.m */,
+				A4907B79220594D300A4E1C4 /* XQPredicate.h */,
+				A4907B7A220594D300A4E1C4 /* XQPredicate.m */,
 			);
 			path = XQPredicate;
 			sourceTree = "<group>";
 		};
-		A4DBB8E821E49D1E00D53F5A /* XQlocalAut */ = {
+		A4907B7B220594D300A4E1C4 /* XQlocalAut */ = {
 			isa = PBXGroup;
 			children = (
-				A4DBB8E921E49D1E00D53F5A /* XQLocalAut.h */,
-				A4DBB8EA21E49D1E00D53F5A /* XQLocalAut.m */,
+				A4907B7C220594D300A4E1C4 /* XQLocalAut.h */,
+				A4907B7D220594D300A4E1C4 /* XQLocalAut.m */,
 			);
 			path = XQlocalAut;
-			sourceTree = "<group>";
-		};
-		A4DBB8EB21E49D1E00D53F5A /* MacTool */ = {
-			isa = PBXGroup;
-			children = (
-				A4DBB8EC21E49D1E00D53F5A /* XQOpenPanel.h */,
-				A4DBB8ED21E49D1E00D53F5A /* XQAlertSystem.h */,
-				A4DBB8EE21E49D1E00D53F5A /* XQUD.h */,
-				A4DBB8EF21E49D1E00D53F5A /* NSView+Common.h */,
-				A4DBB8F021E49D1E00D53F5A /* XQOpenPanel.m */,
-				A4DBB8F121E49D1E00D53F5A /* XQUD.m */,
-				A4DBB8F221E49D1E00D53F5A /* XQAlertSystem.m */,
-				A4DBB8F321E49D1E00D53F5A /* NSView+Common.m */,
-			);
-			path = MacTool;
 			sourceTree = "<group>";
 		};
 		AE2101AE77FD96FE89A49768 /* Frameworks */ = {
@@ -717,7 +648,7 @@
 			children = (
 				9FBD3B981A3B077B4CA42DDB /* libPods-XQProjectToolTests.a */,
 				502B2E902B7EA3A08F97D222 /* libPods-XQProjectToolUITests.a */,
-				E27E9247189B89183582694E /* Pods_XQProjectTool.framework */,
+				82F70FB18D8BA4605EFD9FBA /* libPods-XQProjectTool.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -725,8 +656,12 @@
 		B39AB4A9D1E198175C553DE0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9EAC0534F1CD0B6644D73F19 /* Pods-XQProjectTool.debug.xcconfig */,
-				B3494BA459B4473D41D67908 /* Pods-XQProjectTool.release.xcconfig */,
+				14D7AD49ECACD74C15ADFED6 /* Pods-XQProjectToolTests.debug.xcconfig */,
+				D82549C5D302C1F5126D3425 /* Pods-XQProjectToolTests.release.xcconfig */,
+				EC966D24EF077557EB4A20AE /* Pods-XQProjectToolUITests.debug.xcconfig */,
+				64E797192EA9DA2042EABA37 /* Pods-XQProjectToolUITests.release.xcconfig */,
+				CBD3C2BC48C719097B56D548 /* Pods-XQProjectTool.debug.xcconfig */,
+				EDFDC1F0041A39148FFB83A0 /* Pods-XQProjectTool.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -742,7 +677,6 @@
 				1ABDE97A2071BE0900638A16 /* Sources */,
 				1ABDE97B2071BE0900638A16 /* Frameworks */,
 				1ABDE97C2071BE0900638A16 /* Resources */,
-				BB1DD025DDFFB3A538958C39 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -757,6 +691,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ABDE9AD2071BE0B00638A16 /* Build configuration list for PBXNativeTarget "XQProjectToolTests" */;
 			buildPhases = (
+				4AD2867BBF315FB9FBFCA07B /* [CP] Check Pods Manifest.lock */,
 				1ABDE9922071BE0A00638A16 /* Sources */,
 				1ABDE9932071BE0A00638A16 /* Frameworks */,
 				1ABDE9942071BE0A00638A16 /* Resources */,
@@ -775,6 +710,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ABDE9B02071BE0B00638A16 /* Build configuration list for PBXNativeTarget "XQProjectToolUITests" */;
 			buildPhases = (
+				9B18769E3503102B1DD26A4F /* [CP] Check Pods Manifest.lock */,
 				1ABDE99D2071BE0A00638A16 /* Sources */,
 				1ABDE99E2071BE0A00638A16 /* Frameworks */,
 				1ABDE99F2071BE0A00638A16 /* Resources */,
@@ -843,8 +779,6 @@
 				1AD68F6A20C68075001949D1 /* 1.jpg in Resources */,
 				1ABDE98B2071BE0A00638A16 /* Assets.xcassets in Resources */,
 				1ABDE9892071BE0A00638A16 /* Main.storyboard in Resources */,
-				A4DBB90321E49D1E00D53F5A /* XQCustomSheetAlertViewCell.xib in Resources */,
-				A4DBB90521E49D1E00D53F5A /* XQCustomAlertView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,22 +817,48 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BB1DD025DDFFB3A538958C39 /* [CP] Embed Pods Frameworks */ = {
+		4AD2867BBF315FB9FBFCA07B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-XQProjectTool/Pods-XQProjectTool-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"$(DERIVED_FILE_DIR)/Pods-XQProjectToolTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XQProjectTool/Pods-XQProjectTool-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B18769E3503102B1DD26A4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XQProjectToolUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -908,59 +868,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4DBB90121E49D1E00D53F5A /* XQCustomAlertView.m in Sources */,
-				A4DBB92121E49D1E00D53F5A /* XQIPAddress.m in Sources */,
-				A4DBB8F821E49D1E00D53F5A /* UIImage+Corner.m in Sources */,
-				A4DBB91821E49D1E00D53F5A /* UIView+XQResponse.m in Sources */,
-				A4DBB92621E49D1E00D53F5A /* XQAlertSystem.m in Sources */,
-				A4DBB92321E49D1E00D53F5A /* XQLocalAut.m in Sources */,
-				A4DBB8F621E49D1E00D53F5A /* UIImage+SubImage.m in Sources */,
-				A4DBB92521E49D1E00D53F5A /* XQUD.m in Sources */,
-				A4DBB91621E49D1E00D53F5A /* NSArray+XQFilter.m in Sources */,
-				A4DBB91321E49D1E00D53F5A /* CAShapeLayer+Common.m in Sources */,
-				A4DBB8F421E49D1E00D53F5A /* UITextField+Keyboard.m in Sources */,
-				A4DBB91121E49D1E00D53F5A /* XQIOSDeviceType.m in Sources */,
-				A4DBB91E21E49D1E00D53F5A /* NSObject+XQExchangeIMP.m in Sources */,
-				A4DBB90B21E49D1E00D53F5A /* XQSystemAlert.m in Sources */,
-				A4DBB91A21E49D1E00D53F5A /* NSString+XQHTMLFilter.m in Sources */,
-				A4DBB91F21E49D1E00D53F5A /* XQPlayerMusic.m in Sources */,
-				A4DBB92021E49D1E00D53F5A /* XQKeychain.m in Sources */,
-				A4DBB90021E49D1E00D53F5A /* XQCustomSheetAlertView.m in Sources */,
-				A4DBB8F521E49D1E00D53F5A /* UILabel+XQAtt.m in Sources */,
-				A4DBB92421E49D1E00D53F5A /* XQOpenPanel.m in Sources */,
-				A4DBB8FF21E49D1E00D53F5A /* XQInputPasswordView.m in Sources */,
-				A4DBB91221E49D1E00D53F5A /* CATextLayer+Common.m in Sources */,
-				A4DBB92221E49D1E00D53F5A /* XQPredicate.m in Sources */,
+				A4907B8A220594D300A4E1C4 /* UIImage+Corner.m in Sources */,
+				A4907B94220594D300A4E1C4 /* CATextLayer+Common.m in Sources */,
+				A4907B89220594D300A4E1C4 /* UIImage+Gif.m in Sources */,
+				A4907B82220594D300A4E1C4 /* XQAlertSystem.m in Sources */,
+				A4907BA0220594D300A4E1C4 /* NSNotificationCenter+XQBase.m in Sources */,
+				A4907BA8220594D300A4E1C4 /* XQLocalAut.m in Sources */,
+				A4907B97220594D300A4E1C4 /* NSDictionary+Str.m in Sources */,
+				A4907B9C220594D300A4E1C4 /* UIButton+XQResponse.m in Sources */,
+				A4907B98220594D300A4E1C4 /* NSDictionary+XQJson.m in Sources */,
+				A4907BA3220594D300A4E1C4 /* NSObject+XQExchangeIMP.m in Sources */,
 				1ABDE9862071BE0A00638A16 /* ViewController.m in Sources */,
-				A4DBB91D21E49D1E00D53F5A /* NSObject+XQArchiverData.m in Sources */,
-				A4DBB8FC21E49D1E00D53F5A /* UIView+ColorProgress.m in Sources */,
-				A4DBB91721E49D1E00D53F5A /* UIButton+XQResponse.m in Sources */,
-				A4DBB91921E49D1E00D53F5A /* NSString+HexadecimalConversion.m in Sources */,
-				A4DBB8FE21E49D1E00D53F5A /* XQSpreadView.m in Sources */,
-				A4DBB91421E49D1E00D53F5A /* NSDictionary+Str.m in Sources */,
-				A4DBB90821E49D1E00D53F5A /* XQSuspensionView.m in Sources */,
+				A4907B9A220594D300A4E1C4 /* NSArray+XQFilter.m in Sources */,
+				A4907B8B220594D300A4E1C4 /* UIImage+Rotate.m in Sources */,
+				A4907B9E220594D300A4E1C4 /* NSString+HexadecimalConversion.m in Sources */,
+				A4907B81220594D300A4E1C4 /* XQOpenPanel.m in Sources */,
+				A4907B9F220594D300A4E1C4 /* NSString+XQHTMLFilter.m in Sources */,
+				A4907BA5220594D300A4E1C4 /* XQKeychain.m in Sources */,
+				A4907BA2220594D300A4E1C4 /* NSObject+XQArchiverData.m in Sources */,
+				A4907B96220594D300A4E1C4 /* UIImage+CreateQRCode.m in Sources */,
+				A4907BA7220594D300A4E1C4 /* XQPredicate.m in Sources */,
+				A4907B7F220594D300A4E1C4 /* NSImage+Tools.m in Sources */,
 				1ABDE9912071BE0A00638A16 /* main.m in Sources */,
-				A4DBB90F21E49D1E00D53F5A /* XQGetAppInfo.m in Sources */,
-				A4DBB8FB21E49D1E00D53F5A /* UIImage+CreateQRCode.m in Sources */,
-				A4DBB90D21E49D1E00D53F5A /* XQSpeech.m in Sources */,
-				A4DBB90921E49D1E00D53F5A /* XQSuspensionViewTool.m in Sources */,
-				A4DBB90C21E49D1E00D53F5A /* XQSpeechSynthesizer.m in Sources */,
-				A4DBB91C21E49D1E00D53F5A /* NSObject+XQViewOC.m in Sources */,
-				A4DBB90621E49D1E00D53F5A /* XQCustomSheetAlertFooterView.m in Sources */,
-				A4DBB91021E49D1E00D53F5A /* XQPermissionJudge.m in Sources */,
-				A4DBB91B21E49D1E00D53F5A /* NSNotificationCenter+XQBase.m in Sources */,
-				A4DBB92721E49D1E00D53F5A /* NSView+Common.m in Sources */,
-				A4DBB90421E49D1E00D53F5A /* XQCustomSheetAlertTopView.m in Sources */,
+				A4907B9D220594D300A4E1C4 /* UIView+XQResponse.m in Sources */,
+				A4907B83220594D300A4E1C4 /* NSViewController+XQAlert.m in Sources */,
+				A4907B90220594D300A4E1C4 /* XQInputPasswordView.m in Sources */,
+				A4907B80220594D300A4E1C4 /* XQRegisterHotKey.m in Sources */,
+				A4907B84220594D300A4E1C4 /* XQTask.m in Sources */,
+				A4907B99220594D300A4E1C4 /* NSBundle+Localizable.m in Sources */,
+				A4907B8C220594D300A4E1C4 /* UIView+ColorProgress.m in Sources */,
+				A4907B8E220594D300A4E1C4 /* XQSpreadView.m in Sources */,
+				A4907BA6220594D300A4E1C4 /* XQIPAddress.m in Sources */,
+				A4907B92220594D300A4E1C4 /* XQSpeech.m in Sources */,
+				A4907B7E220594D300A4E1C4 /* NSView+Common.m in Sources */,
+				A4907BA1220594D300A4E1C4 /* NSObject+XQViewOC.m in Sources */,
+				A4907B86220594D300A4E1C4 /* UIDevice+TFDevice.m in Sources */,
+				A4907B88220594D300A4E1C4 /* UIImage+SubImage.m in Sources */,
+				A4907B93220594D300A4E1C4 /* XQIOSDeviceType.m in Sources */,
+				A4907B8D220594D300A4E1C4 /* UIView+XQLine.m in Sources */,
+				A4907B85220594D300A4E1C4 /* UITextField+Keyboard.m in Sources */,
+				A4907BA4220594D300A4E1C4 /* XQPlayerMusic.m in Sources */,
+				A4907B91220594D300A4E1C4 /* XQSpeechSynthesizer.m in Sources */,
 				1ABDE9832071BE0900638A16 /* AppDelegate.m in Sources */,
-				A4DBB90221E49D1E00D53F5A /* XQCustomSheetAlertViewCell.m in Sources */,
-				A4DBB8FA21E49D1E00D53F5A /* UIImage+Color.m in Sources */,
-				A4DBB8FD21E49D1E00D53F5A /* UIView+XQLine.m in Sources */,
-				A4DBB90A21E49D1E00D53F5A /* XQSystemCameraManager.m in Sources */,
-				A4DBB91521E49D1E00D53F5A /* NSDictionary+XQJson.m in Sources */,
-				A4DBB90E21E49D1E00D53F5A /* XQIOSDevice.m in Sources */,
-				A4DBB8F721E49D1E00D53F5A /* UIImage+Gif.m in Sources */,
-				A4DBB8F921E49D1E00D53F5A /* UIImage+Rotate.m in Sources */,
-				A4DBB90721E49D1E00D53F5A /* UINavigationBar+ChangeBackColor.m in Sources */,
+				A4907B95220594D300A4E1C4 /* CAShapeLayer+Common.m in Sources */,
+				A4907B9B220594D300A4E1C4 /* UIImage+Color.m in Sources */,
+				A4907B87220594D300A4E1C4 /* UILabel+XQAtt.m in Sources */,
+				A4907B8F220594D300A4E1C4 /* XQSystemCameraManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1125,11 +1078,12 @@
 		};
 		1ABDE9AB2071BE0B00638A16 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EAC0534F1CD0B6644D73F19 /* Pods-XQProjectTool.debug.xcconfig */;
+			baseConfigurationReference = CBD3C2BC48C719097B56D548 /* Pods-XQProjectTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7RWURRZ69;
+				GCC_PREFIX_HEADER = XQProjectTool/XQProjcetToolPrefixHeader.pch;
 				INFOPLIST_FILE = XQProjectTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1143,11 +1097,12 @@
 		};
 		1ABDE9AC2071BE0B00638A16 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3494BA459B4473D41D67908 /* Pods-XQProjectTool.release.xcconfig */;
+			baseConfigurationReference = EDFDC1F0041A39148FFB83A0 /* Pods-XQProjectTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7RWURRZ69;
+				GCC_PREFIX_HEADER = XQProjectTool/XQProjcetToolPrefixHeader.pch;
 				INFOPLIST_FILE = XQProjectTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1160,6 +1115,7 @@
 		};
 		1ABDE9AE2071BE0B00638A16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14D7AD49ECACD74C15ADFED6 /* Pods-XQProjectToolTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1175,6 +1131,7 @@
 		};
 		1ABDE9AF2071BE0B00638A16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D82549C5D302C1F5126D3425 /* Pods-XQProjectToolTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1190,6 +1147,7 @@
 		};
 		1ABDE9B12071BE0B00638A16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC966D24EF077557EB4A20AE /* Pods-XQProjectToolUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYE5WA8QEX;
@@ -1204,6 +1162,7 @@
 		};
 		1ABDE9B22071BE0B00638A16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64E797192EA9DA2042EABA37 /* Pods-XQProjectToolUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYE5WA8QEX;

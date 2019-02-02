@@ -7,13 +7,8 @@
 //
 
 #import "XQInputPasswordView.h"
-#if !XQExtensionFramework
 #import "CAShapeLayer+Common.h"
 #import "CATextLayer+Common.h"
-#else
-#import <XQProjectTool_CE/CAShapeLayer+Common.h>
-#import <XQProjectTool_CE/CATextLayer+Common.h>
-#endif
 
 
 #define xq_screen_width     ([[UIScreen mainScreen] bounds].size.width)

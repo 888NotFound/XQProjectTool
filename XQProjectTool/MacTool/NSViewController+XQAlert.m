@@ -5,6 +5,8 @@
 //  Created by WXQ on 2019/1/12.
 //
 
+#if TARGET_OS_OSX
+
 #import "NSViewController+XQAlert.h"
 
 @implementation NSViewController (XQAlert)
@@ -16,3 +18,6 @@
 }
 
 @end
+
+
+#endif

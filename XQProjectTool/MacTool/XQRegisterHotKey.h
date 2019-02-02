@@ -6,6 +6,8 @@
 //  Copyright © 2018年 SyKing. All rights reserved.
 //
 
+#if TARGET_OS_OSX
+
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(UInt16, XQModifiers) {
@@ -55,6 +57,7 @@ typedef NS_ENUM(UInt16, XQModifiers) {
 @end
 
 
+#endif
 
 
 
