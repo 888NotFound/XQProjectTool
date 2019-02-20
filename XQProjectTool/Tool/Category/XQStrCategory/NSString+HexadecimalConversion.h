@@ -21,9 +21,18 @@
 - (NSString *)xq_hexadecimalTransferDecimal;;
 
 /**
+ 十六进制字符串转10进制 ulong类型
+ 
+ @param str 16进制字符串
+ @return 10进制 unsigned long 类型
+ */
++ (unsigned long)hexStrToULongWithStr:(NSString *)str;
+
+/**
  16转10
  */
 + (NSString *)xq_hexadecimalTransferDecimalWithStr:(NSString *)str;
+
 
 /**
  16转2

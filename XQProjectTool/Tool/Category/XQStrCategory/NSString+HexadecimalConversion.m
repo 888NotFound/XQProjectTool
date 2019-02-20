@@ -32,16 +32,24 @@
     return [NSString xq_hexadecimalTransferDecimalWithStr:self];
 }
 
+// 16to10
 + (NSString *)xq_hexadecimalTransferDecimalWithStr:(NSString *)str {
+    return [NSString stringWithFormat:@"%ld", [self hexStrToULongWithStr:str]];
+}
+
++ (unsigned long)hexStrToULongWithStr:(NSString *)str {
     if (str.length == 0) {
-        return @"0";
+        return 0;
     }
-        // 转换
+    // 转换
     NSScanner * scanner = [NSScanner scannerWithString:str];
     unsigned long long longlongValue;
     [scanner scanHexLongLong:&longlongValue];
-        //将整数转换为NSNumber,存储到数组中,并返回.
-    return [NSString stringWithFormat:@"%lld", longlongValue];
+    return longlongValue;
+    
+    //    NSLog(@"打印16进制: %lx", 255);
+    //    unsigned long r = strtoul([str UTF8String], 0, 16);
+    //    return r;
 }
 
 /**
@@ -158,6 +166,8 @@
     
     return str;
 }
+
+
 
 @end
 
