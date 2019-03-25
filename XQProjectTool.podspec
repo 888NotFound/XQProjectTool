@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
         #关联资源
         #iphoneS.resources = 'XQProjectTool/UITool/**/*.{xib}'
         
-        iphoneS.dependency 'Masonry'
+        #iphoneS.dependency 'Masonry'
         #关联系统framework, 后缀不要
         iphoneS.frameworks = "UIKit", "AVFoundation"
         iphoneS.dependency "XQProjectTool/Tool"
