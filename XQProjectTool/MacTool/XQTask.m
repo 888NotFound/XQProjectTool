@@ -5,7 +5,6 @@
 //  Created by WXQ on 2019/1/14.
 //
 
-#if TARGET_OS_OSX
 
 #import "XQTask.h"
 
@@ -33,4 +32,3 @@
 
 @end
 
-#endif

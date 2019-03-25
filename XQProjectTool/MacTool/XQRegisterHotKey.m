@@ -6,7 +6,7 @@
 //  Copyright © 2018年 SyKing. All rights reserved.
 //
 
-#if TARGET_OS_OSX
+
 
 #import "XQRegisterHotKey.h"
 #import <EventKit/EventKit.h>
@@ -74,7 +74,6 @@ OSStatus xq_hotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, voi
 
 @end
 
-#endif
 
 
 

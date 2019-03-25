@@ -9,7 +9,8 @@
 #import "NSImage+Tools.h"
 #import <CoreImage/CoreImage.h>
 
-const float THRESHOLD = 0.1; //PLAY WITH THRESHOLD VALUE
+//const float THRESHOLD = 0.1;
+#define THRESHOLD 0.1 //PLAY WITH THRESHOLD VALUE
 
 @implementation NSImage (ColorTools)
 

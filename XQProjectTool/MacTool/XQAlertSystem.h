@@ -6,7 +6,6 @@
 //  Copyright © 2018年 ConfidenceCat. All rights reserved.
 //
 
-#if TARGET_OS_OSX
 
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
@@ -30,5 +29,4 @@ typedef void(^XQAlertSystemCallback)(NSInteger index);
 @end
 
 
-#endif
 

@@ -6,7 +6,7 @@
 //  Copyright © 2018年 ConfidenceCat. All rights reserved.
 //
 
-#if TARGET_OS_OSX
+
 
 #import "XQAlertSystem.h"
 
@@ -72,7 +72,6 @@ NSLog(@"savePath = %@", savePath);
 @end
 
 
-#endif
 
 
 

@@ -5,7 +5,6 @@
 //  Created by WXQ on 2019/1/12.
 //
 
-#if TARGET_OS_OSX
 
 #import <Cocoa/Cocoa.h>
 
@@ -19,4 +18,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#endif
