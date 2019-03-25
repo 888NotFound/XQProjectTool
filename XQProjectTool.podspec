@@ -18,11 +18,12 @@ Pod::Spec.new do |s|
         iphoneS.ios.deployment_target  = "9.3" #平台及版本
         iphoneS.source_files = 'XQProjectTool/UITool/**/*.{h,m,mm}'
         #关联资源
-        iphoneS.resources = 'XQProjectTool/UITool/**/*.{xib}'
+        #iphoneS.resources = 'XQProjectTool/UITool/**/*.{xib}'
         
         iphoneS.dependency 'Masonry'
         #关联系统framework, 后缀不要
         iphoneS.frameworks = "UIKit", "AVFoundation"
+        iphoneS.dependency "XQProjectTool/Tool"
     end
     
     

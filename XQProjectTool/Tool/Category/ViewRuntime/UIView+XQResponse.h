@@ -6,6 +6,8 @@
 //  Copyright © 2017年 WangXQ. All rights reserved.
 //
 
+
+
 #if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
 
@@ -15,7 +17,7 @@
 #define XQPanGestureRecognizer_class UIPanGestureRecognizer
 #define XQRotationGestureRecognizer_class UIRotationGestureRecognizer
 
-#else
+#elif TARGET_OS_MAC
 #import <Cocoa/Cocoa.h>
 
 #define XQGestureRecognizer_class NSGestureRecognizer

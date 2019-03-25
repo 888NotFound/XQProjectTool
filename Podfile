@@ -18,5 +18,6 @@ target 'XQProjectTool' do
   end
 
 pod 'Masonry'
+pod 'XQProjectTool', :path => '../XQProjectTool'
 
 end
