@@ -10,12 +10,16 @@
 
 #if TARGET_OS_IPHONE
 #import <SystemConfiguration/CaptiveNetwork.h>// 获取wifi
+
+#import <NetworkExtension/NEHotspotConfigurationManager.h>
+
 #endif
 
 // 获取当前相关ip网络的
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 #include <net/if.h>
+
 
 #define IOS_CELLULAR    @"pdp_ip0"
 #define IOS_WIFI        @"en0"
@@ -265,6 +269,120 @@
     freeifaddrs(interfaces);
     return address;
 }
+
+
+// 检测WIFI开关
++ (BOOL)isWiFiEnabled {
+    NSCountedSet * cset = [NSCountedSet new];
+    struct ifaddrs *interfaces;
+    
+    if(!getifaddrs(&interfaces) ) {
+        for( struct ifaddrs *interface = interfaces; interface; interface = interface->ifa_next) {
+            if ( (interface->ifa_flags & IFF_UP) == IFF_UP ) {
+                [cset addObject:[NSString stringWithUTF8String:interface->ifa_name]];
+            }
+        }
+    }
+    return [cset countForObject:@"awdl0"] > 1 ? YES : NO;
+}
+
+
+/**
+ 连接wifi
+ @note 需要开启权限
+ 获取WiFi: Capabilities -> Access WiFi Infomation
+ 配置WiFi: Capabilities -> Hotspot Configuration
+
+ @param ssid wifi名称
+ @param passphrase wifi密码
+ 
+ @return 含义
+ 
+ - -1: 版本不支持
+ - 0: 未打开wifi
+ - 1: 正常
+ 
+ */
++ (void)xq_connectWiFiWithSSID:(NSString *)ssid passphrase:(NSString *)passphrase isWEP:(BOOL)isWEP completionHandler:(void (^)(NSError * __nullable error))completionHandler {
+    
+    if ([XQIPAddress isWiFiEnabled]) {
+        if (@available(iOS 11.0, *)) {
+            
+            NEHotspotConfiguration *configuration = nil;
+            if (passphrase.length == 0) {
+                // 没有密码
+                configuration = [[NEHotspotConfiguration alloc] initWithSSID:ssid];
+            }else {
+                configuration = [[NEHotspotConfiguration alloc] initWithSSID:ssid passphrase:passphrase isWEP:isWEP];
+            }
+            
+            // 只加入一次..
+            configuration.joinOnce = YES;
+            
+            [[NEHotspotConfigurationManager sharedManager] applyConfiguration:configuration completionHandler:^(NSError * _Nullable error) {
+                
+                if (error) {
+                    if (completionHandler) {
+                        completionHandler(error);
+                    }
+                    
+                }else {
+                    
+                    // 延时是因为偶尔系统是已经连接, 但是这边还没可以获取到wifi那么快. 一般第一次进来app控制就特别明显
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        /**
+                         这里要注意
+                         当 ssid 错误时 和 当 密码 错误时, 系统照样回你成功...所以要在这里获取一下当前wifi名称, 来判断是否连接成功
+                         密码错误连接大约要 20 秒.
+                         */
+                        NSDictionary *dic = [XQIPAddress getWIFIInfo];
+                        if (dic && dic[@"SSID"]) {
+                            
+                            NSString *c_ssid = dic[@"SSID"];
+                            if ([c_ssid isEqualToString:ssid]) {
+                                if (completionHandler) {
+                                    completionHandler(nil);
+                                }
+                            }else {
+                                NSError *xq_error = [NSError errorWithDomain:@"未连接wifi" code:99998 userInfo:nil];
+                                if (completionHandler) {
+                                    completionHandler(xq_error);
+                                }
+                            }
+                            
+                        }else {
+                            
+                            NSError *xq_error = [NSError errorWithDomain:@"未连接wifi" code:99998 userInfo:nil];
+                            if (completionHandler) {
+                                completionHandler(xq_error);
+                            }
+                        }
+                        
+                    });
+                    
+                    
+                }
+                
+            }];
+            
+            return;
+            
+        } else {
+            NSError *xq_error = [NSError errorWithDomain:@"自定义错误,版本过低" code:99997 userInfo:nil];
+            if (completionHandler) {
+                completionHandler(xq_error);
+            }
+            return;
+        }
+        
+    }
+    
+    NSError *xq_error = [NSError errorWithDomain:@"未打开wifi" code:99996 userInfo:nil];
+    if (completionHandler) {
+        completionHandler(xq_error);
+    }
+}
+
 
 
 @end

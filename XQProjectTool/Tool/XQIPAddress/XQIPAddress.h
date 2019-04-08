@@ -12,19 +12,21 @@
 #import <CoreWLAN/CoreWLAN.h>
 #endif
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface XQIPAddress : NSObject
 
 /**
  获取所有相关IP信息
  */
-+ (NSDictionary *)getIPAddresses;
++ (NSDictionary *_Nullable)getIPAddresses;
 
 /**
  获取设备当前网络IP地址
  
  @return 返回ipv4地址
  */
-+ (NSString *)getIPv4Address;
++ (NSString *_Nullable)getIPv4Address;
 
 #if TARGET_OS_IPHONE
 /**
@@ -33,11 +35,11 @@
  
  @return nil表示获取不到, 就可能当前不是在wifi环境下
  */
-+ (NSDictionary *)getWIFIInfo;
++ (NSDictionary *_Nullable)getWIFIInfo;
 #endif
 
 #if TARGET_OS_OSX
-+ (CWInterface *)getOSXWIFIInfo;
++ (CWInterface *_Nullable)getOSXWIFIInfo;
 #endif
 
 
@@ -53,14 +55,45 @@
  
  @return dic[@"cip"] 则是外网ip了
  */
-+ (NSDictionary *)getWANIPAddress;
++ (NSDictionary *_Nullable)getWANIPAddress;
 
 /**
  获取内网IP
  
  @return 其实就是ipv4/ipv6的地址, 一般国内都是ipv4
  */
-+ (NSString *)getInIPAddress;
++ (NSString *_Nullable)getInIPAddress;
+
+/**
+ 检测WIFI开关
+
+ @return YES已打开wifi, NO未打开
+ */
++ (BOOL)isWiFiEnabled;
+
+/**
+ 连接wifi
+ 
+ @param ssid wifi名称
+ @param passphrase wifi密码
+ @param completionHandler 系统返回结果
+ 
+ error自定义code
+ - -99997: 版本不支持
+ - 99996: 未打开wifi
+ - 99998: 连接失败(密码错误, ssid没有找到符合的)
+ 
+ 
+ @note 需要开启权限
+ 获取WiFi: Capabilities -> Access WiFi Infomation
+ 配置WiFi: Capabilities -> Hotspot Configuration
+ 
+ NEHotspotConfigurationError 错误
+ 
+ */
++ (void)xq_connectWiFiWithSSID:(NSString *)ssid passphrase:(NSString *)passphrase isWEP:(BOOL)isWEP completionHandler:(void (^)(NSError * __nullable error))completionHandler;
+
+NS_ASSUME_NONNULL_END
 
 @end
 
