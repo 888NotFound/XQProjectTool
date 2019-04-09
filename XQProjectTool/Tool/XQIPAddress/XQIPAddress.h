@@ -31,7 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
 #if TARGET_OS_IPHONE
 /**
  获取当前wifi信息
- iOS12获取不到问题: Capabilities -> Access WiFi Information -> ON
+ 
+ @note 权限: 获取不到问题 Capabilities -> Access WiFi Information -> ON
+ (__bridge NSString *)kCNNetworkInfoKeySSID: wifi名称key
  
  @return nil表示获取不到, 就可能当前不是在wifi环境下
  */
@@ -75,13 +77,13 @@ NS_ASSUME_NONNULL_BEGIN
  连接wifi
  
  @param ssid wifi名称
- @param passphrase wifi密码
+ @param passphrase wifi密码, 无密码wifi传 @"" or nil 都可以
  @param completionHandler 系统返回结果
  
  error自定义code
- - -99997: 版本不支持
+ - 99997: 版本不支持,  >= iOS11 才支持
  - 99996: 未打开wifi
- - 99998: 连接失败(密码错误, ssid没有找到符合的)
+ - 99998: 连接失败(密码错误 or ssid没有找到符合的)
  
  
  @note 需要开启权限
@@ -93,7 +95,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)xq_connectWiFiWithSSID:(NSString *)ssid passphrase:(NSString *)passphrase isWEP:(BOOL)isWEP completionHandler:(void (^)(NSError * __nullable error))completionHandler;
 
-NS_ASSUME_NONNULL_END
+
 
 @end
+
+NS_ASSUME_NONNULL_END
 
