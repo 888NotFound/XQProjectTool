@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  获取当前wifi信息
  
  @note 权限: 获取不到问题 Capabilities -> Access WiFi Information -> ON
- (__bridge NSString *)kCNNetworkInfoKeySSID: wifi名称key
+ (__bridge NSString *)kCNNetworkInfoKeySSID: wifi名称key (@"SSID")
  
  @return nil表示获取不到, 就可能当前不是在wifi环境下
  */
