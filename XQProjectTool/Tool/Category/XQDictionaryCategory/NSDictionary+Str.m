@@ -10,6 +10,7 @@
 
 @implementation NSDictionary (Str)
 
+
 + (NSDictionary *)xq_strToDicWithStr:(NSString *)str {
     NSDictionary *dic = nil;
     

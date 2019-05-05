@@ -128,4 +128,18 @@
     return grayImage;
 }
 
+//#if !TARGET_OS_IPHONE
+//// 获取像素点颜色
+//- (void)colorAtPixel {
+//    NSBitmapImageRep* imageRep = [[NSBitmapImageRep alloc] initWithData:[self TIFFRepresentation]];
+//    NSSize imageSize = [self size];
+//    CGFloat y = imageSize.height - 100.0;
+//    NSColor* color = [imageRep colorAtX:100.0 y:y];
+//    [imageRep release];
+//    return;
+//}
+//#endif
+
+
+
 @end
