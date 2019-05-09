@@ -39,6 +39,14 @@
 #endif
 }
 
++ (void)xq_addKeyboardWillHideNotificationWithObserver:(id)observer selector:(SEL)aSelector {
+#if TARGET_OS_IPHONE
+    XQ_AddNT(UIKeyboardWillHideNotification);
+#endif
+}
+
+
+
 + (void)xq_addObserver:(id)observer selector:(SEL)aSelector name:(NSNotificationName)aName {
     [[NSNotificationCenter defaultCenter] addObserver:observer selector:aSelector name:aName object:nil];
 }

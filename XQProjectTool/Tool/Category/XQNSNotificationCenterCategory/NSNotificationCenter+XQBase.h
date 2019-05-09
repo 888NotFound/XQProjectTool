@@ -46,6 +46,11 @@ XQ_PostNTU(ntName, anObject, aUserInfo);\
 + (void)xq_addKeyboardDidShowNotificationWithObserver:(id)observer selector:(SEL)aSelector;
 
 /**
+ 键盘即将消失
+ */
++ (void)xq_addKeyboardWillHideNotificationWithObserver:(id)observer selector:(SEL)aSelector;
+
+/**
  键盘已经消失
  */
 + (void)xq_addKeyboardDidHideNotificationWithObserver:(id)observer selector:(SEL)aSelector;

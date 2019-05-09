@@ -10,7 +10,8 @@
 
 @implementation XQTask
 
-
+/**
+ */
 + (void)restart {
     [self multipleOpen];
     exit(0);
