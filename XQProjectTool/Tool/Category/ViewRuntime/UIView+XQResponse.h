@@ -56,14 +56,40 @@ typedef NS_OPTIONS(NSUInteger, XQSwipeDirection) {
 @interface NSView (XQResponse)
 #endif
 
+/**
+ 添加手势
+
+ @param gesture 需要添加的手势
+ @param callback 手势点击回调, 一下都一样, 这个就不写了 ( 就是懒 ~.~ )
+ */
 - (void)xq_addGestureWithGesture:(XQGestureRecognizer_class *)gesture
                         callback:(XQGesture)callback;
 
+/**
+ 添加点击手势
+ */
 - (void)xq_addTapWithCallback:(XQTap)callback;
+
+/**
+ 添加点击手势
+
+ @param numberOfTapsRequired 点击次数
+ */
 - (void)xq_addTapWithNumberOfTapsRequired:(NSUInteger)numberOfTapsRequired
                                  callback:(XQTap)callback;
 
+/**
+ 添加长按手势
+ */
 - (void)xq_addLongPressWithCallback:(XQLongPress)callback;
+
+/**
+ 添加长按手势
+
+ @param numberOfTapsRequired 点击次数
+ @param minimumPressDuration 最少长按时间, 单位 s
+ @param allowableMovement 允许移动大小
+ */
 - (void)xq_addLongPressWithNumberOfTapsRequired:(NSUInteger)numberOfTapsRequired
                            minimumPressDuration:(CFTimeInterval)minimumPressDuration
                               allowableMovement:(CGFloat)allowableMovement
@@ -72,21 +98,30 @@ typedef NS_OPTIONS(NSUInteger, XQSwipeDirection) {
 #if TARGET_OS_IPHONE
 
 /**
- 添加上扫手势
+ 添加轻扫手势
 
  @param direction 添加的方向
- @param callback 手势执行回调
  */
 - (void)xq_addSwipeWithDirection:(XQSwipeDirection)direction
                         callback:(XQSwipe)callback;
 #endif
 
+/**
+ 添加拖动手势
+ */
 - (void)xq_addPanWithCallback:(XQPan)callback;
 
 #if TARGET_OS_IPHONE
+
+/**
+ 添加捏合手势
+ */
 - (void)xq_addPinchWithCallback:(XQPinch)callback;
 #endif
 
+/**
+ 添加旋转手势
+ */
 - (void)xq_addRotationWithCallback:(XQRotation)callback;
 
 
