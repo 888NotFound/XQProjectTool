@@ -15,7 +15,7 @@
 #ifdef DEBUG
 #define XQLog(...) NSLog(__VA_ARGS__)
 #else
-#define {}
+#define XQLog(...) {}
 #endif
 
 @implementation NSObject (XQViewOC)
@@ -155,7 +155,7 @@
 #pragma mark -- 方法
 
 + (void)xq_viewInstanceMethod {
-    [self xq_viewMethodWithClass:self];
+    [self xq_viewMethodWithClass:[self class]];
 }
 
 + (void)xq_viewClassMethod {
