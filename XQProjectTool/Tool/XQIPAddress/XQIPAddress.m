@@ -296,7 +296,6 @@
  @param ssid wifi名称
  @param passphrase wifi密码
  
- @return 含义
  
  - -1: 版本不支持
  - 0: 未打开wifi
@@ -304,7 +303,7 @@
  
  */
 + (void)xq_connectWiFiWithSSID:(NSString *)ssid passphrase:(NSString *)passphrase isWEP:(BOOL)isWEP completionHandler:(void (^)(NSError * __nullable error))completionHandler {
-    
+#if TARGET_OS_IPHONE
     if ([XQIPAddress isWiFiEnabled]) {
         if (@available(iOS 11.0, *)) {
             
@@ -381,6 +380,8 @@
     if (completionHandler) {
         completionHandler(xq_error);
     }
+#endif
+    
 }
 
 

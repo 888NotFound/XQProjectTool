@@ -18,14 +18,14 @@
 
 + (void)beginSheetImageModalWithWindow:(NSWindow *)window openCallback:(XQOpenPanelCallback)openCallback cancelCallback:(XQOpenPanelCancelCallback)cancelCallback {
     [self beginSheetModalWithWindow:window configPanel:^(NSOpenPanel *openPanel) {
-        openPanel.canChooseFiles = YES;
+        openPanel.canChooseDirectories = NO;
         [openPanel setAllowedFileTypes:@[@"jpg", @"jpeg", @"png"]];
     } openCallback:openCallback cancelCallback:cancelCallback];
 }
 
 + (void)beginSheetPNGImageModalWithWindow:(NSWindow *)window openCallback:(XQOpenPanelCallback)openCallback cancelCallback:(XQOpenPanelCancelCallback)cancelCallback {
     [self beginSheetModalWithWindow:window configPanel:^(NSOpenPanel *openPanel) {
-        openPanel.canChooseFiles = YES;
+        openPanel.canChooseDirectories = NO;
         [openPanel setAllowedFileTypes:@[@"png"]];
     } openCallback:openCallback cancelCallback:cancelCallback];
 }
@@ -39,7 +39,7 @@
     //是否可以选择文件夹
     openPanel.canChooseDirectories = YES;
     //是否可以选择文件
-    openPanel.canChooseFiles = NO;
+    openPanel.canChooseFiles = YES;
     //是否可以多选
     openPanel.allowsMultipleSelection = NO;
     if (configPanel) {
