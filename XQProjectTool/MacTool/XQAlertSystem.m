@@ -13,10 +13,15 @@
 @implementation XQAlertSystem
 
 + (NSAlert *)alertErrorWithWithWindow:(NSWindow *)window domain:(NSErrorDomain)domain code:(NSInteger)code userInfo:(nullable NSDictionary<NSErrorUserInfoKey, id> *)dict callback:(XQAlertSystemCallback)callback {
+    NSError *error = [NSError errorWithDomain:domain code:code userInfo:dict];
+    return [self alertErrorWithWithWindow:window error:error callback:callback];
+}
+
++ (NSAlert *)alertErrorWithWithWindow:(NSWindow *)window error:(NSError *)error callback:(XQAlertSystemCallback)callback {
     if (!window) {
         return nil;
     }
-    NSAlert *alert = [NSAlert alertWithError:[NSError errorWithDomain:domain code:code userInfo:dict]];
+    NSAlert *alert = [NSAlert alertWithError:error];
     [alert beginSheetModalForWindow:window completionHandler:callback];
     return alert;
 }

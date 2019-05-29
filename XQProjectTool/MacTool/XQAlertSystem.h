@@ -26,6 +26,11 @@ typedef void(^XQAlertSystemCallback)(NSInteger index);
  */
 + (NSAlert *)alertErrorWithWithWindow:(NSWindow *)window domain:(NSErrorDomain)domain code:(NSInteger)code userInfo:(nullable NSDictionary<NSErrorUserInfoKey, id> *)dict callback:(XQAlertSystemCallback)callback;
 
+/**
+ 显示错误弹框
+ */
++ (NSAlert *)alertErrorWithWithWindow:(NSWindow *)window error:(NSError *)error callback:(XQAlertSystemCallback)callback;
+
 @end
 
 

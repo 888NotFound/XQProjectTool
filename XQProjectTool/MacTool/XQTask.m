@@ -15,6 +15,9 @@
 /** 系统执行脚本 */
 @property (nonatomic, strong) NSAppleScript *aScript;
 
+/** <#note#> */
+@property (nonatomic, strong) dispatch_queue_t queue;
+
 @end
 
 @implementation XQTask
@@ -70,42 +73,60 @@ static XQTask *sm_ = nil;
 }
 
 
-
 // 执行脚本
-- (void)xq_executeBinShWithCmd:(NSString *)cmd {
-    NSLog(@"cmd: %@", cmd);
-    if ([self.task isRunning]) {
-        NSLog(@"正在运行");
-        return;
+- (void)xq_executeBashWithCmd:(NSString *)cmd {
+    [self xq_executeBinShWithExecutableURL:[NSURL fileURLWithPath:@"/bin/bash"] cmd:cmd];
+}
+// 执行脚本
+- (void)xq_executeSudoWithCmd:(NSString *)cmd {
+    [self xq_executeBinShWithExecutableURL:[NSURL fileURLWithPath:@"/bin/sudo"] cmd:cmd];
+}
+
+- (void)createQueue {
+    if (!self.queue) {
+        self.queue = dispatch_queue_create("xq_test", 0);
     }
+}
+
+- (void)xq_executeBinShWithExecutableURL:(NSURL *)executableURL cmd:(NSString *)cmd {
+    [self createQueue];
+    dispatch_async(self.queue, ^{
+        NSLog(@"cmd: %@", cmd);
+        if ([self.task isRunning]) {
+            NSLog(@"正在运行");
+            return;
+        }
+        
+        if (self.task) {
+            [self xq_terminate];
+        }
+        
+        __weak typeof(self) weakSelf = self;
+        NSError *error = nil;
+        //    @"/bin/sh"
+        NSTask *task = [[self class] launchedTaskWithExecutableURL:[NSURL fileURLWithPath:@"/bin/sudo"] arguments:@[@"-c", cmd] error:&error outLogHandle:^(NSString *log) {
+            NSLog(@"输出: %@", log);
+        } errorLogHandle:^(NSString *log) {
+            NSLog(@"错误: %@", log);
+        } terminationHandler:^(NSTask * _Nonnull task) {
+            NSLog(@"断开: %@", task);
+            weakSelf.task = nil;
+        }];
+        
+        if (error) {
+            NSLog(@"error: %@", error);
+        }
+        
+        self.task = task;
+        
+        // 监听打印
+        //    [self xq_waitReadingForDataInBackgroundAndNotify];
+        // 开始加载
+        //    [self.task launchAndReturnError:&error];
+        // 等待结束
+        //    [self.task waitUntilExit];
+    });
     
-    if (self.task) {
-        [self xq_terminate];
-    }
-    
-    __weak typeof(self) weakSelf = self;
-    NSError *error = nil;
-    NSTask *task = [[self class] launchedTaskWithExecutableURL:[NSURL fileURLWithPath:@"/bin/sh"] arguments:@[@"-c", cmd] error:&error outLogHandle:^(NSString *log) {
-        NSLog(@"输出: %@", log);
-    } errorLogHandle:^(NSString *log) {
-        NSLog(@"错误: %@", log);
-    } terminationHandler:^(NSTask * _Nonnull task) {
-        NSLog(@"断开: %@", task);
-        weakSelf.task = nil;
-    }];
-    
-    if (error) {
-        NSLog(@"error: %@", error);
-    }
-    
-    self.task = task;
-    
-    // 监听打印
-//    [self xq_waitReadingForDataInBackgroundAndNotify];
-    // 开始加载
-//    [self.task launchAndReturnError:&error];
-    // 等待结束
-//    [self.task waitUntilExit];
 }
 
 /**
@@ -200,15 +221,19 @@ static XQTask *sm_ = nil;
 }
 
 - (void)xq_terminate {
-    if (!self.task) {
-        return;
-    }
-    
-    if (self.task.isRunning) {
-        [self.task terminate];
-        self.task = nil;
-        NSLog(@"%s", __func__);
-    }
+    [self createQueue];
+    dispatch_async(self.queue, ^{
+        if (!self.task) {
+            NSLog(@"不存在任务");
+            return;
+        }
+        
+        if (self.task.isRunning) {
+            [self.task terminate];
+            self.task = nil;
+            NSLog(@"%s", __func__);
+        }
+    });
 }
 
 + (nullable NSTask *)launchedTaskWithExecutableURL:(NSURL *)url arguments:(NSArray<NSString *> *)arguments error:(out NSError ** _Nullable)error outLogHandle:(void (^)(NSString *log))outLogHandle errorLogHandle:(void (^)(NSString *log))errorLogHandle terminationHandler:(void (^_Nullable)(NSTask *task))terminationHandler {
@@ -294,6 +319,17 @@ static XQTask *sm_ = nil;
     [task waitUntilExit];
     
     return task;
+}
+
+// 获取管理员权限
++ (NSDictionary *)getAdminAuthority {
+    NSDictionary *error = nil;
+    NSString *script =  @"do shell script \"/bin/ls\" with administrator privileges";
+    
+    NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:script];
+    
+    NSAppleEventDescriptor *des = [appleScript executeAndReturnError:&error];
+    return error;
 }
 
 @end

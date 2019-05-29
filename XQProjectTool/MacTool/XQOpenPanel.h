@@ -17,11 +17,7 @@ typedef void(^XQOpenPanelCancelCallback)(void);
 @interface XQOpenPanel : NSObject
 
 /**
- <#Description#>
-
- @param window <#window description#>
- @param openCallback <#openCallback description#>
- @param cancelCallback <#cancelCallback description#>
+ 默认配置, 什么都可选, 单选
  */
 + (void)beginSheetModalWithWindow:(NSWindow *)window openCallback:(XQOpenPanelCallback)openCallback cancelCallback:(XQOpenPanelCancelCallback)cancelCallback;
 
@@ -35,6 +31,9 @@ typedef void(^XQOpenPanelCancelCallback)(void);
  */
 + (void)beginSheetPNGImageModalWithWindow:(NSWindow *)window openCallback:(XQOpenPanelCallback)openCallback cancelCallback:(XQOpenPanelCancelCallback)cancelCallback;
 
+/**
+ 自己配置config
+ */
 + (void)beginSheetModalWithWindow:(NSWindow *)window configPanel:(void(^)(NSOpenPanel *openPanel))configPanel openCallback:(XQOpenPanelCallback)openCallback cancelCallback:(XQOpenPanelCancelCallback)cancelCallback;
 
 @end
