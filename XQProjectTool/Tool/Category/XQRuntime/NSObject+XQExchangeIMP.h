@@ -46,6 +46,9 @@
 
 /**
  获取关联的值
+ 
+ @param obj 关联对象
+ @param key 关联key
  */
 + (id)xq_getAssociatedObject:(id)obj key:(NSString *)key;
 
