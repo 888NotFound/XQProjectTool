@@ -27,7 +27,7 @@ NSString *const kXQXMLParserNodeKey = @"nodeValue";
 
 + (NSDictionary *)dictionaryForXMLData:(NSData *)data error:(NSError *)error
 {
-    XQXMLParser *xmlParser = [[XQXMLParser alloc]initWithError:error];
+    XQXMLParser *xmlParser = [[XQXMLParser alloc] initWithError:error];
     NSDictionary *rootDictionary = [xmlParser objectWithData:data options:0];
     return rootDictionary;
 }
@@ -105,6 +105,10 @@ NSString *const kXQXMLParserNodeKey = @"nodeValue";
  */
 - (NSDictionary *)objectWithData:(NSData *)data options:(XQXMLParserOptions)options
 {
+    if (!data) {
+        return nil;
+    }
+    
     //    每次处理前先重新初始化
     self.dictionaryStack = [NSMutableArray array];
     self.textInProgress = [NSMutableString string];
