@@ -81,6 +81,9 @@ NSString *const kXQXMLParserNodeKey = @"nodeValue";
         return nil;
     }
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
+    if (!jsonData) {
+        return nil;
+    }
     NSString *str = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
     return str;
 }
@@ -134,13 +137,37 @@ NSString *const kXQXMLParserNodeKey = @"nodeValue";
 
 #pragma mark -  NSXMLParserDelegate methods
 //文档开始读取
-- (void)parserDidStartDocument:(NSXMLParser *)parser
-{
-    
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
+//    NSLog(@"%s", __func__);
 }
-//解析标签开始
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict
-{
+
+/**
+ wxq 解析标签开始
+ 
+ 例如:
+ 
+ <Scheme
+ LastUpgradeVersion = "1020"
+ version = "1.3">
+ 
+ <key>XQTest</key>
+ <string>test</string>
+ 
+ </Scheme>
+ 
+ elementName 是 Scheme 和 key 和 string
+ 
+ attributeDict 是
+ {
+    "LastUpgradeVersion" = 1020,
+    "version" = "1.3"
+ }
+ 
+ 
+ */
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
+//    NSLog(@"%s, %@, %@, %@, %@", __func__, elementName, namespaceURI, qName, attributeDict);
+    
     //    获取当前字典
     NSMutableDictionary *parentDict = [self.dictionaryStack lastObject];
     //    创建子字典
@@ -172,32 +199,113 @@ NSString *const kXQXMLParserNodeKey = @"nodeValue";
     //    更新堆栈数组
     [self.dictionaryStack addObject:childDict];
 }
-//获取标签对应的数据
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
-{
+
+/**
+ wxq 获取标签对应的数据
+ 
+ 例如:
+ 
+ <Scheme
+ LastUpgradeVersion = "1020"
+ version = "1.3">
+ 
+ <key>XQTest</key>
+ <string>test</string>
+ 
+ </Scheme>
+ 
+ string
+ 那么 scheme 标签其实如果算内容是 <key>XQTest</key> <string>test</string>, 但因为也是标签, 那么这个其实算是没有东西的
+ 像 key 标签内容是 XQTest
+ 像 string 标签内容是 test
+ 
+ 烦就烦在这两处， plist 主要靠 key 标签 和 对应的 value 标签...
+ 但是其他的一些 xml 文件, 却是头更重要 (LastUpgradeVersion = "1020" version = "1.3")
+ 所以如果要封装，需要弄一个通用, 几个区分不同 iOS 文件的
+ 
+ */
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+//    NSLog(@"%s, %@", __func__, string);
     [self.textInProgress appendString:string];
 }
+
 //解析标签结束
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+//    NSLog(@"%s, %@, %@, %@", __func__, elementName, namespaceURI, qName);
+    
     NSMutableDictionary *dictInProgress = [self.dictionaryStack lastObject];
     if (self.textInProgress.length > 0) {
         NSString *trmmedString = [self.textInProgress stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [dictInProgress setObject:[trmmedString mutableCopy] forKey:kXQXMLParserNodeKey];
+        if (trmmedString.length > 0) {
+            [dictInProgress setObject:[trmmedString mutableCopy] forKey:kXQXMLParserNodeKey];
+        }
         
         self.textInProgress = [NSMutableString string];
     }
     [self.dictionaryStack removeLastObject];
 }
+
 //文档结束读取
-- (void)parserDidEndDocument:(NSXMLParser *)parser
-{
-    
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+//    NSLog(@"%s", __func__);
 }
+
 //遇到错误时停止解析
-- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError
-{
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+//    NSLog(@"%s", __func__);
     self.errorPointer = parseError;
 }
+
+
+/*
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+ 
+<plist version="1.0">
+<dict>
+ 
+<key>CFBundleDevelopmentRegion</key>
+<string>$(DEVELOPMENT_LANGUAGE)</string>
+ 
+<key>CFBundleExecutable</key>
+<string>$(EXECUTABLE_NAME)</string>
+ 
+<key>CFBundleIconFile</key>
+<string></string>
+ 
+<key>CFBundleIdentifier</key>
+<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+ 
+<key>CFBundleInfoDictionaryVersion</key>
+<string>6.0</string>
+ 
+<key>CFBundleName</key>
+<string>$(PRODUCT_NAME)</string>
+ 
+<key>CFBundlePackageType</key>
+<string>APPL</string>
+ 
+<key>CFBundleShortVersionString</key>
+<string>1.0</string>
+ 
+<key>CFBundleVersion</key>
+<string>1</string>
+ 
+<key>LSMinimumSystemVersion</key>
+<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+ 
+<key>NSHumanReadableCopyright</key>
+<string>Copyright © 2019 WXQ. All rights reserved.</string>
+ 
+<key>NSMainStoryboardFile</key>
+<string>Main</string>
+ 
+<key>NSPrincipalClass</key>
+<string>NSApplication</string>
+ 
+</dict>
+</plist>
+ */
+
 
 @end
