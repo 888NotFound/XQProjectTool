@@ -74,90 +74,75 @@ static XQTask *sm_ = nil;
 
 
 // 执行脚本
-- (void)xq_executeBashWithCmd:(NSString *)cmd {
-    [self xq_executeBinShWithExecutableURL:[NSURL fileURLWithPath:@"/bin/bash"] cmd:cmd];
+- (void)xq_executeBashWithCmd:(NSString *)cmd key:(NSString *)key error:(out NSError ** _Nullable)error outLogHandle:(void (^)(NSString *log))outLogHandle errorLogHandle:(void (^)(NSString *log))errorLogHandle terminationHandler:(void (^_Nullable)(NSTask *task))terminationHandler {
+    [self xq_executeBinShWithExecutableURL:[NSURL fileURLWithPath:@"/bin/bash"] cmd:cmd key:key error:error outLogHandle:outLogHandle errorLogHandle:errorLogHandle terminationHandler:terminationHandler];
 }
+
 // 执行脚本
-- (void)xq_executeSudoWithCmd:(NSString *)cmd {
-    [self xq_executeBinShWithExecutableURL:[NSURL fileURLWithPath:@"/bin/sudo"] cmd:cmd];
+- (void)xq_executeSudoWithCmd:(NSString *)cmd key:(NSString *)key error:(out NSError ** _Nullable)error outLogHandle:(void (^)(NSString *log))outLogHandle errorLogHandle:(void (^)(NSString *log))errorLogHandle terminationHandler:(void (^_Nullable)(NSTask *task))terminationHandler {
+    [self xq_executeBinShWithExecutableURL:[NSURL fileURLWithPath:@"/bin/sudo"] cmd:cmd key:key error:error outLogHandle:outLogHandle errorLogHandle:errorLogHandle terminationHandler:terminationHandler];
 }
 
-- (void)createQueue {
-    if (!self.queue) {
-        self.queue = dispatch_queue_create("xq_test", 0);
-    }
-}
-
-- (void)xq_executeBinShWithExecutableURL:(NSURL *)executableURL cmd:(NSString *)cmd {
-    [self createQueue];
-    dispatch_async(self.queue, ^{
-        NSLog(@"cmd: %@", cmd);
-        if ([self.task isRunning]) {
-            NSLog(@"正在运行");
-            return;
-        }
-        
-        if (self.task) {
-            [self xq_terminate];
-        }
-        
-        __weak typeof(self) weakSelf = self;
-        NSError *error = nil;
-        //    @"/bin/sh"
-        NSTask *task = [[self class] launchedTaskWithExecutableURL:[NSURL fileURLWithPath:@"/bin/sudo"] arguments:@[@"-c", cmd] error:&error outLogHandle:^(NSString *log) {
-            NSLog(@"输出: %@", log);
-        } errorLogHandle:^(NSString *log) {
-            NSLog(@"错误: %@", log);
-        } terminationHandler:^(NSTask * _Nonnull task) {
-            NSLog(@"断开: %@", task);
-            weakSelf.task = nil;
-        }];
-        
-        if (error) {
-            NSLog(@"error: %@", error);
-        }
-        
-        self.task = task;
-        
-        // 监听打印
-        //    [self xq_waitReadingForDataInBackgroundAndNotify];
-        // 开始加载
-        //    [self.task launchAndReturnError:&error];
-        // 等待结束
-        //    [self.task waitUntilExit];
-    });
+- (void)xq_executeBinShWithExecutableURL:(NSURL *)executableURL cmd:(NSString *)cmd key:(NSString *)key error:(out NSError ** _Nullable)error outLogHandle:(void (^)(NSString *log))outLogHandle errorLogHandle:(void (^)(NSString *log))errorLogHandle terminationHandler:(void (^_Nullable)(NSTask *task))terminationHandler {
+    // 每个执行任务都放不同线程
+    // DISPATCH_QUEUE_SERIAL: 串行队列
+    NSString *queueLabel = [NSString stringWithFormat:@"xq_task_%.0f", [NSDate date].timeIntervalSince1970];
+    NSLog(@"cmd: %@", cmd);
     
-}
-
-/**
- 监听脚本打印
- */
-- (void)xq_waitReadingForDataInBackgroundAndNotify {
-    __weak typeof(self.task) weakTask = self.task;
+    __weak typeof(self) weakSelf = self;
     
-    // 监听输出
-    NSPipe *outPipe = self.task.standardOutput;
-    [outPipe.fileHandleForReading waitForDataInBackgroundAndNotify];
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSFileHandleDataAvailableNotification object:outPipe.fileHandleForReading queue:nil usingBlock:^(NSNotification * note) {
-        NSFileHandle *fh = note.object;
-        // 获取当前输出的字符串
-        NSData *data = fh.availableData;
-        NSString *result = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
-        if (result.length != 0) {
-            NSLog(@"**** %@", result);
-        }else {
-            NSLog(@"xq_空");
+    //    @"/bin/sh"
+    NSTask *task = [[self class] launchedTaskWithExecutableURL:executableURL arguments:@[@"-c", cmd] error:error outLogHandle:^(NSString *log) {
+        if (outLogHandle) {
+            outLogHandle(log);
         }
         
-        // 结束的时候，数据都是空的, 然后并且 isRuning == NO
+    } errorLogHandle:^(NSString *log) {
+        if (errorLogHandle) {
+            errorLogHandle(log);
+        }
         
-        if (weakTask.isRunning) {
-            // 再次等待接收
-            [fh waitForDataInBackgroundAndNotify];
-        }else {
-            NSLog(@"结束接收数据");
+    } terminationHandler:^(NSTask * _Nonnull task) {
+        NSLog(@"断开: %@", task);
+        
+        NSString *rKey = nil;
+        for (NSString *key in weakSelf.taskDic.allKeys) {
+            NSTask *sTask = weakSelf.taskDic[key];
+            if ([sTask isEqual:task]) {
+                NSLog(@"包含 task: %@", task);
+                rKey = key;
+            }
+        }
+        
+        if (rKey) {
+            [weakSelf.taskDic removeObjectForKey:rKey];
+        }
+        
+        if (terminationHandler) {
+            terminationHandler(task);
         }
     }];
+    
+    if (*error) {
+        NSLog(@"执行错误 error: %@", *error);
+    }else {
+        
+        if (key.length == 0) {
+            key = [NSString stringWithFormat:@"xq_%.0f", [NSDate date].timeIntervalSince1970];
+        }
+        [self.taskDic addEntriesFromDictionary:@{key:task}];
+        
+        dispatch_async(dispatch_queue_create([queueLabel UTF8String], DISPATCH_QUEUE_SERIAL), ^{
+            [task waitUntilExit];
+            // 监听打印
+            //    [self xq_waitReadingForDataInBackgroundAndNotify];
+            // 开始加载
+            //    [self.task launchAndReturnError:&error];
+            // 等待结束
+            //    [self.task waitUntilExit];
+        });
+    }
+    
 }
 
 /**
@@ -166,74 +151,66 @@ static XQTask *sm_ = nil;
  直接, 调用 [[inPipe fileHandleForWriting] writeData:inData]; 就可以了
  */
 - (void)xq_waitWritingForDataInBackgroundAndNotify {
-    __weak typeof(self.task) weakTask = self.task;
+    /**
+     其实主要就是把 task 的 standardInput 设置为 NSPipe
+     然后获取 [standardInput fileHandleForWriting] 调用 writeData 方法
+     */
     
-    // 监听输入
-    NSPipe *inPipe = self.task.standardInput;
-    NSFileHandle *input = [NSFileHandle fileHandleWithStandardInput];
-    // 等待输入...
-    [input waitForDataInBackgroundAndNotify];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSFileHandleDataAvailableNotification object:input queue:nil usingBlock:^(NSNotification *note) {
-        NSFileHandle *input = note.object;
-        NSData *inData = [input availableData];
-        NSString *inDataStr = [[NSString alloc] initWithData:inData encoding:NSUTF8StringEncoding];
-        NSLog(@"input: %@, %@", note, inDataStr);
-        if ([inData length] == 0) {
-            [[inPipe fileHandleForWriting] closeFile];
-        } else {
-            [[inPipe fileHandleForWriting] writeData:inData];
-        }
-        
-        if (weakTask.isRunning) {
-            [input waitForDataInBackgroundAndNotify];
-        }
-    }];
+//    __weak typeof(self.task) weakTask = self.task;
+//
+//    // 监听输入
+//    NSPipe *inPipe = self.task.standardInput;
+//    NSFileHandle *input = [NSFileHandle fileHandleWithStandardInput];
+//    // 等待输入...
+//    [input waitForDataInBackgroundAndNotify];
+//
+//    [[NSNotificationCenter defaultCenter] addObserverForName:NSFileHandleDataAvailableNotification object:input queue:nil usingBlock:^(NSNotification *note) {
+//        NSFileHandle *input = note.object;
+//        NSData *inData = [input availableData];
+//        NSString *inDataStr = [[NSString alloc] initWithData:inData encoding:NSUTF8StringEncoding];
+//        NSLog(@"input: %@, %@", note, inDataStr);
+//        if ([inData length] == 0) {
+//            [[inPipe fileHandleForWriting] closeFile];
+//        } else {
+//            [[inPipe fileHandleForWriting] writeData:inData];
+//        }
+//
+//        if (weakTask.isRunning) {
+//            [input waitForDataInBackgroundAndNotify];
+//        }
+//    }];
 }
+
+- (void)xq_terminateWithKey:(NSString *)key; {
+    if (!self.taskDic[key]) {
+        NSLog(@"不存在任务");
+        return;
+    }
+
+    if (self.taskDic[key].isRunning) {
+        [self.taskDic[key] terminate];
+    }else {
+        [self.taskDic removeObjectForKey:key];
+    }
+    
+    [self.taskDic removeObjectForKey:key];
+}
+
 
 /**
- 监听错误
+ 结束脚本所有运行
  */
-- (void)xq_waitErrorForDataInBackgroundAndNotify {
-    __weak typeof(self.task) weakTask = self.task;
+- (void)xq_terminateAll {
+    NSLog(@"%s", __func__);
     
-    // 监听输出
-    NSPipe *outPipe = self.task.standardError;
-    [outPipe.fileHandleForReading waitForDataInBackgroundAndNotify];
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSFileHandleDataAvailableNotification object:outPipe.fileHandleForReading queue:nil usingBlock:^(NSNotification * note) {
-        NSFileHandle *fh = note.object;
-        // 获取当前输出的字符串
-        NSData *data = fh.availableData;
-        NSString *result = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
-        if (result.length != 0) {
-            NSLog(@"error: %@", result);
-        }else {
-            NSLog(@"error: xq_空");
+    NSDictionary *dic = self.taskDic.copy;
+    for (NSString *key in dic.allKeys) {
+        NSTask *task = dic[key];
+        if (task.isRunning) {
+            [task terminate];
         }
-        
-        if (weakTask.isRunning) {
-            // 再次等待接收
-            [fh waitForDataInBackgroundAndNotify];
-        }else {
-            NSLog(@"error: 结束接收数据");
-        }
-    }];
-}
-
-- (void)xq_terminate {
-    [self createQueue];
-    dispatch_async(self.queue, ^{
-        if (!self.task) {
-            NSLog(@"不存在任务");
-            return;
-        }
-        
-        if (self.task.isRunning) {
-            [self.task terminate];
-            self.task = nil;
-            NSLog(@"%s", __func__);
-        }
-    });
+    }
+    [self.taskDic removeAllObjects];
 }
 
 + (nullable NSTask *)launchedTaskWithExecutableURL:(NSURL *)url arguments:(NSArray<NSString *> *)arguments error:(out NSError ** _Nullable)error outLogHandle:(void (^)(NSString *log))outLogHandle errorLogHandle:(void (^)(NSString *log))errorLogHandle terminationHandler:(void (^_Nullable)(NSTask *task))terminationHandler {
@@ -316,10 +293,11 @@ static XQTask *sm_ = nil;
     
     
     [task launchAndReturnError:error];
-    [task waitUntilExit];
+//    [task waitUntilExit];
     
     return task;
 }
+
 
 // 获取管理员权限
 + (NSDictionary *)getAdminAuthority {
@@ -330,6 +308,15 @@ static XQTask *sm_ = nil;
     
     NSAppleEventDescriptor *des = [appleScript executeAndReturnError:&error];
     return error;
+}
+
+#pragma mark - get
+
+- (NSMutableDictionary<NSString *,NSTask *> *)taskDic {
+    if (!_taskDic) {
+        _taskDic = [NSMutableDictionary dictionary];
+    }
+    return _taskDic;
 }
 
 @end
