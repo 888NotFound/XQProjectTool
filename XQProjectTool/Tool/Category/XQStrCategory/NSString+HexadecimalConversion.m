@@ -16,6 +16,9 @@
         return @"";
     }
     
+    // 1e00
+    // 1e80
+    
         // 这步操作是项目需求
         // 后面的两个字符串
     NSString *a = [self substringFromIndex:self.length - 2];
@@ -23,9 +26,21 @@
     NSString *b = [self substringToIndex:self.length - 2];
         // 交换位置
     NSString *str = [NSString stringWithFormat:@"%@%@", a, b];
+    // 转为10进制
+    NSString *result = [NSString xq_hexadecimalTransferDecimalWithStr:str];
     
-        // /100, 温湿度
-    return [NSString stringWithFormat:@"%.2f", [NSString xq_hexadecimalTransferDecimalWithStr:str].floatValue/100.0];
+    // /100, 温湿度
+    float m = 100.0;
+    
+    int max = 0x8000;
+    // 判断最高位, 其实就是等于或大于 0x8000, 那么 q1 就为 max, 不然为 0
+    int q1 = result.intValue & max;
+    if (q1 == max) {
+        // 负数
+        return [NSString stringWithFormat:@"-%.2f", (result.intValue - max)/m];
+    }
+    // 正数
+    return [NSString stringWithFormat:@"%.2f", result.intValue/m];
 }
 
 - (NSString *)xq_hexadecimalTransferDecimal {
