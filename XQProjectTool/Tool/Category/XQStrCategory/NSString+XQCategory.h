@@ -63,6 +63,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)xq_vagueFindWithContentText:(NSString *)contentText filterText:(NSString *)filterText;
 
+/**
+ 移除小数点后面的 0
+ */
+- (NSString *)xq_removeFloatAllZero;
+
 @end
 
 NS_ASSUME_NONNULL_END

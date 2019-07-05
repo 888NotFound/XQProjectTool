@@ -28,7 +28,6 @@
 }
 
 - (void)startAnimationWithColor:(UIColor *)color {
-    NSLog(@"%@", NSStringFromCGRect(self.frame));
     
     [self stopAnimation];
     self.isInAnimation = YES;
@@ -84,13 +83,13 @@
         CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
         scaleAnimation.fromValue =@0;//开始的大小
         scaleAnimation.toValue =@1.0;//最后的大小
-        scaleAnimation.duration =animationDuration;
+        scaleAnimation.duration = animationDuration;
         
         CAKeyframeAnimation *opacityAnimation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
-        opacityAnimation.duration =animationDuration;
-        opacityAnimation.values =@[@0, @0.7,@0];
-        opacityAnimation.keyTimes =@[@0, @0.5,@1];
-        animationGroup.animations =@[scaleAnimation, opacityAnimation];
+        opacityAnimation.duration = animationDuration;
+        opacityAnimation.values = @[@0, @0.7,@0];
+        opacityAnimation.keyTimes = @[@0, @0.5,@1];
+        animationGroup.animations = @[scaleAnimation, opacityAnimation];
         
         [radarLayer addAnimation:animationGroup forKey:@"pulsing"];
         

@@ -28,6 +28,10 @@
 }
 
 + (void)autBiometricsWithCallback:(void(^)(void))callback failureCallback:(void(^)(NSError *error))failureCallback {
+    [self autBiometricsWithIsMustFingerprint:NO callback:callback failureCallback:failureCallback];
+}
+
++ (void)autBiometricsWithIsMustFingerprint:(BOOL)isMustFingerprint callback:(void(^)(void))callback failureCallback:(void(^)(NSError *error))failureCallback {
         //创建LAContext
     LAContext* context = [[LAContext alloc] init];
     NSError* error = nil;
@@ -35,12 +39,19 @@
     
     //LAPolicyDeviceOwnerAuthenticationWithBiometrics
         //首先使用canEvaluatePolicy 判断设备支持状态
-    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:&error]) {
+    LAPolicy policy = LAPolicyDeviceOwnerAuthentication;
+    if (isMustFingerprint) {
+        policy = LAPolicyDeviceOwnerAuthenticationWithBiometrics;
+    }
+    
+    if ([context canEvaluatePolicy:policy error:&error]) {
             //支持指纹验证
-        [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:result reply:^(BOOL success, NSError *error) {
+        [context evaluatePolicy:policy localizedReason:result reply:^(BOOL success, NSError *error) {
             if (success) {
                     //验证成功，主线程处理UI
+#if DEBUG
                 NSLog(@"成功啦");
+#endif
                     //用户选择输入密码，切换主线程处理
                 if (callback) {
                     callback();
@@ -48,7 +59,9 @@
                 return ;
                 
             }else {
+#if DEBUG
                 NSLog(@"手势验证失败 %@",error.localizedDescription);
+#endif
                 switch (error.code) {
                     case LAErrorSystemCancel: {
                             //系统取消授权，如其他APP切入
@@ -63,8 +76,10 @@
                         break;
                         
                     case LAErrorAuthenticationFailed:{
-                            //授权失败
+                            // 授权失败, 验证了多次指纹开锁, 失败了, 先让用户密码开锁先
                         NSLog(@"LAErrorAuthenticationFailed");
+                        [self autPwdWithContext:context isMustFingerprint:isMustFingerprint callback:callback failureCallback:failureCallback];
+                        return;
                     }
                         break;
                         
@@ -87,9 +102,9 @@
                         break;
                         
                     case LAErrorUserFallback: {
-                        // 选择输入密码
+                        // 用户选择要输入密码, 让他输入. 反正就算输入正确了, 还是跳到验证指纹这边来
                         NSLog(@"LAErrorUserFallback");
-                        [self autPwdWithContext:context callback:callback failureCallback:failureCallback];
+                        [self autPwdWithContext:context isMustFingerprint:isMustFingerprint callback:callback failureCallback:failureCallback];
                         return;
                     }
                         break;
@@ -110,9 +125,10 @@
                         break;
                         
                     default: {
-                        [self autPwdWithContext:context callback:callback failureCallback:failureCallback];
+//                        [self autPwdWithContext:context isMustFingerprint:isMustFingerprint callback:callback failureCallback:failureCallback];
+                        NSLog(@"指纹验证 default");
                     }
-                        return ;
+                        break;
                 }
                 
                 if (failureCallback) {
@@ -125,7 +141,11 @@
         return;
         
     }else {
-            //不支持指纹识别，LOG出错误详情
+            // 不支持指纹识别，LOG出错误详情
+#if DEBUG
+        NSLog(@"手势不支持 %@", error.localizedDescription);
+#endif
+        
         switch (error.code) {
             case LAErrorTouchIDNotEnrolled: {
                 NSLog(@"TouchID is not enrolled");
@@ -134,6 +154,7 @@
                 
             case LAErrorPasscodeNotSet: {
                 NSLog(@"A passcode has not been set");
+                // 未设置密码
                 error = [NSError errorWithDomain:@"wxq" code:-5 userInfo:nil];
             }
                 break;
@@ -143,15 +164,18 @@
             }
                 break;
                 
-//            case LAErrorBiometryLockout:{// 输入错误过多, 被锁, 需要输入密码
-//                NSLog(@"LAErrorBiometryLockout");
-//            }
-//                break;
-//
-//            case LAErrorBiometryNotAvailable:{
-//                NSLog(@"LAErrorBiometryNotAvailable");
-//            }
-//                break;
+            case LAErrorBiometryLockout:{
+                // 输入错误过多 或 指纹解锁多次, 被锁, 需要先输入密码解锁
+                NSLog(@"LAErrorBiometryLockout");
+                [self autPwdWithContext:context isMustFingerprint:isMustFingerprint callback:callback failureCallback:failureCallback];
+                return;
+            }
+                break;
+
+            case LAErrorBiometryNotAvailable:{
+                NSLog(@"LAErrorBiometryNotAvailable");
+            }
+                break;
                 
             case LAErrorInvalidContext:{
                 NSLog(@"LAErrorInvalidContext");
@@ -174,6 +198,7 @@
                 break;
                 
             case LAErrorUserCancel:{
+                // 取消
                 NSLog(@"LAErrorUserCancel");
             }
                 break;
@@ -185,27 +210,29 @@
                 
             default: {
                 NSLog(@"TouchID not available");
-                [self autPwdWithContext:context callback:callback failureCallback:failureCallback];
             }
-                return;
+                break;
         }
         
-        NSLog(@"手势不支持 %@", error.localizedDescription);
     }
     
     if (failureCallback) {
         failureCallback(error);
     }
-    return;
 }
 
-+ (void)autPwdWithContext:(LAContext *)context callback:(void(^)(void))callback failureCallback:(void(^)(NSError *error))failureCallback {
-    //报错码为-8时，调用此方法会弹出系统密码输入界面
++ (void)autPwdWithContext:(LAContext *)context isMustFingerprint:(BOOL)isMustFingerprint callback:(void(^)(void))callback failureCallback:(void(^)(NSError *error))failureCallback {
+    // 报错码为-8时，调用此方法会弹出系统密码输入界面
     [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:@"请输入系统锁屏密码" reply:^(BOOL success, NSError * _Nullable error){
         if (success) {
-            if (callback) {
-                callback();
+            if (isMustFingerprint) {
+                [self autBiometricsWithIsMustFingerprint:isMustFingerprint callback:callback failureCallback:failureCallback];
+            }else {
+                if (callback) {
+                    callback();
+                }
             }
+            
         }else {
             NSLog(@"密码验证失败 %@", error.localizedDescription);
             if (failureCallback) {

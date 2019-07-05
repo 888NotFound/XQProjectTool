@@ -55,14 +55,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)xq_executeSudoWithCmd:(NSString *)cmd key:(NSString *)key error:(out NSError ** _Nullable)error outLogHandle:(void (^)(NSString *log))outLogHandle errorLogHandle:(void (^)(NSString *log))errorLogHandle terminationHandler:(void (^_Nullable)(NSTask *task))terminationHandler;
 
 /**
- 自己制定执行
-
- @param executableURL 执行的命令
- @param cmd 具体参数
- */
-- (void)xq_executeBinShWithExecutableURL:(NSURL *)executableURL cmd:(NSString *)cmd;
-
-/**
  结束脚本运行
  */
 - (void)xq_terminateWithKey:(NSString *)key;

@@ -155,4 +155,11 @@
     return str.copy;
 }
 
+- (NSString *)xq_removeFloatAllZero {
+    NSString *outNumber = [NSString stringWithFormat:@"%@", @(self.floatValue)];
+    return outNumber;
+}
+
+
+
 @end
