@@ -58,6 +58,14 @@
 
 #if !TARGET_OS_IPHONE
 + (NSData *)xq_imageTransferWithImage:(NSImage *)image isPNG:(BOOL)isPNG;
+
+/**
+ 把图片截取, 分成很多张
+ 然后一个个再继续解析二维码, 提高识别率
+ */
++ (NSArray <XQ_D_ImageType *> *)xq_cropImgArrWithImg:(XQ_D_ImageType *)img;
 #endif
+
+
 
 @end

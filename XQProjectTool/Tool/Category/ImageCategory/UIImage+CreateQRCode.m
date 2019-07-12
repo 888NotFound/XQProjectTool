@@ -161,21 +161,24 @@
         return @[];
     }
     NSMutableArray *muArr = [NSMutableArray array];
-    // 上下
+    
 #if TARGET_OS_IPHONE
+    // 上下
     [muArr addObject:[XQ_D_ImageType imageWithCGImage:CGImageCreateWithImageInRect(img.CGImage, CGRectMake(0, 0, img.size.width, img.size.height/2))]];
     [muArr addObject:[XQ_D_ImageType imageWithCGImage:CGImageCreateWithImageInRect(img.CGImage, CGRectMake(0, img.size.height/2, img.size.width, img.size.height/2))]];
+    
+    // 左右
+    [muArr addObject:[UIImage imageWithCGImage:CGImageCreateWithImageInRect(img.CGImage, CGRectMake(0, 0, img.size.width/2, img.size.height))]];
+    [muArr addObject:[UIImage imageWithCGImage:CGImageCreateWithImageInRect(img.CGImage, CGRectMake(img.size.width/2, 0, img.size.width/2, img.size.height))]];
     
     // 中间
     [muArr addObject:[XQ_D_ImageType imageWithCGImage:CGImageCreateWithImageInRect(img.CGImage, CGRectMake(img.size.width/4, img.size.height/4, img.size.width/2, img.size.height/2))]];
     
     // 平铺
     [muArr addObjectsFromArray:[self xq_cropImgArrWithImg:img count:2]];
+    [muArr addObjectsFromArray:[self xq_cropImgArrWithImg:img count:3]];
     [muArr addObjectsFromArray:[self xq_cropImgArrWithImg:img count:4]];
-    [muArr addObjectsFromArray:[self xq_cropImgArrWithImg:img count:6]];
-    [muArr addObjectsFromArray:[self xq_cropImgArrWithImg:img count:8]];
-    [muArr addObjectsFromArray:[self xq_cropImgArrWithImg:img count:9]];
-    [muArr addObjectsFromArray:[self xq_cropImgArrWithImg:img count:12]];
+    [muArr addObjectsFromArray:[self xq_cropImgArrWithImg:img count:5]];
     //    [muArr addObjectsFromArray:[self xq_cropImgArrWithImg:img count:15]];
 #endif
     
@@ -190,11 +193,21 @@
     NSMutableArray *muArr = [NSMutableArray array];
     
 #if TARGET_OS_IPHONE
+    /**
+     传 count = 2, 但是两边都除以 2, 那么就是4张图片
+     传 count = 4, 但是两边都除以 4, 那么就是16张图片
+     那么这里循环的count, 应该是 count * count, 就是 count 的平方
+     */
+    
     CGFloat width = img.size.width/count;
     CGFloat height = img.size.height/count;
+    
     for (int i = 0; i < count; i++) {
-        NSUInteger index = i % count;
-        [muArr addObject:[XQ_D_ImageType imageWithCGImage:CGImageCreateWithImageInRect(img.CGImage, CGRectMake(index * width, index * height, width, height))]];
+        // 行
+        for (int j = 0; j < count; j++) {
+            // 列
+            [muArr addObject:[XQ_D_ImageType imageWithCGImage:CGImageCreateWithImageInRect(img.CGImage, CGRectMake(i * width, j * height, width, height))]];
+        }
     }
 #endif
     
