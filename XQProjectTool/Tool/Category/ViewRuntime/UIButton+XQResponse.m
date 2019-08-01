@@ -94,8 +94,7 @@ static char * touchUpInside_ = "64";
 }
 
 - (void)respondsToTouchUpInside:(UIButton *)sender {
-    
-    AudioServicesPlaySystemSound(1520);
+//    AudioServicesPlaySystemSound(1520);
     [self clickWithEvents:UIControlEventTouchUpInside];
 }
 

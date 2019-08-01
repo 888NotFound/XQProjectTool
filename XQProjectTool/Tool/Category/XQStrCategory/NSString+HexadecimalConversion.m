@@ -37,6 +37,9 @@
     int q1 = result.intValue & max;
     if (q1 == max) {
         // 负数
+        if ((result.intValue - max) == 0) {
+            return @"0";
+        }
         return [NSString stringWithFormat:@"-%.2f", (result.intValue - max)/m];
     }
     // 正数
