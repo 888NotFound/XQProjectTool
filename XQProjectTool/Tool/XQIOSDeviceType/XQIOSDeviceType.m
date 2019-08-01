@@ -8,6 +8,8 @@
 #import "XQIOSDeviceType.h"
 #import <sys/utsname.h>
 
+
+
 @implementation XQIOSDeviceType
 
 static NSString *iPhoneType_ = @"";
@@ -263,5 +265,8 @@ static NSString *iPhoneType_ = @"";
     
 #endif
 }
+
+
+
 
 @end

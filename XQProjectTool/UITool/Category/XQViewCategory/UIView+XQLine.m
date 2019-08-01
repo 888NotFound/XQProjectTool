@@ -103,32 +103,226 @@
 }
 
 + (void)setBorderWithView:(UIView *)view top:(BOOL)top left:(BOOL)left bottom:(BOOL)bottom right:(BOOL)right borderColor:(UIColor *)color borderWidth:(CGFloat)width {
+    [self setBorderWithView:view top:top left:left bottom:bottom right:right borderColor:color borderWidth:width headSpacing:0 footSpacing:0];
+}
+
+
+
++ (void)xq_setBorderWithView:(UIView *)view
+                   direction:(XQUIViewBorderDirection)direction
+                 borderColor:(UIColor *)color
+                 borderWidth:(CGFloat)width {
+    if (direction & XQUIViewBorderDirectionTop) {
+        [self setBorderWithView:view top:YES left:NO bottom:NO right:NO borderColor:color borderWidth:width];
+    }
+    
+    if (direction & XQUIViewBorderDirectionBottom) {
+        [self setBorderWithView:view top:NO left:NO bottom:YES right:NO borderColor:color borderWidth:width];
+    }
+    
+    if (direction & XQUIViewBorderDirectionLeft) {
+        [self setBorderWithView:view top:NO left:YES bottom:NO right:NO borderColor:color borderWidth:width];
+    }
+    
+    if (direction & XQUIViewBorderDirectionRight) {
+        [self setBorderWithView:view top:NO left:NO bottom:NO right:YES borderColor:color borderWidth:width];
+    }
+    
+}
+
+/**
+ 视图边界线, 这里是用layer的方式
+ 需要注意的是, 如果传进来的view, frame是0, 那么画图也是0
+ 
+ @param view 需要添加layer的视图
+ @param headSpacing 线, 距离头部距离
+ @param footSpacing 线, 距离尾部距离
+ */
++ (void)xq_setBorderWithView:(UIView *)view
+                   direction:(XQUIViewBorderDirection)direction
+                 headSpacing:(CGFloat)headSpacing
+                 footSpacing:(CGFloat)footSpacing
+                 borderColor:(UIColor *)color
+                 borderWidth:(CGFloat)width {
+    if (direction & XQUIViewBorderDirectionTop) {
+        [self setBorderWithView:view top:YES left:NO bottom:NO right:NO borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:footSpacing];
+    }
+    
+    if (direction & XQUIViewBorderDirectionBottom) {
+        [self setBorderWithView:view top:NO left:NO bottom:YES right:NO borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:footSpacing];
+    }
+    
+    if (direction & XQUIViewBorderDirectionLeft) {
+        [self setBorderWithView:view top:NO left:YES bottom:NO right:NO borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:footSpacing];
+    }
+    
+    if (direction & XQUIViewBorderDirectionRight) {
+        [self setBorderWithView:view top:NO left:NO bottom:NO right:YES borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:footSpacing];
+    }
+}
+
+/**
+ 视图边界线, 这里是用layer的方式
+ 
+ @param view 需要添加layer的视图
+ @param headSpacing 线, 距离头部距离
+ @param lineWidth 线的长度
+ */
++ (void)xq_setBorderWithView:(UIView *)view
+                   direction:(XQUIViewBorderDirection)direction
+                 headSpacing:(CGFloat)headSpacing
+                   lineWidth:(CGFloat)lineWidth
+                 borderColor:(UIColor *)color
+                 borderWidth:(CGFloat)width {
+    if (direction & XQUIViewBorderDirectionTop) {
+        [self setBorderWithView:view top:YES left:NO bottom:NO right:NO borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:0 lineWidth:lineWidth];
+    }
+    
+    if (direction & XQUIViewBorderDirectionBottom) {
+        [self setBorderWithView:view top:NO left:NO bottom:YES right:NO borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:0 lineWidth:lineWidth];
+    }
+    
+    if (direction & XQUIViewBorderDirectionLeft) {
+        [self setBorderWithView:view top:NO left:YES bottom:NO right:NO borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:0 lineWidth:lineWidth];
+    }
+    
+    if (direction & XQUIViewBorderDirectionRight) {
+        [self setBorderWithView:view top:NO left:NO bottom:NO right:YES borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:0 lineWidth:lineWidth];
+    }
+}
+
+
++ (void)setBorderWithView:(UIView *)view top:(BOOL)top left:(BOOL)left bottom:(BOOL)bottom right:(BOOL)right borderColor:(UIColor *)color borderWidth:(CGFloat)width headSpacing:(CGFloat)headSpacing footSpacing:(CGFloat)footSpacing {
+    [self setBorderWithView:view top:top left:left bottom:bottom right:right borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:footSpacing lineWidth:0];
+}
+
+/**
+ 视图边界线, 这里是用layer的方式, 自定义线宽度
+ 
+ @note 这样是完美了, 但却是过于麻烦, 填的参数过多
+ 
+ @param view 需要添加layer的视图
+ @param headSpacing 线, 距离头部距离
+ @param lineWidth 线的长度, 自定义长度, 而不是跟着view当前的size来
+ @param y 如果是 .bottom 那么就是 y, 如果是 .right 那么就是 x
+ */
++ (void)xq_setBorderWithView:(UIView *)view
+                   direction:(XQUIViewBorderDirection)direction
+                 headSpacing:(CGFloat)headSpacing
+                   lineWidth:(CGFloat)lineWidth
+                 borderColor:(UIColor *)color
+                 borderWidth:(CGFloat)width
+                           y:(CGFloat)y {
+    if (direction & XQUIViewBorderDirectionTop) {
+        [self setBorderWithView:view top:YES left:NO bottom:NO right:NO borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:0 lineWidth:lineWidth y:y];
+    }
+    
+    if (direction & XQUIViewBorderDirectionBottom) {
+        [self setBorderWithView:view top:NO left:NO bottom:YES right:NO borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:0 lineWidth:lineWidth y:y];
+    }
+    
+    if (direction & XQUIViewBorderDirectionLeft) {
+        [self setBorderWithView:view top:NO left:YES bottom:NO right:NO borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:0 lineWidth:lineWidth y:y];
+    }
+    
+    if (direction & XQUIViewBorderDirectionRight) {
+        [self setBorderWithView:view top:NO left:NO bottom:NO right:YES borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:0 lineWidth:lineWidth y:y];
+    }
+}
+
+/**
+ 画边线
+
+ @param lineWidth 如果是 0, 则忽略
+ */
++ (void)setBorderWithView:(UIView *)view top:(BOOL)top left:(BOOL)left bottom:(BOOL)bottom right:(BOOL)right borderColor:(UIColor *)color borderWidth:(CGFloat)width headSpacing:(CGFloat)headSpacing footSpacing:(CGFloat)footSpacing lineWidth:(CGFloat)lineWidth {
+    [self setBorderWithView:view top:top left:left bottom:bottom right:right borderColor:color borderWidth:width headSpacing:headSpacing footSpacing:footSpacing lineWidth:lineWidth y:0];
+}
+
+/**
+ 画边线
+ 
+ @param lineWidth 如果是 0, 则忽略
+ */
++ (void)setBorderWithView:(UIView *)view top:(BOOL)top left:(BOOL)left bottom:(BOOL)bottom right:(BOOL)right borderColor:(UIColor *)color borderWidth:(CGFloat)width headSpacing:(CGFloat)headSpacing footSpacing:(CGFloat)footSpacing lineWidth:(CGFloat)lineWidth y:(CGFloat)y {
     if (top) {
         CALayer *layer = [CALayer layer];
-        layer.frame = CGRectMake(0, 0, view.frame.size.width, width);
+        
+        CGFloat layerWidth = 0;
+        if (lineWidth <= 0) {
+            layerWidth = view.frame.size.width - headSpacing - footSpacing;
+        }else {
+            layerWidth = lineWidth;
+        }
+        
+        layer.frame = CGRectMake(headSpacing, 0, layerWidth, width);
+        
+        
         layer.backgroundColor = color.CGColor;
         [view.layer addSublayer:layer];
     }
     if (left) {
         CALayer *layer = [CALayer layer];
-        layer.frame = CGRectMake(0, 0, width, view.frame.size.height);
+        
+        CGFloat layerWidth = 0;
+        if (lineWidth <= 0) {
+            layerWidth = view.frame.size.height - headSpacing - footSpacing;
+        }else {
+            layerWidth = lineWidth;
+        }
+        
+        layer.frame = CGRectMake(0, headSpacing, width, layerWidth);
+        
         layer.backgroundColor = color.CGColor;
         [view.layer addSublayer:layer];
     }
+    
     if (bottom) {
         CALayer *layer = [CALayer layer];
-        layer.frame = CGRectMake(0, view.frame.size.height - width, view.frame.size.width, width);
+        
+        CGFloat layerWidth = 0;
+        if (lineWidth <= 0) {
+            layerWidth = view.frame.size.width - headSpacing - footSpacing;
+        }else {
+            layerWidth = lineWidth;
+        }
+        
+        CGFloat layerY = 0;
+        if (y <= 0) {
+            layerY = view.frame.size.height - width;
+        }else {
+            layerY = y;
+        }
+        
+        layer.frame = CGRectMake(headSpacing, layerY, layerWidth, width);
+        
         layer.backgroundColor = color.CGColor;
         [view.layer addSublayer:layer];
     }
+    
     if (right) {
         CALayer *layer = [CALayer layer];
-        layer.frame = CGRectMake(view.frame.size.width - width, 0, width, view.frame.size.height);
+        
+        CGFloat layerWidth = 0;
+        if (lineWidth <= 0) {
+            layerWidth = view.frame.size.height - headSpacing - footSpacing;
+        }else {
+            layerWidth = lineWidth;
+        }
+        
+        CGFloat layerY = 0;
+        if (y <= 0) {
+            layerY = view.frame.size.width - width;
+        }else {
+            layerY = y;
+        }
+        
+        layer.frame = CGRectMake(layerY, headSpacing, width, layerWidth);
+        
         layer.backgroundColor = color.CGColor;
         [view.layer addSublayer:layer];
     }
 }
-
 
 
 @end
