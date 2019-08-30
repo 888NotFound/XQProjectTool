@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
     s.license      = "MIT"  #协议类型
     s.author       = { "王兴乾" => "1034439685@qq.com" } #作者及联系方式
     s.osx.deployment_target  = '10.13'
-    s.ios.deployment_target  = "9.3" #平台及版本
+    s.ios.deployment_target  = "9.0" #平台及版本
     s.source       = { :git => "https://github.com/SyKingW/XQProjectTool.git" ,:tag => "#{s.version}"}   #工程地址及版本号
     s.requires_arc = true   #是否必须arc
     s.prefix_header_file = 'XQProjectTool/XQProjcetToolPrefixHeader.pch'
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     
     #UITool模块
     s.subspec 'UITool' do |iphoneS|
-        iphoneS.ios.deployment_target  = "9.3" #平台及版本
+        iphoneS.ios.deployment_target  = "9.0" #平台及版本
         iphoneS.source_files = 'XQProjectTool/UITool/**/*.{h,m,mm}'
         #关联资源
         #iphoneS.resources = 'XQProjectTool/UITool/**/*.{xib}'
@@ -30,13 +30,13 @@ Pod::Spec.new do |s|
     #通用Tool模块
     s.subspec 'Tool' do |toolS|
         toolS.osx.deployment_target  = '10.13'
-        toolS.ios.deployment_target  = "9.3" #平台及版本
+        toolS.ios.deployment_target  = "9.0" #平台及版本
         toolS.source_files = 'XQProjectTool/Tool/**/*.{h,m,mm}'
     end
     
     #iPhoneTool模块
     s.subspec 'iPhoneTool' do |iPhoneToolS|
-        iPhoneToolS.ios.deployment_target  = "9.3" #平台及版本
+        iPhoneToolS.ios.deployment_target  = "9.0" #平台及版本
         iPhoneToolS.source_files = 'XQProjectTool/iPhoneTool/**/*.{h,m,mm}'
         #关联系统framework, 后缀不要
         iPhoneToolS.frameworks = "AVFoundation", "Speech"
