@@ -40,6 +40,22 @@
 + (BOOL)predicateCheckPhoneWithPhone:(NSString *)phone;
 
 /**
+ 验证邮箱格式是否正确
+ 
+ @param email 邮箱
+ @return YES正确
+ */
++ (BOOL)predicateCheckEMailWithEmail:(NSString *)email;
+
+/**
+ 验证身份证是否合法
+ 
+ @param Id 身份证
+ @return YES 合法
+ */
++ (BOOL)predicateCheckCNIDCardWithId:(NSString *)Id;
+
+/**
  是否存在特殊字符
  
  @return YES存在
