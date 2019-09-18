@@ -10,7 +10,6 @@
 
 @implementation NSString (XQCategory)
 
-
 + (NSArray *)xq_filterDataWithDataArr:(NSArray *)dataArr filterKey:(NSString *)filterKey filterText:(NSString *)filterText {
     NSMutableArray *muArr = [NSMutableArray array];
     
@@ -27,7 +26,6 @@
                 continue;
             }
             
-            
             // 模糊搜索
             BOOL isFind = [self xq_vagueFindWithContentText:tempStr filterText:filterText];
             if (isFind) {
@@ -43,9 +41,50 @@
     return muArr;
 }
 
++ (NSArray *)xq_filterDataWithDataArr:(NSArray *)dataArr filterKeyArr:(NSArray <NSString *> *)filterKeyArr filterText:(NSString *)filterText {
+    NSMutableArray *muArr = [NSMutableArray array];
+    
+    if (filterText != nil && filterText.length > 0 && filterKeyArr.count != 0) {
+        //遍历需要搜索的所有内容，其中self.dataArray为存放总数据的数组
+        for (id model in dataArr) {
+            
+            // 每个 key 搞一遍过去
+            for (NSString *key in filterKeyArr) {
+                
+                NSString *tempStr = [model valueForKey:key];
+                
+                // 把所有的搜索结果转成成 原生 + 拼音
+                NSString *pinyin = [NSString xq_transformToSearchPinyin:tempStr];
+                
+                // 搜索是否包含
+                if ([pinyin rangeOfString:filterText options:NSCaseInsensitiveSearch].length > 0) {
+                    [muArr addObject:model];
+                    // 找到了, 退出寻找
+                    break;
+                }
+                
+                // 模糊搜索
+                BOOL isFind = [self xq_vagueFindWithContentText:tempStr filterText:filterText];
+                if (isFind) {
+                    // 找到了, 退出寻找
+                    [muArr addObject:model];
+                    break;
+                }
+                
+            }
+            
+        }
+        
+    }else {
+        // 没有搜索字
+    }
+    return muArr;
+}
 
 /**
  模糊搜索
+
+ @return YES 匹配成功, NO 匹配失败
  */
 + (BOOL)xq_vagueFindWithContentText:(NSString *)contentText filterText:(NSString *)filterText {
     
@@ -96,6 +135,9 @@
     return YES;
 }
 
+/**
+ 中文转拼音, 并且拼接在后面
+ */
 + (NSString *)xq_transformToSearchPinyin:(NSString *)aString {
     // 是否包含中文
     if (![XQPredicate isContainChineseWithStr:aString]) {
@@ -146,6 +188,9 @@
     return allString;
 }
 
+/**
+ 中文转拼音
+ */
 + (NSString *)xq_transformToPinyin:(NSString *)aString {
     //转成了可变字符串
     NSMutableString *str = [NSMutableString stringWithString:aString];
