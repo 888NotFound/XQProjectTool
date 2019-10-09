@@ -29,19 +29,28 @@
 #endif
 }
 
-- (XQ_Image_type *)imageWithTintColor:(XQ_Color_Type *)tintColor {
+- (XQ_Image_type *)xq_imageWithTintColor:(XQ_Color_Type *)tintColor {
 #if TARGET_OS_IPHONE
-    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
-    [tintColor setFill];
-    CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
-    UIRectFill(bounds);
     
-    //Draw the tinted image in context
-    [self drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.0f];
-//    contentTintColor
-    XQ_Image_type *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return tintedImage;
+    if (@available(iOS 13.0, *)) {
+        // wxq 系统自己出了方法
+        return [self imageWithTintColor:tintColor];
+    } else {
+        UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
+            [tintColor setFill];
+            CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
+            UIRectFill(bounds);
+            
+            //Draw the tinted image in context
+            [self drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.0f];
+        //    contentTintColor
+            XQ_Image_type *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            return tintedImage;
+    }
+    
+    return nil;
+    
 #else
     
     return self;

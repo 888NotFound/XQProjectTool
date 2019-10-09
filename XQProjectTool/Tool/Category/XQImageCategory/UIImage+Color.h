@@ -35,6 +35,8 @@
 /** 获得灰度图 */
 - (XQ_Image_type *)convertToGrayImage;
 
-- (XQ_Image_type *) imageWithTintColor:(XQ_Color_Type *)tintColor;
+/// 改变图片颜色
+/// @param tintColor 要改变成什么颜色
+- (XQ_Image_type *)xq_imageWithTintColor:(XQ_Color_Type *)tintColor;
 
 @end
