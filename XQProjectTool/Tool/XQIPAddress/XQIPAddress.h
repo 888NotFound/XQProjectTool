@@ -12,6 +12,16 @@
 #import <CoreWLAN/CoreWLAN.h>
 #endif
 
+#if TARGET_OS_IPHONE
+#import <CoreLocation/CoreLocation.h>
+
+typedef void(^XQIPAddressCallback)(void);
+typedef void(^XQIPAddressWiFiInfoCallback)(NSDictionary *_Nullable wifiInfo);
+typedef void(^XQIPAddressLocationStatusCallback)(CLAuthorizationStatus status);
+
+
+#endif
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XQIPAddress : NSObject
@@ -32,12 +42,26 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  获取当前wifi信息
  
- @note 权限: 获取不到问题 Capabilities -> Access WiFi Information -> ON
+ @note 12.0 后, 需要开权限:  Capabilities -> Access WiFi Information -> ON
+ 
+ 注意!!! 13.0 后, 获取 wifi 需要先开启定位, 不然会获取失败( 好像是说获取wifi信息能间接获取到位置信息 )
+ #import <CoreLocation/CoreLocation.h>
+ CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+ [locationManager requestWhenInUseAuthorization];
+ 
+ info.plist 定位
+ key: Privacy - Location When In Use Usage Description
+ 
  (__bridge NSString *)kCNNetworkInfoKeySSID: wifi名称key (@"SSID")
  
- @return nil表示获取不到, 就可能当前不是在wifi环境下
+ @param callback 获取成功, nil 表示未连接 wifi
+ @param locationDeniedCallback 定位权限被拒绝 13.0 后才会调用这个
+ 
  */
-+ (NSDictionary *_Nullable)getWIFIInfo;
++ (void)getWIFIInfoWithCallback:(XQIPAddressWiFiInfoCallback)callback
+         locationDeniedCallback:(XQIPAddressLocationStatusCallback)locationDeniedCallback;
+//+ (NSDictionary *_Nullable)getWIFIInfo;
+
 #endif
 
 #if TARGET_OS_OSX

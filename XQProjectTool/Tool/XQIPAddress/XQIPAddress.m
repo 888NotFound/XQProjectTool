@@ -9,8 +9,8 @@
 #import "XQIPAddress.h"
 
 #if TARGET_OS_IPHONE
-#import <SystemConfiguration/CaptiveNetwork.h>// 获取wifi
 
+#import <SystemConfiguration/CaptiveNetwork.h>// 获取wifi
 #import <NetworkExtension/NEHotspotConfigurationManager.h>
 
 #endif
@@ -27,7 +27,26 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
+@interface XQIPAddress () <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, copy) XQIPAddressWiFiInfoCallback wifiInfoCallback;
+@property (nonatomic, copy) XQIPAddressLocationStatusCallback locationStatusCallback;
+
+
+@end
+
 @implementation XQIPAddress
+
++ (instancetype)manager {
+    static XQIPAddress *address = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        address = [XQIPAddress new];
+    });
+    
+    return address;
+}
 
 /**
  获取所有相关IP信息
@@ -165,9 +184,58 @@
 }
 
 #if TARGET_OS_IPHONE
+
 /**
  获取当前wifi信息
  */
++ (void)getWIFIInfoWithCallback:(XQIPAddressWiFiInfoCallback)callback
+         locationDeniedCallback:(XQIPAddressLocationStatusCallback)locationDeniedCallback {
+    
+    if (@available(iOS 13.0, *)) {
+        
+        CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+        // 如果是iOS13 未开启地理位置权限 需要提示一下
+        if (status == kCLAuthorizationStatusNotDetermined) {
+            // 未选择
+            [XQIPAddress manager].wifiInfoCallback = callback;
+            [XQIPAddress manager].locationStatusCallback = locationDeniedCallback;
+            
+            if (![XQIPAddress manager].locationManager) {
+                [XQIPAddress manager].locationManager = [[CLLocationManager alloc] init];
+                [XQIPAddress manager].locationManager.delegate = [XQIPAddress manager];
+            }
+            
+            NSLog(@"请求定位权限");
+            [[XQIPAddress manager].locationManager requestWhenInUseAuthorization];
+            
+        }else if (status == kCLAuthorizationStatusRestricted ||
+                  status == kCLAuthorizationStatusDenied) {
+            NSLog(@"被拒绝定位");
+            if (locationDeniedCallback) {
+                locationDeniedCallback(status);
+            }
+            
+        }else {
+            // 已同意
+            NSLog(@"已同意定位权限");
+            if (callback) {
+                NSDictionary *info = [self getWIFIInfo];
+                callback(info);
+            }
+            
+        }
+        
+    }else {
+        
+        if (callback) {
+            NSDictionary *info = [self getWIFIInfo];
+            callback(info);
+        }
+        
+    }
+    
+}
+
 + (NSDictionary *)getWIFIInfo {
     id info = nil;
     NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
@@ -176,8 +244,10 @@
         info = (__bridge_transfer id)CNCopyCurrentNetworkInfo(strRef);
         CFRelease(strRef);
     }
+    
     return info;
 }
+
 #endif
 
 #if TARGET_OS_OSX
@@ -384,6 +454,36 @@
     
 }
 
+
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    
+    if (status == kCLAuthorizationStatusNotDetermined) {
+        // 不管
+        return;
+    }
+    
+    if (status == kCLAuthorizationStatusAuthorizedAlways ||
+        status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        if (self.wifiInfoCallback) {
+            NSDictionary *info = [XQIPAddress getWIFIInfo];
+            self.wifiInfoCallback(info);
+        }
+    }else {
+        if (self.locationStatusCallback) {
+            self.locationStatusCallback(status);
+        }
+    }
+    
+    // 释放掉
+    self.wifiInfoCallback = nil;
+    self.locationStatusCallback = nil;
+    self.locationManager = nil;
+    
+    
+}
 
 
 @end
