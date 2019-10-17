@@ -141,6 +141,10 @@ typedef NS_OPTIONS(NSUInteger, XQUIViewBorderDirection) {
                            withRadii:(CGSize)radii
                             viewRect:(CGRect)rect;
 
+/// view to image
+/// @param v 要转换的 view
++ (UIImage *)xq_convertViewToImage:(UIView *)v;
+
 @end
 
 
