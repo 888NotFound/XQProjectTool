@@ -50,10 +50,15 @@
 /**
  验证身份证是否合法
  
- @param Id 身份证
+ @param Id 身份证号码
  @return YES 合法
  */
 + (BOOL)predicateCheckCNIDCardWithId:(NSString *)Id;
+
+/// 验证是否是银行卡
+/// @param cardNo   银行卡号
+/// @return YES 合法
++ (BOOL)isBankCard:(NSString *)cardNo;
 
 /**
  是否存在特殊字符
