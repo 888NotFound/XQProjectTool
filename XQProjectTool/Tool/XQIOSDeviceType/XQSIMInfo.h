@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XQSIMInfo : NSObject
 
+#if TARGET_OS_IPHONE
 /**
  获取运营商信息
  */
@@ -21,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  获取运营商信息
  */
 + (nullable NSDictionary <NSString *, CTCarrier *> *)getCarrierInfo;
+#endif
 
 @end
 

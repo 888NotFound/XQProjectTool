@@ -137,6 +137,7 @@
  10 int 转 16 str
  
  @param tmpid 10进制
+ @param complement 补几位, 至少1位, 填0也默认1
  @return 16进制字符串
  */
 + (NSString *)toHexInt:(long long int)tmpid complement:(NSInteger)complement {

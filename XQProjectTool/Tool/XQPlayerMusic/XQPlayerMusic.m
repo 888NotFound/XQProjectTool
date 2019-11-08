@@ -83,7 +83,9 @@ static XQPlayerMusic *manager_ = nil;
  *  @param notification 通知对象
  */
 - (void)playbackFinished:(NSNotification *)notification {
-    NSLog(@"视频播放完成.");
+#if DEBUG
+    NSLog(@"%s, %@, 播放完成.", __func__, [self class]);
+#endif
     if (self.isCirculate) {
             // 播放完成后重复播放
             // 跳到最新的时间点开始播放
