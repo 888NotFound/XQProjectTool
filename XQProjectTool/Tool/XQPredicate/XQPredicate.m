@@ -202,6 +202,10 @@
 //判断是否银行卡
 
 + (BOOL)isBankCard:(NSString *)cardNo {
+    
+    if (cardNo.length < 16) {
+        return NO;
+    }
 
     int oddsum = 0;    //奇数求和
 
@@ -302,7 +306,7 @@
 
 
 /**
- 查询model某个key的值 ??能用字典查么..应该字典也是用这个吧
+ 查询model某个key的值
 
  @param dataArr 数据源
  @param value 要查询的值
