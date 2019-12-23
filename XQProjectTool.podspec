@@ -34,13 +34,6 @@ Pod::Spec.new do |s|
         toolS.source_files = 'XQProjectTool/Tool/**/*.{h,m,mm}'
     end
     
-    #iPhoneTool模块
-    s.subspec 'iPhoneTool' do |iPhoneToolS|
-        iPhoneToolS.ios.deployment_target  = "9.0" #平台及版本
-        iPhoneToolS.source_files = 'XQProjectTool/iPhoneTool/**/*.{h,m,mm}'
-        #关联系统framework, 后缀不要
-        iPhoneToolS.frameworks = "AVFoundation", "Speech"
-    end
     
     #MacTool模块
     s.subspec 'MacTool' do |macS|
