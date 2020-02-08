@@ -7,10 +7,14 @@
 
 #import "XQSIMInfo.h"
 
+#if TARGET_OS_IPHONE
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
+#endif
 
 @implementation XQSIMInfo
+
+#if TARGET_OS_IPHONE
 
 // 获取运营商信息
 + (NSDictionary <NSString *, CTCarrier *> *)getCarrierInfo {
@@ -69,5 +73,7 @@
     }
     return nil;
 }
+
+#endif
 
 @end

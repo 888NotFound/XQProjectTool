@@ -7,7 +7,6 @@
 //
 
 
-
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(UInt16, XQModifiers) {
@@ -44,10 +43,19 @@ typedef NS_ENUM(UInt16, XQModifiers) {
  @param keyID 自定义keyid
  @param inHotKeyCode 热键的code, 例如 18代表1, 21代表4, 49代表空格键, 53esc键等等..
  具体可以调用 [NSEvent addLocalMonitorForEventsMatchingMask:] 这个方法, 自己试一下所有键位的按钮keycode
+ 
  @param modifiers 和普通键的组合键,
- 例如: XQModifiersCmdKeyBit = command, XQModifiersCmdKeyBit + XQModifiersOptionKeyBit = command + option
+ 例如: XQModifiersCmdKeyBit = command,
+ XQModifiersCmdKeyBit | XQModifiersOptionKeyBit = command + option
+ 
  如果 inHotKeyCode 21, modifiers XQModifiersCmdKeyBit, 那么就是 command + 4, 就会触发回调
- @return 注册快捷键结果 0成功. 
+ 
+ @return 注册快捷键结果 0成功.
+ 
+ @note 示例代码: [[XQRegisterHotKey manager] xq_registerCustomHotKeyWithSignature:100 keyID:101 inHotKeyCode:18 modifiers:XQModifiersCmdKeyBit];
+ 这样的就设置了监听 command + 1, 只要用户触发, 就会在 XQRegisterHotKeyDelegate 中回调
+ 并且 signature 和 keyID, 返回的是 100 和 101
+ 
  */
 - (OSStatus)xq_registerCustomHotKeyWithSignature:(UInt32)signature
                                            keyID:(UInt32)keyID

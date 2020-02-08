@@ -27,6 +27,9 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
+
+#if TARGET_OS_IPHONE
+
 @interface XQIPAddress () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -35,6 +38,16 @@
 
 
 @end
+
+#elseif
+
+@interface XQIPAddress ()
+
+@end
+
+#endif
+
+
 
 @implementation XQIPAddress
 
@@ -455,6 +468,7 @@
 }
 
 
+#if TARGET_OS_IPHONE
 
 #pragma mark - CLLocationManagerDelegate
 
@@ -485,6 +499,7 @@
     
 }
 
+#endif
 
 @end
 
