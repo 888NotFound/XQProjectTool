@@ -39,7 +39,7 @@
 
 @end
 
-#elseif
+#else
 
 @interface XQIPAddress ()
 
