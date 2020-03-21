@@ -38,6 +38,11 @@
  */
 #define XQ_UDGet(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
 
+/// 颜色宏
+#define XQ_RGB_Color(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+#define XQ_RGBA_Color(r, g, b ,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+#define XQ_Rand_Color LM_RGB_Color(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
+
 /**
  系统ud，设置值
  
