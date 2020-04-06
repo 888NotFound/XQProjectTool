@@ -26,6 +26,10 @@ typedef NS_ENUM(UInt16, XQModifiers) {
 @protocol XQRegisterHotKeyDelegate <NSObject>
 
 @optional
+
+/// 触发键盘监听回调
+/// @param signature 自定义 signature
+/// @param keyID 自定义 keyId
 - (void)hotKeyHandlerWithSignature:(UInt32)signature keyID:(UInt32)keyID;
 
 @end

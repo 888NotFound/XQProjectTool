@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSViewController (XQAlert)
 
+/// 显示弹框
 - (BOOL)xq_presentErrorWithDomain:(NSErrorDomain)domain code:(NSInteger)code;
 
 @end

@@ -10,6 +10,8 @@
 
 @class XQTextField;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol XQTextFieldDelegate <NSObject>
 
 - (BOOL)textField:(XQTextField *)textField textShouldBeginEditing:(NSText *)textObject;
@@ -19,8 +21,6 @@
 - (void)textField:(XQTextField *)textField textDidChange:(NSNotification *)notification;
 
 @end
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface XQTextField : NSTextField
 
