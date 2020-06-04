@@ -180,6 +180,11 @@ static NSString *iPhoneType_ = @"";
     if ([platform isEqualToString:@"iPhone11,2"])   return @"iPhone XS";
     if ([platform isEqualToString:@"iPhone11,4"] || [platform isEqualToString:@"iPhone11,6"])   return @"iPhone XS Max";
     if ([platform isEqualToString:@"iPhone11,8"])   return @"iPhone XR";
+    if ([platform isEqualToString:@"iPhone12,1"])   return @"iPhone 11";
+    if ([platform isEqualToString:@"iPhone12,3"])   return @"iPhone 11 Pro";
+    if ([platform isEqualToString:@"iPhone12,5"])   return @"iPhone 11 Pro Max";
+    if ([platform isEqualToString:@"iPhone12,8"])   return @"iPhone SE2";
+    
     
 #pragma mark - iPod
     if ([platform isEqualToString:@"iPod1,1"]) return @"iPod Touch 1G";
