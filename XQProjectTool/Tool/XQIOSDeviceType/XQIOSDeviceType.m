@@ -74,6 +74,8 @@ static NSString *iPhoneType_ = @"";
             subtype = XQIPhoneDevTypeXSMax;
         }else if ([str isEqualToString:@"iPhone XR"]) {
             subtype = XQIPhoneDevTypeXR;
+        }else {
+            subtype = XQIPhoneDevTypeXR;
         }
         
     }else if ([str hasPrefix:@"iPod"]) {
@@ -89,10 +91,12 @@ static NSString *iPhoneType_ = @"";
             subtype = XQIPodDevTypeTouch4G;
         }else if ([str hasPrefix:@"iPhone Touch 5G"]) {
             subtype = XQIPodDevTypeTouch5G;
+        }else {
+            subtype = XQIPodDevTypeTouch5G;
         }
         
     }else if ([str hasPrefix:@"iPad"]) {
-        type = XQIOSDevTypeIPod;
+        type = XQIOSDevTypeIPad;
         
         if ([str hasPrefix:@"iPad 1G"]) {
             subtype = XQIPadDevType1G;
@@ -116,6 +120,8 @@ static NSString *iPhoneType_ = @"";
             subtype = XQIPadDevTypePro97;
         }else if ([str hasPrefix:@"iPad Pro 12.9"]) {
             subtype = XQIPadDevTypePro129;
+        }else {
+            subtype = XQIPadDevTypePro129;
         }
         
     }else if ([str hasPrefix:@"Apple TV"]) {
@@ -127,6 +133,8 @@ static NSString *iPhoneType_ = @"";
             subtype = XQAppleTVDevType3;
         }else if ([str hasPrefix:@"Apple TV 4"]) {
             subtype = XQAppleTVDevType4;
+        }else {
+            subtype = XQAppleTVDevType4;
         }
         
     }else if ([str hasPrefix:@"iPhone Simulator"]) {
@@ -135,6 +143,8 @@ static NSString *iPhoneType_ = @"";
         if ([str hasPrefix:@"iPhone Simulator(i386)"]) {
             subtype = XQIPhoneSimulatorDevTypeI386;
         }else if ([str hasPrefix:@"iPhone Simulator(x86_64)"]) {
+            subtype = XQIPhoneSimulatorDevTypeX86_64;
+        }else {
             subtype = XQIPhoneSimulatorDevTypeX86_64;
         }
         
@@ -178,12 +188,22 @@ static NSString *iPhoneType_ = @"";
     if ([platform isEqualToString:@"iPhone10,2"] || [platform isEqualToString:@"iPhone10,5"]) return @"iPhone 8 Plus";
     if ([platform isEqualToString:@"iPhone10,3"] || [platform isEqualToString:@"iPhone10,6"]) return @"iPhone X";
     if ([platform isEqualToString:@"iPhone11,2"])   return @"iPhone XS";
-    if ([platform isEqualToString:@"iPhone11,4"] || [platform isEqualToString:@"iPhone11,6"])   return @"iPhone XS Max";
+    if ([platform isEqualToString:@"iPhone11,4"] || [platform isEqualToString:@"iPhone11,6"])  return @"iPhone XS Max";
     if ([platform isEqualToString:@"iPhone11,8"])   return @"iPhone XR";
     if ([platform isEqualToString:@"iPhone12,1"])   return @"iPhone 11";
     if ([platform isEqualToString:@"iPhone12,3"])   return @"iPhone 11 Pro";
     if ([platform isEqualToString:@"iPhone12,5"])   return @"iPhone 11 Pro Max";
     if ([platform isEqualToString:@"iPhone12,8"])   return @"iPhone SE2";
+    
+//    @"iPhone10,6" : @"iPhone X",
+//    @"iPhone11,2" : @"iPhone XS",
+//    @"iPhone11,4" : @"iPhone XS Max",
+//    @"iPhone11,6" : @"iPhone XS Max CN",
+//    @"iPhone11,8" : @"iPhone XR",
+//    @"iPhone12,1" : @"iPhone 11",
+//    @"iPhone12,3" : @"iPhone 11 Pro",
+//    @"iPhone12,5" : @"iPhone 11 Pro Max",
+//    @"iPhone12,8" : @"iPhone SE (2nd generation)",
     
     
 #pragma mark - iPod
@@ -241,6 +261,8 @@ static NSString *iPhoneType_ = @"";
     if ([platform isEqualToString:@"iPad6,4"]) return @"iPad Pro 9.7";
     if ([platform isEqualToString:@"iPad6,7"]) return @"iPad Pro 12.9";
     if ([platform isEqualToString:@"iPad6,8"]) return @"iPad Pro 12.9";
+    
+    
     
 #pragma mark - Apple TV
     if ([platform isEqualToString:@"AppleTV2,1"]) return @"Apple TV 2";
