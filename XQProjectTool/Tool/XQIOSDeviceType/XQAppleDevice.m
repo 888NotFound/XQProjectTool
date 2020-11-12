@@ -5,12 +5,12 @@
 //  Created by WXQ on 2019/1/8.
 //
 
-#import "XQIOSDeviceType.h"
+#import "XQAppleDevice.h"
 #import <sys/utsname.h>
 
 
 
-@implementation XQIOSDeviceType
+@implementation XQAppleDevice
 
 static NSString *iPhoneType_ = @"";
 
@@ -24,13 +24,15 @@ static NSString *iPhoneType_ = @"";
 }
 
 
-+ (XQIOSDevModel)getIOSDevType {
++ (XQAppleDeviceModel *)getIOSDevType {
     NSString *str = [self getIPhoneType];
-    XQIOSDevType type = XQIOSDevTypeUnknow;
+    XQAppleDevType type = XQAppleDevTypeUnknow;
     NSInteger subtype = 0;
     
+    XQAppleDeviceModel *model = [XQAppleDeviceModel new];
+    
     if ([str hasPrefix:@"iPhone"]) {
-        type = XQIOSDevTypeIPhone;
+        type = XQAppleDevTypeIPhone;
         
         if ([str hasPrefix:@"iPhone 2G"]) {
             subtype = XQIPhoneDevType2G;
@@ -66,6 +68,7 @@ static NSString *iPhoneType_ = @"";
             subtype = XQIPhoneDevType8;
         }else if ([str hasPrefix:@"iPhone 8 Plus"]) {
             subtype = XQIPhoneDevType8Plus;
+            
         }else if ([str hasPrefix:@"iPhone X"]) {
             subtype = XQIPhoneDevTypeX;
         }else if ([str isEqualToString:@"iPhone XS"]) {
@@ -74,12 +77,31 @@ static NSString *iPhoneType_ = @"";
             subtype = XQIPhoneDevTypeXSMax;
         }else if ([str isEqualToString:@"iPhone XR"]) {
             subtype = XQIPhoneDevTypeXR;
+            
+        }else if ([str isEqualToString:@"iPhone 11"]) {
+            subtype = XQIPhoneDevType11;
+        }else if ([str isEqualToString:@"iPhone 11 Pro"]) {
+            subtype = XQIPhoneDevType11Pro;
+        }else if ([str isEqualToString:@"iPhone 11 Pro Max"]) {
+            subtype = XQIPhoneDevType11ProMax;
+            
+        }else if ([str isEqualToString:@"iPhone 12 Mini"]) {
+            subtype = XQIPhoneDevType12Mini;
+        }else if ([str isEqualToString:@"iPhone 12"]) {
+            subtype = XQIPhoneDevType12;
+        }else if ([str isEqualToString:@"iPhone 12 Pro"]) {
+            subtype = XQIPhoneDevType12Pro;
+        }else if ([str isEqualToString:@"iPhone 12 Pro Max"]) {
+            subtype = XQIPhoneDevType12ProMax;
         }else {
+            // 不认识机型默认为 xr
             subtype = XQIPhoneDevTypeXR;
         }
         
+        model.iPhoneSubtype = subtype;
+        
     }else if ([str hasPrefix:@"iPod"]) {
-        type = XQIOSDevTypeIPod;
+        type = XQAppleDevTypeIPod;
         
         if ([str hasPrefix:@"iPhone Touch 1G"]) {
             subtype = XQIPodDevTypeTouch1G;
@@ -95,8 +117,10 @@ static NSString *iPhoneType_ = @"";
             subtype = XQIPodDevTypeTouch5G;
         }
         
+        model.iPodSubtype = subtype;
+        
     }else if ([str hasPrefix:@"iPad"]) {
-        type = XQIOSDevTypeIPad;
+        type = XQAppleDevTypeIPad;
         
         if ([str hasPrefix:@"iPad 1G"]) {
             subtype = XQIPadDevType1G;
@@ -124,8 +148,10 @@ static NSString *iPhoneType_ = @"";
             subtype = XQIPadDevTypePro129;
         }
         
+        model.iPadSubtype = subtype;
+        
     }else if ([str hasPrefix:@"Apple TV"]) {
-        type = XQIOSDevTypeAppleTV;
+        type = XQAppleDevTypeAppleTV;
         
         if ([str hasPrefix:@"Apple TV 2"]) {
             subtype = XQAppleTVDevType2;
@@ -137,8 +163,10 @@ static NSString *iPhoneType_ = @"";
             subtype = XQAppleTVDevType4;
         }
         
+        model.appleTVSubtype = subtype;
+        
     }else if ([str hasPrefix:@"iPhone Simulator"]) {
-        type = XQIOSDevTypeSimulator;
+        type = XQAppleDevTypeSimulator;
         
         if ([str hasPrefix:@"iPhone Simulator(i386)"]) {
             subtype = XQIPhoneSimulatorDevTypeI386;
@@ -148,9 +176,11 @@ static NSString *iPhoneType_ = @"";
             subtype = XQIPhoneSimulatorDevTypeX86_64;
         }
         
+        model.iPhoneSimulatorSubtype = subtype;
     }
     
-    XQIOSDevModel model = {type, subtype, subtype, subtype, subtype, subtype};
+    
+    model.type = type;
     
     return model;
 }
@@ -195,16 +225,6 @@ static NSString *iPhoneType_ = @"";
     if ([platform isEqualToString:@"iPhone12,5"])   return @"iPhone 11 Pro Max";
     if ([platform isEqualToString:@"iPhone12,8"])   return @"iPhone SE2";
     
-//    @"iPhone10,6" : @"iPhone X",
-//    @"iPhone11,2" : @"iPhone XS",
-//    @"iPhone11,4" : @"iPhone XS Max",
-//    @"iPhone11,6" : @"iPhone XS Max CN",
-//    @"iPhone11,8" : @"iPhone XR",
-//    @"iPhone12,1" : @"iPhone 11",
-//    @"iPhone12,3" : @"iPhone 11 Pro",
-//    @"iPhone12,5" : @"iPhone 11 Pro Max",
-//    @"iPhone12,8" : @"iPhone SE (2nd generation)",
-    
     
 #pragma mark - iPod
     if ([platform isEqualToString:@"iPod1,1"]) return @"iPod Touch 1G";
@@ -212,6 +232,11 @@ static NSString *iPhoneType_ = @"";
     if ([platform isEqualToString:@"iPod3,1"]) return @"iPod Touch 3G";
     if ([platform isEqualToString:@"iPod4,1"]) return @"iPod Touch 4G";
     if ([platform isEqualToString:@"iPod5,1"]) return @"iPod Touch 5G";
+    
+//    @"iPod4,1" : @"iPod touch 4",
+//    @"iPod5,1" : @"iPod touch 5",
+//    @"iPod7,1" : @"iPod touch 6",
+//    @"iPod9,1" : @"iPod touch 7",
     
 #pragma mark - iPad
     // ipad1
@@ -262,13 +287,45 @@ static NSString *iPhoneType_ = @"";
     if ([platform isEqualToString:@"iPad6,7"]) return @"iPad Pro 12.9";
     if ([platform isEqualToString:@"iPad6,8"]) return @"iPad Pro 12.9";
     
-    
+//    @"iPad6,11": @"iPad 5 (WiFi)",
+//    @"iPad6,12": @"iPad 5 (Cellular)",
+//    @"iPad7,1" : @"iPad Pro (12.9 inch, 2nd generation)",
+//    @"iPad7,2" : @"iPad Pro (12.9 inch, 2nd generation)",
+//    @"iPad7,3" : @"iPad Pro (10.5 inch)",
+//    @"iPad7,4" : @"iPad Pro (10.5 inch)",
+//    @"iPad7,5" : @"iPad 6 (WiFi)",
+//    @"iPad7,6" : @"iPad 6 (Cellular)",
+//    @"iPad7,11": @"iPad 7 (WiFi)",
+//    @"iPad7,12": @"iPad 7 (Cellular)",
+//    @"iPad8,1" : @"iPad Pro (11 inch)",
+//    @"iPad8,2" : @"iPad Pro (11 inch)",
+//    @"iPad8,3" : @"iPad Pro (11 inch)",
+//    @"iPad8,4" : @"iPad Pro (11 inch)",
+//    @"iPad8,5" : @"iPad Pro (12.9 inch, 3rd generation)",
+//    @"iPad8,6" : @"iPad Pro (12.9 inch, 3rd generation)",
+//    @"iPad8,7" : @"iPad Pro (12.9 inch, 3rd generation)",
+//    @"iPad8,8" : @"iPad Pro (12.9 inch, 3rd generation)",
+//    @"iPad8,9" : @"iPad Pro (11 inch, 2nd generation)",
+//    @"iPad8,10" : @"iPad Pro (11 inch, 2nd generation)",
+//    @"iPad8,11" : @"iPad Pro (12.9 inch, 4th generation)",
+//    @"iPad8,12" : @"iPad Pro (12.9 inch, 4th generation)",
+//    @"iPad11,1" : @"iPad mini (5th generation)",
+//    @"iPad11,2" : @"iPad mini (5th generation)",
+//    @"iPad11,3" : @"iPad Air (3rd generation)",
+//    @"iPad11,4" : @"iPad Air (3rd generation)",
     
 #pragma mark - Apple TV
     if ([platform isEqualToString:@"AppleTV2,1"]) return @"Apple TV 2";
     if ([platform isEqualToString:@"AppleTV3,1"]) return @"Apple TV 3";
     if ([platform isEqualToString:@"AppleTV3,2"]) return @"Apple TV 3";
     if ([platform isEqualToString:@"AppleTV5,3"]) return @"Apple TV 4";
+    if ([platform isEqualToString:@"AppleTV6,2"]) return @"Apple TV 4K";
+    
+//    @"AudioAccessory1,1" : @"HomePod",
+//    @"AudioAccessory1,2" : @"HomePod",
+//    
+//    @"AirPods1,1" : @"AirPods (1st generation)",
+//    @"AirPods2,1" : @"AirPods (2nd generation)",
     
 #pragma mark - iPhone Simulator
     // 手机模拟器

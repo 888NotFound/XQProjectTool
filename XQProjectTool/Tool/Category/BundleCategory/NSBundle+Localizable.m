@@ -8,7 +8,7 @@
 
 #import "NSBundle+Localizable.h"
 #import "NSObject+XQExchangeIMP.h"
-#import "XQIOSDeviceType.h"
+#import "XQAppleDevice.h"
 /** 原理
  *  其实就是创建本地化的时候, 在Bundle的路径下, 就会有各种语言的lproj文件(zh-Hans.lproj这个是简体中文)
  *  在App内改变语言, 就是关联本地的lproj文件

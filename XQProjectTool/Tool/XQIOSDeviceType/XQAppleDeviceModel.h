@@ -1,19 +1,22 @@
 //
-//  XQIOSDeviceType.h
-//  AFNetworking
+//  XQAppleDeviceModel.h
+//  XQProjectTool
 //
-//  Created by WXQ on 2019/1/8.
+//  Created by WXQ on 2020/11/12.
 //
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, XQIOSDevType) {
-    XQIOSDevTypeUnknow = 0,
-    XQIOSDevTypeIPhone,
-    XQIOSDevTypeIPod,
-    XQIOSDevTypeIPad,
-    XQIOSDevTypeAppleTV,
-    XQIOSDevTypeSimulator,// 手机模拟器
+typedef NS_ENUM(NSInteger, XQAppleDevType) {
+    XQAppleDevTypeUnknow = 0,
+    XQAppleDevTypeIPhone,
+    XQAppleDevTypeMac,
+    XQAppleDevTypeIPod,
+    XQAppleDevTypeIPad,
+    XQAppleDevTypeAppleTV,
+    XQAppleDevTypeAirPods,
+    XQAppleDevTypeHomePod,
+    XQAppleDevTypeSimulator,// 手机模拟器
 };
 
 // iphone
@@ -32,6 +35,8 @@ typedef NS_ENUM(NSInteger, XQIPhoneDevType) {
     XQIPhoneDevType6S,
     XQIPhoneDevType6SPlus,
     XQIPhoneDevTypeSE,
+    // 因为还是小屏，就放在这
+    XQIPhoneDevTypeSE2,
     XQIPhoneDevType7,
     XQIPhoneDevType7Plus,
     XQIPhoneDevType8,
@@ -43,7 +48,7 @@ typedef NS_ENUM(NSInteger, XQIPhoneDevType) {
     XQIPhoneDevType11,
     XQIPhoneDevType11Pro,
     XQIPhoneDevType11ProMax,
-    XQIPhoneDevType12mini,
+    XQIPhoneDevType12Mini,
     XQIPhoneDevType12,
     XQIPhoneDevType12Pro,
     XQIPhoneDevType12ProMax,
@@ -97,30 +102,27 @@ typedef NS_ENUM(NSInteger, XQIPhoneSimulatorDevType) {
     XQIPhoneSimulatorDevTypeX86_64,
 };
 
-typedef struct _XQIOSDevModel {
-    XQIOSDevType type;// 主类, 然后通过主类, 再判断下面的子类
-    XQIPhoneDevType iPhoneSubtype;
-    XQIPodDevType iPodSubtype;
-    XQIPadDevType iPadSubtype;
-    XQAppleTVDevType appleTVSubtype;
-    XQIPhoneSimulatorDevType iPhoneSimulatorSubtype;
-}XQIOSDevModel;
-
-#define XQ_IPhoneType [XQIOSDeviceType getIPhoneType]
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XQIOSDeviceType : NSObject
+@interface XQAppleDeviceModel : NSObject
 
-/**
- 获取当前机型
- */
-+ (XQIOSDevModel)getIOSDevType;
+/// 主类, 然后通过主类, 再判断下面的子类
+@property (nonatomic, assign) XQAppleDevType type;
 
-/**
- 获取当前机型, 这个是直接获取具体字符串, 可以判断更加细致的类型
- */
-+ (NSString *)getIPhoneType;
+/// <#note#>
+@property (nonatomic, assign) XQIPhoneDevType iPhoneSubtype;
+
+/// <#note#>
+@property (nonatomic, assign) XQIPodDevType iPodSubtype;
+
+/// <#note#>
+@property (nonatomic, assign) XQIPadDevType iPadSubtype;
+
+/// <#note#>
+@property (nonatomic, assign) XQAppleTVDevType appleTVSubtype;
+
+/// <#note#>
+@property (nonatomic, assign) XQIPhoneSimulatorDevType iPhoneSimulatorSubtype;
 
 
 
