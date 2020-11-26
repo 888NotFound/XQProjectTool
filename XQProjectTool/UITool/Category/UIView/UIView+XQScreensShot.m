@@ -51,20 +51,21 @@
     CGFloat contentHeight = 0;
     if (tableView.tableHeaderView) {
         contentHeight += tableView.tableHeaderView.frame.size.height;
-        NSInteger sections = tableView.numberOfSections;
-        for (NSInteger i = 0; i < sections; i++) {
-            contentHeight += [tableView rectForHeaderInSection:i].size.height;
+    }
+    
+    NSInteger sections = tableView.numberOfSections;
+    for (NSInteger i = 0; i < sections; i++) {
+        contentHeight += [tableView rectForHeaderInSection:i].size.height;
 
-            NSInteger rows = [tableView numberOfRowsInSection:i];
-            for (NSInteger j = 0; j < rows; j++) {
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:j inSection:i];
-                [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:NO];
-                UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-                contentHeight += cell.frame.size.height;
-            }
-
-            contentHeight += [tableView rectForFooterInSection:i].size.height;
+        NSInteger rows = [tableView numberOfRowsInSection:i];
+        for (NSInteger j = 0; j < rows; j++) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:j inSection:i];
+            [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:NO];
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            contentHeight += cell.frame.size.height;
         }
+
+        contentHeight += [tableView rectForFooterInSection:i].size.height;
     }
     
     if (tableView.tableFooterView) {
@@ -82,8 +83,7 @@
         [tableView.tableHeaderView.layer renderInContext:ctx];
         CGContextTranslateCTM(ctx, 0, tableView.tableHeaderView.frame.size.height);
     }
-
-    NSInteger sections = tableView.numberOfSections;
+    
     for (NSInteger i = 0; i < sections; i++) {
         ///sectionHeader
         contentHeight += [tableView rectForHeaderInSection:i].size.height;
