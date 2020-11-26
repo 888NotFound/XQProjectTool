@@ -13,6 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return 返回生成的图片
 - (UIImage *)xq_screenShot;
 
+/// 获取 scrollView 截图
++ (UIImage *)xq_screenShotWithUIScrollView:(UIScrollView *)scrollView;
+
+/// 获取 tableview 完整内容截图
++ (UIImage *)xq_screenShotWithUITableView:(UITableView *)tableView;
+
 @end
 
 NS_ASSUME_NONNULL_END

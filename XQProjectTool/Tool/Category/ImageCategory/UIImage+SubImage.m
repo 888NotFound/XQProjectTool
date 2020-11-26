@@ -109,4 +109,56 @@
     return image;
 }
 
+/// 合并图片
+/// @param imgArr 要合并的图片
+/// @param direction 0 垂直, 1 横向
++ (nullable UIImage *)xq_composeWithImgArr:(NSArray <UIImage *> *)imgArr direction:(NSInteger)direction {
+    if (imgArr.count == 0) {
+        return nil;
+    }
+    
+    if (imgArr.count == 1) {
+        return imgArr.firstObject;
+    }
+    
+    // 获取画布大小
+    CGFloat width = 0;
+    CGFloat height = 0;
+    if (direction == 0) {
+        width = imgArr.firstObject.size.width;
+        for (UIImage *img in imgArr) {
+            height += img.size.height;
+        }
+        
+    }else {
+        height = imgArr.firstObject.size.height;
+        for (UIImage *img in imgArr) {
+            width += img.size.width;
+        }
+    }
+    CGSize size = CGSizeMake(width, height);
+    
+    // 开始画
+    UIGraphicsBeginImageContext(size);
+    
+    CGFloat cHeight = 0;
+    CGFloat cWidth = 0;
+    for (UIImage *img in imgArr) {
+        
+        if (direction == 0) {
+            [img drawInRect:CGRectMake(0, cHeight, img.size.width, img.size.height)];
+        }else {
+            [img drawInRect:CGRectMake(cWidth, 0, img.size.width, img.size.height)];
+        }
+        
+        cHeight += img.size.height;
+        cWidth += img.size.width;
+    }
+    
+    // 获取画，并结束画
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 @end
