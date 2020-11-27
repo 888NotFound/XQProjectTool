@@ -129,6 +129,61 @@
     return image;
 }
 
+/// WKWebView 截图
++ (void)xq_screenshotWithWebView:(WKWebView *)webView callback:(void(^)(UIImage *img))callback {
+    
+    UIScrollView *scrollView = webView.scrollView;
+    [scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+    
+    UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, NO, [UIScreen mainScreen].scale);
+    
+    if (scrollView.contentSize.height <= scrollView.bounds.size.height) {
+        // 小于高度，直接截图
+        [scrollView.layer renderInContext:UIGraphicsGetCurrentContext()];
+        UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        if (callback) {
+            callback(img);
+        }
+    }else {
+        // 大于高度，拼接
+        [self xq_screenshotLongWithWebView:webView callback:callback];
+    }
+}
+
++ (void)xq_screenshotLongWithWebView:(WKWebView *)webView callback:(void(^)(UIImage *img))callback {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        CGFloat screenshotY = webView.scrollView.contentOffset.y;
+        [webView.layer renderInContext:UIGraphicsGetCurrentContext()];
+        CGContextTranslateCTM(UIGraphicsGetCurrentContext(), 0, webView.bounds.size.height);
+        
+        if ((webView.scrollView.contentOffset.y + webView.bounds.size.height) >= webView.scrollView.contentSize.height) {
+            // 最后了
+            UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            if (callback) {
+                callback(img);
+            }
+        }else {
+            
+            CGFloat y = webView.scrollView.contentOffset.y + webView.bounds.size.height;
+            
+            // 不用判断这个了，直接拼上
+            // 不过界面 setContentOffset 会有点问题，会超过 webview 最大内容.
+//            CGFloat maxY = webView.scrollView.contentSize.height - webView.bounds.size.height;
+//
+//            if (y > maxY) {
+//                // 最后一张了
+//                y = maxY;
+//            }
+            
+            // 继续截图
+            [webView.scrollView setContentOffset:CGPointMake(0, y) animated:NO];
+            [self xq_screenshotLongWithWebView:webView callback:callback];
+        }
+    });
+}
+
 @end
 
 
