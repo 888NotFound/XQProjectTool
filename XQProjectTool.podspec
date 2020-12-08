@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
         toolS.ios.deployment_target  = "9.0" #平台及版本
         toolS.source_files = 'XQProjectTool/Tool/**/*.{h,m,mm}'
         
-        toolS.frameworks = "CoreTelephony"
+        toolS.ios.frameworks = "CoreTelephony"
         
     end
     

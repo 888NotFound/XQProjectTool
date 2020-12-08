@@ -6,13 +6,16 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#if TARGET_OS_IOS
 #import <CoreTelephony/CTCarrier.h>
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XQSIMInfo : NSObject
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IOS
 /**
  获取运营商信息
  */
