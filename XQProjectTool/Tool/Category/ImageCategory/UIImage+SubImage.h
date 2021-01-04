@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIImage (SubImage)
 
 /** 截取当前image对象rect区域内的图像 */
@@ -34,3 +36,5 @@
 + (nullable UIImage *)xq_composeWithImgArr:(NSArray <UIImage *> *)imgArr direction:(NSInteger)direction;
 
 @end
+
+NS_ASSUME_NONNULL_END

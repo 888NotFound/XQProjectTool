@@ -18,6 +18,8 @@
 
 /**
  获取uuid
+ 
+ @note 做 siri intent extension 的时候碰到个比较奇怪的问题(当时是 iOS 14.2 系统版本)，就是锁屏状态下，快捷指令自动化执行，会获取不到这个
  */
 + (NSString *)getUUIDStr;
 
