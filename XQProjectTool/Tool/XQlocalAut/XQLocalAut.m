@@ -33,9 +33,21 @@
 
 + (void)autBiometricsWithIsMustFingerprint:(BOOL)isMustFingerprint callback:(void(^)(void))callback failureCallback:(void(^)(NSError *error))failureCallback {
         //创建LAContext
-    LAContext* context = [[LAContext alloc] init];
-    NSError* error = nil;
-    NSString* result = @"请验系统证锁屏指纹";
+    LAContext *context = [[LAContext alloc] init];
+    NSError *error = nil;
+    
+    NSString *result = @"请验证系统锁屏密码";
+    if (!isMustFingerprint) {
+        if (@available(iOS 11.0, *)) {
+            if (context.biometryType == LABiometryTypeFaceID) {
+                result = @"请验证系统锁屏面部识别";
+            }else {
+                result = @"请验证系统锁屏指纹";
+            }
+        } else {
+            result = @"请验证系统锁屏指纹";
+        }
+    }
     
     //LAPolicyDeviceOwnerAuthenticationWithBiometrics
         //首先使用canEvaluatePolicy 判断设备支持状态
