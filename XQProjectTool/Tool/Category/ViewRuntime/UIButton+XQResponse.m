@@ -14,26 +14,10 @@
 
 static char * touchUpInside_ = "64";
 
-#if TARGET_OS_IPHONE
-
-@interface UIButton ()
-
-@end
-
-@implementation UIButton (XQResponse)
-
-#else
-
-@interface NSButton ()
-
-@end
-
-@implementation NSButton (XQResponse)
-
-#endif
+@implementation UIControl (XQResponse)
 
 #if TARGET_OS_IPHONE
-- (void)xq_addEvent:(UIControlEvents)event callback:(XQBtnClick)callback {
+- (void)xq_control_addEvent:(UIControlEvents)event callback:(XQButtonClick)callback {
     if (!callback) {
         NSLog(@"click is nil");
         return;
@@ -44,8 +28,8 @@ static char * touchUpInside_ = "64";
     /** 现在模拟写两个, 可以照着这个思路, 一个一个全部写下去 */
     SEL sel = nil;
     switch (event) {
-        case UIControlEventTouchDown:{
-            sel = @selector(respondsToTouchDown:);
+        case UIControlEventValueChanged:{
+            sel = @selector(respondsToValueChanged:);
         }
             break;
             
@@ -71,6 +55,10 @@ static char * touchUpInside_ = "64";
             return touchUpInside_;
             break;
             
+        case UIControlEventValueChanged:
+            return [NSString stringWithFormat:@"%lu", (unsigned long)events].UTF8String;
+            break;
+            
         default:
             return touchUpInside_;
             break;
@@ -79,7 +67,7 @@ static char * touchUpInside_ = "64";
 
 - (void)clickWithEvents:(UIControlEvents)events {
     const char * str =  [self getEventStr:events];
-    XQBtnClick click = objc_getAssociatedObject(self, str);
+    XQButtonClick click = objc_getAssociatedObject(self, str);
     if (click) {
         click(self);
     }else {
@@ -89,8 +77,8 @@ static char * touchUpInside_ = "64";
 
 #pragma mark -- respondsTo... 这边就比较苦逼了，得一直写完所有方法, 目前没想到比较好的解决方法
 
-- (void)respondsToTouchDown:(UIButton *)sender {
-    [self clickWithEvents:UIControlEventTouchDown];
+- (void)respondsToValueChanged:(UIButton *)sender {
+    [self clickWithEvents:UIControlEventValueChanged];
 }
 
 - (void)respondsToTouchUpInside:(UIButton *)sender {
@@ -103,6 +91,42 @@ static char * touchUpInside_ = "64";
 }
 
 #endif
+
+@end
+
+
+@implementation UIButton (XQResponse)
+
+- (void)xq_addEvent:(UIControlEvents)event callback:(XQButtonClick)callback {
+    [self xq_control_addEvent:event callback:callback];
+}
+
+@end
+
+@implementation UISlider (XQResponse)
+
+/** 现在只支持UIControlEventValueChanged */
+- (void)xq_addEvent:(UIControlEvents)event callback:(XQSliderClick)callback {
+    [self xq_control_addEvent:event callback:^(UIButton * _Nonnull sender) {
+        if (callback) {
+            callback((UISlider *)sender);
+        }
+    }];
+}
+
+@end
+
+
+@implementation UISwitch (XQResponse)
+
+/** 现在只支持UIControlEventValueChanged */
+- (void)xq_addEvent:(UIControlEvents)event callback:(XQSwitchClick)callback {
+    [self xq_control_addEvent:event callback:^(UIButton * _Nonnull sender) {
+        if (callback) {
+            callback((UISwitch *)sender);
+        }
+    }];
+}
 
 @end
 
