@@ -29,6 +29,8 @@
 #endif
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 #if TARGET_OS_IPHONE
 typedef void(^XQSwipe)(UISwipeGestureRecognizer *gesture);
 typedef void(^XQPinch)(UIPinchGestureRecognizer *gesture);
@@ -175,6 +177,7 @@ typedef NS_OPTIONS(NSUInteger, XQSwipeDirection) {
 
 @end
 
+NS_ASSUME_NONNULL_END
 
 
 
