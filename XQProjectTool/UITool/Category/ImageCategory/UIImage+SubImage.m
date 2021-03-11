@@ -6,6 +6,8 @@
 //  Copyright © 2016年 lisong. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
+
 #import "UIImage+SubImage.h"
 
 @implementation UIImage (SubImage)
@@ -162,3 +164,5 @@
 }
 
 @end
+
+#endif

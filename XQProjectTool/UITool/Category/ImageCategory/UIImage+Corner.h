@@ -6,6 +6,8 @@
 //  Copyright © 2017年 WangXQ. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
+
 #import <UIKit/UIKit.h>
 
 @interface UIImage (Corner)
@@ -16,3 +18,5 @@
 + (UIImage *)bezierPathClip:(UIImage *)img cornerRadius:(CGFloat)radius;
 
 @end
+
+#endif

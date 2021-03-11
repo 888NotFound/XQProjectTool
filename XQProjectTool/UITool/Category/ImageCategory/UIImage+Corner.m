@@ -6,6 +6,8 @@
 //  Copyright © 2017年 WangXQ. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
+
 #import "UIImage+Corner.h"
 
 @implementation UIImage (Corner)
@@ -152,7 +154,7 @@ void releaseData(void *info, const void *data, size_t size) {
 
 
 
-
+#endif
 
 
 

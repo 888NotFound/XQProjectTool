@@ -6,6 +6,7 @@
 //  Copyright © 2017年 WangXQ. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
 
 #import "UIButton+XQResponse.h"
 //#import <objc/runtime.h>
@@ -130,7 +131,7 @@ static char * touchUpInside_ = "64";
 
 @end
 
-
+#endif
 
 
 

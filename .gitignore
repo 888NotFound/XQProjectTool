@@ -72,3 +72,8 @@ DerivedData/
 
 
 xcuserdata
+
+
+XQProjectMacTool/Pods
+XQProjectMacTool/XQProjectMacTool.xcworkspace
+XQProjectMacTool/Podfile.lock

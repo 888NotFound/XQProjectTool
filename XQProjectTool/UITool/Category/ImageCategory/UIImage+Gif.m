@@ -6,6 +6,8 @@
 //  Copyright © 2016年 lisong. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
+
 #import "UIImage+Gif.h"
 #import <ImageIO/ImageIO.h>
 
@@ -146,3 +148,6 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
 
 
 @end
+
+
+#endif

@@ -40,8 +40,9 @@ Pod::Spec.new do |s|
     
     #MacTool模块
     s.subspec 'MacTool' do |macS|
-        macS.platform = :osx, '10.13'
-        macS.source_files = 'XQProjectTool/MacTool/**/*.{h,m,mm}'
+        macS.osx.deployment_target  = '10.13'
+        macS.osx.source_files = 'XQProjectTool/MacTool/**/*.{h,m,mm}'
+        
     end
     
     

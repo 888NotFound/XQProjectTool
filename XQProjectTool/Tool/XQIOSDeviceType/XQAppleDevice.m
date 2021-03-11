@@ -8,6 +8,9 @@
 #import "XQAppleDevice.h"
 #import <sys/utsname.h>
 
+#if TARGET_OS_OSX
+#import <sys/sysctl.h>
+#endif
 
 
 @implementation XQAppleDevice
@@ -344,10 +347,11 @@ static NSString *iPhoneType_ = @"";
         sysctlbyname("hw.model", [data mutableBytes], &len, NULL, 0);
         result = [NSString stringWithUTF8String:[data bytes]];
     }
-    
     return result;
     
 #endif
+    
+    return @"";
 }
 
 

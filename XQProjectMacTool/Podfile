@@ -7,6 +7,6 @@ target 'XQProjectMacTool' do
 
   # Pods for XQProjectMacTool
 
-pod 'XQProjectTool', :path => '../../XQProjectTool'
+pod 'XQProjectTool', :path => '../XQProjectTool.podspec'
 
 end

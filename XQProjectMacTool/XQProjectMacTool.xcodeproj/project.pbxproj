@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07C2AC6B36AEB207AF283901 /* Pods_XQProjectMacTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A15922053232398954E6E807 /* Pods_XQProjectMacTool.framework */; };
+		49643668E353CBAF78C4B8EC /* Pods_XQProjectMacTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D870F1245E4CD9A8E665E3D /* Pods_XQProjectMacTool.framework */; };
 		A46C6A042248C2BA00BAC282 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A46C6A032248C2BA00BAC282 /* AppDelegate.m */; };
 		A46C6A072248C2BA00BAC282 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46C6A062248C2BA00BAC282 /* ViewController.m */; };
 		A46C6A092248C2BC00BAC282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A46C6A082248C2BC00BAC282 /* Assets.xcassets */; };
@@ -16,7 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A15922053232398954E6E807 /* Pods_XQProjectMacTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XQProjectMacTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		281CA66CDB0B4EABA5A7067E /* Pods-XQProjectMacTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectMacTool.release.xcconfig"; path = "Target Support Files/Pods-XQProjectMacTool/Pods-XQProjectMacTool.release.xcconfig"; sourceTree = "<group>"; };
+		2D870F1245E4CD9A8E665E3D /* Pods_XQProjectMacTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XQProjectMacTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AD094E4C521DB16D4F1FDCB /* Pods-XQProjectMacTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectMacTool.debug.xcconfig"; path = "Target Support Files/Pods-XQProjectMacTool/Pods-XQProjectMacTool.debug.xcconfig"; sourceTree = "<group>"; };
 		A46C69FF2248C2BA00BAC282 /* XQProjectMacTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XQProjectMacTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A46C6A022248C2BA00BAC282 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A46C6A032248C2BA00BAC282 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -27,8 +29,6 @@
 		A46C6A0D2248C2BC00BAC282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A46C6A0E2248C2BC00BAC282 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A46C6A102248C2BC00BAC282 /* XQProjectMacTool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XQProjectMacTool.entitlements; sourceTree = "<group>"; };
-		D3C8E6788D2DA692C7E2EE73 /* Pods-XQProjectMacTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectMacTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectMacTool/Pods-XQProjectMacTool.release.xcconfig"; sourceTree = "<group>"; };
-		EB57A8FB1590CD37FAF9A87B /* Pods-XQProjectMacTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XQProjectMacTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XQProjectMacTool/Pods-XQProjectMacTool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +36,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C2AC6B36AEB207AF283901 /* Pods_XQProjectMacTool.framework in Frameworks */,
+				49643668E353CBAF78C4B8EC /* Pods_XQProjectMacTool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		81D5D6FD56CC5B242523D1F4 /* Frameworks */ = {
+		204B31525DDDB152500E1768 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A15922053232398954E6E807 /* Pods_XQProjectMacTool.framework */,
+				9AD094E4C521DB16D4F1FDCB /* Pods-XQProjectMacTool.debug.xcconfig */,
+				281CA66CDB0B4EABA5A7067E /* Pods-XQProjectMacTool.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3404E02DFAE393FC35F4D5AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D870F1245E4CD9A8E665E3D /* Pods_XQProjectMacTool.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -56,8 +65,8 @@
 			children = (
 				A46C6A012248C2BA00BAC282 /* XQProjectMacTool */,
 				A46C6A002248C2BA00BAC282 /* Products */,
-				C9382442D8A13536220EA855 /* Pods */,
-				81D5D6FD56CC5B242523D1F4 /* Frameworks */,
+				204B31525DDDB152500E1768 /* Pods */,
+				3404E02DFAE393FC35F4D5AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,15 +94,6 @@
 			path = XQProjectMacTool;
 			sourceTree = "<group>";
 		};
-		C9382442D8A13536220EA855 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EB57A8FB1590CD37FAF9A87B /* Pods-XQProjectMacTool.debug.xcconfig */,
-				D3C8E6788D2DA692C7E2EE73 /* Pods-XQProjectMacTool.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,10 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A46C6A132248C2BC00BAC282 /* Build configuration list for PBXNativeTarget "XQProjectMacTool" */;
 			buildPhases = (
-				6DD28986C9B193D855EBFA52 /* [CP] Check Pods Manifest.lock */,
+				67C3E0806A80D38DAFE1715B /* [CP] Check Pods Manifest.lock */,
 				A46C69FB2248C2BA00BAC282 /* Sources */,
 				A46C69FC2248C2BA00BAC282 /* Frameworks */,
 				A46C69FD2248C2BA00BAC282 /* Resources */,
+				E17CF5011CBADFCCCC0F8739 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,7 +161,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6DD28986C9B193D855EBFA52 /* [CP] Check Pods Manifest.lock */ = {
+		67C3E0806A80D38DAFE1715B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -180,6 +181,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E17CF5011CBADFCCCC0F8739 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XQProjectMacTool/Pods-XQProjectMacTool-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XQProjectMacTool/Pods-XQProjectMacTool-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XQProjectMacTool/Pods-XQProjectMacTool-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -322,7 +340,7 @@
 		};
 		A46C6A142248C2BC00BAC282 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB57A8FB1590CD37FAF9A87B /* Pods-XQProjectMacTool.debug.xcconfig */;
+			baseConfigurationReference = 9AD094E4C521DB16D4F1FDCB /* Pods-XQProjectMacTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = XQProjectMacTool/XQProjectMacTool.entitlements;
@@ -334,7 +352,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wxqlm.XQProjectMacTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -342,7 +360,7 @@
 		};
 		A46C6A152248C2BC00BAC282 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3C8E6788D2DA692C7E2EE73 /* Pods-XQProjectMacTool.release.xcconfig */;
+			baseConfigurationReference = 281CA66CDB0B4EABA5A7067E /* Pods-XQProjectMacTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = XQProjectMacTool/XQProjectMacTool.entitlements;
@@ -354,7 +372,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wxqlm.XQProjectMacTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
